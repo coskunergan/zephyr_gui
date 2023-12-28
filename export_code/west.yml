@@ -1,0 +1,16 @@
+# Copyright (c) 2021 Nordic Semiconductor ASA
+# SPDX-License-Identifier: Apache-2.0
+
+manifest:
+  remotes:
+    - name: zephyrproject-rtos
+      url-base: https://github.com/coskunergan
+
+  projects:
+    - name: zephyr
+      remote: zephyrproject-rtos
+      clone-depth: 3
+      revision: zephyr_cergan
+      import:
+        name-allowlist:
+          - cmsis
