@@ -4687,6 +4687,9 @@
     <file>
       <name>$PROJ_DIR$\..\..\generated\guider_fonts\guider_fonts.mk</name>
     </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\guider_fonts\lv_font_Alatsi_Regular_1.c</name>
+    </file>
   </group>
   <file>
     <name>$PROJ_DIR$\..\..\generated\gui_guider.c</name>
@@ -4700,13 +4703,67 @@
       <name>$PROJ_DIR$\..\..\generated\images\images.mk</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\..\generated\images\_empty_alpha_800x80.c</name>
+      <name>$PROJ_DIR$\..\..\generated\images\_empty_800x80.c</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\..\generated\images\_NoHob_0_alpha_200x194.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\..\generated\images\_SvP_Ver2_alpha_200x194.c</name>
+      <name>$PROJ_DIR$\..\..\generated\images\_NoHob_1_alpha_200x194.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\images\_NoHob_2_alpha_200x194.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\images\_NoHob_3_alpha_200x194.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\images\_NoHob_4_alpha_200x194.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\images\_NoHob_5_alpha_200x194.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\images\_NoHob_6_alpha_200x194.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\images\_Secim_Ver2_alpha_200x194.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\images\_slider_0_alpha_800x80.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\images\_slider_1_alpha_800x80.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\images\_slider_2_alpha_800x80.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\images\_slider_3_alpha_800x80.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\images\_slider_4_alpha_800x80.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\images\_slider_5_alpha_800x80.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\images\_slider_6_alpha_800x80.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\images\_Sv0_Ver2_alpha_200x194.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\images\_Sv1_Ver2_alpha_200x194.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\images\_Sv2_Ver2_alpha_200x194.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\images\_Sv3_Ver2_alpha_200x194.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\images\__alpha_200x194.c</name>
     </file>
   </group>
   <file>
