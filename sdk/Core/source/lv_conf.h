@@ -626,10 +626,10 @@
 /*Set an upper cased letter on which the drive will accessible (e.g. 'A')*/
 #define LV_FS_RAWFS_LETTER 'F'
 /*use the XIP flash*/
-#define LV_FS_RAWFS_XIP 0
+#define LV_FS_RAWFS_XIP 1
 #if LV_FS_RAWFS_XIP
 /*the XIP flash address where the image binary is placed*/
-#define LV_FS_RAWFS_XIP_BASE_ADDR 
+#define LV_FS_RAWFS_XIP_BASE_ADDR 0x90000000
 #endif    /* LV_FS_RAWFS_XIP */
 #endif    /* LV_USE_FS_RAWFS */
 
