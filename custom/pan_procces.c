@@ -40,13 +40,39 @@ void level_set(void *ui, uint8_t level)
 {
   switch(level)
   {
-	case 0: lv_img_set_src(ui, &_NoHob_0_alpha_200x194); break;
-	case 1: lv_img_set_src(ui, &_NoHob_1_alpha_200x194); break;
-	case 2: lv_img_set_src(ui, &_NoHob_2_alpha_200x194); break;
-	case 3: lv_img_set_src(ui, &_NoHob_3_alpha_200x194); break;
-	case 4: lv_img_set_src(ui, &_NoHob_4_alpha_200x194); break;
-	case 5: lv_img_set_src(ui, &_NoHob_5_alpha_200x194); break;
-	case 6: lv_img_set_src(ui, &_NoHob_6_alpha_200x194); break;
+	case 0: lv_img_set_src(ui, &_img_pan_0_alpha_200x194);
+	lv_obj_set_style_bg_img_src(guider_ui.main_screen_slider, &_slider_0_alpha_800x80, LV_PART_MAIN|LV_STATE_DEFAULT);		
+	break;
+	case 1: lv_img_set_src(ui, &_img_pan_1_alpha_200x194); 
+	lv_obj_set_style_bg_img_src(guider_ui.main_screen_slider, &_slider_1_alpha_800x80, LV_PART_MAIN|LV_STATE_DEFAULT);		
+	break;
+	case 2: lv_img_set_src(ui, &_img_pan_2_alpha_200x194); 
+	lv_obj_set_style_bg_img_src(guider_ui.main_screen_slider, &_slider_2_alpha_800x80, LV_PART_MAIN|LV_STATE_DEFAULT);		
+	break;
+	case 3: lv_img_set_src(ui, &_img_pan_3_alpha_200x194); 
+	lv_obj_set_style_bg_img_src(guider_ui.main_screen_slider, &_slider_3_alpha_800x80, LV_PART_MAIN|LV_STATE_DEFAULT);		
+	break;
+	case 4: lv_img_set_src(ui, &_img_pan_4_alpha_200x194); 
+	lv_obj_set_style_bg_img_src(guider_ui.main_screen_slider, &_slider_4_alpha_800x80, LV_PART_MAIN|LV_STATE_DEFAULT);		
+	break;
+	case 5: lv_img_set_src(ui, &_img_pan_5_alpha_200x194); 
+	lv_obj_set_style_bg_img_src(guider_ui.main_screen_slider, &_slider_5_alpha_800x80, LV_PART_MAIN|LV_STATE_DEFAULT);		
+	break;
+	case 6: lv_img_set_src(ui, &_img_pan_6_alpha_200x194); 
+	lv_obj_set_style_bg_img_src(guider_ui.main_screen_slider, &_slider_6_alpha_800x80, LV_PART_MAIN|LV_STATE_DEFAULT);		
+	break;
+	case 7: lv_img_set_src(ui, &_img_pan_7_alpha_200x194); 
+	lv_obj_set_style_bg_img_src(guider_ui.main_screen_slider, &_slider_7_alpha_800x80, LV_PART_MAIN|LV_STATE_DEFAULT);		
+	break;	
+	case 8: lv_img_set_src(ui, &_img_pan_8_alpha_200x194); 
+	lv_obj_set_style_bg_img_src(guider_ui.main_screen_slider, &_slider_8_alpha_800x80, LV_PART_MAIN|LV_STATE_DEFAULT);		
+	break;
+	case 9: lv_img_set_src(ui, &_img_pan_9_alpha_200x194); 
+	lv_obj_set_style_bg_img_src(guider_ui.main_screen_slider, &_slider_9_alpha_800x80, LV_PART_MAIN|LV_STATE_DEFAULT);		
+	break;
+	case 10: lv_img_set_src(ui, &_img_pan_P_alpha_200x194); 
+	lv_obj_set_style_bg_img_src(guider_ui.main_screen_slider, &_slider_P_alpha_800x80, LV_PART_MAIN|LV_STATE_DEFAULT);		
+	break;	
   default:break;
 	}
 }

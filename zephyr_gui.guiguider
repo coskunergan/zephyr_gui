@@ -37,6 +37,347 @@
 			"keyboard_font_size": "18",
 			"list": [
 				{
+					"name": "img_pan_P",
+					"id": "48u008y7",
+					"type": "img",
+					"left": 338,
+					"top": 190,
+					"visible": false,
+					"flag": [],
+					"custom_attributes": {},
+					"width": 200,
+					"height": 194,
+					"default_style": false,
+					"use_fs": false,
+					"fs_type": "flash",
+					"sd_path": "",
+					"img_path": "C:\\workspace_cergan\\zephyr_gui\\import\\image\\img_pan_P.png",
+					"rotate": 0,
+					"x": 50,
+					"y": 50,
+					"color_format": "true-color-alpha",
+					"style": [
+						{
+							"part": "LV_PART_MAIN",
+							"state": "LV_STATE_DEFAULT",
+							"disable": false,
+							"image_recolor": "#ffffff",
+							"image_recolor_opa": 0,
+							"image_opa": 255
+						}
+					]
+				},
+				{
+					"name": "img_pan_9",
+					"id": "5qrqooca",
+					"type": "img",
+					"left": 300,
+					"top": 143,
+					"visible": false,
+					"flag": [],
+					"custom_attributes": {},
+					"width": 200,
+					"height": 194,
+					"default_style": false,
+					"use_fs": false,
+					"fs_type": "flash",
+					"sd_path": "",
+					"img_path": "C:\\workspace_cergan\\zephyr_gui\\import\\image\\img_pan_9.png",
+					"rotate": 0,
+					"x": 50,
+					"y": 50,
+					"color_format": "true-color-alpha",
+					"style": [
+						{
+							"part": "LV_PART_MAIN",
+							"state": "LV_STATE_DEFAULT",
+							"disable": false,
+							"image_recolor": "#ffffff",
+							"image_recolor_opa": 0,
+							"image_opa": 255
+						}
+					]
+				},
+				{
+					"name": "img_pan_8",
+					"id": "aft2aer4",
+					"type": "img",
+					"left": 294,
+					"top": 143,
+					"visible": false,
+					"flag": [],
+					"custom_attributes": {},
+					"width": 200,
+					"height": 194,
+					"default_style": false,
+					"use_fs": false,
+					"fs_type": "flash",
+					"sd_path": "",
+					"img_path": "C:\\workspace_cergan\\zephyr_gui\\import\\image\\img_pan_8.png",
+					"rotate": 0,
+					"x": 50,
+					"y": 50,
+					"color_format": "true-color-alpha",
+					"style": [
+						{
+							"part": "LV_PART_MAIN",
+							"state": "LV_STATE_DEFAULT",
+							"disable": false,
+							"image_recolor": "#ffffff",
+							"image_recolor_opa": 0,
+							"image_opa": 255
+						}
+					]
+				},
+				{
+					"name": "img_pan_7",
+					"id": "uh5vhmlz",
+					"type": "img",
+					"left": 300,
+					"top": 165,
+					"visible": false,
+					"flag": [],
+					"custom_attributes": {},
+					"width": 200,
+					"height": 194,
+					"default_style": false,
+					"use_fs": false,
+					"fs_type": "flash",
+					"sd_path": "",
+					"img_path": "C:\\workspace_cergan\\zephyr_gui\\import\\image\\img_pan_7.png",
+					"rotate": 0,
+					"x": 50,
+					"y": 50,
+					"color_format": "true-color-alpha",
+					"style": [
+						{
+							"part": "LV_PART_MAIN",
+							"state": "LV_STATE_DEFAULT",
+							"disable": false,
+							"image_recolor": "#ffffff",
+							"image_recolor_opa": 0,
+							"image_opa": 255
+						}
+					]
+				},
+				{
+					"name": "img_pan_6",
+					"id": "0uju7o5y",
+					"type": "img",
+					"left": 350,
+					"top": 190,
+					"visible": false,
+					"flag": [],
+					"custom_attributes": {},
+					"width": 200,
+					"height": 194,
+					"default_style": false,
+					"use_fs": false,
+					"fs_type": "flash",
+					"sd_path": "",
+					"img_path": "C:\\workspace_cergan\\zephyr_gui\\import\\image\\img_pan_6.png",
+					"rotate": 0,
+					"x": 50,
+					"y": 50,
+					"color_format": "true-color-alpha",
+					"style": [
+						{
+							"part": "LV_PART_MAIN",
+							"state": "LV_STATE_DEFAULT",
+							"disable": false,
+							"image_recolor": "#ffffff",
+							"image_recolor_opa": 0,
+							"image_opa": 255
+						}
+					]
+				},
+				{
+					"name": "img_pan_5",
+					"id": "exr0113m",
+					"type": "img",
+					"left": 300,
+					"top": 143,
+					"visible": false,
+					"flag": [],
+					"custom_attributes": {},
+					"width": 200,
+					"height": 194,
+					"default_style": false,
+					"use_fs": false,
+					"fs_type": "flash",
+					"sd_path": "",
+					"img_path": "C:\\workspace_cergan\\zephyr_gui\\import\\image\\img_pan_5.png",
+					"rotate": 0,
+					"x": 50,
+					"y": 50,
+					"color_format": "true-color-alpha",
+					"style": [
+						{
+							"part": "LV_PART_MAIN",
+							"state": "LV_STATE_DEFAULT",
+							"disable": false,
+							"image_recolor": "#ffffff",
+							"image_recolor_opa": 0,
+							"image_opa": 255
+						}
+					]
+				},
+				{
+					"name": "img_pan_4",
+					"id": "nagrfr2p",
+					"type": "img",
+					"left": 308,
+					"top": 165,
+					"visible": false,
+					"flag": [],
+					"custom_attributes": {},
+					"width": 200,
+					"height": 194,
+					"default_style": false,
+					"use_fs": false,
+					"fs_type": "flash",
+					"sd_path": "",
+					"img_path": "C:\\workspace_cergan\\zephyr_gui\\import\\image\\img_pan_4.png",
+					"rotate": 0,
+					"x": 50,
+					"y": 50,
+					"color_format": "true-color-alpha",
+					"style": [
+						{
+							"part": "LV_PART_MAIN",
+							"state": "LV_STATE_DEFAULT",
+							"disable": false,
+							"image_recolor": "#ffffff",
+							"image_recolor_opa": 0,
+							"image_opa": 255
+						}
+					]
+				},
+				{
+					"name": "img_pan_3",
+					"id": "chktpcie",
+					"type": "img",
+					"left": 350,
+					"top": 190,
+					"visible": false,
+					"flag": [],
+					"custom_attributes": {},
+					"width": 200,
+					"height": 194,
+					"default_style": false,
+					"use_fs": false,
+					"fs_type": "flash",
+					"sd_path": "",
+					"img_path": "C:\\workspace_cergan\\zephyr_gui\\import\\image\\img_pan_3.png",
+					"rotate": 0,
+					"x": 50,
+					"y": 50,
+					"color_format": "true-color-alpha",
+					"style": [
+						{
+							"part": "LV_PART_MAIN",
+							"state": "LV_STATE_DEFAULT",
+							"disable": false,
+							"image_recolor": "#ffffff",
+							"image_recolor_opa": 0,
+							"image_opa": 255
+						}
+					]
+				},
+				{
+					"name": "img_pan_2",
+					"id": "dcf869a6",
+					"type": "img",
+					"left": 300,
+					"top": 165,
+					"visible": false,
+					"flag": [],
+					"custom_attributes": {},
+					"width": 200,
+					"height": 194,
+					"default_style": false,
+					"use_fs": false,
+					"fs_type": "flash",
+					"sd_path": "",
+					"img_path": "C:\\workspace_cergan\\zephyr_gui\\import\\image\\img_pan_2.png",
+					"rotate": 0,
+					"x": 50,
+					"y": 50,
+					"color_format": "true-color-alpha",
+					"style": [
+						{
+							"part": "LV_PART_MAIN",
+							"state": "LV_STATE_DEFAULT",
+							"disable": false,
+							"image_recolor": "#ffffff",
+							"image_recolor_opa": 0,
+							"image_opa": 255
+						}
+					]
+				},
+				{
+					"name": "img_pan_1",
+					"id": "5xj61m3e",
+					"type": "img",
+					"left": 300,
+					"top": 158,
+					"visible": false,
+					"flag": [],
+					"custom_attributes": {},
+					"width": 200,
+					"height": 194,
+					"default_style": false,
+					"use_fs": false,
+					"fs_type": "flash",
+					"sd_path": "",
+					"img_path": "C:\\workspace_cergan\\zephyr_gui\\import\\image\\img_pan_1.png",
+					"rotate": 0,
+					"x": 50,
+					"y": 50,
+					"color_format": "true-color-alpha",
+					"style": [
+						{
+							"part": "LV_PART_MAIN",
+							"state": "LV_STATE_DEFAULT",
+							"disable": false,
+							"image_recolor": "#ffffff",
+							"image_recolor_opa": 0,
+							"image_opa": 255
+						}
+					]
+				},
+				{
+					"name": "img_pan_0",
+					"id": "5yk32387",
+					"type": "img",
+					"left": 300,
+					"top": 165,
+					"visible": false,
+					"flag": [],
+					"custom_attributes": {},
+					"width": 200,
+					"height": 194,
+					"default_style": false,
+					"use_fs": false,
+					"fs_type": "flash",
+					"sd_path": "",
+					"img_path": "C:\\workspace_cergan\\zephyr_gui\\import\\image\\img_pan_0.png",
+					"rotate": 0,
+					"x": 50,
+					"y": 50,
+					"color_format": "true-color-alpha",
+					"style": [
+						{
+							"part": "LV_PART_MAIN",
+							"state": "LV_STATE_DEFAULT",
+							"disable": false,
+							"image_recolor": "#ffffff",
+							"image_recolor_opa": 0,
+							"image_opa": 255
+						}
+					]
+				},
+				{
 					"name": "cont_2",
 					"id": "2cxf8oux",
 					"type": "cont",
@@ -794,11 +1135,11 @@
 					"event": {}
 				},
 				{
-					"name": "level_3",
-					"id": "lriib494",
+					"name": "no_level_P",
+					"id": "46cmpzj4",
 					"type": "img",
 					"left": 300,
-					"top": 143,
+					"top": 184,
 					"visible": false,
 					"flag": [],
 					"custom_attributes": {},
@@ -808,7 +1149,7 @@
 					"use_fs": false,
 					"fs_type": "flash",
 					"sd_path": "",
-					"img_path": "C:\\workspace_cergan\\zephyr_gui\\import\\image\\Sv3_Ver2.png",
+					"img_path": "C:\\workspace_cergan\\zephyr_gui\\import\\image\\NoHob_P.png",
 					"rotate": 0,
 					"x": 50,
 					"y": 50,
@@ -825,11 +1166,11 @@
 					]
 				},
 				{
-					"name": "level_2",
-					"id": "0ssd38tr",
+					"name": "no_level_9",
+					"id": "5zoiu1ug",
 					"type": "img",
-					"left": 300,
-					"top": 143,
+					"left": 350,
+					"top": 190,
 					"visible": false,
 					"flag": [],
 					"custom_attributes": {},
@@ -839,7 +1180,7 @@
 					"use_fs": false,
 					"fs_type": "flash",
 					"sd_path": "",
-					"img_path": "C:\\workspace_cergan\\zephyr_gui\\import\\image\\Sv2_Ver2.png",
+					"img_path": "C:\\workspace_cergan\\zephyr_gui\\import\\image\\NoHob_9.png",
 					"rotate": 0,
 					"x": 50,
 					"y": 50,
@@ -856,11 +1197,11 @@
 					]
 				},
 				{
-					"name": "level_1",
-					"id": "dm80cm0n",
+					"name": "no_level_8",
+					"id": "dggy0vu3",
 					"type": "img",
-					"left": 300,
-					"top": 143,
+					"left": 318,
+					"top": 172,
 					"visible": false,
 					"flag": [],
 					"custom_attributes": {},
@@ -870,7 +1211,7 @@
 					"use_fs": false,
 					"fs_type": "flash",
 					"sd_path": "",
-					"img_path": "C:\\workspace_cergan\\zephyr_gui\\import\\image\\Sv1_Ver2.png",
+					"img_path": "C:\\workspace_cergan\\zephyr_gui\\import\\image\\NoHob_8.png",
 					"rotate": 0,
 					"x": 50,
 					"y": 50,
@@ -887,11 +1228,11 @@
 					]
 				},
 				{
-					"name": "level_0",
-					"id": "joq0v4zp",
+					"name": "no_level_7",
+					"id": "o8d4hrrp",
 					"type": "img",
-					"left": 300,
-					"top": 143,
+					"left": 308,
+					"top": 165,
 					"visible": false,
 					"flag": [],
 					"custom_attributes": {},
@@ -901,7 +1242,7 @@
 					"use_fs": false,
 					"fs_type": "flash",
 					"sd_path": "",
-					"img_path": "C:\\workspace_cergan\\zephyr_gui\\import\\image\\Sv0_Ver2.png",
+					"img_path": "C:\\workspace_cergan\\zephyr_gui\\import\\image\\NoHob_7.png",
 					"rotate": 0,
 					"x": 50,
 					"y": 50,
@@ -1119,6 +1460,130 @@
 					"fs_type": "flash",
 					"sd_path": "",
 					"img_path": "C:\\workspace_cergan\\zephyr_gui\\import\\image\\NoHob_0.png",
+					"rotate": 0,
+					"x": 50,
+					"y": 50,
+					"color_format": "true-color-alpha",
+					"style": [
+						{
+							"part": "LV_PART_MAIN",
+							"state": "LV_STATE_DEFAULT",
+							"disable": false,
+							"image_recolor": "#ffffff",
+							"image_recolor_opa": 0,
+							"image_opa": 255
+						}
+					]
+				},
+				{
+					"name": "slider_P",
+					"id": "qr7kw7jt",
+					"type": "img",
+					"left": 7,
+					"top": 258,
+					"visible": false,
+					"flag": [],
+					"custom_attributes": {},
+					"width": 800,
+					"height": 80,
+					"default_style": false,
+					"use_fs": false,
+					"fs_type": "flash",
+					"sd_path": "",
+					"img_path": "C:\\workspace_cergan\\zephyr_gui\\import\\image\\slider_P.png",
+					"rotate": 0,
+					"x": 50,
+					"y": 50,
+					"color_format": "true-color-alpha",
+					"style": [
+						{
+							"part": "LV_PART_MAIN",
+							"state": "LV_STATE_DEFAULT",
+							"disable": false,
+							"image_recolor": "#ffffff",
+							"image_recolor_opa": 0,
+							"image_opa": 255
+						}
+					]
+				},
+				{
+					"name": "slider_9",
+					"id": "ny4larj1",
+					"type": "img",
+					"left": 0,
+					"top": 269,
+					"visible": false,
+					"flag": [],
+					"custom_attributes": {},
+					"width": 800,
+					"height": 80,
+					"default_style": false,
+					"use_fs": false,
+					"fs_type": "flash",
+					"sd_path": "",
+					"img_path": "C:\\workspace_cergan\\zephyr_gui\\import\\image\\slider_9.png",
+					"rotate": 0,
+					"x": 50,
+					"y": 50,
+					"color_format": "true-color-alpha",
+					"style": [
+						{
+							"part": "LV_PART_MAIN",
+							"state": "LV_STATE_DEFAULT",
+							"disable": false,
+							"image_recolor": "#ffffff",
+							"image_recolor_opa": 0,
+							"image_opa": 255
+						}
+					]
+				},
+				{
+					"name": "slider_8",
+					"id": "h5rrh1qm",
+					"type": "img",
+					"left": 15,
+					"top": 222,
+					"visible": false,
+					"flag": [],
+					"custom_attributes": {},
+					"width": 800,
+					"height": 80,
+					"default_style": false,
+					"use_fs": false,
+					"fs_type": "flash",
+					"sd_path": "",
+					"img_path": "C:\\workspace_cergan\\zephyr_gui\\import\\image\\slider_8.png",
+					"rotate": 0,
+					"x": 50,
+					"y": 50,
+					"color_format": "true-color-alpha",
+					"style": [
+						{
+							"part": "LV_PART_MAIN",
+							"state": "LV_STATE_DEFAULT",
+							"disable": false,
+							"image_recolor": "#ffffff",
+							"image_recolor_opa": 0,
+							"image_opa": 255
+						}
+					]
+				},
+				{
+					"name": "slider_7",
+					"id": "9n09kati",
+					"type": "img",
+					"left": 6,
+					"top": 244,
+					"visible": false,
+					"flag": [],
+					"custom_attributes": {},
+					"width": 800,
+					"height": 80,
+					"default_style": false,
+					"use_fs": false,
+					"fs_type": "flash",
+					"sd_path": "",
+					"img_path": "C:\\workspace_cergan\\zephyr_gui\\import\\image\\slider_7.png",
 					"rotate": 0,
 					"x": 50,
 					"y": 50,
@@ -2418,6 +2883,530 @@
 									}
 								},
 								"item_index": 6
+							},
+							{
+								"trigger": "pressing",
+								"dst": "qd0d1ueq",
+								"item_index": 7,
+								"action": {
+									"load_screen": {
+										"ische": false,
+										"duration": 200,
+										"delay": 200,
+										"scrId": "",
+										"anim_type": "LV_SCR_LOAD_ANIM_NONE",
+										"is_clean": false,
+										"is_del": true
+									},
+									"bg_color": {
+										"ische": false,
+										"value": "#000000"
+									},
+									"grad_color": {
+										"ische": false,
+										"value": "#000000",
+										"dir": "LV_GRAD_DIR_HOR"
+									},
+									"bg_opa": {
+										"ische": false,
+										"value": 255
+									},
+									"width": {
+										"ische": false,
+										"value": 50
+									},
+									"height": {
+										"ische": false,
+										"value": 50
+									},
+									"set_text": {
+										"ische": false,
+										"value": "default",
+										"font": 12,
+										"font_family": "simsun"
+									},
+									"position": {
+										"ische": false,
+										"value_x": 0,
+										"value_y": 0
+									},
+									"isVisible": {
+										"ische": false,
+										"flag": ""
+									},
+									"customer_code": {
+										"ische": true,
+										"inc_c": "",
+										"code_c": "pan_level(select, 7);",
+										"inc_py": "",
+										"code_py": ""
+									},
+									"add_state": {
+										"ische": false,
+										"value": "LV_STATE_DEFAULT"
+									},
+									"add_flag": {
+										"ische": false,
+										"value": []
+									},
+									"clear_flag": {
+										"ische": false,
+										"value": []
+									},
+									"move": {
+										"ische": false,
+										"value_x": 0,
+										"value_y": 0,
+										"delay": 0,
+										"duration": 1000,
+										"repeat_count": 0,
+										"repeat_delay": 0,
+										"playback_time": 0,
+										"playback_delay": 0,
+										"start_cb": "",
+										"ready_cb": "",
+										"deleted_cb": "",
+										"path_type": "linear"
+									},
+									"scaleSize": {
+										"ische": false,
+										"width": 0,
+										"height": 0,
+										"delay": 0,
+										"duration": 1000,
+										"repeat_count": 0,
+										"repeat_delay": 0,
+										"playback_time": 0,
+										"playback_delay": 0,
+										"start_cb": "",
+										"ready_cb": "",
+										"deleted_cb": "",
+										"path_type": "linear"
+									},
+									"img_zoom": {
+										"ische": false,
+										"zoom": 0,
+										"delay": 0,
+										"duration": 1000,
+										"repeat_count": 0,
+										"repeat_delay": 0,
+										"playback_time": 0,
+										"playback_delay": 0,
+										"start_cb": "",
+										"ready_cb": "",
+										"deleted_cb": "",
+										"path_type": "linear"
+									},
+									"rotate": {
+										"ische": false,
+										"rotate": 0,
+										"x": 0,
+										"y": 0,
+										"delay": 0,
+										"duration": 1000,
+										"repeat_count": 0,
+										"repeat_delay": 0,
+										"playback_time": 0,
+										"playback_delay": 0,
+										"start_cb": "",
+										"ready_cb": "",
+										"deleted_cb": "",
+										"path_type": "linear"
+									}
+								}
+							},
+							{
+								"trigger": "pressing",
+								"dst": "qd0d1ueq",
+								"item_index": 8,
+								"action": {
+									"load_screen": {
+										"ische": false,
+										"duration": 200,
+										"delay": 200,
+										"scrId": "",
+										"anim_type": "LV_SCR_LOAD_ANIM_NONE",
+										"is_clean": false,
+										"is_del": true
+									},
+									"bg_color": {
+										"ische": false,
+										"value": "#000000"
+									},
+									"grad_color": {
+										"ische": false,
+										"value": "#000000",
+										"dir": "LV_GRAD_DIR_HOR"
+									},
+									"bg_opa": {
+										"ische": false,
+										"value": 255
+									},
+									"width": {
+										"ische": false,
+										"value": 50
+									},
+									"height": {
+										"ische": false,
+										"value": 50
+									},
+									"set_text": {
+										"ische": false,
+										"value": "default",
+										"font": 12,
+										"font_family": "simsun"
+									},
+									"position": {
+										"ische": false,
+										"value_x": 0,
+										"value_y": 0
+									},
+									"isVisible": {
+										"ische": false,
+										"flag": ""
+									},
+									"customer_code": {
+										"ische": true,
+										"inc_c": "",
+										"code_c": "pan_level(select, 8);",
+										"inc_py": "",
+										"code_py": ""
+									},
+									"add_state": {
+										"ische": false,
+										"value": "LV_STATE_DEFAULT"
+									},
+									"add_flag": {
+										"ische": false,
+										"value": []
+									},
+									"clear_flag": {
+										"ische": false,
+										"value": []
+									},
+									"move": {
+										"ische": false,
+										"value_x": 0,
+										"value_y": 0,
+										"delay": 0,
+										"duration": 1000,
+										"repeat_count": 0,
+										"repeat_delay": 0,
+										"playback_time": 0,
+										"playback_delay": 0,
+										"start_cb": "",
+										"ready_cb": "",
+										"deleted_cb": "",
+										"path_type": "linear"
+									},
+									"scaleSize": {
+										"ische": false,
+										"width": 0,
+										"height": 0,
+										"delay": 0,
+										"duration": 1000,
+										"repeat_count": 0,
+										"repeat_delay": 0,
+										"playback_time": 0,
+										"playback_delay": 0,
+										"start_cb": "",
+										"ready_cb": "",
+										"deleted_cb": "",
+										"path_type": "linear"
+									},
+									"img_zoom": {
+										"ische": false,
+										"zoom": 0,
+										"delay": 0,
+										"duration": 1000,
+										"repeat_count": 0,
+										"repeat_delay": 0,
+										"playback_time": 0,
+										"playback_delay": 0,
+										"start_cb": "",
+										"ready_cb": "",
+										"deleted_cb": "",
+										"path_type": "linear"
+									},
+									"rotate": {
+										"ische": false,
+										"rotate": 0,
+										"x": 0,
+										"y": 0,
+										"delay": 0,
+										"duration": 1000,
+										"repeat_count": 0,
+										"repeat_delay": 0,
+										"playback_time": 0,
+										"playback_delay": 0,
+										"start_cb": "",
+										"ready_cb": "",
+										"deleted_cb": "",
+										"path_type": "linear"
+									}
+								}
+							},
+							{
+								"trigger": "pressing",
+								"dst": "qd0d1ueq",
+								"item_index": 9,
+								"action": {
+									"load_screen": {
+										"ische": false,
+										"duration": 200,
+										"delay": 200,
+										"scrId": "",
+										"anim_type": "LV_SCR_LOAD_ANIM_NONE",
+										"is_clean": false,
+										"is_del": true
+									},
+									"bg_color": {
+										"ische": false,
+										"value": "#000000"
+									},
+									"grad_color": {
+										"ische": false,
+										"value": "#000000",
+										"dir": "LV_GRAD_DIR_HOR"
+									},
+									"bg_opa": {
+										"ische": false,
+										"value": 255
+									},
+									"width": {
+										"ische": false,
+										"value": 50
+									},
+									"height": {
+										"ische": false,
+										"value": 50
+									},
+									"set_text": {
+										"ische": false,
+										"value": "default",
+										"font": 12,
+										"font_family": "simsun"
+									},
+									"position": {
+										"ische": false,
+										"value_x": 0,
+										"value_y": 0
+									},
+									"isVisible": {
+										"ische": false,
+										"flag": ""
+									},
+									"customer_code": {
+										"ische": true,
+										"inc_c": "",
+										"code_c": "pan_level(select, 9);",
+										"inc_py": "",
+										"code_py": ""
+									},
+									"add_state": {
+										"ische": false,
+										"value": "LV_STATE_DEFAULT"
+									},
+									"add_flag": {
+										"ische": false,
+										"value": []
+									},
+									"clear_flag": {
+										"ische": false,
+										"value": []
+									},
+									"move": {
+										"ische": false,
+										"value_x": 0,
+										"value_y": 0,
+										"delay": 0,
+										"duration": 1000,
+										"repeat_count": 0,
+										"repeat_delay": 0,
+										"playback_time": 0,
+										"playback_delay": 0,
+										"start_cb": "",
+										"ready_cb": "",
+										"deleted_cb": "",
+										"path_type": "linear"
+									},
+									"scaleSize": {
+										"ische": false,
+										"width": 0,
+										"height": 0,
+										"delay": 0,
+										"duration": 1000,
+										"repeat_count": 0,
+										"repeat_delay": 0,
+										"playback_time": 0,
+										"playback_delay": 0,
+										"start_cb": "",
+										"ready_cb": "",
+										"deleted_cb": "",
+										"path_type": "linear"
+									},
+									"img_zoom": {
+										"ische": false,
+										"zoom": 0,
+										"delay": 0,
+										"duration": 1000,
+										"repeat_count": 0,
+										"repeat_delay": 0,
+										"playback_time": 0,
+										"playback_delay": 0,
+										"start_cb": "",
+										"ready_cb": "",
+										"deleted_cb": "",
+										"path_type": "linear"
+									},
+									"rotate": {
+										"ische": false,
+										"rotate": 0,
+										"x": 0,
+										"y": 0,
+										"delay": 0,
+										"duration": 1000,
+										"repeat_count": 0,
+										"repeat_delay": 0,
+										"playback_time": 0,
+										"playback_delay": 0,
+										"start_cb": "",
+										"ready_cb": "",
+										"deleted_cb": "",
+										"path_type": "linear"
+									}
+								}
+							},
+							{
+								"trigger": "pressing",
+								"dst": "qd0d1ueq",
+								"item_index": 10,
+								"action": {
+									"load_screen": {
+										"ische": false,
+										"duration": 200,
+										"delay": 200,
+										"scrId": "",
+										"anim_type": "LV_SCR_LOAD_ANIM_NONE",
+										"is_clean": false,
+										"is_del": true
+									},
+									"bg_color": {
+										"ische": false,
+										"value": "#000000"
+									},
+									"grad_color": {
+										"ische": false,
+										"value": "#000000",
+										"dir": "LV_GRAD_DIR_HOR"
+									},
+									"bg_opa": {
+										"ische": false,
+										"value": 255
+									},
+									"width": {
+										"ische": false,
+										"value": 50
+									},
+									"height": {
+										"ische": false,
+										"value": 50
+									},
+									"set_text": {
+										"ische": false,
+										"value": "default",
+										"font": 12,
+										"font_family": "simsun"
+									},
+									"position": {
+										"ische": false,
+										"value_x": 0,
+										"value_y": 0
+									},
+									"isVisible": {
+										"ische": false,
+										"flag": ""
+									},
+									"customer_code": {
+										"ische": true,
+										"inc_c": "",
+										"code_c": "pan_level(select, 10);",
+										"inc_py": "",
+										"code_py": ""
+									},
+									"add_state": {
+										"ische": false,
+										"value": "LV_STATE_DEFAULT"
+									},
+									"add_flag": {
+										"ische": false,
+										"value": []
+									},
+									"clear_flag": {
+										"ische": false,
+										"value": []
+									},
+									"move": {
+										"ische": false,
+										"value_x": 0,
+										"value_y": 0,
+										"delay": 0,
+										"duration": 1000,
+										"repeat_count": 0,
+										"repeat_delay": 0,
+										"playback_time": 0,
+										"playback_delay": 0,
+										"start_cb": "",
+										"ready_cb": "",
+										"deleted_cb": "",
+										"path_type": "linear"
+									},
+									"scaleSize": {
+										"ische": false,
+										"width": 0,
+										"height": 0,
+										"delay": 0,
+										"duration": 1000,
+										"repeat_count": 0,
+										"repeat_delay": 0,
+										"playback_time": 0,
+										"playback_delay": 0,
+										"start_cb": "",
+										"ready_cb": "",
+										"deleted_cb": "",
+										"path_type": "linear"
+									},
+									"img_zoom": {
+										"ische": false,
+										"zoom": 0,
+										"delay": 0,
+										"duration": 1000,
+										"repeat_count": 0,
+										"repeat_delay": 0,
+										"playback_time": 0,
+										"playback_delay": 0,
+										"start_cb": "",
+										"ready_cb": "",
+										"deleted_cb": "",
+										"path_type": "linear"
+									},
+									"rotate": {
+										"ische": false,
+										"rotate": 0,
+										"x": 0,
+										"y": 0,
+										"delay": 0,
+										"duration": 1000,
+										"repeat_count": 0,
+										"repeat_delay": 0,
+										"playback_time": 0,
+										"playback_delay": 0,
+										"start_cb": "",
+										"ready_cb": "",
+										"deleted_cb": "",
+										"path_type": "linear"
+									}
+								}
 							}
 						]
 					},
@@ -2969,6 +3958,58 @@
 									"code_c": "pan_level(select, 6);",
 									"inc_py": "",
 									"code_py": ""
+								},
+								{
+									"src": "main_screen_slider",
+									"trigger": "pressing",
+									"dst": "main_screen_slider",
+									"dst_type": "btnm",
+									"item_index": 7,
+									"src_screen": "main_screen",
+									"action": "customer_code",
+									"inc_c": "",
+									"code_c": "pan_level(select, 7);",
+									"inc_py": "",
+									"code_py": ""
+								},
+								{
+									"src": "main_screen_slider",
+									"trigger": "pressing",
+									"dst": "main_screen_slider",
+									"dst_type": "btnm",
+									"item_index": 8,
+									"src_screen": "main_screen",
+									"action": "customer_code",
+									"inc_c": "",
+									"code_c": "pan_level(select, 8);",
+									"inc_py": "",
+									"code_py": ""
+								},
+								{
+									"src": "main_screen_slider",
+									"trigger": "pressing",
+									"dst": "main_screen_slider",
+									"dst_type": "btnm",
+									"item_index": 9,
+									"src_screen": "main_screen",
+									"action": "customer_code",
+									"inc_c": "",
+									"code_c": "pan_level(select, 9);",
+									"inc_py": "",
+									"code_py": ""
+								},
+								{
+									"src": "main_screen_slider",
+									"trigger": "pressing",
+									"dst": "main_screen_slider",
+									"dst_type": "btnm",
+									"item_index": 10,
+									"src_screen": "main_screen",
+									"action": "customer_code",
+									"inc_c": "",
+									"code_c": "pan_level(select, 10);",
+									"inc_py": "",
+									"code_py": ""
 								}
 							]
 						},
@@ -3360,6 +4401,146 @@
 						]
 					},
 					{
+						"name": "main_screen_slider_7",
+						"id": "9n09kati",
+						"type": "img",
+						"visible": false,
+						"flag": [],
+						"pos": [
+							6,
+							244
+						],
+						"size": [
+							800,
+							80
+						],
+						"default_style": false,
+						"custom_attributes": {},
+						"img_path": "C:\\workspace_cergan\\zephyr_gui\\import\\image\\slider_7.png",
+						"color_format": "true-color-alpha",
+						"rotate": 0,
+						"pivot": "50,50",
+						"use_fs": false,
+						"fs_type": "flash",
+						"img_flash_path": "F:/slider_7.png",
+						"img_sd_path": "S:/slider_7.png",
+						"style": [
+							{
+								"part": "LV_PART_MAIN",
+								"state": "LV_STATE_DEFAULT",
+								"disable": false,
+								"image_recolor": "#ffffff",
+								"image_recolor_opa": 0,
+								"image_opa": 255
+							}
+						]
+					},
+					{
+						"name": "main_screen_slider_8",
+						"id": "h5rrh1qm",
+						"type": "img",
+						"visible": false,
+						"flag": [],
+						"pos": [
+							15,
+							222
+						],
+						"size": [
+							800,
+							80
+						],
+						"default_style": false,
+						"custom_attributes": {},
+						"img_path": "C:\\workspace_cergan\\zephyr_gui\\import\\image\\slider_8.png",
+						"color_format": "true-color-alpha",
+						"rotate": 0,
+						"pivot": "50,50",
+						"use_fs": false,
+						"fs_type": "flash",
+						"img_flash_path": "F:/slider_8.png",
+						"img_sd_path": "S:/slider_8.png",
+						"style": [
+							{
+								"part": "LV_PART_MAIN",
+								"state": "LV_STATE_DEFAULT",
+								"disable": false,
+								"image_recolor": "#ffffff",
+								"image_recolor_opa": 0,
+								"image_opa": 255
+							}
+						]
+					},
+					{
+						"name": "main_screen_slider_9",
+						"id": "ny4larj1",
+						"type": "img",
+						"visible": false,
+						"flag": [],
+						"pos": [
+							0,
+							269
+						],
+						"size": [
+							800,
+							80
+						],
+						"default_style": false,
+						"custom_attributes": {},
+						"img_path": "C:\\workspace_cergan\\zephyr_gui\\import\\image\\slider_9.png",
+						"color_format": "true-color-alpha",
+						"rotate": 0,
+						"pivot": "50,50",
+						"use_fs": false,
+						"fs_type": "flash",
+						"img_flash_path": "F:/slider_9.png",
+						"img_sd_path": "S:/slider_9.png",
+						"style": [
+							{
+								"part": "LV_PART_MAIN",
+								"state": "LV_STATE_DEFAULT",
+								"disable": false,
+								"image_recolor": "#ffffff",
+								"image_recolor_opa": 0,
+								"image_opa": 255
+							}
+						]
+					},
+					{
+						"name": "main_screen_slider_P",
+						"id": "qr7kw7jt",
+						"type": "img",
+						"visible": false,
+						"flag": [],
+						"pos": [
+							7,
+							258
+						],
+						"size": [
+							800,
+							80
+						],
+						"default_style": false,
+						"custom_attributes": {},
+						"img_path": "C:\\workspace_cergan\\zephyr_gui\\import\\image\\slider_P.png",
+						"color_format": "true-color-alpha",
+						"rotate": 0,
+						"pivot": "50,50",
+						"use_fs": false,
+						"fs_type": "flash",
+						"img_flash_path": "F:/slider_P.png",
+						"img_sd_path": "S:/slider_P.png",
+						"style": [
+							{
+								"part": "LV_PART_MAIN",
+								"state": "LV_STATE_DEFAULT",
+								"disable": false,
+								"image_recolor": "#ffffff",
+								"image_recolor_opa": 0,
+								"image_opa": 255
+							}
+						]
+					},
+					{
 						"name": "main_screen_no_level_0",
 						"id": "cnbn8krh",
 						"type": "img",
@@ -3605,14 +4786,14 @@
 						]
 					},
 					{
-						"name": "main_screen_level_0",
-						"id": "joq0v4zp",
+						"name": "main_screen_no_level_7",
+						"id": "o8d4hrrp",
 						"type": "img",
 						"visible": false,
 						"flag": [],
 						"pos": [
-							300,
-							143
+							308,
+							165
 						],
 						"size": [
 							200,
@@ -3620,14 +4801,14 @@
 						],
 						"default_style": false,
 						"custom_attributes": {},
-						"img_path": "C:\\workspace_cergan\\zephyr_gui\\import\\image\\Sv0_Ver2.png",
+						"img_path": "C:\\workspace_cergan\\zephyr_gui\\import\\image\\NoHob_7.png",
 						"color_format": "true-color-alpha",
 						"rotate": 0,
 						"pivot": "50,50",
 						"use_fs": false,
 						"fs_type": "flash",
-						"img_flash_path": "F:/Sv0_Ver2.png",
-						"img_sd_path": "S:/Sv0_Ver2.png",
+						"img_flash_path": "F:/NoHob_7.png",
+						"img_sd_path": "S:/NoHob_7.png",
 						"style": [
 							{
 								"part": "LV_PART_MAIN",
@@ -3640,14 +4821,14 @@
 						]
 					},
 					{
-						"name": "main_screen_level_1",
-						"id": "dm80cm0n",
+						"name": "main_screen_no_level_8",
+						"id": "dggy0vu3",
 						"type": "img",
 						"visible": false,
 						"flag": [],
 						"pos": [
-							300,
-							143
+							318,
+							172
 						],
 						"size": [
 							200,
@@ -3655,14 +4836,14 @@
 						],
 						"default_style": false,
 						"custom_attributes": {},
-						"img_path": "C:\\workspace_cergan\\zephyr_gui\\import\\image\\Sv1_Ver2.png",
+						"img_path": "C:\\workspace_cergan\\zephyr_gui\\import\\image\\NoHob_8.png",
 						"color_format": "true-color-alpha",
 						"rotate": 0,
 						"pivot": "50,50",
 						"use_fs": false,
 						"fs_type": "flash",
-						"img_flash_path": "F:/Sv1_Ver2.png",
-						"img_sd_path": "S:/Sv1_Ver2.png",
+						"img_flash_path": "F:/NoHob_8.png",
+						"img_sd_path": "S:/NoHob_8.png",
 						"style": [
 							{
 								"part": "LV_PART_MAIN",
@@ -3675,14 +4856,14 @@
 						]
 					},
 					{
-						"name": "main_screen_level_2",
-						"id": "0ssd38tr",
+						"name": "main_screen_no_level_9",
+						"id": "5zoiu1ug",
 						"type": "img",
 						"visible": false,
 						"flag": [],
 						"pos": [
-							300,
-							143
+							350,
+							190
 						],
 						"size": [
 							200,
@@ -3690,14 +4871,14 @@
 						],
 						"default_style": false,
 						"custom_attributes": {},
-						"img_path": "C:\\workspace_cergan\\zephyr_gui\\import\\image\\Sv2_Ver2.png",
+						"img_path": "C:\\workspace_cergan\\zephyr_gui\\import\\image\\NoHob_9.png",
 						"color_format": "true-color-alpha",
 						"rotate": 0,
 						"pivot": "50,50",
 						"use_fs": false,
 						"fs_type": "flash",
-						"img_flash_path": "F:/Sv2_Ver2.png",
-						"img_sd_path": "S:/Sv2_Ver2.png",
+						"img_flash_path": "F:/NoHob_9.png",
+						"img_sd_path": "S:/NoHob_9.png",
 						"style": [
 							{
 								"part": "LV_PART_MAIN",
@@ -3710,14 +4891,14 @@
 						]
 					},
 					{
-						"name": "main_screen_level_3",
-						"id": "lriib494",
+						"name": "main_screen_no_level_P",
+						"id": "46cmpzj4",
 						"type": "img",
 						"visible": false,
 						"flag": [],
 						"pos": [
 							300,
-							143
+							184
 						],
 						"size": [
 							200,
@@ -3725,14 +4906,14 @@
 						],
 						"default_style": false,
 						"custom_attributes": {},
-						"img_path": "C:\\workspace_cergan\\zephyr_gui\\import\\image\\Sv3_Ver2.png",
+						"img_path": "C:\\workspace_cergan\\zephyr_gui\\import\\image\\NoHob_P.png",
 						"color_format": "true-color-alpha",
 						"rotate": 0,
 						"pivot": "50,50",
 						"use_fs": false,
 						"fs_type": "flash",
-						"img_flash_path": "F:/Sv3_Ver2.png",
-						"img_sd_path": "S:/Sv3_Ver2.png",
+						"img_flash_path": "F:/NoHob_P.png",
+						"img_sd_path": "S:/NoHob_P.png",
 						"style": [
 							{
 								"part": "LV_PART_MAIN",
@@ -4046,6 +5227,391 @@
 								"shadow_spread": 0,
 								"shadow_ofs_x": 0,
 								"shadow_ofs_y": 0
+							}
+						]
+					},
+					{
+						"name": "main_screen_img_pan_0",
+						"id": "5yk32387",
+						"type": "img",
+						"visible": false,
+						"flag": [],
+						"pos": [
+							300,
+							165
+						],
+						"size": [
+							200,
+							194
+						],
+						"default_style": false,
+						"custom_attributes": {},
+						"img_path": "C:\\workspace_cergan\\zephyr_gui\\import\\image\\img_pan_0.png",
+						"color_format": "true-color-alpha",
+						"rotate": 0,
+						"pivot": "50,50",
+						"use_fs": false,
+						"fs_type": "flash",
+						"img_flash_path": "F:/img_pan_0.png",
+						"img_sd_path": "S:/img_pan_0.png",
+						"style": [
+							{
+								"part": "LV_PART_MAIN",
+								"state": "LV_STATE_DEFAULT",
+								"disable": false,
+								"image_recolor": "#ffffff",
+								"image_recolor_opa": 0,
+								"image_opa": 255
+							}
+						]
+					},
+					{
+						"name": "main_screen_img_pan_1",
+						"id": "5xj61m3e",
+						"type": "img",
+						"visible": false,
+						"flag": [],
+						"pos": [
+							300,
+							158
+						],
+						"size": [
+							200,
+							194
+						],
+						"default_style": false,
+						"custom_attributes": {},
+						"img_path": "C:\\workspace_cergan\\zephyr_gui\\import\\image\\img_pan_1.png",
+						"color_format": "true-color-alpha",
+						"rotate": 0,
+						"pivot": "50,50",
+						"use_fs": false,
+						"fs_type": "flash",
+						"img_flash_path": "F:/img_pan_1.png",
+						"img_sd_path": "S:/img_pan_1.png",
+						"style": [
+							{
+								"part": "LV_PART_MAIN",
+								"state": "LV_STATE_DEFAULT",
+								"disable": false,
+								"image_recolor": "#ffffff",
+								"image_recolor_opa": 0,
+								"image_opa": 255
+							}
+						]
+					},
+					{
+						"name": "main_screen_img_pan_2",
+						"id": "dcf869a6",
+						"type": "img",
+						"visible": false,
+						"flag": [],
+						"pos": [
+							300,
+							165
+						],
+						"size": [
+							200,
+							194
+						],
+						"default_style": false,
+						"custom_attributes": {},
+						"img_path": "C:\\workspace_cergan\\zephyr_gui\\import\\image\\img_pan_2.png",
+						"color_format": "true-color-alpha",
+						"rotate": 0,
+						"pivot": "50,50",
+						"use_fs": false,
+						"fs_type": "flash",
+						"img_flash_path": "F:/img_pan_2.png",
+						"img_sd_path": "S:/img_pan_2.png",
+						"style": [
+							{
+								"part": "LV_PART_MAIN",
+								"state": "LV_STATE_DEFAULT",
+								"disable": false,
+								"image_recolor": "#ffffff",
+								"image_recolor_opa": 0,
+								"image_opa": 255
+							}
+						]
+					},
+					{
+						"name": "main_screen_img_pan_3",
+						"id": "chktpcie",
+						"type": "img",
+						"visible": false,
+						"flag": [],
+						"pos": [
+							350,
+							190
+						],
+						"size": [
+							200,
+							194
+						],
+						"default_style": false,
+						"custom_attributes": {},
+						"img_path": "C:\\workspace_cergan\\zephyr_gui\\import\\image\\img_pan_3.png",
+						"color_format": "true-color-alpha",
+						"rotate": 0,
+						"pivot": "50,50",
+						"use_fs": false,
+						"fs_type": "flash",
+						"img_flash_path": "F:/img_pan_3.png",
+						"img_sd_path": "S:/img_pan_3.png",
+						"style": [
+							{
+								"part": "LV_PART_MAIN",
+								"state": "LV_STATE_DEFAULT",
+								"disable": false,
+								"image_recolor": "#ffffff",
+								"image_recolor_opa": 0,
+								"image_opa": 255
+							}
+						]
+					},
+					{
+						"name": "main_screen_img_pan_4",
+						"id": "nagrfr2p",
+						"type": "img",
+						"visible": false,
+						"flag": [],
+						"pos": [
+							308,
+							165
+						],
+						"size": [
+							200,
+							194
+						],
+						"default_style": false,
+						"custom_attributes": {},
+						"img_path": "C:\\workspace_cergan\\zephyr_gui\\import\\image\\img_pan_4.png",
+						"color_format": "true-color-alpha",
+						"rotate": 0,
+						"pivot": "50,50",
+						"use_fs": false,
+						"fs_type": "flash",
+						"img_flash_path": "F:/img_pan_4.png",
+						"img_sd_path": "S:/img_pan_4.png",
+						"style": [
+							{
+								"part": "LV_PART_MAIN",
+								"state": "LV_STATE_DEFAULT",
+								"disable": false,
+								"image_recolor": "#ffffff",
+								"image_recolor_opa": 0,
+								"image_opa": 255
+							}
+						]
+					},
+					{
+						"name": "main_screen_img_pan_5",
+						"id": "exr0113m",
+						"type": "img",
+						"visible": false,
+						"flag": [],
+						"pos": [
+							300,
+							143
+						],
+						"size": [
+							200,
+							194
+						],
+						"default_style": false,
+						"custom_attributes": {},
+						"img_path": "C:\\workspace_cergan\\zephyr_gui\\import\\image\\img_pan_5.png",
+						"color_format": "true-color-alpha",
+						"rotate": 0,
+						"pivot": "50,50",
+						"use_fs": false,
+						"fs_type": "flash",
+						"img_flash_path": "F:/img_pan_5.png",
+						"img_sd_path": "S:/img_pan_5.png",
+						"style": [
+							{
+								"part": "LV_PART_MAIN",
+								"state": "LV_STATE_DEFAULT",
+								"disable": false,
+								"image_recolor": "#ffffff",
+								"image_recolor_opa": 0,
+								"image_opa": 255
+							}
+						]
+					},
+					{
+						"name": "main_screen_img_pan_6",
+						"id": "0uju7o5y",
+						"type": "img",
+						"visible": false,
+						"flag": [],
+						"pos": [
+							350,
+							190
+						],
+						"size": [
+							200,
+							194
+						],
+						"default_style": false,
+						"custom_attributes": {},
+						"img_path": "C:\\workspace_cergan\\zephyr_gui\\import\\image\\img_pan_6.png",
+						"color_format": "true-color-alpha",
+						"rotate": 0,
+						"pivot": "50,50",
+						"use_fs": false,
+						"fs_type": "flash",
+						"img_flash_path": "F:/img_pan_6.png",
+						"img_sd_path": "S:/img_pan_6.png",
+						"style": [
+							{
+								"part": "LV_PART_MAIN",
+								"state": "LV_STATE_DEFAULT",
+								"disable": false,
+								"image_recolor": "#ffffff",
+								"image_recolor_opa": 0,
+								"image_opa": 255
+							}
+						]
+					},
+					{
+						"name": "main_screen_img_pan_7",
+						"id": "uh5vhmlz",
+						"type": "img",
+						"visible": false,
+						"flag": [],
+						"pos": [
+							300,
+							165
+						],
+						"size": [
+							200,
+							194
+						],
+						"default_style": false,
+						"custom_attributes": {},
+						"img_path": "C:\\workspace_cergan\\zephyr_gui\\import\\image\\img_pan_7.png",
+						"color_format": "true-color-alpha",
+						"rotate": 0,
+						"pivot": "50,50",
+						"use_fs": false,
+						"fs_type": "flash",
+						"img_flash_path": "F:/img_pan_7.png",
+						"img_sd_path": "S:/img_pan_7.png",
+						"style": [
+							{
+								"part": "LV_PART_MAIN",
+								"state": "LV_STATE_DEFAULT",
+								"disable": false,
+								"image_recolor": "#ffffff",
+								"image_recolor_opa": 0,
+								"image_opa": 255
+							}
+						]
+					},
+					{
+						"name": "main_screen_img_pan_8",
+						"id": "aft2aer4",
+						"type": "img",
+						"visible": false,
+						"flag": [],
+						"pos": [
+							294,
+							143
+						],
+						"size": [
+							200,
+							194
+						],
+						"default_style": false,
+						"custom_attributes": {},
+						"img_path": "C:\\workspace_cergan\\zephyr_gui\\import\\image\\img_pan_8.png",
+						"color_format": "true-color-alpha",
+						"rotate": 0,
+						"pivot": "50,50",
+						"use_fs": false,
+						"fs_type": "flash",
+						"img_flash_path": "F:/img_pan_8.png",
+						"img_sd_path": "S:/img_pan_8.png",
+						"style": [
+							{
+								"part": "LV_PART_MAIN",
+								"state": "LV_STATE_DEFAULT",
+								"disable": false,
+								"image_recolor": "#ffffff",
+								"image_recolor_opa": 0,
+								"image_opa": 255
+							}
+						]
+					},
+					{
+						"name": "main_screen_img_pan_9",
+						"id": "5qrqooca",
+						"type": "img",
+						"visible": false,
+						"flag": [],
+						"pos": [
+							300,
+							143
+						],
+						"size": [
+							200,
+							194
+						],
+						"default_style": false,
+						"custom_attributes": {},
+						"img_path": "C:\\workspace_cergan\\zephyr_gui\\import\\image\\img_pan_9.png",
+						"color_format": "true-color-alpha",
+						"rotate": 0,
+						"pivot": "50,50",
+						"use_fs": false,
+						"fs_type": "flash",
+						"img_flash_path": "F:/img_pan_9.png",
+						"img_sd_path": "S:/img_pan_9.png",
+						"style": [
+							{
+								"part": "LV_PART_MAIN",
+								"state": "LV_STATE_DEFAULT",
+								"disable": false,
+								"image_recolor": "#ffffff",
+								"image_recolor_opa": 0,
+								"image_opa": 255
+							}
+						]
+					},
+					{
+						"name": "main_screen_img_pan_P",
+						"id": "48u008y7",
+						"type": "img",
+						"visible": false,
+						"flag": [],
+						"pos": [
+							338,
+							190
+						],
+						"size": [
+							200,
+							194
+						],
+						"default_style": false,
+						"custom_attributes": {},
+						"img_path": "C:\\workspace_cergan\\zephyr_gui\\import\\image\\img_pan_P.png",
+						"color_format": "true-color-alpha",
+						"rotate": 0,
+						"pivot": "50,50",
+						"use_fs": false,
+						"fs_type": "flash",
+						"img_flash_path": "F:/img_pan_P.png",
+						"img_sd_path": "S:/img_pan_P.png",
+						"style": [
+							{
+								"part": "LV_PART_MAIN",
+								"state": "LV_STATE_DEFAULT",
+								"disable": false,
+								"image_recolor": "#ffffff",
+								"image_recolor_opa": 0,
+								"image_opa": 255
 							}
 						]
 					}

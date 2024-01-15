@@ -59,6 +59,26 @@ static void main_screen_slider_event_handler (lv_event_t *e)
 			pan_level(select, 6);
 			break;
 		}
+		case 7:
+		{
+			pan_level(select, 7);
+			break;
+		}
+		case 8:
+		{
+			pan_level(select, 8);
+			break;
+		}
+		case 9:
+		{
+			pan_level(select, 9);
+			break;
+		}
+		case 10:
+		{
+			pan_level(select, 10);
+			break;
+		}
 		default:
 			break;
 		}

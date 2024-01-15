@@ -188,6 +188,58 @@ void setup_scr_main_screen(lv_ui *ui)
 	//Write style for main_screen_slider_6, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
 	lv_obj_set_style_img_opa(ui->main_screen_slider_6, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
 
+	//Write codes main_screen_slider_7
+	ui->main_screen_slider_7 = lv_img_create(ui->main_screen);
+	lv_obj_add_flag(ui->main_screen_slider_7, LV_OBJ_FLAG_CLICKABLE);
+	lv_img_set_src(ui->main_screen_slider_7, &_slider_7_alpha_800x80);
+	lv_img_set_pivot(ui->main_screen_slider_7, 50,50);
+	lv_img_set_angle(ui->main_screen_slider_7, 0);
+	lv_obj_set_pos(ui->main_screen_slider_7, 6, 244);
+	lv_obj_set_size(ui->main_screen_slider_7, 800, 80);
+	lv_obj_add_flag(ui->main_screen_slider_7, LV_OBJ_FLAG_HIDDEN);
+
+	//Write style for main_screen_slider_7, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+	lv_obj_set_style_img_opa(ui->main_screen_slider_7, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+
+	//Write codes main_screen_slider_8
+	ui->main_screen_slider_8 = lv_img_create(ui->main_screen);
+	lv_obj_add_flag(ui->main_screen_slider_8, LV_OBJ_FLAG_CLICKABLE);
+	lv_img_set_src(ui->main_screen_slider_8, &_slider_8_alpha_800x80);
+	lv_img_set_pivot(ui->main_screen_slider_8, 50,50);
+	lv_img_set_angle(ui->main_screen_slider_8, 0);
+	lv_obj_set_pos(ui->main_screen_slider_8, 15, 222);
+	lv_obj_set_size(ui->main_screen_slider_8, 800, 80);
+	lv_obj_add_flag(ui->main_screen_slider_8, LV_OBJ_FLAG_HIDDEN);
+
+	//Write style for main_screen_slider_8, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+	lv_obj_set_style_img_opa(ui->main_screen_slider_8, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+
+	//Write codes main_screen_slider_9
+	ui->main_screen_slider_9 = lv_img_create(ui->main_screen);
+	lv_obj_add_flag(ui->main_screen_slider_9, LV_OBJ_FLAG_CLICKABLE);
+	lv_img_set_src(ui->main_screen_slider_9, &_slider_9_alpha_800x80);
+	lv_img_set_pivot(ui->main_screen_slider_9, 50,50);
+	lv_img_set_angle(ui->main_screen_slider_9, 0);
+	lv_obj_set_pos(ui->main_screen_slider_9, 0, 269);
+	lv_obj_set_size(ui->main_screen_slider_9, 800, 80);
+	lv_obj_add_flag(ui->main_screen_slider_9, LV_OBJ_FLAG_HIDDEN);
+
+	//Write style for main_screen_slider_9, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+	lv_obj_set_style_img_opa(ui->main_screen_slider_9, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+
+	//Write codes main_screen_slider_P
+	ui->main_screen_slider_P = lv_img_create(ui->main_screen);
+	lv_obj_add_flag(ui->main_screen_slider_P, LV_OBJ_FLAG_CLICKABLE);
+	lv_img_set_src(ui->main_screen_slider_P, &_slider_P_alpha_800x80);
+	lv_img_set_pivot(ui->main_screen_slider_P, 50,50);
+	lv_img_set_angle(ui->main_screen_slider_P, 0);
+	lv_obj_set_pos(ui->main_screen_slider_P, 7, 258);
+	lv_obj_set_size(ui->main_screen_slider_P, 800, 80);
+	lv_obj_add_flag(ui->main_screen_slider_P, LV_OBJ_FLAG_HIDDEN);
+
+	//Write style for main_screen_slider_P, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+	lv_obj_set_style_img_opa(ui->main_screen_slider_P, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+
 	//Write codes main_screen_no_level_0
 	ui->main_screen_no_level_0 = lv_img_create(ui->main_screen);
 	lv_obj_add_flag(ui->main_screen_no_level_0, LV_OBJ_FLAG_CLICKABLE);
@@ -279,57 +331,57 @@ void setup_scr_main_screen(lv_ui *ui)
 	//Write style for main_screen_no_level_6, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
 	lv_obj_set_style_img_opa(ui->main_screen_no_level_6, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
 
-	//Write codes main_screen_level_0
-	ui->main_screen_level_0 = lv_img_create(ui->main_screen);
-	lv_obj_add_flag(ui->main_screen_level_0, LV_OBJ_FLAG_CLICKABLE);
-	lv_img_set_src(ui->main_screen_level_0, &_Sv0_Ver2_alpha_200x194);
-	lv_img_set_pivot(ui->main_screen_level_0, 50,50);
-	lv_img_set_angle(ui->main_screen_level_0, 0);
-	lv_obj_set_pos(ui->main_screen_level_0, 300, 143);
-	lv_obj_set_size(ui->main_screen_level_0, 200, 194);
-	lv_obj_add_flag(ui->main_screen_level_0, LV_OBJ_FLAG_HIDDEN);
+	//Write codes main_screen_no_level_7
+	ui->main_screen_no_level_7 = lv_img_create(ui->main_screen);
+	lv_obj_add_flag(ui->main_screen_no_level_7, LV_OBJ_FLAG_CLICKABLE);
+	lv_img_set_src(ui->main_screen_no_level_7, &_NoHob_7_alpha_200x194);
+	lv_img_set_pivot(ui->main_screen_no_level_7, 50,50);
+	lv_img_set_angle(ui->main_screen_no_level_7, 0);
+	lv_obj_set_pos(ui->main_screen_no_level_7, 308, 165);
+	lv_obj_set_size(ui->main_screen_no_level_7, 200, 194);
+	lv_obj_add_flag(ui->main_screen_no_level_7, LV_OBJ_FLAG_HIDDEN);
 
-	//Write style for main_screen_level_0, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
-	lv_obj_set_style_img_opa(ui->main_screen_level_0, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+	//Write style for main_screen_no_level_7, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+	lv_obj_set_style_img_opa(ui->main_screen_no_level_7, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
 
-	//Write codes main_screen_level_1
-	ui->main_screen_level_1 = lv_img_create(ui->main_screen);
-	lv_obj_add_flag(ui->main_screen_level_1, LV_OBJ_FLAG_CLICKABLE);
-	lv_img_set_src(ui->main_screen_level_1, &_Sv1_Ver2_alpha_200x194);
-	lv_img_set_pivot(ui->main_screen_level_1, 50,50);
-	lv_img_set_angle(ui->main_screen_level_1, 0);
-	lv_obj_set_pos(ui->main_screen_level_1, 300, 143);
-	lv_obj_set_size(ui->main_screen_level_1, 200, 194);
-	lv_obj_add_flag(ui->main_screen_level_1, LV_OBJ_FLAG_HIDDEN);
+	//Write codes main_screen_no_level_8
+	ui->main_screen_no_level_8 = lv_img_create(ui->main_screen);
+	lv_obj_add_flag(ui->main_screen_no_level_8, LV_OBJ_FLAG_CLICKABLE);
+	lv_img_set_src(ui->main_screen_no_level_8, &_NoHob_8_alpha_200x194);
+	lv_img_set_pivot(ui->main_screen_no_level_8, 50,50);
+	lv_img_set_angle(ui->main_screen_no_level_8, 0);
+	lv_obj_set_pos(ui->main_screen_no_level_8, 318, 172);
+	lv_obj_set_size(ui->main_screen_no_level_8, 200, 194);
+	lv_obj_add_flag(ui->main_screen_no_level_8, LV_OBJ_FLAG_HIDDEN);
 
-	//Write style for main_screen_level_1, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
-	lv_obj_set_style_img_opa(ui->main_screen_level_1, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+	//Write style for main_screen_no_level_8, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+	lv_obj_set_style_img_opa(ui->main_screen_no_level_8, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
 
-	//Write codes main_screen_level_2
-	ui->main_screen_level_2 = lv_img_create(ui->main_screen);
-	lv_obj_add_flag(ui->main_screen_level_2, LV_OBJ_FLAG_CLICKABLE);
-	lv_img_set_src(ui->main_screen_level_2, &_Sv2_Ver2_alpha_200x194);
-	lv_img_set_pivot(ui->main_screen_level_2, 50,50);
-	lv_img_set_angle(ui->main_screen_level_2, 0);
-	lv_obj_set_pos(ui->main_screen_level_2, 300, 143);
-	lv_obj_set_size(ui->main_screen_level_2, 200, 194);
-	lv_obj_add_flag(ui->main_screen_level_2, LV_OBJ_FLAG_HIDDEN);
+	//Write codes main_screen_no_level_9
+	ui->main_screen_no_level_9 = lv_img_create(ui->main_screen);
+	lv_obj_add_flag(ui->main_screen_no_level_9, LV_OBJ_FLAG_CLICKABLE);
+	lv_img_set_src(ui->main_screen_no_level_9, &_NoHob_9_alpha_200x194);
+	lv_img_set_pivot(ui->main_screen_no_level_9, 50,50);
+	lv_img_set_angle(ui->main_screen_no_level_9, 0);
+	lv_obj_set_pos(ui->main_screen_no_level_9, 350, 190);
+	lv_obj_set_size(ui->main_screen_no_level_9, 200, 194);
+	lv_obj_add_flag(ui->main_screen_no_level_9, LV_OBJ_FLAG_HIDDEN);
 
-	//Write style for main_screen_level_2, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
-	lv_obj_set_style_img_opa(ui->main_screen_level_2, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+	//Write style for main_screen_no_level_9, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+	lv_obj_set_style_img_opa(ui->main_screen_no_level_9, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
 
-	//Write codes main_screen_level_3
-	ui->main_screen_level_3 = lv_img_create(ui->main_screen);
-	lv_obj_add_flag(ui->main_screen_level_3, LV_OBJ_FLAG_CLICKABLE);
-	lv_img_set_src(ui->main_screen_level_3, &_Sv3_Ver2_alpha_200x194);
-	lv_img_set_pivot(ui->main_screen_level_3, 50,50);
-	lv_img_set_angle(ui->main_screen_level_3, 0);
-	lv_obj_set_pos(ui->main_screen_level_3, 300, 143);
-	lv_obj_set_size(ui->main_screen_level_3, 200, 194);
-	lv_obj_add_flag(ui->main_screen_level_3, LV_OBJ_FLAG_HIDDEN);
+	//Write codes main_screen_no_level_P
+	ui->main_screen_no_level_P = lv_img_create(ui->main_screen);
+	lv_obj_add_flag(ui->main_screen_no_level_P, LV_OBJ_FLAG_CLICKABLE);
+	lv_img_set_src(ui->main_screen_no_level_P, &_NoHob_P_alpha_200x194);
+	lv_img_set_pivot(ui->main_screen_no_level_P, 50,50);
+	lv_img_set_angle(ui->main_screen_no_level_P, 0);
+	lv_obj_set_pos(ui->main_screen_no_level_P, 300, 184);
+	lv_obj_set_size(ui->main_screen_no_level_P, 200, 194);
+	lv_obj_add_flag(ui->main_screen_no_level_P, LV_OBJ_FLAG_HIDDEN);
 
-	//Write style for main_screen_level_3, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
-	lv_obj_set_style_img_opa(ui->main_screen_level_3, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+	//Write style for main_screen_no_level_P, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+	lv_obj_set_style_img_opa(ui->main_screen_no_level_P, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
 
 	//Write codes main_screen_cont_1
 	ui->main_screen_cont_1 = lv_obj_create(ui->main_screen);
@@ -418,6 +470,149 @@ void setup_scr_main_screen(lv_ui *ui)
 
 	//Write style for main_screen_select_ring_h2, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
 	lv_obj_set_style_img_opa(ui->main_screen_select_ring_h2, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+
+	//Write codes main_screen_img_pan_0
+	ui->main_screen_img_pan_0 = lv_img_create(ui->main_screen);
+	lv_obj_add_flag(ui->main_screen_img_pan_0, LV_OBJ_FLAG_CLICKABLE);
+	lv_img_set_src(ui->main_screen_img_pan_0, &_img_pan_0_alpha_200x194);
+	lv_img_set_pivot(ui->main_screen_img_pan_0, 50,50);
+	lv_img_set_angle(ui->main_screen_img_pan_0, 0);
+	lv_obj_set_pos(ui->main_screen_img_pan_0, 300, 165);
+	lv_obj_set_size(ui->main_screen_img_pan_0, 200, 194);
+	lv_obj_add_flag(ui->main_screen_img_pan_0, LV_OBJ_FLAG_HIDDEN);
+
+	//Write style for main_screen_img_pan_0, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+	lv_obj_set_style_img_opa(ui->main_screen_img_pan_0, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+
+	//Write codes main_screen_img_pan_1
+	ui->main_screen_img_pan_1 = lv_img_create(ui->main_screen);
+	lv_obj_add_flag(ui->main_screen_img_pan_1, LV_OBJ_FLAG_CLICKABLE);
+	lv_img_set_src(ui->main_screen_img_pan_1, &_img_pan_1_alpha_200x194);
+	lv_img_set_pivot(ui->main_screen_img_pan_1, 50,50);
+	lv_img_set_angle(ui->main_screen_img_pan_1, 0);
+	lv_obj_set_pos(ui->main_screen_img_pan_1, 300, 158);
+	lv_obj_set_size(ui->main_screen_img_pan_1, 200, 194);
+	lv_obj_add_flag(ui->main_screen_img_pan_1, LV_OBJ_FLAG_HIDDEN);
+
+	//Write style for main_screen_img_pan_1, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+	lv_obj_set_style_img_opa(ui->main_screen_img_pan_1, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+
+	//Write codes main_screen_img_pan_2
+	ui->main_screen_img_pan_2 = lv_img_create(ui->main_screen);
+	lv_obj_add_flag(ui->main_screen_img_pan_2, LV_OBJ_FLAG_CLICKABLE);
+	lv_img_set_src(ui->main_screen_img_pan_2, &_img_pan_2_alpha_200x194);
+	lv_img_set_pivot(ui->main_screen_img_pan_2, 50,50);
+	lv_img_set_angle(ui->main_screen_img_pan_2, 0);
+	lv_obj_set_pos(ui->main_screen_img_pan_2, 300, 165);
+	lv_obj_set_size(ui->main_screen_img_pan_2, 200, 194);
+	lv_obj_add_flag(ui->main_screen_img_pan_2, LV_OBJ_FLAG_HIDDEN);
+
+	//Write style for main_screen_img_pan_2, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+	lv_obj_set_style_img_opa(ui->main_screen_img_pan_2, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+
+	//Write codes main_screen_img_pan_3
+	ui->main_screen_img_pan_3 = lv_img_create(ui->main_screen);
+	lv_obj_add_flag(ui->main_screen_img_pan_3, LV_OBJ_FLAG_CLICKABLE);
+	lv_img_set_src(ui->main_screen_img_pan_3, &_img_pan_3_alpha_200x194);
+	lv_img_set_pivot(ui->main_screen_img_pan_3, 50,50);
+	lv_img_set_angle(ui->main_screen_img_pan_3, 0);
+	lv_obj_set_pos(ui->main_screen_img_pan_3, 350, 190);
+	lv_obj_set_size(ui->main_screen_img_pan_3, 200, 194);
+	lv_obj_add_flag(ui->main_screen_img_pan_3, LV_OBJ_FLAG_HIDDEN);
+
+	//Write style for main_screen_img_pan_3, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+	lv_obj_set_style_img_opa(ui->main_screen_img_pan_3, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+
+	//Write codes main_screen_img_pan_4
+	ui->main_screen_img_pan_4 = lv_img_create(ui->main_screen);
+	lv_obj_add_flag(ui->main_screen_img_pan_4, LV_OBJ_FLAG_CLICKABLE);
+	lv_img_set_src(ui->main_screen_img_pan_4, &_img_pan_4_alpha_200x194);
+	lv_img_set_pivot(ui->main_screen_img_pan_4, 50,50);
+	lv_img_set_angle(ui->main_screen_img_pan_4, 0);
+	lv_obj_set_pos(ui->main_screen_img_pan_4, 308, 165);
+	lv_obj_set_size(ui->main_screen_img_pan_4, 200, 194);
+	lv_obj_add_flag(ui->main_screen_img_pan_4, LV_OBJ_FLAG_HIDDEN);
+
+	//Write style for main_screen_img_pan_4, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+	lv_obj_set_style_img_opa(ui->main_screen_img_pan_4, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+
+	//Write codes main_screen_img_pan_5
+	ui->main_screen_img_pan_5 = lv_img_create(ui->main_screen);
+	lv_obj_add_flag(ui->main_screen_img_pan_5, LV_OBJ_FLAG_CLICKABLE);
+	lv_img_set_src(ui->main_screen_img_pan_5, &_img_pan_5_alpha_200x194);
+	lv_img_set_pivot(ui->main_screen_img_pan_5, 50,50);
+	lv_img_set_angle(ui->main_screen_img_pan_5, 0);
+	lv_obj_set_pos(ui->main_screen_img_pan_5, 300, 143);
+	lv_obj_set_size(ui->main_screen_img_pan_5, 200, 194);
+	lv_obj_add_flag(ui->main_screen_img_pan_5, LV_OBJ_FLAG_HIDDEN);
+
+	//Write style for main_screen_img_pan_5, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+	lv_obj_set_style_img_opa(ui->main_screen_img_pan_5, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+
+	//Write codes main_screen_img_pan_6
+	ui->main_screen_img_pan_6 = lv_img_create(ui->main_screen);
+	lv_obj_add_flag(ui->main_screen_img_pan_6, LV_OBJ_FLAG_CLICKABLE);
+	lv_img_set_src(ui->main_screen_img_pan_6, &_img_pan_6_alpha_200x194);
+	lv_img_set_pivot(ui->main_screen_img_pan_6, 50,50);
+	lv_img_set_angle(ui->main_screen_img_pan_6, 0);
+	lv_obj_set_pos(ui->main_screen_img_pan_6, 350, 190);
+	lv_obj_set_size(ui->main_screen_img_pan_6, 200, 194);
+	lv_obj_add_flag(ui->main_screen_img_pan_6, LV_OBJ_FLAG_HIDDEN);
+
+	//Write style for main_screen_img_pan_6, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+	lv_obj_set_style_img_opa(ui->main_screen_img_pan_6, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+
+	//Write codes main_screen_img_pan_7
+	ui->main_screen_img_pan_7 = lv_img_create(ui->main_screen);
+	lv_obj_add_flag(ui->main_screen_img_pan_7, LV_OBJ_FLAG_CLICKABLE);
+	lv_img_set_src(ui->main_screen_img_pan_7, &_img_pan_7_alpha_200x194);
+	lv_img_set_pivot(ui->main_screen_img_pan_7, 50,50);
+	lv_img_set_angle(ui->main_screen_img_pan_7, 0);
+	lv_obj_set_pos(ui->main_screen_img_pan_7, 300, 165);
+	lv_obj_set_size(ui->main_screen_img_pan_7, 200, 194);
+	lv_obj_add_flag(ui->main_screen_img_pan_7, LV_OBJ_FLAG_HIDDEN);
+
+	//Write style for main_screen_img_pan_7, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+	lv_obj_set_style_img_opa(ui->main_screen_img_pan_7, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+
+	//Write codes main_screen_img_pan_8
+	ui->main_screen_img_pan_8 = lv_img_create(ui->main_screen);
+	lv_obj_add_flag(ui->main_screen_img_pan_8, LV_OBJ_FLAG_CLICKABLE);
+	lv_img_set_src(ui->main_screen_img_pan_8, &_img_pan_8_alpha_200x194);
+	lv_img_set_pivot(ui->main_screen_img_pan_8, 50,50);
+	lv_img_set_angle(ui->main_screen_img_pan_8, 0);
+	lv_obj_set_pos(ui->main_screen_img_pan_8, 294, 143);
+	lv_obj_set_size(ui->main_screen_img_pan_8, 200, 194);
+	lv_obj_add_flag(ui->main_screen_img_pan_8, LV_OBJ_FLAG_HIDDEN);
+
+	//Write style for main_screen_img_pan_8, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+	lv_obj_set_style_img_opa(ui->main_screen_img_pan_8, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+
+	//Write codes main_screen_img_pan_9
+	ui->main_screen_img_pan_9 = lv_img_create(ui->main_screen);
+	lv_obj_add_flag(ui->main_screen_img_pan_9, LV_OBJ_FLAG_CLICKABLE);
+	lv_img_set_src(ui->main_screen_img_pan_9, &_img_pan_9_alpha_200x194);
+	lv_img_set_pivot(ui->main_screen_img_pan_9, 50,50);
+	lv_img_set_angle(ui->main_screen_img_pan_9, 0);
+	lv_obj_set_pos(ui->main_screen_img_pan_9, 300, 143);
+	lv_obj_set_size(ui->main_screen_img_pan_9, 200, 194);
+	lv_obj_add_flag(ui->main_screen_img_pan_9, LV_OBJ_FLAG_HIDDEN);
+
+	//Write style for main_screen_img_pan_9, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+	lv_obj_set_style_img_opa(ui->main_screen_img_pan_9, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+
+	//Write codes main_screen_img_pan_P
+	ui->main_screen_img_pan_P = lv_img_create(ui->main_screen);
+	lv_obj_add_flag(ui->main_screen_img_pan_P, LV_OBJ_FLAG_CLICKABLE);
+	lv_img_set_src(ui->main_screen_img_pan_P, &_img_pan_P_alpha_200x194);
+	lv_img_set_pivot(ui->main_screen_img_pan_P, 50,50);
+	lv_img_set_angle(ui->main_screen_img_pan_P, 0);
+	lv_obj_set_pos(ui->main_screen_img_pan_P, 338, 190);
+	lv_obj_set_size(ui->main_screen_img_pan_P, 200, 194);
+	lv_obj_add_flag(ui->main_screen_img_pan_P, LV_OBJ_FLAG_HIDDEN);
+
+	//Write style for main_screen_img_pan_P, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+	lv_obj_set_style_img_opa(ui->main_screen_img_pan_P, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
 
 	//Update current screen layout.
 	lv_obj_update_layout(ui->main_screen);
