@@ -2887,7 +2887,6 @@
 							{
 								"trigger": "pressing",
 								"dst": "qd0d1ueq",
-								"item_index": 7,
 								"action": {
 									"load_screen": {
 										"ische": false,
@@ -3013,12 +3012,12 @@
 										"deleted_cb": "",
 										"path_type": "linear"
 									}
-								}
+								},
+								"item_index": 7
 							},
 							{
 								"trigger": "pressing",
 								"dst": "qd0d1ueq",
-								"item_index": 8,
 								"action": {
 									"load_screen": {
 										"ische": false,
@@ -3144,12 +3143,12 @@
 										"deleted_cb": "",
 										"path_type": "linear"
 									}
-								}
+								},
+								"item_index": 8
 							},
 							{
 								"trigger": "pressing",
 								"dst": "qd0d1ueq",
-								"item_index": 9,
 								"action": {
 									"load_screen": {
 										"ische": false,
@@ -3275,12 +3274,12 @@
 										"deleted_cb": "",
 										"path_type": "linear"
 									}
-								}
+								},
+								"item_index": 9
 							},
 							{
 								"trigger": "pressing",
 								"dst": "qd0d1ueq",
-								"item_index": 10,
 								"action": {
 									"load_screen": {
 										"ische": false,
@@ -3406,7 +3405,8 @@
 										"deleted_cb": "",
 										"path_type": "linear"
 									}
-								}
+								},
+								"item_index": 10
 							}
 						]
 					},

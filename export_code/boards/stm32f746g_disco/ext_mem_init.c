@@ -8,11 +8,9 @@
 #include <zephyr/zephyr.h>
 #include <soc.h>
 
-#define QUAD_OUT_FAST_READ_CMD               0x6B
-#define QUAD_OUT_FAST_READ_DTR_CMD           0x6D
-#define QUAD_OUT_FAST_READ_4_BYTE_ADDR_CMD   0x6C
+#define QUAD_INOUT_FAST_READ_CMD        0xEB
 
-#define N25Q128A_DUMMY_CYCLES_READ      8
+#define N25Q128A_DUMMY_CYCLES_READ      10
 
 void BSP_QSPI_EnableMemoryMappedMode()
 {
@@ -23,8 +21,8 @@ void BSP_QSPI_EnableMemoryMappedMode()
 
     /* Configure the command for the read instruction */
     cmd.InstructionMode   = QSPI_INSTRUCTION_1_LINE;
-    cmd.Instruction       = QUAD_OUT_FAST_READ_CMD;
-    cmd.AddressMode       = QSPI_ADDRESS_1_LINE;
+    cmd.Instruction       = QUAD_INOUT_FAST_READ_CMD;
+    cmd.AddressMode       = QSPI_ADDRESS_4_LINES;
     cmd.AddressSize       = QSPI_ADDRESS_24_BITS;
     cmd.AlternateByteMode = QSPI_ALTERNATE_BYTES_NONE;
     cmd.DataMode          = QSPI_DATA_4_LINES;

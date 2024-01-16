@@ -36,7 +36,7 @@ void main(void)
 	lv_task_handler();
 	display_blanking_off(display_dev);
 
-	while (1) {
+	while (1) {			
 		k_msleep(lv_task_handler());
 	}
 }
