@@ -2,17 +2,23 @@
 # SPDX-License-Identifier: Apache-2.0
 
 manifest:
-  remotes:
-    - name: zephyrproject-rtos
+  remotes:    
+    - name: zephyr_cergan
       url-base: https://github.com/coskunergan
+    - name: zpp_remote
+      url-base: https://github.com/lowlander      
 
   projects:
     - name: zephyr
-      remote: zephyrproject-rtos
-      clone-depth: 3
+      remote: zephyr_cergan
+      clone-depth: 1
       revision: zephyr_cergan
       import:
         name-allowlist:
           - cmsis
           - hal_stm32
-          - lvgl          
+          - lvgl
+    - name: zpp
+      remote: zpp_remote
+      revision: master
+      path: modules/zpp          

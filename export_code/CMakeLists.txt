@@ -1,12 +1,12 @@
 # SPDX-License-Identifier: Apache-2.0
 
 cmake_minimum_required(VERSION 3.20.0)
-
+set(ZEPHYR_EXTRA_MODULES $ENV{ZEPHYR_BASE}../../modules/zpp)
 find_package(Zephyr REQUIRED HINTS $ENV{ZEPHYR_BASE})
 project(gui_guider)
 
-FILE(GLOB app_sources src/*.c src/generated/*.c src/custom/*.c src/generated/guider_customer_fonts/*.c src/generated/guider_fonts/*.c src/generated/images/*.c)
-target_include_directories(app PRIVATE src/generated src/custom src/generated/guider_customer_fonts src/generated/guider_fonts)
+FILE(GLOB app_sources src/*.cpp src/generated/*.c src/custom/*.c src/generated/guider_customer_fonts/*.c src/generated/guider_fonts/*.c src/generated/images/*.c)
+target_include_directories(app PRIVATE inc src/generated src/custom src/generated/guider_customer_fonts src/generated/guider_fonts)
 target_sources(app PRIVATE ${app_sources})
 target_compile_definitions(app PRIVATE LV_LVGL_H_INCLUDE_SIMPLE)
 

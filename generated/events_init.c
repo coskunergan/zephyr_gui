@@ -44,52 +44,52 @@ static void main_screen_slider_event_handler (lv_event_t *e)
 		}
 		case 1:
 		{
-			set_slider(1);
+			set_slider(2);
 			break;
 		}
 		case 2:
 		{
-			set_slider(2);
+			set_slider(4);
 			break;
 		}
 		case 3:
 		{
-			set_slider(3);
+			set_slider(6);
 			break;
 		}
 		case 4:
 		{
-			set_slider(4);
+			set_slider(8);
 			break;
 		}
 		case 5:
 		{
-			set_slider(5);
+			set_slider(10);
 			break;
 		}
 		case 6:
 		{
-			set_slider(6);
+			set_slider(12);
 			break;
 		}
 		case 7:
 		{
-			set_slider(7);
+			set_slider(14);
 			break;
 		}
 		case 8:
 		{
-			set_slider(8);
+			set_slider(16);
 			break;
 		}
 		case 9:
 		{
-			set_slider(9);
+			set_slider(18);
 			break;
 		}
 		case 10:
 		{
-			set_slider(10);
+			set_slider(20);
 			break;
 		}
 		default:

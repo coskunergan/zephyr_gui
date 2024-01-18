@@ -1,0 +1,13 @@
+
+&uart7 {
+	pinctrl-0 = <&uart7_rx_pf6 &uart7_tx_pf7>;
+	pinctrl-names = "default";
+	current-speed = <9600>;
+	status = "okay";
+	
+	modbus0 {
+		compatible = "zephyr,modbus-serial";
+		status = "okay";
+		de-gpios = <&gpiof 8 GPIO_ACTIVE_LOW>;	
+	};	
+};

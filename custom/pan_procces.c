@@ -6,6 +6,7 @@
 
 lv_timer_t *timer;
 system_obj_t system_obj;
+tft_registers_t tft_regs;
 
 /*******************************************************************************/
 /*******************************************************************************/
@@ -132,23 +133,23 @@ void refresh_display(void)
     {
         case 1:
             lv_obj_clear_flag(guider_ui.main_screen_select_ring_h1, LV_OBJ_FLAG_HIDDEN);
-            level_set(guider_ui.main_screen_pan_1, system_obj.pan_1_value);
+            level_set(guider_ui.main_screen_pan_1, tft_regs.read_regs.pan1_value / 2);
             break;
         case 2:
             lv_obj_clear_flag(guider_ui.main_screen_select_ring_h2, LV_OBJ_FLAG_HIDDEN);
-            level_set(guider_ui.main_screen_pan_2, system_obj.pan_2_value);
+            level_set(guider_ui.main_screen_pan_2, tft_regs.read_regs.pan2_value / 2);
             break;
         case 3:
             //lv_obj_add_flag(guider_ui.main_screen_select_ring_h3, LV_OBJ_FLAG_HIDDEN);
-            level_set(guider_ui.main_screen_pan_3, system_obj.pan_3_value);
+            level_set(guider_ui.main_screen_pan_3, tft_regs.read_regs.pan3_value / 2);
             break;
         case 4:
             //lv_obj_add_flag(guider_ui.main_screen_select_ring_h4, LV_OBJ_FLAG_HIDDEN);
-            level_set(guider_ui.main_screen_pan_4, system_obj.pan_4_value);
+            level_set(guider_ui.main_screen_pan_4, tft_regs.read_regs.pan4_value / 2);
             break;
         case 5:
             //lv_obj_add_flag(guider_ui.main_screen_select_ring_h4, LV_OBJ_FLAG_HIDDEN);
-            level_set(guider_ui.main_screen_pan_5, system_obj.pan_5_value);
+            level_set(guider_ui.main_screen_pan_5, tft_regs.read_regs.pan5_value / 2);
             break;
         default:
             lv_obj_set_style_bg_img_src(guider_ui.main_screen_slider, &_empty_800x80, LV_PART_MAIN | LV_STATE_DEFAULT);
@@ -165,19 +166,19 @@ void set_slider(uint8_t val)
         switch(system_obj.select_pan)
         {
             case 1:
-                system_obj.pan_1_value = val;
+                tft_regs.read_regs.pan1_value = val;
                 break;
             case 2:
-                system_obj.pan_2_value = val;
+                tft_regs.read_regs.pan2_value = val;
                 break;
             case 3:
-                system_obj.pan_3_value = val;
+                tft_regs.read_regs.pan3_value = val;
                 break;
             case 4:
-                system_obj.pan_4_value = val;
+                tft_regs.read_regs.pan4_value = val;
                 break;
             case 5:
-                system_obj.pan_5_value = val;
+                tft_regs.read_regs.pan5_value = val;
                 break;
             default:
                 break;
