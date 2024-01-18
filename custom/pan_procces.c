@@ -2,9 +2,41 @@
 #include <pan_procces.h>
 #include "gui_guider.h"
 
-/*******************************************************************************/
-/*******************************************************************************/
+#define SELECT_TIMEOUT 3000
 
+lv_timer_t *timer;
+system_obj_t system_obj;
+
+/*******************************************************************************/
+/*******************************************************************************/
+/*******************************************************************************/
+void select_timeout_timer(lv_timer_t *timer)
+{
+    set_select(0);
+}
+/*******************************************************************************/
+void system_init(void)
+{
+    lv_obj_clear_flag(guider_ui.main_screen, LV_OBJ_FLAG_SCROLL_ELASTIC);
+    lv_obj_clear_flag(guider_ui.main_screen_cont_1, LV_OBJ_FLAG_SCROLL_ELASTIC);
+    lv_obj_clear_flag(guider_ui.main_screen_cont_2, LV_OBJ_FLAG_SCROLL_ELASTIC);
+    //lv_obj_clear_flag(guider_ui.main_screen_cont_3, LV_OBJ_FLAG_SCROLL_ELASTIC);
+    //lv_obj_clear_flag(guider_ui.main_screen_cont_4, LV_OBJ_FLAG_SCROLL_ELASTIC);
+    //lv_obj_clear_flag(guider_ui.main_screen_cont_5, LV_OBJ_FLAG_SCROLL_ELASTIC);
+    lv_obj_add_flag(guider_ui.main_screen_select_ring_h1, LV_OBJ_FLAG_HIDDEN);
+    lv_obj_add_flag(guider_ui.main_screen_select_ring_h2, LV_OBJ_FLAG_HIDDEN);
+    //lv_obj_add_flag(guider_ui.main_screen_select_ring_h3, LV_OBJ_FLAG_HIDDEN);
+    //lv_obj_add_flag(guider_ui.main_screen_select_ring_h4, LV_OBJ_FLAG_HIDDEN);
+    //lv_obj_add_flag(guider_ui.main_screen_select_ring_h5, LV_OBJ_FLAG_HIDDEN);
+    memset(&system_obj, 0, sizeof(system_obj));
+    timer = lv_timer_create(select_timeout_timer, SELECT_TIMEOUT,  NULL);
+}
+/*******************************************************************************/
+void select_timer_start(void)
+{
+    lv_timer_reset(timer);
+}
+/*******************************************************************************/
 void pan_move(uint16_t x, uint16_t y)
 {
     lv_anim_t main_screen_img_1_anim_move_x;
@@ -35,7 +67,7 @@ void pan_move(uint16_t x, uint16_t y)
     lv_anim_set_playback_delay(&main_screen_img_1_anim_move_y, 0);
     lv_anim_start(&main_screen_img_1_anim_move_y);
 }
-
+/*******************************************************************************/
 void level_set(void *ui, uint8_t level)
 {
     switch(level)
@@ -88,6 +120,81 @@ void level_set(void *ui, uint8_t level)
             break;
     }
 }
+/*******************************************************************************/
+void refresh_display(void)
+{
+    lv_obj_add_flag(guider_ui.main_screen_select_ring_h1, LV_OBJ_FLAG_HIDDEN);
+    lv_obj_add_flag(guider_ui.main_screen_select_ring_h2, LV_OBJ_FLAG_HIDDEN);
+    //lv_obj_add_flag(guider_ui.main_screen_select_ring_h3, LV_OBJ_FLAG_HIDDEN);
+    //lv_obj_add_flag(guider_ui.main_screen_select_ring_h4, LV_OBJ_FLAG_HIDDEN);
+    //lv_obj_add_flag(guider_ui.main_screen_select_ring_h5, LV_OBJ_FLAG_HIDDEN);
+    switch(system_obj.select_pan)
+    {
+        case 1:
+            lv_obj_clear_flag(guider_ui.main_screen_select_ring_h1, LV_OBJ_FLAG_HIDDEN);
+            level_set(guider_ui.main_screen_pan_1, system_obj.pan_1_value);
+            break;
+        case 2:
+            lv_obj_clear_flag(guider_ui.main_screen_select_ring_h2, LV_OBJ_FLAG_HIDDEN);
+            level_set(guider_ui.main_screen_pan_2, system_obj.pan_2_value);
+            break;
+        case 3:
+            //lv_obj_add_flag(guider_ui.main_screen_select_ring_h3, LV_OBJ_FLAG_HIDDEN);
+            level_set(guider_ui.main_screen_pan_3, system_obj.pan_3_value);
+            break;
+        case 4:
+            //lv_obj_add_flag(guider_ui.main_screen_select_ring_h4, LV_OBJ_FLAG_HIDDEN);
+            level_set(guider_ui.main_screen_pan_4, system_obj.pan_4_value);
+            break;
+        case 5:
+            //lv_obj_add_flag(guider_ui.main_screen_select_ring_h4, LV_OBJ_FLAG_HIDDEN);
+            level_set(guider_ui.main_screen_pan_5, system_obj.pan_5_value);
+            break;
+        default:
+            lv_obj_set_style_bg_img_src(guider_ui.main_screen_slider, &_empty_800x80, LV_PART_MAIN | LV_STATE_DEFAULT);
+            break;
+    }
+}
+/*******************************************************************************/
+void set_slider(uint8_t val)
+{
+    select_timer_start();
+    if(system_obj.slider_value != val)
+    {
+        system_obj.slider_value = val;
+        switch(system_obj.select_pan)
+        {
+            case 1:
+                system_obj.pan_1_value = val;
+                break;
+            case 2:
+                system_obj.pan_2_value = val;
+                break;
+            case 3:
+                system_obj.pan_3_value = val;
+                break;
+            case 4:
+                system_obj.pan_4_value = val;
+                break;
+            case 5:
+                system_obj.pan_5_value = val;
+                break;
+            default:
+                break;
+        }
+        refresh_display();
+    }
+}
+/*******************************************************************************/
+void set_select(uint8_t sel)
+{
+    select_timer_start();
+    if(system_obj.select_pan != sel)
+    {
+        system_obj.select_pan = sel;
+        refresh_display();
+    }
+}
 
 void pan_level(uint8_t sel, uint8_t level)
 {
@@ -97,26 +204,8 @@ void pan_level(uint8_t sel, uint8_t level)
         return;
     }
     s_level = level;
-    switch(sel)
-    {
-        case 1:
-            level_set(guider_ui.main_screen_pan_1, level);
-            break;
-        case 2:
-            level_set(guider_ui.main_screen_pan_2, level);
-            break;
-        case 3:
-            level_set(guider_ui.main_screen_pan_3, level);
-            break;
-        case 4:
-            level_set(guider_ui.main_screen_pan_4, level);
-            break;
-        case 5:
-            level_set(guider_ui.main_screen_pan_5, level);
-            break;
-        default:
-            break;
-    }
-}
 
+}
+/*******************************************************************************/
+/*******************************************************************************/
 /*******************************************************************************/

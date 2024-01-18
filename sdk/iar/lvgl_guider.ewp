@@ -4739,6 +4739,9 @@
       <name>$PROJ_DIR$\..\..\generated\images\_img_pan_P_alpha_200x194.c</name>
     </file>
     <file>
+      <name>$PROJ_DIR$\..\..\generated\images\_logo_alpha_394x163.c</name>
+    </file>
+    <file>
       <name>$PROJ_DIR$\..\..\generated\images\_NoHob_0_alpha_200x194.c</name>
     </file>
     <file>
@@ -4811,6 +4814,9 @@
       <name>$PROJ_DIR$\..\..\generated\images\__alpha_200x194.c</name>
     </file>
   </group>
+  <file>
+    <name>$PROJ_DIR$\..\..\generated\setup_scr_logo_screen.c</name>
+  </file>
   <file>
     <name>$PROJ_DIR$\..\..\generated\setup_scr_main_screen.c</name>
   </file>

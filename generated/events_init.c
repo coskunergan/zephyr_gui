@@ -13,7 +13,20 @@
 
 
 extern lv_ui guider_ui;
-uint8_t select = 0;
+static void main_screen_event_handler (lv_event_t *e)
+{
+	lv_event_code_t code = lv_event_get_code(e);
+
+	switch (code) {
+	case LV_EVENT_SCREEN_LOADED:
+	{
+		system_init();
+		break;
+	}
+	default:
+		break;
+	}
+}
 static void main_screen_slider_event_handler (lv_event_t *e)
 {
 	lv_event_code_t code = lv_event_get_code(e);
@@ -26,57 +39,57 @@ static void main_screen_slider_event_handler (lv_event_t *e)
 		switch(id) {
 		case 0:
 		{
-			pan_level(select, 0);
+			set_slider(0);
 			break;
 		}
 		case 1:
 		{
-			pan_level(select, 1);
+			set_slider(1);
 			break;
 		}
 		case 2:
 		{
-			pan_level(select, 2);
+			set_slider(2);
 			break;
 		}
 		case 3:
 		{
-			pan_level(select, 3);
+			set_slider(3);
 			break;
 		}
 		case 4:
 		{
-			pan_level(select, 4);
+			set_slider(4);
 			break;
 		}
 		case 5:
 		{
-			pan_level(select, 5);
+			set_slider(5);
 			break;
 		}
 		case 6:
 		{
-			pan_level(select, 6);
+			set_slider(6);
 			break;
 		}
 		case 7:
 		{
-			pan_level(select, 7);
+			set_slider(7);
 			break;
 		}
 		case 8:
 		{
-			pan_level(select, 8);
+			set_slider(8);
 			break;
 		}
 		case 9:
 		{
-			pan_level(select, 9);
+			set_slider(9);
 			break;
 		}
 		case 10:
 		{
-			pan_level(select, 10);
+			set_slider(10);
 			break;
 		}
 		default:
@@ -95,10 +108,7 @@ static void main_screen_pan_1_event_handler (lv_event_t *e)
 	switch (code) {
 	case LV_EVENT_PRESSING:
 	{
-		lv_obj_clear_flag(guider_ui.main_screen_cont_1, LV_OBJ_FLAG_SCROLL_ELASTIC);
-	lv_obj_add_flag(guider_ui.main_screen_select_ring_h2, LV_OBJ_FLAG_HIDDEN);
-	lv_obj_clear_flag(guider_ui.main_screen_select_ring_h1, LV_OBJ_FLAG_HIDDEN);
-	select = 1;
+		set_select(1);
 		break;
 	}
 	default:
@@ -112,10 +122,7 @@ static void main_screen_select_ring_h1_event_handler (lv_event_t *e)
 	switch (code) {
 	case LV_EVENT_PRESSING:
 	{
-		        lv_indev_t *indev = lv_indev_get_act();
-	        lv_point_t p;
-	        lv_indev_get_point(indev, &p);
-	        lv_obj_set_pos(guider_ui.main_screen_cont_1, p.x - 100, p.y - 100);                
+		set_select(1);
 		break;
 	}
 	default:
@@ -129,10 +136,7 @@ static void main_screen_pan_2_event_handler (lv_event_t *e)
 	switch (code) {
 	case LV_EVENT_PRESSING:
 	{
-		lv_obj_clear_flag(guider_ui.main_screen_cont_2, LV_OBJ_FLAG_SCROLL_ELASTIC);
-	lv_obj_add_flag(guider_ui.main_screen_select_ring_h1, LV_OBJ_FLAG_HIDDEN);
-	lv_obj_clear_flag(guider_ui.main_screen_select_ring_h2, LV_OBJ_FLAG_HIDDEN);
-	select = 2;
+		set_select(2);
 		break;
 	}
 	default:
@@ -146,10 +150,7 @@ static void main_screen_select_ring_h2_event_handler (lv_event_t *e)
 	switch (code) {
 	case LV_EVENT_PRESSING:
 	{
-		        lv_indev_t *indev = lv_indev_get_act();
-	        lv_point_t p;
-	        lv_indev_get_point(indev, &p);
-	        lv_obj_set_pos(guider_ui.main_screen_cont_2, p.x - 100, p.y - 100);                
+		set_select(2);
 		break;
 	}
 	default:
@@ -158,11 +159,39 @@ static void main_screen_select_ring_h2_event_handler (lv_event_t *e)
 }
 void events_init_main_screen(lv_ui *ui)
 {
+	lv_obj_add_event_cb(ui->main_screen, main_screen_event_handler, LV_EVENT_ALL, NULL);
 	lv_obj_add_event_cb(ui->main_screen_slider, main_screen_slider_event_handler, LV_EVENT_ALL, NULL);
 	lv_obj_add_event_cb(ui->main_screen_pan_1, main_screen_pan_1_event_handler, LV_EVENT_ALL, NULL);
 	lv_obj_add_event_cb(ui->main_screen_select_ring_h1, main_screen_select_ring_h1_event_handler, LV_EVENT_ALL, NULL);
 	lv_obj_add_event_cb(ui->main_screen_pan_2, main_screen_pan_2_event_handler, LV_EVENT_ALL, NULL);
 	lv_obj_add_event_cb(ui->main_screen_select_ring_h2, main_screen_select_ring_h2_event_handler, LV_EVENT_ALL, NULL);
+}
+static void logo_screen_event_handler (lv_event_t *e)
+{
+	lv_event_code_t code = lv_event_get_code(e);
+
+	switch (code) {
+	case LV_EVENT_CLICKED:
+	{
+		//Write the load screen code.
+	    lv_obj_t * act_scr = lv_scr_act();
+	    lv_disp_t * d = lv_obj_get_disp(act_scr);
+	    if (d->prev_scr == NULL && (d->scr_to_load == NULL || d->scr_to_load == act_scr)) {
+	        if (guider_ui.main_screen_del == true) {
+	          setup_scr_main_screen(&guider_ui);
+	        }
+	        lv_scr_load_anim(guider_ui.main_screen, LV_SCR_LOAD_ANIM_NONE, 200, 200, true);
+	        guider_ui.logo_screen_del = true;
+	    }
+		break;
+	}
+	default:
+		break;
+	}
+}
+void events_init_logo_screen(lv_ui *ui)
+{
+	lv_obj_add_event_cb(ui->logo_screen, logo_screen_event_handler, LV_EVENT_ALL, NULL);
 }
 
 void events_init(lv_ui *ui)

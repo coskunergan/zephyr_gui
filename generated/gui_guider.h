@@ -63,6 +63,9 @@ typedef struct
 	lv_obj_t *main_screen_img_pan_8;
 	lv_obj_t *main_screen_img_pan_9;
 	lv_obj_t *main_screen_img_pan_P;
+	lv_obj_t *logo_screen;
+	bool logo_screen_del;
+	lv_obj_t *logo_screen_img_1;
 }lv_ui;
 
 void ui_init_style(lv_style_t * style);
@@ -71,6 +74,7 @@ void setup_ui(lv_ui *ui);
 extern lv_ui guider_ui;
 
 void setup_scr_main_screen(lv_ui *ui);
+void setup_scr_logo_screen(lv_ui *ui);
 LV_IMG_DECLARE(__alpha_200x194);
 LV_IMG_DECLARE(__alpha_200x194);
 LV_IMG_DECLARE(__alpha_200x194);
@@ -113,6 +117,7 @@ LV_IMG_DECLARE(_img_pan_7_alpha_200x194);
 LV_IMG_DECLARE(_img_pan_8_alpha_200x194);
 LV_IMG_DECLARE(_img_pan_9_alpha_200x194);
 LV_IMG_DECLARE(_img_pan_P_alpha_200x194);
+LV_IMG_DECLARE(_logo_alpha_394x163);
 
 LV_FONT_DECLARE(lv_font_Alatsi_Regular_1)
 

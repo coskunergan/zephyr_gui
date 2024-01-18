@@ -24,6 +24,7 @@ void init_scr_del_flag(lv_ui *ui)
 {
   
 	ui->main_screen_del = true;
+	ui->logo_screen_del = true;
 }
 
 void setup_ui(lv_ui *ui)
