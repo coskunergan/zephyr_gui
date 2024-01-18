@@ -9,10 +9,22 @@ typedef struct
 {
     uint8_t select_pan;
     uint8_t slider_value;
-    uint8_t flag_1: 1,
-            flag_2: 1,
-            flag_3: 1,
-            reserve: 6;
+    uint8_t m_pan1_state: 1,
+            m_pan2_state: 1,
+            m_pan3_state: 1,
+            m_pan4_state: 1,
+            m_pan5_state: 1,
+            reserve: 3;
+    uint16_t m_pan1_x;            
+    uint16_t m_pan1_y;
+    uint16_t m_pan2_x;            
+    uint16_t m_pan2_y;
+    uint16_t m_pan3_x;            
+    uint16_t m_pan3_y;
+    uint16_t m_pan4_x;            
+    uint16_t m_pan4_y;
+    uint16_t m_pan5_x;            
+    uint16_t m_pan5_y;                
 } system_obj_t;
 
 typedef struct
@@ -95,14 +107,14 @@ typedef struct
             reserve            : 7;
 } modbus_status_t;
 
-typedef struct 
+typedef struct
 {
     tft_write_registers_t write_regs;
     tft_read_registers_t read_regs;
     modbus_status_t modbus_status;
     size_t read_fail_count;
     size_t write_fail_count;
-}tft_registers_t;
+} tft_registers_t;
 
 /*******************************************************************************/
 
@@ -110,7 +122,6 @@ void system_init(void);
 void set_slider(uint8_t val);
 void set_select(uint8_t sel);
 void refresh_display(void);
-void pan_move(uint16_t x, uint16_t y);
 void pan_level(uint8_t sel, uint8_t level);
 
 #endif /* PAN_PROCCES */

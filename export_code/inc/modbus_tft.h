@@ -16,6 +16,7 @@
 #include <zpp.hpp>
 #include <zpp/timer.hpp>
 #include <chrono>
+
 #include "pan_procces.h"
 
 extern tft_registers_t tft_regs;
@@ -54,7 +55,7 @@ namespace device_modbus_tft
 
         ((uint16_t *)&tft_regs)[addr] = reg;
 
-        LOG_INF("Holding register write, addr %u", addr);
+        LOG_INF("Holding register write, addr %u", addr);                
 
         return 0;
     }
@@ -108,7 +109,7 @@ namespace device_modbus_tft
         }
     private:
         static void task_modbus_tft(modbus_tft *mb) noexcept
-        {
+        {            
             while(1)
             {
                 this_thread::sleep_for(100ms);

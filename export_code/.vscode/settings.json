@@ -66,7 +66,8 @@
       "typeinfo": "cpp",
       "lv_hal.h": "c",
       "lv_tabview.h": "c",
-      "lv_assert.h": "c"
+      "lv_assert.h": "c",
+      "pan_procces.h": "c"
    },
    "cortex-debug.variableUseNaturalFormat": false,
 }

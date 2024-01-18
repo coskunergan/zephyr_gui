@@ -383,7 +383,7 @@
 					"type": "cont",
 					"left": 300,
 					"top": 50,
-					"visible": true,
+					"visible": false,
 					"flag": [],
 					"custom_attributes": {},
 					"width": 200,
@@ -554,8 +554,7 @@
 										}
 									}
 								]
-							},
-							"layerName": "main_screen"
+							}
 						},
 						{
 							"name": "pan_2",
@@ -572,7 +571,7 @@
 							"use_fs": false,
 							"fs_type": "flash",
 							"sd_path": "",
-							"img_path": "C:\\workspace_cergan\\zephyr_gui\\import\\image\\NoHob_0.png",
+							"img_path": "C:\\workspace_cergan\\zephyr_gui\\import\\image\\img_pan_0.png",
 							"rotate": 0,
 							"x": 50,
 							"y": 50,
@@ -720,8 +719,7 @@
 										}
 									}
 								]
-							},
-							"layerName": "main_screen"
+							}
 						}
 					],
 					"style": [
@@ -761,7 +759,7 @@
 					"type": "cont",
 					"left": 15,
 					"top": 38,
-					"visible": true,
+					"visible": false,
 					"flag": [],
 					"custom_attributes": {},
 					"width": 200,
@@ -932,8 +930,7 @@
 										}
 									}
 								]
-							},
-							"layerName": "main_screen"
+							}
 						},
 						{
 							"name": "pan_1",
@@ -950,7 +947,7 @@
 							"use_fs": false,
 							"fs_type": "flash",
 							"sd_path": "",
-							"img_path": "C:\\workspace_cergan\\zephyr_gui\\import\\image\\NoHob_0.png",
+							"img_path": "C:\\workspace_cergan\\zephyr_gui\\import\\image\\img_pan_0.png",
 							"rotate": 0,
 							"x": 50,
 							"y": 50,
@@ -1098,8 +1095,7 @@
 										}
 									}
 								]
-							},
-							"layerName": "main_screen"
+							}
 						}
 					],
 					"style": [
@@ -3409,8 +3405,7 @@
 								"item_index": 10
 							}
 						]
-					},
-					"layerName": "main_screen"
+					}
 				},
 				{
 					"name": "pan_3",
@@ -3654,8 +3649,7 @@
 					"bg_img_recolor": "#ffffff",
 					"bg_img_recolor_opa": 0
 				}
-			],
-			"layerName": "main_screen"
+			]
 		},
 		{
 			"name": "logo_screen",
@@ -5281,7 +5275,7 @@
 						"name": "main_screen_cont_1",
 						"id": "oquitm7r",
 						"type": "cont",
-						"visible": true,
+						"visible": false,
 						"scrollbar_mode": "OFF",
 						"flag": [],
 						"pos": [
@@ -5328,14 +5322,14 @@
 										}
 									]
 								},
-								"img_path": "C:\\workspace_cergan\\zephyr_gui\\import\\image\\NoHob_0.png",
+								"img_path": "C:\\workspace_cergan\\zephyr_gui\\import\\image\\img_pan_0.png",
 								"color_format": "true-color-alpha",
 								"rotate": 0,
 								"pivot": "50,50",
 								"use_fs": false,
 								"fs_type": "flash",
-								"img_flash_path": "F:/NoHob_0.png",
-								"img_sd_path": "S:/NoHob_0.png",
+								"img_flash_path": "F:/img_pan_0.png",
+								"img_sd_path": "S:/img_pan_0.png",
 								"style": [
 									{
 										"part": "LV_PART_MAIN",
@@ -5434,7 +5428,7 @@
 						"name": "main_screen_cont_2",
 						"id": "2cxf8oux",
 						"type": "cont",
-						"visible": true,
+						"visible": false,
 						"scrollbar_mode": "OFF",
 						"flag": [],
 						"pos": [
@@ -5480,14 +5474,14 @@
 										}
 									]
 								},
-								"img_path": "C:\\workspace_cergan\\zephyr_gui\\import\\image\\NoHob_0.png",
+								"img_path": "C:\\workspace_cergan\\zephyr_gui\\import\\image\\img_pan_0.png",
 								"color_format": "true-color-alpha",
 								"rotate": 0,
 								"pivot": "50,50",
 								"use_fs": false,
 								"fs_type": "flash",
-								"img_flash_path": "F:/NoHob_0.png",
-								"img_sd_path": "S:/NoHob_0.png",
+								"img_flash_path": "F:/img_pan_0.png",
+								"img_sd_path": "S:/img_pan_0.png",
 								"style": [
 									{
 										"part": "LV_PART_MAIN",

@@ -388,6 +388,7 @@ void setup_scr_main_screen(lv_ui *ui)
 	lv_obj_set_pos(ui->main_screen_cont_1, 15, 38);
 	lv_obj_set_size(ui->main_screen_cont_1, 200, 194);
 	lv_obj_set_scrollbar_mode(ui->main_screen_cont_1, LV_SCROLLBAR_MODE_OFF);
+	lv_obj_add_flag(ui->main_screen_cont_1, LV_OBJ_FLAG_HIDDEN);
 
 	//Write style for main_screen_cont_1, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
 	lv_obj_set_style_border_width(ui->main_screen_cont_1, 2, LV_PART_MAIN|LV_STATE_DEFAULT);
@@ -405,7 +406,7 @@ void setup_scr_main_screen(lv_ui *ui)
 	//Write codes main_screen_pan_1
 	ui->main_screen_pan_1 = lv_img_create(ui->main_screen_cont_1);
 	lv_obj_add_flag(ui->main_screen_pan_1, LV_OBJ_FLAG_CLICKABLE);
-	lv_img_set_src(ui->main_screen_pan_1, &_NoHob_0_alpha_200x194);
+	lv_img_set_src(ui->main_screen_pan_1, &_img_pan_0_alpha_200x194);
 	lv_img_set_pivot(ui->main_screen_pan_1, 50,50);
 	lv_img_set_angle(ui->main_screen_pan_1, 0);
 	lv_obj_set_pos(ui->main_screen_pan_1, 0, 0);
@@ -432,6 +433,7 @@ void setup_scr_main_screen(lv_ui *ui)
 	lv_obj_set_pos(ui->main_screen_cont_2, 300, 50);
 	lv_obj_set_size(ui->main_screen_cont_2, 200, 194);
 	lv_obj_set_scrollbar_mode(ui->main_screen_cont_2, LV_SCROLLBAR_MODE_OFF);
+	lv_obj_add_flag(ui->main_screen_cont_2, LV_OBJ_FLAG_HIDDEN);
 
 	//Write style for main_screen_cont_2, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
 	lv_obj_set_style_border_width(ui->main_screen_cont_2, 2, LV_PART_MAIN|LV_STATE_DEFAULT);
@@ -449,7 +451,7 @@ void setup_scr_main_screen(lv_ui *ui)
 	//Write codes main_screen_pan_2
 	ui->main_screen_pan_2 = lv_img_create(ui->main_screen_cont_2);
 	lv_obj_add_flag(ui->main_screen_pan_2, LV_OBJ_FLAG_CLICKABLE);
-	lv_img_set_src(ui->main_screen_pan_2, &_NoHob_0_alpha_200x194);
+	lv_img_set_src(ui->main_screen_pan_2, &_img_pan_0_alpha_200x194);
 	lv_img_set_pivot(ui->main_screen_pan_2, 50,50);
 	lv_img_set_angle(ui->main_screen_pan_2, 0);
 	lv_obj_set_pos(ui->main_screen_pan_2, 0, 0);
