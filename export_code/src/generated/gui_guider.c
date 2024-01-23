@@ -23,13 +23,13 @@ void ui_init_style(lv_style_t * style)
 void init_scr_del_flag(lv_ui *ui)
 {
   
-	ui->main_screen_del = true;
 	ui->logo_screen_del = true;
+	ui->main_screen_del = true;
 }
 
 void setup_ui(lv_ui *ui)
 {
   init_scr_del_flag(ui);
-  setup_scr_main_screen(ui);
-  lv_scr_load(ui->main_screen);
+  setup_scr_logo_screen(ui);
+  lv_scr_load(ui->logo_screen);
 }

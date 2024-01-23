@@ -13,6 +13,57 @@
 
 
 extern lv_ui guider_ui;
+static void logo_screen_event_handler (lv_event_t *e)
+{
+	lv_event_code_t code = lv_event_get_code(e);
+
+	switch (code) {
+	case LV_EVENT_CLICKED:
+	{
+		//Write the load screen code.
+	    lv_obj_t * act_scr = lv_scr_act();
+	    lv_disp_t * d = lv_obj_get_disp(act_scr);
+	    if (d->prev_scr == NULL && (d->scr_to_load == NULL || d->scr_to_load == act_scr)) {
+	        if (guider_ui.main_screen_del == true) {
+	          setup_scr_main_screen(&guider_ui);
+	        }
+	        lv_scr_load_anim(guider_ui.main_screen, LV_SCR_LOAD_ANIM_NONE, 200, 200, true);
+	        guider_ui.logo_screen_del = true;
+	    }
+		break;
+	}
+	default:
+		break;
+	}
+}
+static void logo_screen_img_1_event_handler (lv_event_t *e)
+{
+	lv_event_code_t code = lv_event_get_code(e);
+
+	switch (code) {
+	case LV_EVENT_CLICKED:
+	{
+		//Write the load screen code.
+	    lv_obj_t * act_scr = lv_scr_act();
+	    lv_disp_t * d = lv_obj_get_disp(act_scr);
+	    if (d->prev_scr == NULL && (d->scr_to_load == NULL || d->scr_to_load == act_scr)) {
+	        if (guider_ui.main_screen_del == true) {
+	          setup_scr_main_screen(&guider_ui);
+	        }
+	        lv_scr_load_anim(guider_ui.main_screen, LV_SCR_LOAD_ANIM_NONE, 200, 200, true);
+	        guider_ui.logo_screen_del = true;
+	    }
+		break;
+	}
+	default:
+		break;
+	}
+}
+void events_init_logo_screen(lv_ui *ui)
+{
+	lv_obj_add_event_cb(ui->logo_screen, logo_screen_event_handler, LV_EVENT_ALL, NULL);
+	lv_obj_add_event_cb(ui->logo_screen_img_1, logo_screen_img_1_event_handler, LV_EVENT_ALL, NULL);
+}
 static void main_screen_event_handler (lv_event_t *e)
 {
 	lv_event_code_t code = lv_event_get_code(e);
@@ -157,6 +208,90 @@ static void main_screen_select_ring_h2_event_handler (lv_event_t *e)
 		break;
 	}
 }
+static void main_screen_pan_3_event_handler (lv_event_t *e)
+{
+	lv_event_code_t code = lv_event_get_code(e);
+
+	switch (code) {
+	case LV_EVENT_PRESSED:
+	{
+		set_select(3);
+		break;
+	}
+	default:
+		break;
+	}
+}
+static void main_screen_select_ring_h3_event_handler (lv_event_t *e)
+{
+	lv_event_code_t code = lv_event_get_code(e);
+
+	switch (code) {
+	case LV_EVENT_PRESSED:
+	{
+		set_select(3);
+		break;
+	}
+	default:
+		break;
+	}
+}
+static void main_screen_pan_4_event_handler (lv_event_t *e)
+{
+	lv_event_code_t code = lv_event_get_code(e);
+
+	switch (code) {
+	case LV_EVENT_PRESSED:
+	{
+		set_select(4);
+		break;
+	}
+	default:
+		break;
+	}
+}
+static void main_screen_select_ring_h4_event_handler (lv_event_t *e)
+{
+	lv_event_code_t code = lv_event_get_code(e);
+
+	switch (code) {
+	case LV_EVENT_PRESSED:
+	{
+		set_select(4);
+		break;
+	}
+	default:
+		break;
+	}
+}
+static void main_screen_pan_5_event_handler (lv_event_t *e)
+{
+	lv_event_code_t code = lv_event_get_code(e);
+
+	switch (code) {
+	case LV_EVENT_PRESSED:
+	{
+		set_select(5);
+		break;
+	}
+	default:
+		break;
+	}
+}
+static void main_screen_select_ring_h5_event_handler (lv_event_t *e)
+{
+	lv_event_code_t code = lv_event_get_code(e);
+
+	switch (code) {
+	case LV_EVENT_PRESSED:
+	{
+		set_select(5);
+		break;
+	}
+	default:
+		break;
+	}
+}
 void events_init_main_screen(lv_ui *ui)
 {
 	lv_obj_add_event_cb(ui->main_screen, main_screen_event_handler, LV_EVENT_ALL, NULL);
@@ -165,33 +300,12 @@ void events_init_main_screen(lv_ui *ui)
 	lv_obj_add_event_cb(ui->main_screen_select_ring_h1, main_screen_select_ring_h1_event_handler, LV_EVENT_ALL, NULL);
 	lv_obj_add_event_cb(ui->main_screen_pan_2, main_screen_pan_2_event_handler, LV_EVENT_ALL, NULL);
 	lv_obj_add_event_cb(ui->main_screen_select_ring_h2, main_screen_select_ring_h2_event_handler, LV_EVENT_ALL, NULL);
-}
-static void logo_screen_event_handler (lv_event_t *e)
-{
-	lv_event_code_t code = lv_event_get_code(e);
-
-	switch (code) {
-	case LV_EVENT_CLICKED:
-	{
-		//Write the load screen code.
-	    lv_obj_t * act_scr = lv_scr_act();
-	    lv_disp_t * d = lv_obj_get_disp(act_scr);
-	    if (d->prev_scr == NULL && (d->scr_to_load == NULL || d->scr_to_load == act_scr)) {
-	        if (guider_ui.main_screen_del == true) {
-	          setup_scr_main_screen(&guider_ui);
-	        }
-	        lv_scr_load_anim(guider_ui.main_screen, LV_SCR_LOAD_ANIM_NONE, 200, 200, true);
-	        guider_ui.logo_screen_del = true;
-	    }
-		break;
-	}
-	default:
-		break;
-	}
-}
-void events_init_logo_screen(lv_ui *ui)
-{
-	lv_obj_add_event_cb(ui->logo_screen, logo_screen_event_handler, LV_EVENT_ALL, NULL);
+	lv_obj_add_event_cb(ui->main_screen_pan_3, main_screen_pan_3_event_handler, LV_EVENT_ALL, NULL);
+	lv_obj_add_event_cb(ui->main_screen_select_ring_h3, main_screen_select_ring_h3_event_handler, LV_EVENT_ALL, NULL);
+	lv_obj_add_event_cb(ui->main_screen_pan_4, main_screen_pan_4_event_handler, LV_EVENT_ALL, NULL);
+	lv_obj_add_event_cb(ui->main_screen_select_ring_h4, main_screen_select_ring_h4_event_handler, LV_EVENT_ALL, NULL);
+	lv_obj_add_event_cb(ui->main_screen_pan_5, main_screen_pan_5_event_handler, LV_EVENT_ALL, NULL);
+	lv_obj_add_event_cb(ui->main_screen_select_ring_h5, main_screen_select_ring_h5_event_handler, LV_EVENT_ALL, NULL);
 }
 
 void events_init(lv_ui *ui)

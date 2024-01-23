@@ -84,11 +84,7 @@ typedef struct
 {
     uint16_t reserved[9];
     slave_param_bits_t slave_param_bits;
-    uint16_t pan1_value;
-    uint16_t pan2_value;
-    uint16_t pan3_value;
-    uint16_t pan4_value;
-    uint16_t pan5_value;
+    uint16_t panx_value[5];
 } tft_read_registers_t;
 
 typedef struct

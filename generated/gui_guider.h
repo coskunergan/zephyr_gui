@@ -18,11 +18,11 @@ extern "C" {
 typedef struct
 {
   
+	lv_obj_t *logo_screen;
+	bool logo_screen_del;
+	lv_obj_t *logo_screen_img_1;
 	lv_obj_t *main_screen;
 	bool main_screen_del;
-	lv_obj_t *main_screen_pan_5;
-	lv_obj_t *main_screen_pan_4;
-	lv_obj_t *main_screen_pan_3;
 	lv_obj_t *main_screen_slider;
 	lv_obj_t *main_screen_slider_0;
 	lv_obj_t *main_screen_slider_1;
@@ -52,6 +52,15 @@ typedef struct
 	lv_obj_t *main_screen_cont_2;
 	lv_obj_t *main_screen_pan_2;
 	lv_obj_t *main_screen_select_ring_h2;
+	lv_obj_t *main_screen_cont_3;
+	lv_obj_t *main_screen_pan_3;
+	lv_obj_t *main_screen_select_ring_h3;
+	lv_obj_t *main_screen_cont_4;
+	lv_obj_t *main_screen_pan_4;
+	lv_obj_t *main_screen_select_ring_h4;
+	lv_obj_t *main_screen_cont_5;
+	lv_obj_t *main_screen_pan_5;
+	lv_obj_t *main_screen_select_ring_h5;
 	lv_obj_t *main_screen_img_pan_0;
 	lv_obj_t *main_screen_img_pan_1;
 	lv_obj_t *main_screen_img_pan_2;
@@ -63,9 +72,6 @@ typedef struct
 	lv_obj_t *main_screen_img_pan_8;
 	lv_obj_t *main_screen_img_pan_9;
 	lv_obj_t *main_screen_img_pan_P;
-	lv_obj_t *logo_screen;
-	bool logo_screen_del;
-	lv_obj_t *logo_screen_img_1;
 }lv_ui;
 
 void ui_init_style(lv_style_t * style);
@@ -73,11 +79,9 @@ void init_scr_del_flag(lv_ui *ui);
 void setup_ui(lv_ui *ui);
 extern lv_ui guider_ui;
 
-void setup_scr_main_screen(lv_ui *ui);
 void setup_scr_logo_screen(lv_ui *ui);
-LV_IMG_DECLARE(__alpha_200x194);
-LV_IMG_DECLARE(__alpha_200x194);
-LV_IMG_DECLARE(__alpha_200x194);
+void setup_scr_main_screen(lv_ui *ui);
+LV_IMG_DECLARE(_logo_alpha_394x163);
 
 LV_IMG_DECLARE(_empty_800x80);
 LV_IMG_DECLARE(_slider_0_alpha_800x80);
@@ -107,6 +111,12 @@ LV_IMG_DECLARE(_Secim_Ver2_alpha_200x194);
 LV_IMG_DECLARE(_img_pan_0_alpha_200x194);
 LV_IMG_DECLARE(_Secim_Ver2_alpha_200x194);
 LV_IMG_DECLARE(_img_pan_0_alpha_200x194);
+LV_IMG_DECLARE(_Secim_Ver2_alpha_200x194);
+LV_IMG_DECLARE(_img_pan_0_alpha_200x194);
+LV_IMG_DECLARE(_Secim_Ver2_alpha_200x194);
+LV_IMG_DECLARE(_img_pan_0_alpha_200x194);
+LV_IMG_DECLARE(_Secim_Ver2_alpha_200x194);
+LV_IMG_DECLARE(_img_pan_0_alpha_200x194);
 LV_IMG_DECLARE(_img_pan_1_alpha_200x194);
 LV_IMG_DECLARE(_img_pan_2_alpha_200x194);
 LV_IMG_DECLARE(_img_pan_3_alpha_200x194);
@@ -117,7 +127,6 @@ LV_IMG_DECLARE(_img_pan_7_alpha_200x194);
 LV_IMG_DECLARE(_img_pan_8_alpha_200x194);
 LV_IMG_DECLARE(_img_pan_9_alpha_200x194);
 LV_IMG_DECLARE(_img_pan_P_alpha_200x194);
-LV_IMG_DECLARE(_logo_alpha_394x163);
 
 LV_FONT_DECLARE(lv_font_Alatsi_Regular_1)
 
