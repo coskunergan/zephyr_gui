@@ -3,7 +3,9 @@
 #include "gui_guider.h"
 
 #define SELECT_TIMEOUT 5000
-#define REFRESH_TIME  300
+#define REFRESH_TIME   300
+#define MINI_PAN_SCALE 180
+#define MID_PAN_SCALE  256
 
 lv_timer_t *timeout_timer;
 lv_timer_t *refresh_timer;
@@ -37,8 +39,45 @@ void system_init(void)
     //lv_obj_add_flag(guider_ui.main_screen_select_ring_h4, LV_OBJ_FLAG_HIDDEN);
     //lv_obj_add_flag(guider_ui.main_screen_select_ring_h5, LV_OBJ_FLAG_HIDDEN);
     memset(&system_obj, 0, sizeof(system_obj));
+    memset(&tft_regs, 0, sizeof(tft_regs));
+    tft_regs.write_regs.pan1_regs.x = 1;
+    tft_regs.write_regs.pan1_regs.y = 1;
+    tft_regs.write_regs.pan2_regs.x = 1;
+    tft_regs.write_regs.pan2_regs.y = 1;
+    tft_regs.write_regs.pan3_regs.x = 1;
+    tft_regs.write_regs.pan3_regs.y = 1;
+    tft_regs.write_regs.pan4_regs.x = 1;
+    tft_regs.write_regs.pan4_regs.y = 1;
+    tft_regs.write_regs.pan5_regs.x = 1;
+    tft_regs.write_regs.pan5_regs.y = 1;
     timeout_timer = lv_timer_create(timeout_timer_cb, SELECT_TIMEOUT,  NULL);
     refresh_timer = lv_timer_create(refresh_timer_cb, REFRESH_TIME,  NULL);
+    lv_anim_init(&system_obj.pan1.a_x);
+    lv_anim_init(&system_obj.pan1.a_y);
+    lv_anim_init(&system_obj.pan2.a_x);
+    lv_anim_init(&system_obj.pan2.a_y);
+    lv_anim_init(&system_obj.pan3.a_x);
+    lv_anim_init(&system_obj.pan3.a_y);
+    lv_anim_init(&system_obj.pan4.a_x);
+    lv_anim_init(&system_obj.pan4.a_y);
+    lv_anim_init(&system_obj.pan5.a_x);
+    lv_anim_init(&system_obj.pan5.a_y);
+    system_obj.pan1.img_pan = guider_ui.main_screen_pan_1;
+    system_obj.pan1.img_ring = guider_ui.main_screen_select_ring_h1;
+    system_obj.pan1.obj_cont = guider_ui.main_screen_cont_1;
+    system_obj.pan2.img_pan = guider_ui.main_screen_pan_2;
+    system_obj.pan2.img_ring = guider_ui.main_screen_select_ring_h2;
+    system_obj.pan2.obj_cont = guider_ui.main_screen_cont_2;
+    // system_obj.pan3.img_pan = guider_ui.main_screen_pan_3;
+    // system_obj.pan3.img_ring = guider_ui.main_screen_select_ring_h3;
+    // system_obj.pan3.obj_cont = guider_ui.main_screen_cont_3;
+    // system_obj.pan4.img_pan = guider_ui.main_screen_pan_4;
+    // system_obj.pan4.img_ring = guider_ui.main_screen_select_ring_h4;
+    // system_obj.pan4.obj_cont = guider_ui.main_screen_cont_4;
+    // system_obj.pan5.img_pan = guider_ui.main_screen_pan_5;
+    // system_obj.pan5.img_ring = guider_ui.main_screen_select_ring_h5;
+    // system_obj.pan5.obj_cont = guider_ui.main_screen_cont_5;
+    refresh_display();
 }
 /*******************************************************************************/
 void select_timer_start(void)
@@ -46,35 +85,33 @@ void select_timer_start(void)
     lv_timer_reset(timeout_timer);
 }
 /*******************************************************************************/
-void pan_slide(void *ui, uint16_t x, uint16_t y)
-{
-    lv_anim_t anim_move_x;
-    lv_anim_init(&anim_move_x);
-    lv_anim_set_var(&anim_move_x, ui);
-    lv_anim_set_time(&anim_move_x, 3000);
-    lv_anim_set_delay(&anim_move_x, 0);
-    lv_anim_set_exec_cb(&anim_move_x, (lv_anim_exec_xcb_t)lv_obj_set_x);
-    lv_anim_set_values(&anim_move_x, lv_obj_get_x(ui), x);
-    lv_anim_set_path_cb(&anim_move_x, &lv_anim_path_ease_in_out);
-    lv_anim_set_repeat_count(&anim_move_x, 0);
-    lv_anim_set_repeat_delay(&anim_move_x, 0);
-    lv_anim_set_playback_time(&anim_move_x, 0);
-    lv_anim_set_playback_delay(&anim_move_x, 0);
-    lv_anim_start(&anim_move_x);
+void pan_slide(lv_anim_t *a_x, lv_anim_t *a_y, void *ui, uint16_t x, uint16_t y)
+{    
+    lv_anim_del(a_x, NULL);
+    lv_anim_set_var(a_x, ui);
+    lv_anim_set_time(a_x, 15000 * ((float)(abs((int)lv_obj_get_x(ui) - (int)x)) / 800) + 1000);
+    lv_anim_set_delay(a_x, 0);
+    lv_anim_set_exec_cb(a_x, (lv_anim_exec_xcb_t)lv_obj_set_x);
+    lv_anim_set_values(a_x, lv_obj_get_x(ui), x);
+    lv_anim_set_path_cb(a_x, &lv_anim_path_ease_in_out);
+    lv_anim_set_repeat_count(a_x, 0);
+    lv_anim_set_repeat_delay(a_x, 0);
+    lv_anim_set_playback_time(a_x, 0);
+    lv_anim_set_playback_delay(a_x, 0);
+    lv_anim_start(a_x);
     //Write animation: move_y
-    lv_anim_t anim_move_y;
-    lv_anim_init(&anim_move_y);
-    lv_anim_set_var(&anim_move_y, ui);
-    lv_anim_set_time(&anim_move_y, 3000);
-    lv_anim_set_delay(&anim_move_y, 0);
-    lv_anim_set_exec_cb(&anim_move_y, (lv_anim_exec_xcb_t)lv_obj_set_y);
-    lv_anim_set_values(&anim_move_y, lv_obj_get_y(ui), y);
-    lv_anim_set_path_cb(&anim_move_y, &lv_anim_path_ease_in_out);
-    lv_anim_set_repeat_count(&anim_move_y, 0);
-    lv_anim_set_repeat_delay(&anim_move_y, 0);
-    lv_anim_set_playback_time(&anim_move_y, 0);
-    lv_anim_set_playback_delay(&anim_move_y, 0);
-    lv_anim_start(&anim_move_y);
+    lv_anim_del(a_y, NULL);
+    lv_anim_set_var(a_y, ui);
+    lv_anim_set_time(a_y, 3000);
+    lv_anim_set_delay(a_y, 0);
+    lv_anim_set_exec_cb(a_y, (lv_anim_exec_xcb_t)lv_obj_set_y);
+    lv_anim_set_values(a_y, lv_obj_get_y(ui), y);
+    lv_anim_set_path_cb(a_y, &lv_anim_path_ease_in_out);
+    lv_anim_set_repeat_count(a_y, 0);
+    lv_anim_set_repeat_delay(a_y, 0);
+    lv_anim_set_playback_time(a_y, 0);
+    lv_anim_set_playback_delay(a_y, 0);
+    lv_anim_start(a_y);
 }
 /*******************************************************************************/
 void pan_move(uint8_t sel, uint16_t x, uint16_t y)
@@ -82,7 +119,7 @@ void pan_move(uint8_t sel, uint16_t x, uint16_t y)
     switch(sel)
     {
         case 1:
-
+            lv_obj_set_pos(guider_ui.main_screen_cont_1, x, y);
             break;
         case 2:
             lv_obj_set_pos(guider_ui.main_screen_cont_2, x, y);
@@ -152,106 +189,46 @@ void level_set(void *ui, uint8_t level)
         default:
             break;
     }
+    lv_img_set_pivot(ui, 50, 50);
+}
+/*******************************************************************************/
+void pan_refresh(tft_pan_registers_t *pan_regs, system_pan_registers_t *sys_pan_regs)
+{
+    if(sys_pan_regs->pan.pan_state.state_active != pan_regs->pan_state.state_active)
+    {
+        sys_pan_regs->pan.pan_state.state_active = pan_regs->pan_state.state_active;
+        if(pan_regs->pan_state.state_active)
+        {
+            lv_img_set_zoom(sys_pan_regs->img_pan, (pan_regs->pan_state.pan_size) ? MID_PAN_SCALE : MINI_PAN_SCALE);
+            lv_img_set_zoom(sys_pan_regs->img_ring, (pan_regs->pan_state.pan_size) ? MID_PAN_SCALE : MINI_PAN_SCALE);
+            lv_obj_set_pos(sys_pan_regs->obj_cont, (pan_regs->x - 1) * 150 + ((pan_regs->pan_state.pan_size) ? 0 : 17), (pan_regs->pan_state.pan_size) ? (198 - (pan_regs->y - 1) * 33) : (246 - (pan_regs->x - 1) * 41));
+            lv_obj_clear_flag(sys_pan_regs->obj_cont, LV_OBJ_FLAG_HIDDEN);
+        }
+        else
+        {
+            lv_obj_add_flag(sys_pan_regs->obj_cont, LV_OBJ_FLAG_HIDDEN);
+        }
+    }
+    else if((sys_pan_regs->pan.x != pan_regs->x) || (sys_pan_regs->pan.y != pan_regs->y))
+    {
+        sys_pan_regs->pan.x = pan_regs->x;
+        sys_pan_regs->pan.y = pan_regs->y;
+        pan_slide(&sys_pan_regs->a_x, &sys_pan_regs->a_y, sys_pan_regs->obj_cont, (pan_regs->x - 1) * 150 + ((pan_regs->pan_state.pan_size) ? 0 : 17), (pan_regs->pan_state.pan_size) ? (198 - (pan_regs->y - 1) * 33) : (246 - (pan_regs->y - 1) * 41));
+    }
 }
 /*******************************************************************************/
 void refresh_display(void)
 {
-    if(system_obj.m_pan1_state != tft_regs.write_regs.pan1_state.state_active)
-    {
-        system_obj.m_pan1_state = tft_regs.write_regs.pan1_state.state_active;
-        if(system_obj.m_pan1_state)
-        {
-            lv_obj_set_pos(guider_ui.main_screen_cont_1, tft_regs.write_regs.pan1_x, tft_regs.write_regs.pan1_y);
-            lv_obj_clear_flag(guider_ui.main_screen_cont_1, LV_OBJ_FLAG_HIDDEN);
-        }
-        else
-        {
-            lv_obj_add_flag(guider_ui.main_screen_cont_1, LV_OBJ_FLAG_HIDDEN);
-            lv_obj_set_pos(guider_ui.main_screen_cont_1, tft_regs.write_regs.pan1_x, tft_regs.write_regs.pan1_y);
-        }
-    }
-    else if((system_obj.m_pan1_x != tft_regs.write_regs.pan1_x) || (system_obj.m_pan1_y != tft_regs.write_regs.pan1_y))
-    {        
-        system_obj.m_pan1_x = tft_regs.write_regs.pan1_x;
-        system_obj.m_pan1_y = tft_regs.write_regs.pan1_y;
-        pan_slide(guider_ui.main_screen_cont_1, tft_regs.write_regs.pan1_x, tft_regs.write_regs.pan1_y);
-    } 
-    if(system_obj.m_pan2_state != tft_regs.write_regs.pan2_state.state_active)
-    {
-        system_obj.m_pan2_state = tft_regs.write_regs.pan2_state.state_active;
-        if(system_obj.m_pan2_state)
-        {
-            lv_obj_set_pos(guider_ui.main_screen_cont_2, tft_regs.write_regs.pan2_x, tft_regs.write_regs.pan2_y);
-            lv_obj_clear_flag(guider_ui.main_screen_cont_2, LV_OBJ_FLAG_HIDDEN);
-        }
-        else
-        {
-            lv_obj_add_flag(guider_ui.main_screen_cont_2, LV_OBJ_FLAG_HIDDEN);
-        }
-    }
-    else if((system_obj.m_pan2_x != tft_regs.write_regs.pan2_x) || (system_obj.m_pan2_y != tft_regs.write_regs.pan2_y))
-    {        
-        system_obj.m_pan2_x = tft_regs.write_regs.pan2_x;
-        system_obj.m_pan2_y = tft_regs.write_regs.pan2_y;
-        pan_slide(guider_ui.main_screen_cont_2, tft_regs.write_regs.pan2_x, tft_regs.write_regs.pan2_y);
-    }    
-    // if(system_obj.m_pan3_state != tft_regs.write_regs.pan3_state.state_active)
-    // {
-    //     system_obj.m_pan3_state = tft_regs.write_regs.pan3_state.state_active;
-    //     if(system_obj.m_pan3_state)
-    //     {
-    //         lv_obj_set_pos(guider_ui.main_screen_cont_3, tft_regs.write_regs.pan3_x, tft_regs.write_regs.pan3_y);
-    //         lv_obj_clear_flag(guider_ui.main_screen_cont_3, LV_OBJ_FLAG_HIDDEN);
-    //     }
-    //     else
-    //     {
-    //         lv_obj_add_flag(guider_ui.main_screen_cont_3, LV_OBJ_FLAG_HIDDEN);
-    //     }
-    // }
-    // else if((system_obj.m_pan3_x != tft_regs.write_regs.pan3_x) || (system_obj.m_pan3_y != tft_regs.write_regs.pan3_y))
-    // {        
-    //     system_obj.m_pan3_x = tft_regs.write_regs.pan3_x;
-    //     system_obj.m_pan3_y = tft_regs.write_regs.pan3_y;
-    //     pan_slide(guider_ui.main_screen_cont_3, tft_regs.write_regs.pan3_x, tft_regs.write_regs.pan3_y);
-    // }  
-    // if(system_obj.m_pan4_state != tft_regs.write_regs.pan4_state.state_active)
-    // {
-    //     system_obj.m_pan4_state = tft_regs.write_regs.pan4_state.state_active;
-    //     if(system_obj.m_pan4_state)
-    //     {
-    //         lv_obj_set_pos(guider_ui.main_screen_cont_4, tft_regs.write_regs.pan4_x, tft_regs.write_regs.pan4_y);
-    //         lv_obj_clear_flag(guider_ui.main_screen_cont_4, LV_OBJ_FLAG_HIDDEN);
-    //     }
-    //     else
-    //     {
-    //         lv_obj_add_flag(guider_ui.main_screen_cont_4, LV_OBJ_FLAG_HIDDEN);
-    //     }
-    // }
-    // else if((system_obj.m_pan4_x != tft_regs.write_regs.pan4_x) || (system_obj.m_pan4_y != tft_regs.write_regs.pan4_y))
-    // {        
-    //     system_obj.m_pan4_x = tft_regs.write_regs.pan4_x;
-    //     system_obj.m_pan4_y = tft_regs.write_regs.pan4_y;
-    //     pan_slide(guider_ui.main_screen_cont_4, tft_regs.write_regs.pan4_x, tft_regs.write_regs.pan4_y);
-    // }      
-    // if(system_obj.m_pan5_state != tft_regs.write_regs.pan5_state.state_active)
-    // {
-    //     system_obj.m_pan5_state = tft_regs.write_regs.pan5_state.state_active;
-    //     if(system_obj.m_pan5_state)
-    //     {
-    //         lv_obj_set_pos(guider_ui.main_screen_cont_5, tft_regs.write_regs.pan5_x, tft_regs.write_regs.pan5_y);
-    //         lv_obj_clear_flag(guider_ui.main_screen_cont_5, LV_OBJ_FLAG_HIDDEN);
-    //     }
-    //     else
-    //     {
-    //         lv_obj_add_flag(guider_ui.main_screen_cont_5, LV_OBJ_FLAG_HIDDEN);
-    //     }
-    // }
-    // else if((system_obj.m_pan5_x != tft_regs.write_regs.pan5_x) || (system_obj.m_pan5_y != tft_regs.write_regs.pan5_y))
-    // {        
-    //     system_obj.m_pan5_x = tft_regs.write_regs.pan5_x;
-    //     system_obj.m_pan5_y = tft_regs.write_regs.pan5_y;
-    //     pan_slide(guider_ui.main_screen_cont_5, tft_regs.write_regs.pan5_x, tft_regs.write_regs.pan5_y);
-    // }      
+    /////// TEST ///////
+    //tft_regs.write_regs.pan1_state.state_active = true;
+    ////////////////////
+
+    pan_refresh(&tft_regs.write_regs.pan1_regs, &system_obj.pan1);
+    pan_refresh(&tft_regs.write_regs.pan2_regs, &system_obj.pan2);
+    // pan_refresh(&tft_regs.write_regs.pan3_regs, &system_obj.pan3);
+    // pan_refresh(&tft_regs.write_regs.pan4_regs, &system_obj.pan4);
+    // pan_refresh(&tft_regs.write_regs.pan5_regs, &system_obj.pan5);
+
     lv_obj_add_flag(guider_ui.main_screen_select_ring_h1, LV_OBJ_FLAG_HIDDEN);
     lv_obj_add_flag(guider_ui.main_screen_select_ring_h2, LV_OBJ_FLAG_HIDDEN);
     //lv_obj_add_flag(guider_ui.main_screen_select_ring_h3, LV_OBJ_FLAG_HIDDEN);
@@ -322,6 +299,10 @@ void set_select(uint8_t sel)
     {
         system_obj.select_pan = sel;
         refresh_display();
+    }
+    if(sel)
+    {
+        tft_regs.read_regs.slave_param_bits.buzzer_bit_pan = !tft_regs.read_regs.slave_param_bits.buzzer_bit_pan;
     }
 }
 /*******************************************************************************/

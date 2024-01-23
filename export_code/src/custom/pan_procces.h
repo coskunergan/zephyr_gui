@@ -7,24 +7,40 @@
 /*******************************************************************************/
 typedef struct
 {
+    uint16_t state_active   : 1,
+             pan_state      : 1,
+             vertical_horizontal: 1,
+             circle_rectangle: 1,
+             pan_size       :  2,
+             reserve        : 10;
+} pan_state_t;
+
+typedef struct
+{
+    uint16_t x;
+    uint16_t y;
+    pan_state_t pan_state;
+} tft_pan_registers_t;
+
+typedef struct
+{
+    void *img_pan;
+    void *img_ring;
+    void *obj_cont;
+    lv_anim_t a_x;
+    lv_anim_t a_y;
+    tft_pan_registers_t pan;
+} system_pan_registers_t;
+
+typedef struct
+{
     uint8_t select_pan;
     uint8_t slider_value;
-    uint8_t m_pan1_state: 1,
-            m_pan2_state: 1,
-            m_pan3_state: 1,
-            m_pan4_state: 1,
-            m_pan5_state: 1,
-            reserve: 3;
-    uint16_t m_pan1_x;            
-    uint16_t m_pan1_y;
-    uint16_t m_pan2_x;            
-    uint16_t m_pan2_y;
-    uint16_t m_pan3_x;            
-    uint16_t m_pan3_y;
-    uint16_t m_pan4_x;            
-    uint16_t m_pan4_y;
-    uint16_t m_pan5_x;            
-    uint16_t m_pan5_y;                
+    system_pan_registers_t pan1;
+    system_pan_registers_t pan2;
+    system_pan_registers_t pan3;
+    system_pan_registers_t pan4;
+    system_pan_registers_t pan5;
 } system_obj_t;
 
 typedef struct
@@ -50,44 +66,18 @@ typedef struct
 
 typedef struct
 {
-    uint16_t state_active   : 1,
-             pan_state      : 1,
-             vertical_horizontal: 1,
-             circle_rectangle: 1,
-             pan_size       :  2,
-             reserve        : 10;
-} pan_state_t;
-
-typedef struct
-{
     uint16_t reserved[8];
     uint16_t grid_x;
     uint16_t grid_y;
     master_param_bits_t master_param_bits;
-    uint16_t pan1_x;
-    uint16_t pan1_y;
-    pan_state_t pan1_state;
-    uint16_t pan2_x;
-    uint16_t pan2_y;
-    pan_state_t pan2_state;
-    uint16_t pan3_x;
-    uint16_t pan3_y;
-    pan_state_t pan3_state;
-    uint16_t pan4_x;
-    uint16_t pan4_y;
-    pan_state_t pan4_state;
-    uint16_t pan5_x;
-    uint16_t pan5_y;
-    pan_state_t pan5_state;
-    uint16_t pan6_x;
-    uint16_t pan6_y;
-    pan_state_t pan6_state;
-    uint16_t pan7_x;
-    uint16_t pan7_y;
-    pan_state_t pan7_state;
-    uint16_t pan8_x;
-    uint16_t pan8_y;
-    pan_state_t pan8_state;
+    tft_pan_registers_t pan1_regs;
+    tft_pan_registers_t pan2_regs;
+    tft_pan_registers_t pan3_regs;
+    tft_pan_registers_t pan4_regs;
+    tft_pan_registers_t pan5_regs;
+    tft_pan_registers_t pan6_regs;
+    tft_pan_registers_t pan7_regs;
+    tft_pan_registers_t pan8_regs;
 } tft_write_registers_t;
 
 typedef struct

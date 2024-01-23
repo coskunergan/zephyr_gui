@@ -422,9 +422,9 @@
 								}
 							],
 							"event": {
-								"pressing": [
+								"pressed": [
 									{
-										"trigger": "pressing",
+										"trigger": "pressed",
 										"dst": "za1bu43s",
 										"action": {
 											"load_screen": {
@@ -587,9 +587,9 @@
 								}
 							],
 							"event": {
-								"pressing": [
+								"pressed": [
 									{
-										"trigger": "pressing",
+										"trigger": "pressed",
 										"dst": "6qgeo887",
 										"action": {
 											"load_screen": {
@@ -798,9 +798,9 @@
 								}
 							],
 							"event": {
-								"pressing": [
+								"pressed": [
 									{
-										"trigger": "pressing",
+										"trigger": "pressed",
 										"dst": "eyklican",
 										"action": {
 											"load_screen": {
@@ -963,9 +963,9 @@
 								}
 							],
 							"event": {
-								"pressing": [
+								"pressed": [
 									{
-										"trigger": "pressing",
+										"trigger": "pressed",
 										"dst": "o1ck5ubv",
 										"action": {
 											"load_screen": {
@@ -5307,10 +5307,10 @@
 								"default_style": false,
 								"custom_attributes": {},
 								"event": {
-									"pressing": [
+									"pressed": [
 										{
 											"src": "main_screen_pan_1",
-											"trigger": "pressing",
+											"trigger": "pressed",
 											"dst": "main_screen_pan_1",
 											"dst_type": "img",
 											"src_screen": "main_screen",
@@ -5358,10 +5358,10 @@
 								"default_style": false,
 								"custom_attributes": {},
 								"event": {
-									"pressing": [
+									"pressed": [
 										{
 											"src": "main_screen_select_ring_h1",
-											"trigger": "pressing",
+											"trigger": "pressed",
 											"dst": "main_screen_select_ring_h1",
 											"dst_type": "img",
 											"src_screen": "main_screen",
@@ -5459,10 +5459,10 @@
 								"default_style": false,
 								"custom_attributes": {},
 								"event": {
-									"pressing": [
+									"pressed": [
 										{
 											"src": "main_screen_pan_2",
-											"trigger": "pressing",
+											"trigger": "pressed",
 											"dst": "main_screen_pan_2",
 											"dst_type": "img",
 											"src_screen": "main_screen",
@@ -5510,10 +5510,10 @@
 								"default_style": false,
 								"custom_attributes": {},
 								"event": {
-									"pressing": [
+									"pressed": [
 										{
 											"src": "main_screen_select_ring_h2",
-											"trigger": "pressing",
+											"trigger": "pressed",
 											"dst": "main_screen_select_ring_h2",
 											"dst_type": "img",
 											"src_screen": "main_screen",

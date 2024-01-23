@@ -106,7 +106,7 @@ static void main_screen_pan_1_event_handler (lv_event_t *e)
 	lv_event_code_t code = lv_event_get_code(e);
 
 	switch (code) {
-	case LV_EVENT_PRESSING:
+	case LV_EVENT_PRESSED:
 	{
 		set_select(1);
 		break;
@@ -120,7 +120,7 @@ static void main_screen_select_ring_h1_event_handler (lv_event_t *e)
 	lv_event_code_t code = lv_event_get_code(e);
 
 	switch (code) {
-	case LV_EVENT_PRESSING:
+	case LV_EVENT_PRESSED:
 	{
 		set_select(1);
 		break;
@@ -134,7 +134,7 @@ static void main_screen_pan_2_event_handler (lv_event_t *e)
 	lv_event_code_t code = lv_event_get_code(e);
 
 	switch (code) {
-	case LV_EVENT_PRESSING:
+	case LV_EVENT_PRESSED:
 	{
 		set_select(2);
 		break;
@@ -148,7 +148,7 @@ static void main_screen_select_ring_h2_event_handler (lv_event_t *e)
 	lv_event_code_t code = lv_event_get_code(e);
 
 	switch (code) {
-	case LV_EVENT_PRESSING:
+	case LV_EVENT_PRESSED:
 	{
 		set_select(2);
 		break;
