@@ -25,7 +25,8 @@ typedef struct
 typedef struct
 {
     void *img_pan;
-    void *img_ring;
+    void *img_ring_l;
+    void *img_ring_h;
     void *obj_cont;
     lv_anim_t a_x;
     lv_anim_t a_y;

@@ -21,6 +21,7 @@ typedef struct
 	lv_obj_t *logo_screen;
 	bool logo_screen_del;
 	lv_obj_t *logo_screen_img_1;
+	lv_obj_t *logo_screen_label_1;
 	lv_obj_t *main_screen;
 	bool main_screen_del;
 	lv_obj_t *main_screen_slider;
@@ -49,18 +50,23 @@ typedef struct
 	lv_obj_t *main_screen_cont_1;
 	lv_obj_t *main_screen_pan_1;
 	lv_obj_t *main_screen_select_ring_h1;
+	lv_obj_t *main_screen_select_ring_l1;
 	lv_obj_t *main_screen_cont_2;
 	lv_obj_t *main_screen_pan_2;
 	lv_obj_t *main_screen_select_ring_h2;
+	lv_obj_t *main_screen_select_ring_l2;
 	lv_obj_t *main_screen_cont_3;
 	lv_obj_t *main_screen_pan_3;
 	lv_obj_t *main_screen_select_ring_h3;
+	lv_obj_t *main_screen_select_ring_l3;
 	lv_obj_t *main_screen_cont_4;
 	lv_obj_t *main_screen_pan_4;
 	lv_obj_t *main_screen_select_ring_h4;
+	lv_obj_t *main_screen_select_ring_l4;
 	lv_obj_t *main_screen_cont_5;
 	lv_obj_t *main_screen_pan_5;
 	lv_obj_t *main_screen_select_ring_h5;
+	lv_obj_t *main_screen_select_ring_l5;
 	lv_obj_t *main_screen_img_pan_0;
 	lv_obj_t *main_screen_img_pan_1;
 	lv_obj_t *main_screen_img_pan_2;
@@ -108,14 +114,19 @@ LV_IMG_DECLARE(_NoHob_9_alpha_200x194);
 LV_IMG_DECLARE(_NoHob_P_alpha_200x194);
 LV_IMG_DECLARE(_img_pan_0_alpha_200x194);
 LV_IMG_DECLARE(_Secim_Ver2_alpha_200x194);
+LV_IMG_DECLARE(_Secim_Ver3_alpha_200x194);
 LV_IMG_DECLARE(_img_pan_0_alpha_200x194);
 LV_IMG_DECLARE(_Secim_Ver2_alpha_200x194);
+LV_IMG_DECLARE(_Secim_Ver3_alpha_200x194);
 LV_IMG_DECLARE(_img_pan_0_alpha_200x194);
 LV_IMG_DECLARE(_Secim_Ver2_alpha_200x194);
+LV_IMG_DECLARE(_Secim_Ver3_alpha_200x194);
 LV_IMG_DECLARE(_img_pan_0_alpha_200x194);
 LV_IMG_DECLARE(_Secim_Ver2_alpha_200x194);
+LV_IMG_DECLARE(_Secim_Ver3_alpha_200x194);
 LV_IMG_DECLARE(_img_pan_0_alpha_200x194);
 LV_IMG_DECLARE(_Secim_Ver2_alpha_200x194);
+LV_IMG_DECLARE(_Secim_Ver3_alpha_200x194);
 LV_IMG_DECLARE(_img_pan_0_alpha_200x194);
 LV_IMG_DECLARE(_img_pan_1_alpha_200x194);
 LV_IMG_DECLARE(_img_pan_2_alpha_200x194);
@@ -128,6 +139,8 @@ LV_IMG_DECLARE(_img_pan_8_alpha_200x194);
 LV_IMG_DECLARE(_img_pan_9_alpha_200x194);
 LV_IMG_DECLARE(_img_pan_P_alpha_200x194);
 
+LV_FONT_DECLARE(lv_font_montserratMedium_12)
+LV_FONT_DECLARE(lv_font_montserratMedium_16)
 LV_FONT_DECLARE(lv_font_Alatsi_Regular_1)
 
 

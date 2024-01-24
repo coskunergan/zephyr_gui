@@ -37,6 +37,28 @@ void setup_scr_logo_screen(lv_ui *ui)
 	//Write style for logo_screen_img_1, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
 	lv_obj_set_style_img_opa(ui->logo_screen_img_1, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
 
+	//Write codes logo_screen_label_1
+	ui->logo_screen_label_1 = lv_label_create(ui->logo_screen);
+	lv_label_set_text(ui->logo_screen_label_1, "Enes Kaan AVCI");
+	lv_label_set_long_mode(ui->logo_screen_label_1, LV_LABEL_LONG_WRAP);
+	lv_obj_set_pos(ui->logo_screen_label_1, 320, 347);
+	lv_obj_set_size(ui->logo_screen_label_1, 160, 32);
+
+	//Write style for logo_screen_label_1, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+	lv_obj_set_style_border_width(ui->logo_screen_label_1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_radius(ui->logo_screen_label_1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_color(ui->logo_screen_label_1, lv_color_hex(0xffffff), LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_font(ui->logo_screen_label_1, &lv_font_montserratMedium_12, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_letter_space(ui->logo_screen_label_1, 2, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_line_space(ui->logo_screen_label_1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_align(ui->logo_screen_label_1, LV_TEXT_ALIGN_CENTER, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_opa(ui->logo_screen_label_1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_top(ui->logo_screen_label_1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_right(ui->logo_screen_label_1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_bottom(ui->logo_screen_label_1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_left(ui->logo_screen_label_1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_shadow_width(ui->logo_screen_label_1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+
 	//Update current screen layout.
 	lv_obj_update_layout(ui->logo_screen);
 

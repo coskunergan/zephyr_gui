@@ -4690,6 +4690,12 @@
     <file>
       <name>$PROJ_DIR$\..\..\generated\guider_fonts\lv_font_Alatsi_Regular_1.c</name>
     </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\guider_fonts\lv_font_montserratMedium_12.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\guider_fonts\lv_font_montserratMedium_16.c</name>
+    </file>
   </group>
   <file>
     <name>$PROJ_DIR$\..\..\generated\gui_guider.c</name>
@@ -4776,6 +4782,9 @@
     </file>
     <file>
       <name>$PROJ_DIR$\..\..\generated\images\_Secim_Ver2_alpha_200x194.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\images\_Secim_Ver3_alpha_200x194.c</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\..\generated\images\_slider_0_alpha_800x80.c</name>

@@ -395,6 +395,19 @@ void setup_scr_main_screen(lv_ui *ui)
 	//Write style for main_screen_select_ring_h1, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
 	lv_obj_set_style_img_opa(ui->main_screen_select_ring_h1, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
 
+	//Write codes main_screen_select_ring_l1
+	ui->main_screen_select_ring_l1 = lv_img_create(ui->main_screen_cont_1);
+	lv_obj_add_flag(ui->main_screen_select_ring_l1, LV_OBJ_FLAG_CLICKABLE);
+	lv_img_set_src(ui->main_screen_select_ring_l1, &_Secim_Ver3_alpha_200x194);
+	lv_img_set_pivot(ui->main_screen_select_ring_l1, 100,5);
+	lv_img_set_angle(ui->main_screen_select_ring_l1, 0);
+	lv_obj_set_pos(ui->main_screen_select_ring_l1, 0, 0);
+	lv_obj_set_size(ui->main_screen_select_ring_l1, 200, 194);
+	lv_obj_add_flag(ui->main_screen_select_ring_l1, LV_OBJ_FLAG_HIDDEN);
+
+	//Write style for main_screen_select_ring_l1, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+	lv_obj_set_style_img_opa(ui->main_screen_select_ring_l1, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+
 	//Write codes main_screen_cont_2
 	ui->main_screen_cont_2 = lv_obj_create(ui->main_screen);
 	lv_obj_set_pos(ui->main_screen_cont_2, 300, 50);
@@ -439,6 +452,19 @@ void setup_scr_main_screen(lv_ui *ui)
 
 	//Write style for main_screen_select_ring_h2, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
 	lv_obj_set_style_img_opa(ui->main_screen_select_ring_h2, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+
+	//Write codes main_screen_select_ring_l2
+	ui->main_screen_select_ring_l2 = lv_img_create(ui->main_screen_cont_2);
+	lv_obj_add_flag(ui->main_screen_select_ring_l2, LV_OBJ_FLAG_CLICKABLE);
+	lv_img_set_src(ui->main_screen_select_ring_l2, &_Secim_Ver3_alpha_200x194);
+	lv_img_set_pivot(ui->main_screen_select_ring_l2, 100,5);
+	lv_img_set_angle(ui->main_screen_select_ring_l2, 0);
+	lv_obj_set_pos(ui->main_screen_select_ring_l2, 0, 0);
+	lv_obj_set_size(ui->main_screen_select_ring_l2, 200, 194);
+	lv_obj_add_flag(ui->main_screen_select_ring_l2, LV_OBJ_FLAG_HIDDEN);
+
+	//Write style for main_screen_select_ring_l2, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+	lv_obj_set_style_img_opa(ui->main_screen_select_ring_l2, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
 
 	//Write codes main_screen_cont_3
 	ui->main_screen_cont_3 = lv_obj_create(ui->main_screen);
@@ -485,6 +511,19 @@ void setup_scr_main_screen(lv_ui *ui)
 	//Write style for main_screen_select_ring_h3, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
 	lv_obj_set_style_img_opa(ui->main_screen_select_ring_h3, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
 
+	//Write codes main_screen_select_ring_l3
+	ui->main_screen_select_ring_l3 = lv_img_create(ui->main_screen_cont_3);
+	lv_obj_add_flag(ui->main_screen_select_ring_l3, LV_OBJ_FLAG_CLICKABLE);
+	lv_img_set_src(ui->main_screen_select_ring_l3, &_Secim_Ver3_alpha_200x194);
+	lv_img_set_pivot(ui->main_screen_select_ring_l3, 100,5);
+	lv_img_set_angle(ui->main_screen_select_ring_l3, 0);
+	lv_obj_set_pos(ui->main_screen_select_ring_l3, 0, 0);
+	lv_obj_set_size(ui->main_screen_select_ring_l3, 200, 194);
+	lv_obj_add_flag(ui->main_screen_select_ring_l3, LV_OBJ_FLAG_HIDDEN);
+
+	//Write style for main_screen_select_ring_l3, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+	lv_obj_set_style_img_opa(ui->main_screen_select_ring_l3, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+
 	//Write codes main_screen_cont_4
 	ui->main_screen_cont_4 = lv_obj_create(ui->main_screen);
 	lv_obj_set_pos(ui->main_screen_cont_4, 145, 201);
@@ -530,6 +569,19 @@ void setup_scr_main_screen(lv_ui *ui)
 	//Write style for main_screen_select_ring_h4, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
 	lv_obj_set_style_img_opa(ui->main_screen_select_ring_h4, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
 
+	//Write codes main_screen_select_ring_l4
+	ui->main_screen_select_ring_l4 = lv_img_create(ui->main_screen_cont_4);
+	lv_obj_add_flag(ui->main_screen_select_ring_l4, LV_OBJ_FLAG_CLICKABLE);
+	lv_img_set_src(ui->main_screen_select_ring_l4, &_Secim_Ver3_alpha_200x194);
+	lv_img_set_pivot(ui->main_screen_select_ring_l4, 100,5);
+	lv_img_set_angle(ui->main_screen_select_ring_l4, 0);
+	lv_obj_set_pos(ui->main_screen_select_ring_l4, 0, 0);
+	lv_obj_set_size(ui->main_screen_select_ring_l4, 200, 194);
+	lv_obj_add_flag(ui->main_screen_select_ring_l4, LV_OBJ_FLAG_HIDDEN);
+
+	//Write style for main_screen_select_ring_l4, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+	lv_obj_set_style_img_opa(ui->main_screen_select_ring_l4, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+
 	//Write codes main_screen_cont_5
 	ui->main_screen_cont_5 = lv_obj_create(ui->main_screen);
 	lv_obj_set_pos(ui->main_screen_cont_5, 415, 201);
@@ -574,6 +626,19 @@ void setup_scr_main_screen(lv_ui *ui)
 
 	//Write style for main_screen_select_ring_h5, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
 	lv_obj_set_style_img_opa(ui->main_screen_select_ring_h5, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+
+	//Write codes main_screen_select_ring_l5
+	ui->main_screen_select_ring_l5 = lv_img_create(ui->main_screen_cont_5);
+	lv_obj_add_flag(ui->main_screen_select_ring_l5, LV_OBJ_FLAG_CLICKABLE);
+	lv_img_set_src(ui->main_screen_select_ring_l5, &_Secim_Ver3_alpha_200x194);
+	lv_img_set_pivot(ui->main_screen_select_ring_l5, 100,5);
+	lv_img_set_angle(ui->main_screen_select_ring_l5, 0);
+	lv_obj_set_pos(ui->main_screen_select_ring_l5, 0, 0);
+	lv_obj_set_size(ui->main_screen_select_ring_l5, 200, 194);
+	lv_obj_add_flag(ui->main_screen_select_ring_l5, LV_OBJ_FLAG_HIDDEN);
+
+	//Write style for main_screen_select_ring_l5, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+	lv_obj_set_style_img_opa(ui->main_screen_select_ring_l5, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
 
 	//Write codes main_screen_img_pan_0
 	ui->main_screen_img_pan_0 = lv_img_create(ui->main_screen);
