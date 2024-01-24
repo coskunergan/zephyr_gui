@@ -9,7 +9,7 @@
 /*******************************************************************************
  * Size: 12 px
  * Bpp: 4
- * Opts: --user-data-dir=C:\Users\cosku\AppData\Roaming\gui-guider --app-path=C:\NXP\GUI-Guider-1.6.1-GA\resources\app.asar --no-sandbox --no-zygote --lang=tr --device-scale-factor=1 --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=5 --time-ticks-at-unix-epoch=-1706010917238565 --launch-time-ticks=66827419986 --mojo-platform-channel-handle=3000 --field-trial-handle=1704,i,4850226804367996407,11424025525324105622,131072 --disable-features=SpareRendererForSitePerProcess,WinRetrieveSuggestionsOnlyOnDemand /prefetch:1
+ * Opts: --user-data-dir=C:\Users\cosku\AppData\Roaming\gui-guider --app-path=C:\NXP\GUI-Guider-1.6.1-GA\resources\app.asar --no-sandbox --no-zygote --lang=tr --device-scale-factor=1 --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=5 --time-ticks-at-unix-epoch=-1706010917237749 --launch-time-ticks=98646529809 --mojo-platform-channel-handle=3036 --field-trial-handle=1724,i,10780753537267097518,8819975705331074779,131072 --disable-features=SpareRendererForSitePerProcess,WinRetrieveSuggestionsOnlyOnDemand /prefetch:1
  ******************************************************************************/
 
 #ifdef LV_LVGL_H_INCLUDE_SIMPLE
