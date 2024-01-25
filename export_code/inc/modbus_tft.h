@@ -18,6 +18,7 @@
 #include <chrono>
 
 #include "pan_procces.h"
+#include "lvgl.h"
 
 extern tft_registers_t tft_regs;
 
@@ -26,11 +27,11 @@ namespace device_modbus_tft
     using namespace zpp;
     using namespace std::chrono;
     using namespace device_modbus_slave;
-    ZPP_THREAD_STACK_DEFINE(tft_modbus_stack, 384);
+    ZPP_THREAD_STACK_DEFINE(tft_modbus_stack, 1024);
     const uint16_t tft_slave_id{1};
     const size_t tft_modbus_try_count{5};// ~5sn
     const milliseconds modbus_stream_check_delay{10s};
-    bool tft_enb_state = false;    
+    bool tft_enb_state = false;
 
     static int holding_reg_rd(uint16_t addr, uint16_t *reg)
     {
@@ -55,7 +56,7 @@ namespace device_modbus_tft
 
         ((uint16_t *)&tft_regs)[addr] = reg;
 
-        LOG_INF("Holding register write, addr %u", addr);                
+        LOG_INF("Holding register write, addr %u", addr);
 
         return 0;
     }
@@ -109,11 +110,18 @@ namespace device_modbus_tft
         }
     private:
         static void task_modbus_tft(modbus_tft *mb) noexcept
-        {            
+        {
+            static bool logo_off_state = false;
             while(1)
             {
                 this_thread::sleep_for(100ms);
                 tft_regs.modbus_status.data_stream_fail = false;
+                if(tft_regs.write_regs.master_param_bits.logo_off_state && logo_off_state == false)
+                {
+                    logo_off_state = true;
+                    lv_obj_t *act_scr = lv_scr_act();
+                    lv_event_send(act_scr, LV_EVENT_CLICKED, NULL);
+                }
             }
         }
     };

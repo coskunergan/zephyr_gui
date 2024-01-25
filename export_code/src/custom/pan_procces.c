@@ -40,6 +40,7 @@ void system_init(void)
     lv_obj_clear_flag(guider_ui.main_screen_cont_5, LV_OBJ_FLAG_SCROLLABLE);
     memset(&system_obj, 0, sizeof(system_obj));
     memset(&tft_regs, 0, sizeof(tft_regs));
+    tft_regs.write_regs.master_param_bits.logo_off_state = true;
     tft_regs.write_regs.pan1_regs.x = 1;
     tft_regs.write_regs.pan1_regs.y = 1;
     tft_regs.write_regs.pan2_regs.x = 1;

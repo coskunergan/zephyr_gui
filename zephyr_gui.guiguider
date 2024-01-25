@@ -980,7 +980,8 @@
 										}
 									}
 								]
-							}
+							},
+							"layerName": "main_screen"
 						},
 						{
 							"name": "select_ring_h5",
@@ -1145,7 +1146,8 @@
 										}
 									}
 								]
-							}
+							},
+							"layerName": "main_screen"
 						},
 						{
 							"name": "pan_5",
@@ -1310,7 +1312,8 @@
 										}
 									}
 								]
-							}
+							},
+							"layerName": "main_screen"
 						}
 					],
 					"style": [
@@ -1521,7 +1524,8 @@
 										}
 									}
 								]
-							}
+							},
+							"layerName": "main_screen"
 						},
 						{
 							"name": "select_ring_h4",
@@ -1686,7 +1690,8 @@
 										}
 									}
 								]
-							}
+							},
+							"layerName": "main_screen"
 						},
 						{
 							"name": "pan_4",
@@ -1851,7 +1856,8 @@
 										}
 									}
 								]
-							}
+							},
+							"layerName": "main_screen"
 						}
 					],
 					"style": [
@@ -2062,7 +2068,8 @@
 										}
 									}
 								]
-							}
+							},
+							"layerName": "main_screen"
 						},
 						{
 							"name": "select_ring_h3",
@@ -2227,7 +2234,8 @@
 										}
 									}
 								]
-							}
+							},
+							"layerName": "main_screen"
 						},
 						{
 							"name": "pan_3",
@@ -2392,7 +2400,8 @@
 										}
 									}
 								]
-							}
+							},
+							"layerName": "main_screen"
 						}
 					],
 					"style": [
@@ -2603,7 +2612,8 @@
 										}
 									}
 								]
-							}
+							},
+							"layerName": "main_screen"
 						},
 						{
 							"name": "select_ring_h2",
@@ -2768,7 +2778,8 @@
 										}
 									}
 								]
-							}
+							},
+							"layerName": "main_screen"
 						},
 						{
 							"name": "pan_2",
@@ -2933,7 +2944,8 @@
 										}
 									}
 								]
-							}
+							},
+							"layerName": "main_screen"
 						}
 					],
 					"style": [
@@ -3144,7 +3156,8 @@
 										}
 									}
 								]
-							}
+							},
+							"layerName": "main_screen"
 						},
 						{
 							"name": "select_ring_h1",
@@ -3309,7 +3322,8 @@
 										}
 									}
 								]
-							}
+							},
+							"layerName": "main_screen"
 						},
 						{
 							"name": "pan_1",
@@ -3474,7 +3488,8 @@
 										}
 									}
 								]
-							}
+							},
+							"layerName": "main_screen"
 						}
 					],
 					"style": [
@@ -5784,7 +5799,8 @@
 								"item_index": 10
 							}
 						]
-					}
+					},
+					"layerName": "main_screen"
 				}
 			],
 			"event": {
@@ -5935,7 +5951,8 @@
 					"bg_img_recolor": "#ffffff",
 					"bg_img_recolor_opa": 0
 				}
-			]
+			],
+			"layerName": "main_screen"
 		}
 	],
 	"projectName": "button_test",

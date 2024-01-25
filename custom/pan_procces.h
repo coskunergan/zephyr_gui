@@ -47,7 +47,8 @@ typedef struct
 typedef struct
 {
     uint16_t onoff_state            : 1,
-             reserve                : 12,
+             logo_off_state         : 1,
+             reserved               : 11,
              surge_error            : 1,
              low_volt_freq_error    : 1,
              high_volt_freq_error   : 1;
