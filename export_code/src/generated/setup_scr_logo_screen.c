@@ -39,7 +39,7 @@ void setup_scr_logo_screen(lv_ui *ui)
 
 	//Write codes logo_screen_label_1
 	ui->logo_screen_label_1 = lv_label_create(ui->logo_screen);
-	lv_label_set_text(ui->logo_screen_label_1, "Enes Kaan AVCI");
+	lv_label_set_text(ui->logo_screen_label_1, "Berk MARADİT");
 	lv_label_set_long_mode(ui->logo_screen_label_1, LV_LABEL_LONG_WRAP);
 	lv_obj_set_pos(ui->logo_screen_label_1, 320, 347);
 	lv_obj_set_size(ui->logo_screen_label_1, 160, 32);
