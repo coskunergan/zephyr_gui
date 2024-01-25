@@ -42,6 +42,9 @@ typedef struct
     system_pan_registers_t pan3;
     system_pan_registers_t pan4;
     system_pan_registers_t pan5;
+    uint16_t level_backup[5];
+    bool pause;
+    bool lock;
 } system_obj_t;
 
 typedef struct
@@ -111,5 +114,10 @@ void set_slider(uint8_t val);
 void set_select(uint8_t sel);
 void refresh_display(void);
 void pan_level(uint8_t sel, uint8_t level);
+void click_pause(void);
+void click_main_timer(void);
+void long_press_lock(void);
+void pressed_lock(void);
+void released_lock(void);
 
 #endif /* PAN_PROCCES */

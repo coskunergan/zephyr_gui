@@ -78,6 +78,17 @@ typedef struct
 	lv_obj_t *main_screen_img_pan_8;
 	lv_obj_t *main_screen_img_pan_9;
 	lv_obj_t *main_screen_img_pan_P;
+	lv_obj_t *main_screen_menu_cont;
+	lv_obj_t *main_screen_timer_btn;
+	lv_obj_t *main_screen_timer_btn_label;
+	lv_obj_t *main_screen_pause_btn;
+	lv_obj_t *main_screen_pause_btn_label;
+	lv_obj_t *main_screen_menu_btn;
+	lv_obj_t *main_screen_menu_btn_label;
+	lv_obj_t *main_screen_lock_btn;
+	lv_obj_t *main_screen_lock_btn_label;
+	lv_obj_t *main_screen_spinner_1;
+	lv_obj_t *main_screen_count_down_label;
 }lv_ui;
 
 void ui_init_style(lv_style_t * style);
@@ -139,9 +150,19 @@ LV_IMG_DECLARE(_img_pan_8_alpha_200x194);
 LV_IMG_DECLARE(_img_pan_9_alpha_200x194);
 LV_IMG_DECLARE(_img_pan_P_alpha_200x194);
 
+LV_IMG_DECLARE(_empty_800x80);
+LV_IMG_DECLARE(_Timer_alpha_57x57);
+LV_IMG_DECLARE(_ActiveTimer_alpha_57x57);
+LV_IMG_DECLARE(_Pause_alpha_57x57);
+LV_IMG_DECLARE(_Play_alpha_57x57);
+LV_IMG_DECLARE(_Menu_alpha_57x57);
+LV_IMG_DECLARE(_Lock_alpha_57x57);
+LV_IMG_DECLARE(_ActiveLock_alpha_57x57);
+
 LV_FONT_DECLARE(lv_font_montserratMedium_12)
 LV_FONT_DECLARE(lv_font_montserratMedium_16)
 LV_FONT_DECLARE(lv_font_Alatsi_Regular_1)
+LV_FONT_DECLARE(lv_font_montserratMedium_44)
 
 
 #ifdef __cplusplus

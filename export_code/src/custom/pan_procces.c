@@ -11,6 +11,9 @@ lv_timer_t *timeout_timer;
 lv_timer_t *refresh_timer;
 system_obj_t system_obj;
 tft_registers_t tft_regs;
+lv_anim_t anim_pause;
+lv_anim_t anim_lock;
+uint8_t long_press_countdown;
 
 /*******************************************************************************/
 /*******************************************************************************/
@@ -23,6 +26,11 @@ void timeout_timer_cb(lv_timer_t *timer)
 void refresh_timer_cb(lv_timer_t *timer)
 {
     refresh_display();
+    if(long_press_countdown)
+    {
+        --long_press_countdown;
+        lv_label_set_text_fmt(guider_ui.main_screen_count_down_label, "%d", long_press_countdown);
+    }
 }
 /*******************************************************************************/
 void system_init(void)
@@ -63,6 +71,7 @@ void system_init(void)
     lv_anim_init(&system_obj.pan4.a_y);
     lv_anim_init(&system_obj.pan5.a_x);
     lv_anim_init(&system_obj.pan5.a_y);
+    lv_anim_init(&anim_pause);
     system_obj.pan1.img_pan = guider_ui.main_screen_pan_1;
     system_obj.pan1.img_ring_l = guider_ui.main_screen_select_ring_l1;
     system_obj.pan1.img_ring_h = guider_ui.main_screen_select_ring_h1;
@@ -233,7 +242,7 @@ void pan_refresh(tft_pan_registers_t *pan_regs, system_pan_registers_t *sys_pan_
             lv_obj_clear_flag(sys_pan_regs->img_ring_h, LV_OBJ_FLAG_HIDDEN);
         }
         level_set(sys_pan_regs->img_pan, tft_regs.read_regs.panx_value[index] / 2);
-    }    
+    }
     if(sys_pan_regs->pan.pan_state.state_active != pan_regs->pan_state.state_active)
     {
         sys_pan_regs->pan.pan_state.state_active = pan_regs->pan_state.state_active;
@@ -281,7 +290,7 @@ void refresh_display(void)
     //tft_regs.write_regs.pan2_regs.pan_state.state_active = true;
     //tft_regs.write_regs.pan2_regs.pan_state.pan_size = 1;
     ////////////////////
-    pan_refresh(&tft_regs.write_regs.pan1_regs, &system_obj.pan1, 0);    
+    pan_refresh(&tft_regs.write_regs.pan1_regs, &system_obj.pan1, 0);
     pan_refresh(&tft_regs.write_regs.pan2_regs, &system_obj.pan2, 1);
     pan_refresh(&tft_regs.write_regs.pan3_regs, &system_obj.pan3, 2);
     pan_refresh(&tft_regs.write_regs.pan4_regs, &system_obj.pan4, 3);
@@ -291,7 +300,7 @@ void refresh_display(void)
 void set_slider(uint8_t val)
 {
     select_timer_start();
-    if(system_obj.slider_value != val)
+    if(system_obj.slider_value != val && system_obj.pause == false)
     {
         system_obj.slider_value = val;
         if(system_obj.select_pan)
@@ -325,19 +334,29 @@ void set_select(uint8_t sel)
         default:
             break;
     }
-    if(system_obj.select_pan != sel)
-    {
-        system_obj.select_pan = sel;
-        refresh_display();
-    }
     if(sel)
     {
         tft_regs.read_regs.slave_param_bits.buzzer_bit_pan = !tft_regs.read_regs.slave_param_bits.buzzer_bit_pan;
     }
-	else
-	{
-		lv_obj_set_style_bg_img_src(guider_ui.main_screen_slider, &_empty_800x80, LV_PART_MAIN | LV_STATE_DEFAULT);
-	}
+    if(system_obj.select_pan != sel && system_obj.pause == false && system_obj.lock == false)
+    {
+        system_obj.select_pan = sel;
+    }
+    else
+    {
+        system_obj.select_pan = 0;
+    }
+    refresh_display();
+    if(system_obj.select_pan)
+    {
+        lv_obj_clear_flag(guider_ui.main_screen_slider, LV_OBJ_FLAG_HIDDEN);
+        lv_obj_add_flag(guider_ui.main_screen_menu_cont, LV_OBJ_FLAG_HIDDEN);
+    }
+    else
+    {
+        lv_obj_add_flag(guider_ui.main_screen_slider, LV_OBJ_FLAG_HIDDEN);
+        lv_obj_clear_flag(guider_ui.main_screen_menu_cont, LV_OBJ_FLAG_HIDDEN);
+    }
 }
 /*******************************************************************************/
 void pan_level(uint8_t sel, uint8_t level)
@@ -348,6 +367,143 @@ void pan_level(uint8_t sel, uint8_t level)
         return;
     }
     s_level = level;
+}
+/*******************************************************************************/
+void released_lock(void)
+{
+    long_press_countdown = 0;
+    lv_obj_add_flag(guider_ui.main_screen_count_down_label, LV_OBJ_FLAG_HIDDEN);
+    lv_obj_add_flag(guider_ui.main_screen_spinner_1, LV_OBJ_FLAG_HIDDEN);
+    lv_obj_set_style_img_opa(guider_ui.main_screen_pan_1, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_img_opa(guider_ui.main_screen_pan_2, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_img_opa(guider_ui.main_screen_pan_3, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_img_opa(guider_ui.main_screen_pan_4, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_img_opa(guider_ui.main_screen_pan_5, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
+}
+/*******************************************************************************/
+void pressed_lock(void)
+{
+    long_press_countdown = 5;
+    lv_label_set_text_fmt(guider_ui.main_screen_count_down_label, "%d", long_press_countdown);
+    lv_obj_clear_flag(guider_ui.main_screen_count_down_label, LV_OBJ_FLAG_HIDDEN);
+    lv_obj_clear_flag(guider_ui.main_screen_spinner_1, LV_OBJ_FLAG_HIDDEN);
+    lv_obj_set_style_img_opa(guider_ui.main_screen_pan_1, 72, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_img_opa(guider_ui.main_screen_pan_2, 72, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_img_opa(guider_ui.main_screen_pan_3, 72, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_img_opa(guider_ui.main_screen_pan_4, 72, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_img_opa(guider_ui.main_screen_pan_5, 72, LV_PART_MAIN | LV_STATE_DEFAULT);
+    tft_regs.read_regs.slave_param_bits.buzzer_bit_pan = !tft_regs.read_regs.slave_param_bits.buzzer_bit_pan;
+}
+/*******************************************************************************/
+void pause_anim_ready_cb(lv_anim_t *a)
+{
+    if(system_obj.pause == false)
+    {
+        lv_obj_clear_flag(guider_ui.main_screen_timer_btn, LV_OBJ_FLAG_HIDDEN);
+        lv_obj_clear_flag(guider_ui.main_screen_lock_btn, LV_OBJ_FLAG_HIDDEN);
+    }
+}
+/*******************************************************************************/
+void pause_slide(bool active)
+{
+    lv_anim_del(&anim_pause, NULL);
+    lv_anim_set_var(&anim_pause, guider_ui.main_screen_pause_btn);
+    lv_anim_set_time(&anim_pause, 500);
+    lv_anim_set_delay(&anim_pause, 0);
+    lv_anim_set_exec_cb(&anim_pause, (lv_anim_exec_xcb_t)lv_obj_set_x);
+    lv_anim_set_values(&anim_pause, lv_obj_get_x(guider_ui.main_screen_pause_btn), (active) ? 372 : 462);
+    lv_anim_set_path_cb(&anim_pause, &lv_anim_path_ease_in_out);
+    lv_anim_set_repeat_count(&anim_pause, 0);
+    lv_anim_set_repeat_delay(&anim_pause, 0);
+    lv_anim_set_playback_time(&anim_pause, 0);
+    lv_anim_set_playback_delay(&anim_pause, 0);
+    lv_anim_set_ready_cb(&anim_pause, &pause_anim_ready_cb);
+    lv_anim_start(&anim_pause);
+}
+/*******************************************************************************/
+void lock_anim_ready_cb(lv_anim_t *a)
+{
+    if(system_obj.lock == false)
+    {
+        lv_obj_clear_flag(guider_ui.main_screen_timer_btn, LV_OBJ_FLAG_HIDDEN);
+        lv_obj_clear_flag(guider_ui.main_screen_pause_btn, LV_OBJ_FLAG_HIDDEN);
+        lv_obj_clear_flag(guider_ui.main_screen_menu_btn, LV_OBJ_FLAG_HIDDEN);
+    }
+}
+/*******************************************************************************/
+void lock_slide(bool active)
+{
+    lv_anim_del(&anim_lock, NULL);
+    lv_anim_set_var(&anim_lock, guider_ui.main_screen_lock_btn);
+    lv_anim_set_time(&anim_lock, 500);
+    lv_anim_set_delay(&anim_lock, 0);
+    lv_anim_set_exec_cb(&anim_lock, (lv_anim_exec_xcb_t)lv_obj_set_x);
+    lv_anim_set_values(&anim_lock, lv_obj_get_x(guider_ui.main_screen_lock_btn), (active) ? 372 : 280);
+    lv_anim_set_path_cb(&anim_lock, &lv_anim_path_ease_in_out);
+    lv_anim_set_repeat_count(&anim_lock, 0);
+    lv_anim_set_repeat_delay(&anim_lock, 0);
+    lv_anim_set_playback_time(&anim_lock, 0);
+    lv_anim_set_playback_delay(&anim_lock, 0);
+    lv_anim_set_ready_cb(&anim_lock, &lock_anim_ready_cb);
+    lv_anim_start(&anim_lock);
+}
+/*******************************************************************************/
+void click_pause(void)
+{
+    system_obj.pause = !system_obj.pause;
+    if(system_obj.pause)
+    {
+        system_obj.select_pan = 0;
+        memcpy(system_obj.level_backup, tft_regs.read_regs.panx_value, sizeof(tft_regs.read_regs.panx_value));
+        memset(tft_regs.read_regs.panx_value, 0, sizeof(tft_regs.read_regs.panx_value));
+        tft_regs.read_regs.slave_param_bits.buzzer_bit_pause = true;
+        lv_imgbtn_set_src(guider_ui.main_screen_pause_btn, LV_IMGBTN_STATE_RELEASED, NULL, &_Play_alpha_57x57, NULL);
+        lv_imgbtn_set_src(guider_ui.main_screen_pause_btn, LV_IMGBTN_STATE_PRESSED, NULL, &_Pause_alpha_57x57, NULL);
+        lv_obj_set_style_img_opa(guider_ui.main_screen_pan_1, 72, LV_PART_MAIN | LV_STATE_DEFAULT);
+        lv_obj_set_style_img_opa(guider_ui.main_screen_pan_2, 72, LV_PART_MAIN | LV_STATE_DEFAULT);
+        lv_obj_set_style_img_opa(guider_ui.main_screen_pan_3, 72, LV_PART_MAIN | LV_STATE_DEFAULT);
+        lv_obj_set_style_img_opa(guider_ui.main_screen_pan_4, 72, LV_PART_MAIN | LV_STATE_DEFAULT);
+        lv_obj_set_style_img_opa(guider_ui.main_screen_pan_5, 72, LV_PART_MAIN | LV_STATE_DEFAULT);
+        lv_obj_add_flag(guider_ui.main_screen_timer_btn, LV_OBJ_FLAG_HIDDEN);
+        lv_obj_add_flag(guider_ui.main_screen_lock_btn, LV_OBJ_FLAG_HIDDEN);
+    }
+    else
+    {
+        memcpy(tft_regs.read_regs.panx_value, system_obj.level_backup, sizeof(tft_regs.read_regs.panx_value));
+        tft_regs.read_regs.slave_param_bits.buzzer_bit_pause = false;
+        lv_imgbtn_set_src(guider_ui.main_screen_pause_btn, LV_IMGBTN_STATE_RELEASED, NULL, &_Pause_alpha_57x57, NULL);
+        lv_imgbtn_set_src(guider_ui.main_screen_pause_btn, LV_IMGBTN_STATE_PRESSED, NULL, &_Play_alpha_57x57, NULL);
+        lv_obj_set_style_img_opa(guider_ui.main_screen_pan_1, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
+        lv_obj_set_style_img_opa(guider_ui.main_screen_pan_2, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
+        lv_obj_set_style_img_opa(guider_ui.main_screen_pan_3, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
+        lv_obj_set_style_img_opa(guider_ui.main_screen_pan_4, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
+        lv_obj_set_style_img_opa(guider_ui.main_screen_pan_5, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
+    }
+    pause_slide(system_obj.pause);
+}
+/*******************************************************************************/
+void long_press_lock(void)
+{
+    system_obj.lock = !system_obj.lock;
+    if(system_obj.lock)
+    {
+        tft_regs.read_regs.slave_param_bits.buzzer_bit_lock = true;
+        lv_obj_add_flag(guider_ui.main_screen_timer_btn, LV_OBJ_FLAG_HIDDEN);
+        lv_obj_add_flag(guider_ui.main_screen_pause_btn, LV_OBJ_FLAG_HIDDEN);
+        lv_obj_add_flag(guider_ui.main_screen_menu_btn, LV_OBJ_FLAG_HIDDEN);
+    }
+    else
+    {
+        tft_regs.read_regs.slave_param_bits.buzzer_bit_lock = false;
+    }
+    lv_obj_add_flag(guider_ui.main_screen_count_down_label, LV_OBJ_FLAG_HIDDEN);
+    lv_obj_add_flag(guider_ui.main_screen_spinner_1, LV_OBJ_FLAG_HIDDEN);
+    lock_slide(system_obj.lock);
+}
+/*******************************************************************************/
+void click_main_timer(void)
+{
+    tft_regs.read_regs.slave_param_bits.buzzer_bit_pan = !tft_regs.read_regs.slave_param_bits.buzzer_bit_pan;
 }
 /*******************************************************************************/
 /*******************************************************************************/

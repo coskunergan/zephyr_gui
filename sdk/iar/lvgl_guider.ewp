@@ -4696,6 +4696,9 @@
     <file>
       <name>$PROJ_DIR$\..\..\generated\guider_fonts\lv_font_montserratMedium_16.c</name>
     </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\guider_fonts\lv_font_montserratMedium_44.c</name>
+    </file>
   </group>
   <file>
     <name>$PROJ_DIR$\..\..\generated\gui_guider.c</name>
@@ -4707,6 +4710,12 @@
     <name>images</name>
     <file>
       <name>$PROJ_DIR$\..\..\generated\images\images.mk</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\images\_ActiveLock_alpha_57x57.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\images\_ActiveTimer_alpha_57x57.c</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\..\generated\images\_empty_800x80.c</name>
@@ -4745,7 +4754,13 @@
       <name>$PROJ_DIR$\..\..\generated\images\_img_pan_P_alpha_200x194.c</name>
     </file>
     <file>
+      <name>$PROJ_DIR$\..\..\generated\images\_Lock_alpha_57x57.c</name>
+    </file>
+    <file>
       <name>$PROJ_DIR$\..\..\generated\images\_logo_alpha_394x163.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\images\_Menu_alpha_57x57.c</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\..\generated\images\_NoHob_0_alpha_200x194.c</name>
@@ -4779,6 +4794,12 @@
     </file>
     <file>
       <name>$PROJ_DIR$\..\..\generated\images\_NoHob_P_alpha_200x194.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\images\_Pause_alpha_57x57.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\images\_Play_alpha_57x57.c</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\..\generated\images\_Secim_Ver2_alpha_200x194.c</name>
@@ -4818,6 +4839,9 @@
     </file>
     <file>
       <name>$PROJ_DIR$\..\..\generated\images\_slider_P_alpha_800x80.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\images\_Timer_alpha_57x57.c</name>
     </file>
   </group>
   <file>
