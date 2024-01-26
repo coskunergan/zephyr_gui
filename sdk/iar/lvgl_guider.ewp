@@ -4671,6 +4671,9 @@
     <name>$PROJ_DIR$\..\..\generated\events_init.h</name>
   </file>
   <file>
+    <name>$PROJ_DIR$\..\..\generated\fs_driver.py</name>
+  </file>
+  <file>
     <name>$PROJ_DIR$\..\..\generated\generated.mk</name>
   </file>
   <group>
@@ -4688,13 +4691,28 @@
       <name>$PROJ_DIR$\..\..\generated\guider_fonts\guider_fonts.mk</name>
     </file>
     <file>
+      <name>$PROJ_DIR$\..\..\generated\guider_fonts\lv_font_Acme_Regular_16.c</name>
+    </file>
+    <file>
       <name>$PROJ_DIR$\..\..\generated\guider_fonts\lv_font_Alatsi_Regular_1.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\guider_fonts\lv_font_Alatsi_Regular_18.c</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\..\generated\guider_fonts\lv_font_montserratMedium_12.c</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\..\generated\guider_fonts\lv_font_montserratMedium_16.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\guider_fonts\lv_font_montserratMedium_20.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\guider_fonts\lv_font_montserratMedium_24.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\guider_fonts\lv_font_montserratMedium_34.c</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\..\generated\guider_fonts\lv_font_montserratMedium_44.c</name>
@@ -4705,6 +4723,9 @@
   </file>
   <file>
     <name>$PROJ_DIR$\..\..\generated\gui_guider.h</name>
+  </file>
+  <file>
+    <name>$PROJ_DIR$\..\..\generated\gui_guider.py</name>
   </file>
   <group>
     <name>images</name>
@@ -4718,7 +4739,19 @@
       <name>$PROJ_DIR$\..\..\generated\images\_ActiveTimer_alpha_57x57.c</name>
     </file>
     <file>
+      <name>$PROJ_DIR$\..\..\generated\images\_clock_alpha_40x40.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\images\_contrast_alpha_50x50.c</name>
+    </file>
+    <file>
       <name>$PROJ_DIR$\..\..\generated\images\_empty_800x80.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\images\_empty_alpha_800x80.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\images\_gtmqr_alpha_200x200.c</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\..\generated\images\_img_pan_0_alpha_200x194.c</name>
@@ -4752,6 +4785,9 @@
     </file>
     <file>
       <name>$PROJ_DIR$\..\..\generated\images\_img_pan_P_alpha_200x194.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\images\_info_alpha_40x40.c</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\..\generated\images\_Lock_alpha_57x57.c</name>
@@ -4802,10 +4838,16 @@
       <name>$PROJ_DIR$\..\..\generated\images\_Play_alpha_57x57.c</name>
     </file>
     <file>
+      <name>$PROJ_DIR$\..\..\generated\images\_power_alpha_50x50.c</name>
+    </file>
+    <file>
       <name>$PROJ_DIR$\..\..\generated\images\_Secim_Ver2_alpha_200x194.c</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\..\generated\images\_Secim_Ver3_alpha_200x194.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\images\_settings_alpha_40x40.c</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\..\generated\images\_slider_0_alpha_800x80.c</name>
@@ -4841,7 +4883,169 @@
       <name>$PROJ_DIR$\..\..\generated\images\_slider_P_alpha_800x80.c</name>
     </file>
     <file>
+      <name>$PROJ_DIR$\..\..\generated\images\_speaker_alpha_50x50.c</name>
+    </file>
+    <file>
       <name>$PROJ_DIR$\..\..\generated\images\_Timer_alpha_57x57.c</name>
+    </file>
+  </group>
+  <group>
+    <name>MicroPython</name>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\lv_font_Acme_Regular_16.fnt</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\lv_font_Alatsi_Regular_1.fnt</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\lv_font_Alatsi_Regular_18.fnt</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\lv_font_montserratMedium_12.fnt</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\lv_font_montserratMedium_16.fnt</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\lv_font_montserratMedium_20.fnt</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\lv_font_montserratMedium_24.fnt</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\lv_font_montserratMedium_44.fnt</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\_ActiveLock_alpha_57x57.bin</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\_ActiveTimer_alpha_57x57.bin</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\_empty_800x80.bin</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\_img_pan_0_alpha_200x194.bin</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\_img_pan_1_alpha_200x194.bin</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\_img_pan_2_alpha_200x194.bin</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\_img_pan_3_alpha_200x194.bin</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\_img_pan_4_alpha_200x194.bin</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\_img_pan_5_alpha_200x194.bin</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\_img_pan_6_alpha_200x194.bin</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\_img_pan_7_alpha_200x194.bin</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\_img_pan_8_alpha_200x194.bin</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\_img_pan_9_alpha_200x194.bin</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\_img_pan_P_alpha_200x194.bin</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\_Lock_alpha_57x57.bin</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\_logo_alpha_394x163.bin</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\_Menu_alpha_57x57.bin</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\_NoHob_0_alpha_200x194.bin</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\_NoHob_1_alpha_200x194.bin</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\_NoHob_2_alpha_200x194.bin</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\_NoHob_3_alpha_200x194.bin</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\_NoHob_4_alpha_200x194.bin</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\_NoHob_5_alpha_200x194.bin</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\_NoHob_6_alpha_200x194.bin</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\_NoHob_7_alpha_200x194.bin</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\_NoHob_8_alpha_200x194.bin</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\_NoHob_9_alpha_200x194.bin</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\_NoHob_P_alpha_200x194.bin</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\_Pause_alpha_57x57.bin</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\_Play_alpha_57x57.bin</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\_Secim_Ver2_alpha_200x194.bin</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\_Secim_Ver3_alpha_200x194.bin</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\_slider_0_alpha_800x80.bin</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\_slider_1_alpha_800x80.bin</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\_slider_2_alpha_800x80.bin</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\_slider_3_alpha_800x80.bin</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\_slider_4_alpha_800x80.bin</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\_slider_5_alpha_800x80.bin</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\_slider_6_alpha_800x80.bin</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\_slider_7_alpha_800x80.bin</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\_slider_8_alpha_800x80.bin</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\_slider_9_alpha_800x80.bin</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\_slider_P_alpha_800x80.bin</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\MicroPython\_Timer_alpha_57x57.bin</name>
     </file>
   </group>
   <file>
@@ -4849,6 +5053,9 @@
   </file>
   <file>
     <name>$PROJ_DIR$\..\..\generated\setup_scr_main_screen.c</name>
+  </file>
+  <file>
+    <name>$PROJ_DIR$\..\..\generated\setup_scr_menu_screen.c</name>
   </file>
   <file>
     <name>$PROJ_DIR$\..\..\generated\widgets_init.c</name>

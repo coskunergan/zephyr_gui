@@ -883,7 +883,7 @@ void setup_scr_main_screen(lv_ui *ui)
 	lv_label_set_long_mode(ui->main_screen_menu_btn_label, LV_LABEL_LONG_WRAP);
 	lv_obj_align(ui->main_screen_menu_btn_label, LV_ALIGN_CENTER, 0, 0);
 	lv_obj_set_style_pad_all(ui->main_screen_menu_btn, 0, LV_STATE_DEFAULT);
-	lv_obj_set_pos(ui->main_screen_menu_btn, 17, 11);
+	lv_obj_set_pos(ui->main_screen_menu_btn, 18, 9);
 	lv_obj_set_size(ui->main_screen_menu_btn, 57, 57);
 
 	//Write style for main_screen_menu_btn, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
@@ -940,6 +940,28 @@ void setup_scr_main_screen(lv_ui *ui)
 
 	//Write style for main_screen_lock_btn, Part: LV_PART_MAIN, State: LV_IMGBTN_STATE_RELEASED.
 	lv_obj_set_style_img_opa(ui->main_screen_lock_btn, 255, LV_PART_MAIN|LV_IMGBTN_STATE_RELEASED);
+
+	//Write codes main_screen_clock_lbl
+	ui->main_screen_clock_lbl = lv_label_create(ui->main_screen_menu_cont);
+	lv_label_set_text(ui->main_screen_clock_lbl, "00:00");
+	lv_label_set_long_mode(ui->main_screen_clock_lbl, LV_LABEL_LONG_WRAP);
+	lv_obj_set_pos(ui->main_screen_clock_lbl, 647, 23);
+	lv_obj_set_size(ui->main_screen_clock_lbl, 140, 36);
+
+	//Write style for main_screen_clock_lbl, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+	lv_obj_set_style_border_width(ui->main_screen_clock_lbl, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_radius(ui->main_screen_clock_lbl, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_color(ui->main_screen_clock_lbl, lv_color_hex(0xffffff), LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_font(ui->main_screen_clock_lbl, &lv_font_montserratMedium_34, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_letter_space(ui->main_screen_clock_lbl, 6, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_line_space(ui->main_screen_clock_lbl, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_align(ui->main_screen_clock_lbl, LV_TEXT_ALIGN_CENTER, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_opa(ui->main_screen_clock_lbl, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_top(ui->main_screen_clock_lbl, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_right(ui->main_screen_clock_lbl, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_bottom(ui->main_screen_clock_lbl, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_left(ui->main_screen_clock_lbl, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_shadow_width(ui->main_screen_clock_lbl, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 
 	//Write codes main_screen_spinner_1
 	ui->main_screen_spinner_1 = lv_spinner_create(ui->main_screen, 1000, 60);

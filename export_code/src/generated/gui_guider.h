@@ -21,7 +21,7 @@ typedef struct
 	lv_obj_t *logo_screen;
 	bool logo_screen_del;
 	lv_obj_t *logo_screen_img_1;
-	lv_obj_t *logo_screen_label_1;
+	lv_obj_t *logo_screen_clock_lbl;
 	lv_obj_t *main_screen;
 	bool main_screen_del;
 	lv_obj_t *main_screen_slider;
@@ -87,8 +87,38 @@ typedef struct
 	lv_obj_t *main_screen_menu_btn_label;
 	lv_obj_t *main_screen_lock_btn;
 	lv_obj_t *main_screen_lock_btn_label;
+	lv_obj_t *main_screen_clock_lbl;
 	lv_obj_t *main_screen_spinner_1;
 	lv_obj_t *main_screen_count_down_label;
+	lv_obj_t *menu_screen;
+	bool menu_screen_del;
+	lv_obj_t *menu_screen_tabview_1;
+	lv_obj_t *menu_screen_tabview_1_tab_1;
+	lv_obj_t *menu_screen_tabview_1_tab_2;
+	lv_obj_t *menu_screen_tabview_1_tab_3;
+	lv_obj_t *menu_screen_power_roller;
+	lv_obj_t *menu_screen_sound_switch;
+	lv_obj_t *menu_screen_slider_contrast;
+	lv_obj_t *menu_screen_img_2;
+	lv_obj_t *menu_screen_img_4;
+	lv_obj_t *menu_screen_img_3;
+	lv_obj_t *menu_screen_settings_save_btn;
+	lv_obj_t *menu_screen_settings_save_btn_label;
+	lv_obj_t *menu_screen_roller_1;
+	lv_obj_t *menu_screen_roller_2;
+	lv_obj_t *menu_screen_label_1;
+	lv_obj_t *menu_screen_label_2;
+	lv_obj_t *menu_screen_label_3;
+	lv_obj_t *menu_screen_clock_save_btn;
+	lv_obj_t *menu_screen_clock_save_btn_label;
+	lv_obj_t *menu_screen_img_1;
+	lv_obj_t *menu_screen_img_5;
+	lv_obj_t *menu_screen_img_settings;
+	lv_obj_t *menu_screen_img_clock;
+	lv_obj_t *menu_screen_img_info;
+	lv_obj_t *menu_screen_imgbtn_1;
+	lv_obj_t *menu_screen_imgbtn_1_label;
+	lv_obj_t *menu_screen_clock_lbl;
 }lv_ui;
 
 void ui_init_style(lv_style_t * style);
@@ -98,6 +128,7 @@ extern lv_ui guider_ui;
 
 void setup_scr_logo_screen(lv_ui *ui);
 void setup_scr_main_screen(lv_ui *ui);
+void setup_scr_menu_screen(lv_ui *ui);
 LV_IMG_DECLARE(_logo_alpha_394x163);
 
 LV_IMG_DECLARE(_empty_800x80);
@@ -158,11 +189,25 @@ LV_IMG_DECLARE(_Play_alpha_57x57);
 LV_IMG_DECLARE(_Menu_alpha_57x57);
 LV_IMG_DECLARE(_Lock_alpha_57x57);
 LV_IMG_DECLARE(_ActiveLock_alpha_57x57);
+LV_IMG_DECLARE(_speaker_alpha_50x50);
+LV_IMG_DECLARE(_power_alpha_50x50);
+LV_IMG_DECLARE(_contrast_alpha_50x50);
+LV_IMG_DECLARE(_gtmqr_alpha_200x200);
+LV_IMG_DECLARE(_empty_alpha_800x80);
+LV_IMG_DECLARE(_settings_alpha_40x40);
+LV_IMG_DECLARE(_clock_alpha_40x40);
+LV_IMG_DECLARE(_info_alpha_40x40);
+LV_IMG_DECLARE(_Menu_alpha_57x57);
 
-LV_FONT_DECLARE(lv_font_montserratMedium_12)
+LV_FONT_DECLARE(lv_font_montserratMedium_34)
 LV_FONT_DECLARE(lv_font_montserratMedium_16)
 LV_FONT_DECLARE(lv_font_Alatsi_Regular_1)
+LV_FONT_DECLARE(lv_font_montserratMedium_12)
 LV_FONT_DECLARE(lv_font_montserratMedium_44)
+LV_FONT_DECLARE(lv_font_Acme_Regular_16)
+LV_FONT_DECLARE(lv_font_Alatsi_Regular_18)
+LV_FONT_DECLARE(lv_font_montserratMedium_24)
+LV_FONT_DECLARE(lv_font_montserratMedium_20)
 
 
 #ifdef __cplusplus

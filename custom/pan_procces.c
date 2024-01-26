@@ -9,6 +9,7 @@
 
 lv_timer_t *timeout_timer;
 lv_timer_t *refresh_timer;
+lv_timer_t *second_timer;
 system_obj_t system_obj;
 tft_registers_t tft_regs;
 lv_anim_t anim_pause;
@@ -17,6 +18,26 @@ uint8_t long_press_countdown;
 
 /*******************************************************************************/
 /*******************************************************************************/
+/*******************************************************************************/
+void second_timer_cb(lv_timer_t *timeout_timer)
+{
+    if(guider_ui.menu_screen_del == false)
+    {
+        lv_label_set_text_fmt(guider_ui.menu_screen_clock_lbl, "%02d:%02d", tft_regs.write_regs.hour, tft_regs.write_regs.minute);
+    }
+    else if(guider_ui.main_screen_del == false)
+    {
+        lv_label_set_text_fmt(guider_ui.main_screen_clock_lbl, "%02d:%02d", tft_regs.write_regs.hour, tft_regs.write_regs.minute);
+    }
+    else
+    {
+        lv_label_set_text_fmt(guider_ui.logo_screen_clock_lbl, "%02d:%02d", tft_regs.write_regs.hour, tft_regs.write_regs.minute);
+    }
+    if(tft_regs.write_regs.hour == tft_regs.read_regs.hour_set && tft_regs.write_regs.minute == tft_regs.read_regs.minute_set)
+    {
+        tft_regs.read_regs.slave_param_bits.clock_updated = false;
+    }
+}
 /*******************************************************************************/
 void timeout_timer_cb(lv_timer_t *timer)
 {
@@ -33,22 +54,11 @@ void refresh_timer_cb(lv_timer_t *timer)
     }
 }
 /*******************************************************************************/
-void system_init(void)
+void logo_screen_init(void)
 {
-    lv_obj_clear_flag(guider_ui.main_screen, LV_OBJ_FLAG_SCROLL_ELASTIC);
-    lv_obj_clear_flag(guider_ui.main_screen_cont_1, LV_OBJ_FLAG_SCROLL_ELASTIC);
-    lv_obj_clear_flag(guider_ui.main_screen_cont_2, LV_OBJ_FLAG_SCROLL_ELASTIC);
-    lv_obj_clear_flag(guider_ui.main_screen_cont_3, LV_OBJ_FLAG_SCROLL_ELASTIC);
-    lv_obj_clear_flag(guider_ui.main_screen_cont_4, LV_OBJ_FLAG_SCROLL_ELASTIC);
-    lv_obj_clear_flag(guider_ui.main_screen_cont_5, LV_OBJ_FLAG_SCROLL_ELASTIC);
-    lv_obj_clear_flag(guider_ui.main_screen_cont_1, LV_OBJ_FLAG_SCROLLABLE);
-    lv_obj_clear_flag(guider_ui.main_screen_cont_2, LV_OBJ_FLAG_SCROLLABLE);
-    lv_obj_clear_flag(guider_ui.main_screen_cont_3, LV_OBJ_FLAG_SCROLLABLE);
-    lv_obj_clear_flag(guider_ui.main_screen_cont_4, LV_OBJ_FLAG_SCROLLABLE);
-    lv_obj_clear_flag(guider_ui.main_screen_cont_5, LV_OBJ_FLAG_SCROLLABLE);
+    guider_ui.logo_screen_del = false;
     memset(&system_obj, 0, sizeof(system_obj));
     memset(&tft_regs, 0, sizeof(tft_regs));
-    tft_regs.write_regs.master_param_bits.logo_off_state = true;
     tft_regs.write_regs.pan1_regs.x = 1;
     tft_regs.write_regs.pan1_regs.y = 1;
     tft_regs.write_regs.pan2_regs.x = 1;
@@ -59,41 +69,84 @@ void system_init(void)
     tft_regs.write_regs.pan4_regs.y = 1;
     tft_regs.write_regs.pan5_regs.x = 1;
     tft_regs.write_regs.pan5_regs.y = 1;
-    timeout_timer = lv_timer_create(timeout_timer_cb, SELECT_TIMEOUT,  NULL);
-    refresh_timer = lv_timer_create(refresh_timer_cb, REFRESH_TIME,  NULL);
-    lv_anim_init(&system_obj.pan1.a_x);
-    lv_anim_init(&system_obj.pan1.a_y);
-    lv_anim_init(&system_obj.pan2.a_x);
-    lv_anim_init(&system_obj.pan2.a_y);
-    lv_anim_init(&system_obj.pan3.a_x);
-    lv_anim_init(&system_obj.pan3.a_y);
-    lv_anim_init(&system_obj.pan4.a_x);
-    lv_anim_init(&system_obj.pan4.a_y);
-    lv_anim_init(&system_obj.pan5.a_x);
-    lv_anim_init(&system_obj.pan5.a_y);
-    lv_anim_init(&anim_pause);
-    system_obj.pan1.img_pan = guider_ui.main_screen_pan_1;
-    system_obj.pan1.img_ring_l = guider_ui.main_screen_select_ring_l1;
-    system_obj.pan1.img_ring_h = guider_ui.main_screen_select_ring_h1;
-    system_obj.pan1.obj_cont = guider_ui.main_screen_cont_1;
-    system_obj.pan2.img_pan = guider_ui.main_screen_pan_2;
-    system_obj.pan2.img_ring_l = guider_ui.main_screen_select_ring_l2;
-    system_obj.pan2.img_ring_h = guider_ui.main_screen_select_ring_h2;
-    system_obj.pan2.obj_cont = guider_ui.main_screen_cont_2;
-    system_obj.pan3.img_pan = guider_ui.main_screen_pan_3;
-    system_obj.pan3.img_ring_l = guider_ui.main_screen_select_ring_l3;
-    system_obj.pan3.img_ring_h = guider_ui.main_screen_select_ring_h3;
-    system_obj.pan3.obj_cont = guider_ui.main_screen_cont_3;
-    system_obj.pan4.img_pan = guider_ui.main_screen_pan_4;
-    system_obj.pan4.img_ring_l = guider_ui.main_screen_select_ring_l4;
-    system_obj.pan4.img_ring_h = guider_ui.main_screen_select_ring_h4;
-    system_obj.pan4.obj_cont = guider_ui.main_screen_cont_4;
-    system_obj.pan5.img_pan = guider_ui.main_screen_pan_5;
-    system_obj.pan5.img_ring_l = guider_ui.main_screen_select_ring_l5;
-    system_obj.pan5.img_ring_h = guider_ui.main_screen_select_ring_h5;
-    system_obj.pan5.obj_cont = guider_ui.main_screen_cont_5;
+    second_timer = lv_timer_create(second_timer_cb, 1000,  NULL);
+}
+/*******************************************************************************/
+void main_screen_init(void)
+{
+    guider_ui.menu_screen_del = true;
+    guider_ui.logo_screen_del = true;
+    if(guider_ui.main_screen_del == true)
+    {
+        guider_ui.main_screen_del = false;
+        tft_regs.write_regs.master_param_bits.logo_off_state = true;
+        lv_obj_clear_flag(guider_ui.main_screen, LV_OBJ_FLAG_SCROLL_ELASTIC);
+        lv_obj_clear_flag(guider_ui.main_screen_cont_1, LV_OBJ_FLAG_SCROLL_ELASTIC);
+        lv_obj_clear_flag(guider_ui.main_screen_cont_2, LV_OBJ_FLAG_SCROLL_ELASTIC);
+        lv_obj_clear_flag(guider_ui.main_screen_cont_3, LV_OBJ_FLAG_SCROLL_ELASTIC);
+        lv_obj_clear_flag(guider_ui.main_screen_cont_4, LV_OBJ_FLAG_SCROLL_ELASTIC);
+        lv_obj_clear_flag(guider_ui.main_screen_cont_5, LV_OBJ_FLAG_SCROLL_ELASTIC);
+        lv_obj_clear_flag(guider_ui.main_screen_cont_1, LV_OBJ_FLAG_SCROLLABLE);
+        lv_obj_clear_flag(guider_ui.main_screen_cont_2, LV_OBJ_FLAG_SCROLLABLE);
+        lv_obj_clear_flag(guider_ui.main_screen_cont_3, LV_OBJ_FLAG_SCROLLABLE);
+        lv_obj_clear_flag(guider_ui.main_screen_cont_4, LV_OBJ_FLAG_SCROLLABLE);
+        lv_obj_clear_flag(guider_ui.main_screen_cont_5, LV_OBJ_FLAG_SCROLLABLE);
+        timeout_timer = lv_timer_create(timeout_timer_cb, SELECT_TIMEOUT,  NULL);
+        refresh_timer = lv_timer_create(refresh_timer_cb, REFRESH_TIME,  NULL);
+        system_obj.pan1.img_pan = guider_ui.main_screen_pan_1;
+        system_obj.pan1.img_ring_l = guider_ui.main_screen_select_ring_l1;
+        system_obj.pan1.img_ring_h = guider_ui.main_screen_select_ring_h1;
+        system_obj.pan1.obj_cont = guider_ui.main_screen_cont_1;
+        system_obj.pan2.img_pan = guider_ui.main_screen_pan_2;
+        system_obj.pan2.img_ring_l = guider_ui.main_screen_select_ring_l2;
+        system_obj.pan2.img_ring_h = guider_ui.main_screen_select_ring_h2;
+        system_obj.pan2.obj_cont = guider_ui.main_screen_cont_2;
+        system_obj.pan3.img_pan = guider_ui.main_screen_pan_3;
+        system_obj.pan3.img_ring_l = guider_ui.main_screen_select_ring_l3;
+        system_obj.pan3.img_ring_h = guider_ui.main_screen_select_ring_h3;
+        system_obj.pan3.obj_cont = guider_ui.main_screen_cont_3;
+        system_obj.pan4.img_pan = guider_ui.main_screen_pan_4;
+        system_obj.pan4.img_ring_l = guider_ui.main_screen_select_ring_l4;
+        system_obj.pan4.img_ring_h = guider_ui.main_screen_select_ring_h4;
+        system_obj.pan4.obj_cont = guider_ui.main_screen_cont_4;
+        system_obj.pan5.img_pan = guider_ui.main_screen_pan_5;
+        system_obj.pan5.img_ring_l = guider_ui.main_screen_select_ring_l5;
+        system_obj.pan5.img_ring_h = guider_ui.main_screen_select_ring_h5;
+        system_obj.pan5.obj_cont = guider_ui.main_screen_cont_5;
+        lv_anim_init(&system_obj.pan1.a_x);
+        lv_anim_init(&system_obj.pan1.a_y);
+        lv_anim_init(&system_obj.pan2.a_x);
+        lv_anim_init(&system_obj.pan2.a_y);
+        lv_anim_init(&system_obj.pan3.a_x);
+        lv_anim_init(&system_obj.pan3.a_y);
+        lv_anim_init(&system_obj.pan4.a_x);
+        lv_anim_init(&system_obj.pan4.a_y);
+        lv_anim_init(&system_obj.pan5.a_x);
+        lv_anim_init(&system_obj.pan5.a_y);
+        lv_anim_init(&anim_pause);
+    }
     refresh_display();
-    tft_regs.read_regs.slave_param_bits.buzzer_bit_pan = !tft_regs.read_regs.slave_param_bits.buzzer_bit_pan;
+    buzzer_beep();
+    lv_label_set_text_fmt(guider_ui.main_screen_clock_lbl, "%02d:%02d", tft_regs.write_regs.hour, tft_regs.write_regs.minute);
+}
+/*******************************************************************************/
+void menu_screen_init(void)
+{
+    guider_ui.menu_screen_del = false;
+    buzzer_beep();
+    if(tft_regs.read_regs.slave_param_bits.buzzer_bit_mute)
+    {
+        lv_obj_add_state(guider_ui.menu_screen_sound_switch, LV_STATE_CHECKED);
+    }
+    else
+    {
+        lv_obj_clear_state(guider_ui.menu_screen_sound_switch, LV_STATE_CHECKED);
+    }
+    lv_roller_set_selected(guider_ui.menu_screen_power_roller, tft_regs.read_regs.slave_param_bits.power_limit, LV_ANIM_ON);
+    lv_roller_set_selected(guider_ui.menu_screen_roller_1, tft_regs.write_regs.hour, LV_ANIM_ON);
+    lv_roller_set_selected(guider_ui.menu_screen_roller_2, tft_regs.write_regs.minute, LV_ANIM_ON);
+    lv_label_set_text_fmt(guider_ui.menu_screen_clock_lbl, "%02d:%02d", tft_regs.write_regs.hour, tft_regs.write_regs.minute);
+
 }
 /*******************************************************************************/
 void select_timer_start(void)
@@ -336,7 +389,7 @@ void set_select(uint8_t sel)
     }
     if(sel)
     {
-        tft_regs.read_regs.slave_param_bits.buzzer_bit_pan = !tft_regs.read_regs.slave_param_bits.buzzer_bit_pan;
+        buzzer_beep();
     }
     if(system_obj.select_pan != sel && system_obj.pause == false && system_obj.lock == false)
     {
@@ -392,7 +445,7 @@ void pressed_lock(void)
     lv_obj_set_style_img_opa(guider_ui.main_screen_pan_3, 72, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_img_opa(guider_ui.main_screen_pan_4, 72, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_img_opa(guider_ui.main_screen_pan_5, 72, LV_PART_MAIN | LV_STATE_DEFAULT);
-    tft_regs.read_regs.slave_param_bits.buzzer_bit_pan = !tft_regs.read_regs.slave_param_bits.buzzer_bit_pan;
+    buzzer_beep();
 }
 /*******************************************************************************/
 void pause_anim_ready_cb(lv_anim_t *a)
@@ -503,7 +556,31 @@ void long_press_lock(void)
 /*******************************************************************************/
 void click_main_timer(void)
 {
-    tft_regs.read_regs.slave_param_bits.buzzer_bit_pan = !tft_regs.read_regs.slave_param_bits.buzzer_bit_pan;
+    buzzer_beep();
+}
+/*******************************************************************************/
+void pressed_clock_save(void)
+{
+    lv_timer_reset(second_timer);
+    buzzer_beep();
+    tft_regs.read_regs.hour_set = lv_roller_get_selected(guider_ui.menu_screen_roller_1);
+    tft_regs.read_regs.minute_set = lv_roller_get_selected(guider_ui.menu_screen_roller_2);
+    tft_regs.read_regs.slave_param_bits.clock_updated = true;
+}
+/*******************************************************************************/
+void pressed_setting_save(void)
+{
+    tft_regs.read_regs.slave_param_bits.buzzer_bit_mute = lv_obj_get_state(guider_ui.menu_screen_sound_switch) & LV_STATE_CHECKED ? true : false;
+    tft_regs.read_regs.slave_param_bits.power_limit = lv_roller_get_selected(guider_ui.menu_screen_power_roller);
+    buzzer_beep();
+}
+/*******************************************************************************/
+void buzzer_beep(void)
+{
+    if(tft_regs.read_regs.slave_param_bits.buzzer_bit_mute == false)
+    {
+        tft_regs.read_regs.slave_param_bits.buzzer_bit_pan = !tft_regs.read_regs.slave_param_bits.buzzer_bit_pan;
+    }
 }
 /*******************************************************************************/
 /*******************************************************************************/

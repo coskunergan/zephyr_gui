@@ -59,19 +59,20 @@ typedef struct
 
 typedef struct
 {
-    uint16_t power_limit_0   : 1,
-             power_limit_1   : 1,
-             power_limit_2   : 1,
-             power_limit_3   : 1,
+    uint16_t power_limit     : 4,
              buzzer_bit_pause: 1,
              buzzer_bit_lock : 1,
              buzzer_bit_pan  : 1,
-             reserve         : 9;
+             buzzer_bit_mute : 1,
+             clock_updated   : 1,
+             reserve         : 8;
 } slave_param_bits_t;
 
 typedef struct
 {
-    uint16_t reserved[8];
+    uint16_t reserved[7];
+    uint8_t minute;
+    uint8_t hour;
     uint16_t grid_x;
     uint16_t grid_y;
     master_param_bits_t master_param_bits;
@@ -87,7 +88,9 @@ typedef struct
 
 typedef struct
 {
-    uint16_t reserved[9];
+    uint16_t reserved[8];
+    uint8_t minute_set;
+    uint8_t hour_set;    
     slave_param_bits_t slave_param_bits;
     uint16_t panx_value[5];
 } tft_read_registers_t;
@@ -109,7 +112,9 @@ typedef struct
 
 /*******************************************************************************/
 
-void system_init(void);
+void logo_screen_init(void);
+void main_screen_init(void);
+void menu_screen_init(void);
 void set_slider(uint8_t val);
 void set_select(uint8_t sel);
 void refresh_display(void);
@@ -119,5 +124,8 @@ void click_main_timer(void);
 void long_press_lock(void);
 void pressed_lock(void);
 void released_lock(void);
+void buzzer_beep(void);
+void pressed_clock_save(void);
+void pressed_setting_save(void);
 
 #endif /* PAN_PROCCES */

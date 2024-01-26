@@ -430,7 +430,7 @@
 /*Documentation of the widgets: https://docs.lvgl.io/latest/en/html/widgets/index.html*/
 #define LV_USE_ARC 1
 
-#define LV_USE_BAR 0
+#define LV_USE_BAR 1
 
 #define LV_USE_BTN 1
 
@@ -454,15 +454,15 @@
 
 #define LV_USE_LINE 0
 
-#define LV_USE_ROLLER 0
+#define LV_USE_ROLLER 1
 #if LV_USE_ROLLER
 /*Number of extra "pages" when the roller is infinite*/
 #define LV_ROLLER_INF_PAGES 7
 #endif    /* LV_USE_ROLLER */
 
-#define LV_USE_SLIDER 0
+#define LV_USE_SLIDER 1
 
-#define LV_USE_SWITCH 0
+#define LV_USE_SWITCH 1
 
 #define LV_USE_TEXTAREA 0
 #if LV_USE_TEXTAREA
@@ -528,7 +528,7 @@
 
 #define LV_USE_SPINNER 1
 
-#define LV_USE_TABVIEW 0
+#define LV_USE_TABVIEW 1
 
 #define LV_USE_TILEVIEW 0
 
