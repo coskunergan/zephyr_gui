@@ -323,7 +323,10 @@ void pan_refresh(tft_pan_registers_t *pan_regs, system_pan_registers_t *sys_pan_
             }
             else
             {
-                system_obj.select_pan = (index == (system_obj.select_pan - 1)) ? 0 : system_obj.select_pan;
+                if(index == (system_obj.select_pan - 1))
+                {
+                    system_obj.select_pan = 0;
+                }                
                 no_level_set(sys_pan_regs->img_pan, tft_regs.read_regs.panx_value[index] / 2);
             }
         }

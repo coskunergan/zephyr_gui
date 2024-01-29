@@ -65,7 +65,7 @@ typedef struct
              buzzer_bit_pan  : 1,
              buzzer_bit_mute : 1,
              clock_updated   : 1,
-             reserve         : 8;
+             reserve         : 7;
 } slave_param_bits_t;
 
 typedef struct

@@ -571,8 +571,7 @@
 					"bg_img_recolor": "#ffffff",
 					"bg_img_recolor_opa": 0
 				}
-			],
-			"layerName": "logo_screen"
+			]
 		},
 		{
 			"name": "main_screen",
@@ -621,7 +620,7 @@
 							"border_opa": 255,
 							"border_color": "#2195f6",
 							"radius": 0,
-							"text_color": "#858585",
+							"text_color": "#ffffff",
 							"font": 44,
 							"text_align": "LV_TEXT_ALIGN_CENTER",
 							"font_family": "montserratMedium",
@@ -1313,8 +1312,7 @@
 										}
 									}
 								]
-							},
-							"layerName": "main_screen"
+							}
 						},
 						{
 							"name": "menu_btn",
@@ -1748,8 +1746,7 @@
 										}
 									}
 								]
-							},
-							"layerName": "main_screen"
+							}
 						},
 						{
 							"name": "timer_btn",
@@ -1966,8 +1963,7 @@
 										}
 									}
 								]
-							},
-							"layerName": "main_screen"
+							}
 						}
 					],
 					"style": [
@@ -2520,8 +2516,7 @@
 										}
 									}
 								]
-							},
-							"layerName": "main_screen"
+							}
 						},
 						{
 							"name": "select_ring_h5",
@@ -2686,8 +2681,7 @@
 										}
 									}
 								]
-							},
-							"layerName": "main_screen"
+							}
 						},
 						{
 							"name": "pan_5",
@@ -2852,8 +2846,7 @@
 										}
 									}
 								]
-							},
-							"layerName": "main_screen"
+							}
 						}
 					],
 					"style": [
@@ -3064,8 +3057,7 @@
 										}
 									}
 								]
-							},
-							"layerName": "main_screen"
+							}
 						},
 						{
 							"name": "select_ring_h4",
@@ -3230,8 +3222,7 @@
 										}
 									}
 								]
-							},
-							"layerName": "main_screen"
+							}
 						},
 						{
 							"name": "pan_4",
@@ -3396,8 +3387,7 @@
 										}
 									}
 								]
-							},
-							"layerName": "main_screen"
+							}
 						}
 					],
 					"style": [
@@ -3608,8 +3598,7 @@
 										}
 									}
 								]
-							},
-							"layerName": "main_screen"
+							}
 						},
 						{
 							"name": "select_ring_h3",
@@ -3774,8 +3763,7 @@
 										}
 									}
 								]
-							},
-							"layerName": "main_screen"
+							}
 						},
 						{
 							"name": "pan_3",
@@ -3940,8 +3928,7 @@
 										}
 									}
 								]
-							},
-							"layerName": "main_screen"
+							}
 						}
 					],
 					"style": [
@@ -4152,8 +4139,7 @@
 										}
 									}
 								]
-							},
-							"layerName": "main_screen"
+							}
 						},
 						{
 							"name": "select_ring_h2",
@@ -4318,8 +4304,7 @@
 										}
 									}
 								]
-							},
-							"layerName": "main_screen"
+							}
 						},
 						{
 							"name": "pan_2",
@@ -4484,8 +4469,7 @@
 										}
 									}
 								]
-							},
-							"layerName": "main_screen"
+							}
 						}
 					],
 					"style": [
@@ -4696,8 +4680,7 @@
 										}
 									}
 								]
-							},
-							"layerName": "main_screen"
+							}
 						},
 						{
 							"name": "select_ring_h1",
@@ -4862,8 +4845,7 @@
 										}
 									}
 								]
-							},
-							"layerName": "main_screen"
+							}
 						},
 						{
 							"name": "pan_1",
@@ -5028,8 +5010,7 @@
 										}
 									}
 								]
-							},
-							"layerName": "main_screen"
+							}
 						}
 					],
 					"style": [
@@ -7341,8 +7322,7 @@
 								"item_index": 10
 							}
 						]
-					},
-					"layerName": "main_screen"
+					}
 				}
 			],
 			"event": {
@@ -7493,8 +7473,7 @@
 					"bg_img_recolor": "#ffffff",
 					"bg_img_recolor_opa": 0
 				}
-			],
-			"layerName": "main_screen"
+			]
 		},
 		{
 			"name": "menu_screen",
@@ -7986,8 +7965,7 @@
 								}
 							}
 						]
-					},
-					"layerName": "menu_screen"
+					}
 				},
 				{
 					"name": "img_clock",
@@ -8152,8 +8130,7 @@
 								}
 							}
 						]
-					},
-					"layerName": "menu_screen"
+					}
 				},
 				{
 					"name": "img_settings",
@@ -8318,8 +8295,7 @@
 								}
 							}
 						]
-					},
-					"layerName": "menu_screen"
+					}
 				},
 				{
 					"name": "img_5",
@@ -8365,7 +8341,7 @@
 					"height": 367,
 					"default_style": false,
 					"scrollbar_mode": "OFF",
-					"current_item": 0,
+					"current_item": 2,
 					"child": [
 						{
 							"name": "settings",
@@ -8668,8 +8644,7 @@
 												}
 											}
 										]
-									},
-									"layerName": "menu_screen"
+									}
 								},
 								{
 									"name": "img_3",
@@ -9574,8 +9549,7 @@
 												}
 											}
 										]
-									},
-									"layerName": "menu_screen"
+									}
 								},
 								{
 									"name": "label_3",
@@ -10368,6 +10342,95 @@
 							"type": "tab",
 							"child": [
 								{
+									"name": "label_4",
+									"id": "amcxpkus",
+									"type": "label",
+									"left": 260,
+									"top": 254,
+									"visible": true,
+									"flag": [],
+									"custom_attributes": {},
+									"width": 100,
+									"height": 32,
+									"default_style": false,
+									"text": "V1.0.0",
+									"long_mode": "LV_LABEL_LONG_WRAP",
+									"style": [
+										{
+											"part": "LV_PART_MAIN",
+											"state": "LV_STATE_DEFAULT",
+											"disable": false,
+											"border_side": [
+												"LV_BORDER_SIDE_FULL"
+											],
+											"border_width": 0,
+											"border_opa": 255,
+											"border_color": "#2195f6",
+											"radius": 0,
+											"text_color": "#000000",
+											"font": 16,
+											"text_align": "LV_TEXT_ALIGN_CENTER",
+											"font_family": "montserratMedium",
+											"letter_space": 2,
+											"line_space": 0,
+											"bg_color": "#2195f6",
+											"bg_grad_color": "#2195f6",
+											"bg_opa": 0,
+											"bg_grad_dir": "LV_GRAD_DIR_NONE",
+											"padding_top": 0,
+											"padding_right": 0,
+											"padding_bottom": 0,
+											"padding_left": 0,
+											"bg_img_src": "",
+											"bg_img_opa": 255,
+											"bg_img_recolor": "#ffffff",
+											"bg_img_recolor_opa": 0,
+											"shadow_color": "#2195f6",
+											"shadow_opa": 255,
+											"shadow_width": 0,
+											"shadow_spread": 0,
+											"shadow_ofs_x": 0,
+											"shadow_ofs_y": 0
+										},
+										{
+											"part": "LV_PART_MAIN",
+											"state": "LV_STATE_DISABLED",
+											"disable": true,
+											"border_side": [
+												"LV_BORDER_SIDE_FULL"
+											],
+											"border_width": 0,
+											"border_opa": 255,
+											"border_color": "#2195f6",
+											"radius": 0,
+											"text_color": "#000000",
+											"font": 16,
+											"font_family": "montserratMedium",
+											"text_align": "LV_TEXT_ALIGN_CENTER",
+											"letter_space": 2,
+											"line_space": 0,
+											"bg_color": "#2195f6",
+											"bg_grad_color": "#2195f6",
+											"bg_opa": 0,
+											"bg_grad_dir": "LV_GRAD_DIR_NONE",
+											"padding_top": 0,
+											"padding_right": 0,
+											"padding_bottom": 0,
+											"padding_left": 0,
+											"bg_img_src": "",
+											"bg_img_opa": 255,
+											"bg_img_recolor": "#ffffff",
+											"bg_img_recolor_opa": 0,
+											"shadow_color": "#2195f6",
+											"shadow_opa": 255,
+											"shadow_width": 0,
+											"shadow_spread": 0,
+											"shadow_ofs_x": 0,
+											"shadow_ofs_y": 0
+										}
+									]
+								},
+								{
 									"name": "img_1",
 									"id": "bvkbu6x3",
 									"type": "img",
@@ -10630,8 +10693,7 @@
 					"bg_img_recolor": "#ffffff",
 					"bg_img_recolor_opa": 0
 				}
-			],
-			"layerName": "menu_screen"
+			]
 		}
 	],
 	"projectName": "button_test",
@@ -10793,7 +10855,7 @@
 		"LV_MEM_AUTO_DEFRAG": true,
 		"LV_MEM_CUSTOM_FREE": "vPortFree",
 		"LV_USE_GPU_NXP_PXP": "~~",
-		"LV_USE_MEM_MONITOR": false,
+		"LV_USE_MEM_MONITOR": true,
 		"LV_MEM_CUSTOM_ALLOC": "pvPortMalloc",
 		"LV_USE_PERF_MONITOR": false,
 		"LV_MEM_CUSTOM_INCLUDE": "FreeRTOS.h",
@@ -14270,7 +14332,7 @@
 								"border_opa": 255,
 								"border_color": "#2195f6",
 								"radius": 0,
-								"text_color": "#858585",
+								"text_color": "#ffffff",
 								"font": 44,
 								"text_align": "LV_TEXT_ALIGN_CENTER",
 								"font_family": "montserratMedium",
@@ -16089,6 +16151,99 @@
 												"image_recolor": "#ffffff",
 												"image_recolor_opa": 0,
 												"image_opa": 255
+											}
+										]
+									},
+									{
+										"name": "menu_screen_label_4",
+										"id": "amcxpkus",
+										"type": "label",
+										"visible": true,
+										"flag": [],
+										"pos": [
+											260,
+											254
+										],
+										"size": [
+											100,
+											32
+										],
+										"default_style": false,
+										"custom_attributes": {},
+										"text": "V1.0.0",
+										"long_mode": "LV_LABEL_LONG_WRAP",
+										"style": [
+											{
+												"part": "LV_PART_MAIN",
+												"state": "LV_STATE_DEFAULT",
+												"disable": false,
+												"border_side": [
+													"LV_BORDER_SIDE_FULL"
+												],
+												"border_width": 0,
+												"border_opa": 255,
+												"border_color": "#2195f6",
+												"radius": 0,
+												"text_color": "#000000",
+												"font": 16,
+												"text_align": "LV_TEXT_ALIGN_CENTER",
+												"font_family": "montserratMedium",
+												"letter_space": 2,
+												"line_space": 0,
+												"bg_color": "#2195f6",
+												"bg_grad_color": "#2195f6",
+												"bg_opa": 0,
+												"bg_grad_dir": "LV_GRAD_DIR_NONE",
+												"padding_top": 0,
+												"padding_right": 0,
+												"padding_bottom": 0,
+												"padding_left": 0,
+												"bg_img_src": "",
+												"bg_img_opa": 255,
+												"bg_img_recolor": "#ffffff",
+												"bg_img_recolor_opa": 0,
+												"shadow_color": "#2195f6",
+												"shadow_opa": 255,
+												"shadow_width": 0,
+												"shadow_spread": 0,
+												"shadow_ofs_x": 0,
+												"shadow_ofs_y": 0
+											},
+											{
+												"part": "LV_PART_MAIN",
+												"state": "LV_STATE_DISABLED",
+												"disable": true,
+												"border_side": [
+													"LV_BORDER_SIDE_FULL"
+												],
+												"border_width": 0,
+												"border_opa": 255,
+												"border_color": "#2195f6",
+												"radius": 0,
+												"text_color": "#000000",
+												"font": 16,
+												"font_family": "montserratMedium",
+												"text_align": "LV_TEXT_ALIGN_CENTER",
+												"letter_space": 2,
+												"line_space": 0,
+												"bg_color": "#2195f6",
+												"bg_grad_color": "#2195f6",
+												"bg_opa": 0,
+												"bg_grad_dir": "LV_GRAD_DIR_NONE",
+												"padding_top": 0,
+												"padding_right": 0,
+												"padding_bottom": 0,
+												"padding_left": 0,
+												"bg_img_src": "",
+												"bg_img_opa": 255,
+												"bg_img_recolor": "#ffffff",
+												"bg_img_recolor_opa": 0,
+												"shadow_color": "#2195f6",
+												"shadow_opa": 255,
+												"shadow_width": 0,
+												"shadow_spread": 0,
+												"shadow_ofs_x": 0,
+												"shadow_ofs_y": 0
 											}
 										]
 									}

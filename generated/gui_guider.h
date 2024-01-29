@@ -112,6 +112,7 @@ typedef struct
 	lv_obj_t *menu_screen_clock_save_btn;
 	lv_obj_t *menu_screen_clock_save_btn_label;
 	lv_obj_t *menu_screen_img_1;
+	lv_obj_t *menu_screen_label_4;
 	lv_obj_t *menu_screen_img_5;
 	lv_obj_t *menu_screen_img_settings;
 	lv_obj_t *menu_screen_img_clock;

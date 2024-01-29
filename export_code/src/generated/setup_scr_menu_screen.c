@@ -385,6 +385,28 @@ void setup_scr_menu_screen(lv_ui *ui)
 	//Write style for menu_screen_img_1, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
 	lv_obj_set_style_img_opa(ui->menu_screen_img_1, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
 
+	//Write codes menu_screen_label_4
+	ui->menu_screen_label_4 = lv_label_create(ui->menu_screen_tabview_1_tab_3);
+	lv_label_set_text(ui->menu_screen_label_4, "V1.0.0");
+	lv_label_set_long_mode(ui->menu_screen_label_4, LV_LABEL_LONG_WRAP);
+	lv_obj_set_pos(ui->menu_screen_label_4, 260, 254);
+	lv_obj_set_size(ui->menu_screen_label_4, 100, 32);
+
+	//Write style for menu_screen_label_4, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+	lv_obj_set_style_border_width(ui->menu_screen_label_4, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_radius(ui->menu_screen_label_4, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_color(ui->menu_screen_label_4, lv_color_hex(0x000000), LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_font(ui->menu_screen_label_4, &lv_font_montserratMedium_16, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_letter_space(ui->menu_screen_label_4, 2, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_line_space(ui->menu_screen_label_4, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_align(ui->menu_screen_label_4, LV_TEXT_ALIGN_CENTER, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_opa(ui->menu_screen_label_4, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_top(ui->menu_screen_label_4, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_right(ui->menu_screen_label_4, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_bottom(ui->menu_screen_label_4, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_left(ui->menu_screen_label_4, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_shadow_width(ui->menu_screen_label_4, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+
 	//Write codes menu_screen_img_5
 	ui->menu_screen_img_5 = lv_img_create(ui->menu_screen);
 	lv_obj_add_flag(ui->menu_screen_img_5, LV_OBJ_FLAG_CLICKABLE);

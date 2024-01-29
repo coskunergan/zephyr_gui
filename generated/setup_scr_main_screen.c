@@ -996,7 +996,7 @@ void setup_scr_main_screen(lv_ui *ui)
 	//Write style for main_screen_count_down_label, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
 	lv_obj_set_style_border_width(ui->main_screen_count_down_label, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_radius(ui->main_screen_count_down_label, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_text_color(ui->main_screen_count_down_label, lv_color_hex(0x858585), LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_color(ui->main_screen_count_down_label, lv_color_hex(0xffffff), LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_text_font(ui->main_screen_count_down_label, &lv_font_montserratMedium_44, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_text_letter_space(ui->main_screen_count_down_label, 2, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_text_line_space(ui->main_screen_count_down_label, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
