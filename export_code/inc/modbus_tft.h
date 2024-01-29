@@ -120,7 +120,7 @@ namespace device_modbus_tft
                 {
                     logo_off_state = true;
                     lv_obj_t *act_scr = lv_scr_act();
-                    lv_event_send(act_scr, LV_EVENT_CLICKED, NULL);
+                    lv_event_send(act_scr, LV_EVENT_VALUE_CHANGED, NULL);
                 }
             }
         }

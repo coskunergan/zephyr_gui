@@ -42,7 +42,7 @@
 					"type": "label",
 					"left": 336,
 					"top": 340,
-					"visible": true,
+					"visible": false,
 					"flag": [],
 					"custom_attributes": {},
 					"width": 140,
@@ -155,153 +155,20 @@
 							"image_opa": 255
 						}
 					],
-					"event": {
-						"clicked": [
-							{
-								"trigger": "clicked",
-								"dst": "screen",
-								"action": {
-									"load_screen": {
-										"ische": true,
-										"duration": 200,
-										"delay": 200,
-										"scrId": "default_scr",
-										"anim_type": "LV_SCR_LOAD_ANIM_NONE",
-										"is_clean": false,
-										"is_del": true
-									},
-									"bg_color": {
-										"ische": false,
-										"value": "#000000"
-									},
-									"grad_color": {
-										"ische": false,
-										"value": "#000000",
-										"dir": "LV_GRAD_DIR_HOR"
-									},
-									"bg_opa": {
-										"ische": false,
-										"value": 255
-									},
-									"width": {
-										"ische": false,
-										"value": 50
-									},
-									"height": {
-										"ische": false,
-										"value": 50
-									},
-									"set_text": {
-										"ische": false,
-										"value": "default",
-										"font": 12,
-										"font_family": "simsun"
-									},
-									"position": {
-										"ische": false,
-										"value_x": 0,
-										"value_y": 0
-									},
-									"isVisible": {
-										"ische": false,
-										"flag": ""
-									},
-									"customer_code": {
-										"ische": false,
-										"inc_c": "",
-										"code_c": "",
-										"inc_py": "",
-										"code_py": ""
-									},
-									"add_state": {
-										"ische": false,
-										"value": "LV_STATE_DEFAULT"
-									},
-									"add_flag": {
-										"ische": false,
-										"value": []
-									},
-									"clear_flag": {
-										"ische": false,
-										"value": []
-									},
-									"move": {
-										"ische": false,
-										"value_x": 0,
-										"value_y": 0,
-										"delay": 0,
-										"duration": 1000,
-										"repeat_count": 0,
-										"repeat_delay": 0,
-										"playback_time": 0,
-										"playback_delay": 0,
-										"start_cb": "",
-										"ready_cb": "",
-										"deleted_cb": "",
-										"path_type": "linear"
-									},
-									"scaleSize": {
-										"ische": false,
-										"width": 0,
-										"height": 0,
-										"delay": 0,
-										"duration": 1000,
-										"repeat_count": 0,
-										"repeat_delay": 0,
-										"playback_time": 0,
-										"playback_delay": 0,
-										"start_cb": "",
-										"ready_cb": "",
-										"deleted_cb": "",
-										"path_type": "linear"
-									},
-									"img_zoom": {
-										"ische": false,
-										"zoom": 0,
-										"delay": 0,
-										"duration": 1000,
-										"repeat_count": 0,
-										"repeat_delay": 0,
-										"playback_time": 0,
-										"playback_delay": 0,
-										"start_cb": "",
-										"ready_cb": "",
-										"deleted_cb": "",
-										"path_type": "linear"
-									},
-									"rotate": {
-										"ische": false,
-										"rotate": 0,
-										"x": 0,
-										"y": 0,
-										"delay": 0,
-										"duration": 1000,
-										"repeat_count": 0,
-										"repeat_delay": 0,
-										"playback_time": 0,
-										"playback_delay": 0,
-										"start_cb": "",
-										"ready_cb": "",
-										"deleted_cb": "",
-										"path_type": "linear"
-									}
-								}
-							}
-						]
-					}
+					"event": {}
 				}
 			],
 			"event": {
-				"clicked": [
+				"screen_loaded": [
 					{
-						"trigger": "clicked",
-						"dst": "screen",
+						"trigger": "screen_loaded",
+						"dst": "r4qfrg1n",
 						"action": {
 							"load_screen": {
-								"ische": true,
-								"duration": 50,
-								"delay": 50,
-								"scrId": "default_scr",
+								"ische": false,
+								"duration": 200,
+								"delay": 200,
+								"scrId": "",
 								"anim_type": "LV_SCR_LOAD_ANIM_NONE",
 								"is_clean": false,
 								"is_del": true
@@ -343,9 +210,9 @@
 								"flag": ""
 							},
 							"customer_code": {
-								"ische": false,
+								"ische": true,
 								"inc_c": "",
-								"code_c": "",
+								"code_c": "logo_screen_init();",
 								"inc_py": "",
 								"code_py": ""
 							},
@@ -424,16 +291,16 @@
 						}
 					}
 				],
-				"screen_loaded": [
+				"value_changed": [
 					{
-						"trigger": "screen_loaded",
-						"dst": "r4qfrg1n",
+						"trigger": "value_changed",
+						"dst": "screen",
 						"action": {
 							"load_screen": {
-								"ische": false,
-								"duration": 200,
-								"delay": 200,
-								"scrId": "",
+								"ische": true,
+								"duration": 50,
+								"delay": 50,
+								"scrId": "default_scr",
 								"anim_type": "LV_SCR_LOAD_ANIM_NONE",
 								"is_clean": false,
 								"is_del": true
@@ -475,9 +342,9 @@
 								"flag": ""
 							},
 							"customer_code": {
-								"ische": true,
+								"ische": false,
 								"inc_c": "",
-								"code_c": "logo_screen_init();",
+								"code_c": "",
 								"inc_py": "",
 								"code_py": ""
 							},
@@ -750,7 +617,7 @@
 							"type": "label",
 							"left": 647,
 							"top": 23,
-							"visible": true,
+							"visible": false,
 							"flag": [],
 							"custom_attributes": {},
 							"width": 140,
@@ -8927,7 +8794,7 @@
 											"border_width": 0,
 											"border_opa": 255,
 											"border_color": "#2195f6",
-											"radius": 10,
+											"radius": 21,
 											"shadow_color": "#2195f6",
 											"shadow_opa": 255,
 											"shadow_width": 0,
@@ -9062,7 +8929,7 @@
 											"border_width": 0,
 											"border_opa": 255,
 											"border_color": "#2195f6",
-											"radius": 10
+											"radius": 21
 										},
 										{
 											"part": "LV_PART_KNOB",
@@ -10353,7 +10220,7 @@
 									"width": 100,
 									"height": 32,
 									"default_style": false,
-									"text": "V1.0.0",
+									"text": "V1.0.1",
 									"long_mode": "LV_LABEL_LONG_WRAP",
 									"style": [
 										{
@@ -10855,7 +10722,7 @@
 		"LV_MEM_AUTO_DEFRAG": true,
 		"LV_MEM_CUSTOM_FREE": "vPortFree",
 		"LV_USE_GPU_NXP_PXP": "~~",
-		"LV_USE_MEM_MONITOR": true,
+		"LV_USE_MEM_MONITOR": false,
 		"LV_MEM_CUSTOM_ALLOC": "pvPortMalloc",
 		"LV_USE_PERF_MONITOR": false,
 		"LV_MEM_CUSTOM_INCLUDE": "FreeRTOS.h",
@@ -10897,22 +10764,6 @@
 				"keyboard_font_type": "simsun",
 				"keyboard_font_size": "18",
 				"event": {
-					"clicked": [
-						{
-							"src": "logo_screen",
-							"trigger": "clicked",
-							"dst": "main_screen",
-							"dst_type": "scr",
-							"src_screen": "logo_screen",
-							"action": "load_screen",
-							"duration": 50,
-							"delay": 50,
-							"scrId": "default_scr",
-							"anim_type": "LV_SCR_LOAD_ANIM_NONE",
-							"is_clean": false,
-							"is_del": true
-						}
-					],
 					"screen_loaded": [
 						{
 							"src": "logo_screen",
@@ -10925,6 +10776,22 @@
 							"code_c": "logo_screen_init();",
 							"inc_py": "",
 							"code_py": ""
+						}
+					],
+					"value_changed": [
+						{
+							"src": "logo_screen",
+							"trigger": "value_changed",
+							"dst": "main_screen",
+							"dst_type": "scr",
+							"src_screen": "logo_screen",
+							"action": "load_screen",
+							"duration": 50,
+							"delay": 50,
+							"scrId": "default_scr",
+							"anim_type": "LV_SCR_LOAD_ANIM_NONE",
+							"is_clean": false,
+							"is_del": true
 						}
 					]
 				},
@@ -10964,24 +10831,7 @@
 						],
 						"default_style": false,
 						"custom_attributes": {},
-						"event": {
-							"clicked": [
-								{
-									"src": "logo_screen_img_1",
-									"trigger": "clicked",
-									"dst": "main_screen",
-									"dst_type": "scr",
-									"src_screen": "logo_screen",
-									"action": "load_screen",
-									"duration": 200,
-									"delay": 200,
-									"scrId": "default_scr",
-									"anim_type": "LV_SCR_LOAD_ANIM_NONE",
-									"is_clean": false,
-									"is_del": true
-								}
-							]
-						},
+						"event": {},
 						"img_path": "C:\\workspace_cergan\\zephyr_gui\\import\\image\\logo.png",
 						"color_format": "true-color-alpha",
 						"rotate": 0,
@@ -11005,7 +10855,7 @@
 						"name": "logo_screen_clock_lbl",
 						"id": "sqb1rj7d",
 						"type": "label",
-						"visible": true,
+						"visible": false,
 						"flag": [],
 						"pos": [
 							336,
@@ -14128,7 +13978,7 @@
 								"name": "main_screen_clock_lbl",
 								"id": "p6gc8zub",
 								"type": "label",
-								"visible": true,
+								"visible": false,
 								"flag": [],
 								"pos": [
 									647,
@@ -14651,7 +14501,7 @@
 												"border_width": 0,
 												"border_opa": 255,
 												"border_color": "#2195f6",
-												"radius": 10,
+												"radius": 21,
 												"shadow_color": "#2195f6",
 												"shadow_opa": 255,
 												"shadow_width": 0,
@@ -14786,7 +14636,7 @@
 												"border_width": 0,
 												"border_opa": 255,
 												"border_color": "#2195f6",
-												"radius": 10
+												"radius": 21
 											},
 											{
 												"part": "LV_PART_KNOB",
@@ -16170,7 +16020,7 @@
 										],
 										"default_style": false,
 										"custom_attributes": {},
-										"text": "V1.0.0",
+										"text": "V1.0.1",
 										"long_mode": "LV_LABEL_LONG_WRAP",
 										"style": [
 											{

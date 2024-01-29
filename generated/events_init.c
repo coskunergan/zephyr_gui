@@ -18,7 +18,12 @@ static void logo_screen_event_handler (lv_event_t *e)
 	lv_event_code_t code = lv_event_get_code(e);
 
 	switch (code) {
-	case LV_EVENT_CLICKED:
+	case LV_EVENT_SCREEN_LOADED:
+	{
+		logo_screen_init();
+		break;
+	}
+	case LV_EVENT_VALUE_CHANGED:
 	{
 		//Write the load screen code.
 	    lv_obj_t * act_scr = lv_scr_act();
@@ -32,34 +37,6 @@ static void logo_screen_event_handler (lv_event_t *e)
 	    }
 		break;
 	}
-	case LV_EVENT_SCREEN_LOADED:
-	{
-		logo_screen_init();
-		break;
-	}
-	default:
-		break;
-	}
-}
-static void logo_screen_img_1_event_handler (lv_event_t *e)
-{
-	lv_event_code_t code = lv_event_get_code(e);
-
-	switch (code) {
-	case LV_EVENT_CLICKED:
-	{
-		//Write the load screen code.
-	    lv_obj_t * act_scr = lv_scr_act();
-	    lv_disp_t * d = lv_obj_get_disp(act_scr);
-	    if (d->prev_scr == NULL && (d->scr_to_load == NULL || d->scr_to_load == act_scr)) {
-	        if (guider_ui.main_screen_del == true) {
-	          setup_scr_main_screen(&guider_ui);
-	        }
-	        lv_scr_load_anim(guider_ui.main_screen, LV_SCR_LOAD_ANIM_NONE, 200, 200, true);
-	        guider_ui.logo_screen_del = true;
-	    }
-		break;
-	}
 	default:
 		break;
 	}
@@ -67,7 +44,6 @@ static void logo_screen_img_1_event_handler (lv_event_t *e)
 void events_init_logo_screen(lv_ui *ui)
 {
 	lv_obj_add_event_cb(ui->logo_screen, logo_screen_event_handler, LV_EVENT_ALL, NULL);
-	lv_obj_add_event_cb(ui->logo_screen_img_1, logo_screen_img_1_event_handler, LV_EVENT_ALL, NULL);
 }
 static void main_screen_event_handler (lv_event_t *e)
 {

@@ -115,7 +115,7 @@ void setup_scr_menu_screen(lv_ui *ui)
 	lv_obj_set_style_bg_opa(ui->menu_screen_sound_switch, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_bg_color(ui->menu_screen_sound_switch, lv_color_hex(0x636363), LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_border_width(ui->menu_screen_sound_switch, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_radius(ui->menu_screen_sound_switch, 10, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_radius(ui->menu_screen_sound_switch, 21, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_shadow_width(ui->menu_screen_sound_switch, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 
 	//Write style for menu_screen_sound_switch, Part: LV_PART_INDICATOR, State: LV_STATE_CHECKED.
@@ -127,7 +127,7 @@ void setup_scr_menu_screen(lv_ui *ui)
 	lv_obj_set_style_bg_opa(ui->menu_screen_sound_switch, 255, LV_PART_KNOB|LV_STATE_DEFAULT);
 	lv_obj_set_style_bg_color(ui->menu_screen_sound_switch, lv_color_hex(0xffffff), LV_PART_KNOB|LV_STATE_DEFAULT);
 	lv_obj_set_style_border_width(ui->menu_screen_sound_switch, 0, LV_PART_KNOB|LV_STATE_DEFAULT);
-	lv_obj_set_style_radius(ui->menu_screen_sound_switch, 10, LV_PART_KNOB|LV_STATE_DEFAULT);
+	lv_obj_set_style_radius(ui->menu_screen_sound_switch, 21, LV_PART_KNOB|LV_STATE_DEFAULT);
 
 	//Write codes menu_screen_slider_contrast
 	ui->menu_screen_slider_contrast = lv_slider_create(ui->menu_screen_tabview_1_tab_1);
@@ -387,7 +387,7 @@ void setup_scr_menu_screen(lv_ui *ui)
 
 	//Write codes menu_screen_label_4
 	ui->menu_screen_label_4 = lv_label_create(ui->menu_screen_tabview_1_tab_3);
-	lv_label_set_text(ui->menu_screen_label_4, "V1.0.0");
+	lv_label_set_text(ui->menu_screen_label_4, "V1.0.1");
 	lv_label_set_long_mode(ui->menu_screen_label_4, LV_LABEL_LONG_WRAP);
 	lv_obj_set_pos(ui->menu_screen_label_4, 260, 254);
 	lv_obj_set_size(ui->menu_screen_label_4, 100, 32);

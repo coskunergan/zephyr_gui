@@ -947,6 +947,7 @@ void setup_scr_main_screen(lv_ui *ui)
 	lv_label_set_long_mode(ui->main_screen_clock_lbl, LV_LABEL_LONG_WRAP);
 	lv_obj_set_pos(ui->main_screen_clock_lbl, 647, 23);
 	lv_obj_set_size(ui->main_screen_clock_lbl, 140, 36);
+	lv_obj_add_flag(ui->main_screen_clock_lbl, LV_OBJ_FLAG_HIDDEN);
 
 	//Write style for main_screen_clock_lbl, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
 	lv_obj_set_style_border_width(ui->main_screen_clock_lbl, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
