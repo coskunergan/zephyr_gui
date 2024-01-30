@@ -25,49 +25,6 @@ void setup_scr_main_screen(lv_ui *ui)
 	lv_obj_set_style_bg_opa(ui->main_screen, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_bg_color(ui->main_screen, lv_color_hex(0x06090b), LV_PART_MAIN|LV_STATE_DEFAULT);
 
-	//Write codes main_screen_slider
-	ui->main_screen_slider = lv_btnmatrix_create(ui->main_screen);
-	static const char *main_screen_slider_text_map[] = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "P", "",};
-	lv_btnmatrix_set_map(ui->main_screen_slider, main_screen_slider_text_map);
-	lv_obj_set_pos(ui->main_screen_slider, 0, 395);
-	lv_obj_set_size(ui->main_screen_slider, 800, 80);
-	lv_obj_add_flag(ui->main_screen_slider, LV_OBJ_FLAG_HIDDEN);
-
-	//Write style for main_screen_slider, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
-	lv_obj_set_style_border_width(ui->main_screen_slider, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_pad_top(ui->main_screen_slider, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_pad_bottom(ui->main_screen_slider, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_pad_left(ui->main_screen_slider, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_pad_right(ui->main_screen_slider, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_pad_column(ui->main_screen_slider, 8, LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_bg_img_src(ui->main_screen_slider, &_empty_800x80, LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_bg_img_opa(ui->main_screen_slider, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_radius(ui->main_screen_slider, 4, LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_bg_opa(ui->main_screen_slider, 221, LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_bg_color(ui->main_screen_slider, lv_color_hex(0x221f1f), LV_PART_MAIN|LV_STATE_DEFAULT);
-
-	//Write style for main_screen_slider, Part: LV_PART_ITEMS, State: LV_STATE_DEFAULT.
-	lv_obj_set_style_border_width(ui->main_screen_slider, 1, LV_PART_ITEMS|LV_STATE_DEFAULT);
-	lv_obj_set_style_border_opa(ui->main_screen_slider, 255, LV_PART_ITEMS|LV_STATE_DEFAULT);
-	lv_obj_set_style_border_color(ui->main_screen_slider, lv_color_hex(0xc9c9c9), LV_PART_ITEMS|LV_STATE_DEFAULT);
-	lv_obj_set_style_border_side(ui->main_screen_slider, LV_BORDER_SIDE_NONE, LV_PART_ITEMS|LV_STATE_DEFAULT);
-	lv_obj_set_style_text_color(ui->main_screen_slider, lv_color_hex(0x000000), LV_PART_ITEMS|LV_STATE_DEFAULT);
-	lv_obj_set_style_text_font(ui->main_screen_slider, &lv_font_Alatsi_Regular_1, LV_PART_ITEMS|LV_STATE_DEFAULT);
-	lv_obj_set_style_radius(ui->main_screen_slider, 27, LV_PART_ITEMS|LV_STATE_DEFAULT);
-	lv_obj_set_style_bg_opa(ui->main_screen_slider, 0, LV_PART_ITEMS|LV_STATE_DEFAULT);
-	lv_obj_set_style_shadow_width(ui->main_screen_slider, 0, LV_PART_ITEMS|LV_STATE_DEFAULT);
-
-	//Write style for main_screen_slider, Part: LV_PART_ITEMS, State: LV_STATE_PRESSED.
-	lv_obj_set_style_border_width(ui->main_screen_slider, 1, LV_PART_ITEMS|LV_STATE_PRESSED);
-	lv_obj_set_style_border_opa(ui->main_screen_slider, 255, LV_PART_ITEMS|LV_STATE_PRESSED);
-	lv_obj_set_style_border_color(ui->main_screen_slider, lv_color_hex(0xc9c9c9), LV_PART_ITEMS|LV_STATE_PRESSED);
-	lv_obj_set_style_border_side(ui->main_screen_slider, LV_BORDER_SIDE_NONE, LV_PART_ITEMS|LV_STATE_PRESSED);
-	lv_obj_set_style_text_color(ui->main_screen_slider, lv_color_hex(0x000000), LV_PART_ITEMS|LV_STATE_PRESSED);
-	lv_obj_set_style_text_font(ui->main_screen_slider, &lv_font_Alatsi_Regular_1, LV_PART_ITEMS|LV_STATE_PRESSED);
-	lv_obj_set_style_radius(ui->main_screen_slider, 4, LV_PART_ITEMS|LV_STATE_PRESSED);
-	lv_obj_set_style_bg_opa(ui->main_screen_slider, 0, LV_PART_ITEMS|LV_STATE_PRESSED);
-	lv_obj_set_style_shadow_width(ui->main_screen_slider, 0, LV_PART_ITEMS|LV_STATE_PRESSED);
-
 	//Write codes main_screen_slider_0
 	ui->main_screen_slider_0 = lv_img_create(ui->main_screen);
 	lv_obj_add_flag(ui->main_screen_slider_0, LV_OBJ_FLAG_CLICKABLE);
@@ -505,7 +462,7 @@ void setup_scr_main_screen(lv_ui *ui)
 	lv_img_set_src(ui->main_screen_select_ring_h3, &_Secim_Ver2_alpha_200x194);
 	lv_img_set_pivot(ui->main_screen_select_ring_h3, 100,5);
 	lv_img_set_angle(ui->main_screen_select_ring_h3, 0);
-	lv_obj_set_pos(ui->main_screen_select_ring_h3, 1, 0);
+	lv_obj_set_pos(ui->main_screen_select_ring_h3, 0, 0);
 	lv_obj_set_size(ui->main_screen_select_ring_h3, 200, 194);
 	lv_obj_add_flag(ui->main_screen_select_ring_h3, LV_OBJ_FLAG_HIDDEN);
 
@@ -1008,6 +965,49 @@ void setup_scr_main_screen(lv_ui *ui)
 	lv_obj_set_style_pad_bottom(ui->main_screen_count_down_label, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_pad_left(ui->main_screen_count_down_label, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_shadow_width(ui->main_screen_count_down_label, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+
+	//Write codes main_screen_slider
+	ui->main_screen_slider = lv_btnmatrix_create(ui->main_screen);
+	static const char *main_screen_slider_text_map[] = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "P", "",};
+	lv_btnmatrix_set_map(ui->main_screen_slider, main_screen_slider_text_map);
+	lv_obj_set_pos(ui->main_screen_slider, 0, 395);
+	lv_obj_set_size(ui->main_screen_slider, 800, 80);
+	lv_obj_add_flag(ui->main_screen_slider, LV_OBJ_FLAG_HIDDEN);
+
+	//Write style for main_screen_slider, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+	lv_obj_set_style_border_width(ui->main_screen_slider, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_top(ui->main_screen_slider, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_bottom(ui->main_screen_slider, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_left(ui->main_screen_slider, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_right(ui->main_screen_slider, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_column(ui->main_screen_slider, 8, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_img_src(ui->main_screen_slider, &_empty_800x80, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_img_opa(ui->main_screen_slider, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_radius(ui->main_screen_slider, 4, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_opa(ui->main_screen_slider, 221, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_color(ui->main_screen_slider, lv_color_hex(0x221f1f), LV_PART_MAIN|LV_STATE_DEFAULT);
+
+	//Write style for main_screen_slider, Part: LV_PART_ITEMS, State: LV_STATE_DEFAULT.
+	lv_obj_set_style_border_width(ui->main_screen_slider, 1, LV_PART_ITEMS|LV_STATE_DEFAULT);
+	lv_obj_set_style_border_opa(ui->main_screen_slider, 255, LV_PART_ITEMS|LV_STATE_DEFAULT);
+	lv_obj_set_style_border_color(ui->main_screen_slider, lv_color_hex(0xc9c9c9), LV_PART_ITEMS|LV_STATE_DEFAULT);
+	lv_obj_set_style_border_side(ui->main_screen_slider, LV_BORDER_SIDE_NONE, LV_PART_ITEMS|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_color(ui->main_screen_slider, lv_color_hex(0x000000), LV_PART_ITEMS|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_font(ui->main_screen_slider, &lv_font_Alatsi_Regular_1, LV_PART_ITEMS|LV_STATE_DEFAULT);
+	lv_obj_set_style_radius(ui->main_screen_slider, 27, LV_PART_ITEMS|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_opa(ui->main_screen_slider, 0, LV_PART_ITEMS|LV_STATE_DEFAULT);
+	lv_obj_set_style_shadow_width(ui->main_screen_slider, 0, LV_PART_ITEMS|LV_STATE_DEFAULT);
+
+	//Write style for main_screen_slider, Part: LV_PART_ITEMS, State: LV_STATE_PRESSED.
+	lv_obj_set_style_border_width(ui->main_screen_slider, 1, LV_PART_ITEMS|LV_STATE_PRESSED);
+	lv_obj_set_style_border_opa(ui->main_screen_slider, 255, LV_PART_ITEMS|LV_STATE_PRESSED);
+	lv_obj_set_style_border_color(ui->main_screen_slider, lv_color_hex(0xc9c9c9), LV_PART_ITEMS|LV_STATE_PRESSED);
+	lv_obj_set_style_border_side(ui->main_screen_slider, LV_BORDER_SIDE_NONE, LV_PART_ITEMS|LV_STATE_PRESSED);
+	lv_obj_set_style_text_color(ui->main_screen_slider, lv_color_hex(0x000000), LV_PART_ITEMS|LV_STATE_PRESSED);
+	lv_obj_set_style_text_font(ui->main_screen_slider, &lv_font_Alatsi_Regular_1, LV_PART_ITEMS|LV_STATE_PRESSED);
+	lv_obj_set_style_radius(ui->main_screen_slider, 4, LV_PART_ITEMS|LV_STATE_PRESSED);
+	lv_obj_set_style_bg_opa(ui->main_screen_slider, 0, LV_PART_ITEMS|LV_STATE_PRESSED);
+	lv_obj_set_style_shadow_width(ui->main_screen_slider, 0, LV_PART_ITEMS|LV_STATE_PRESSED);
 
 	//Update current screen layout.
 	lv_obj_update_layout(ui->main_screen);

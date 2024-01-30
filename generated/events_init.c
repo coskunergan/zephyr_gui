@@ -59,80 +59,6 @@ static void main_screen_event_handler (lv_event_t *e)
 		break;
 	}
 }
-static void main_screen_slider_event_handler (lv_event_t *e)
-{
-	lv_event_code_t code = lv_event_get_code(e);
-
-	switch (code) {
-	case LV_EVENT_PRESSING:
-	{
-		lv_obj_t * obj = lv_event_get_target(e);
-		uint32_t id = lv_btnmatrix_get_selected_btn(obj);
-		switch(id) {
-		case 0:
-		{
-			set_slider(0);
-			break;
-		}
-		case 1:
-		{
-			set_slider(2);
-			break;
-		}
-		case 2:
-		{
-			set_slider(4);
-			break;
-		}
-		case 3:
-		{
-			set_slider(6);
-			break;
-		}
-		case 4:
-		{
-			set_slider(8);
-			break;
-		}
-		case 5:
-		{
-			set_slider(10);
-			break;
-		}
-		case 6:
-		{
-			set_slider(12);
-			break;
-		}
-		case 7:
-		{
-			set_slider(14);
-			break;
-		}
-		case 8:
-		{
-			set_slider(16);
-			break;
-		}
-		case 9:
-		{
-			set_slider(18);
-			break;
-		}
-		case 10:
-		{
-			set_slider(20);
-			break;
-		}
-		default:
-			break;
-		}
-		break;
-	}
-	default:
-		break;
-	}
-}
 static void main_screen_pan_1_event_handler (lv_event_t *e)
 {
 	lv_event_code_t code = lv_event_get_code(e);
@@ -418,10 +344,83 @@ static void main_screen_lock_btn_event_handler (lv_event_t *e)
 		break;
 	}
 }
+static void main_screen_slider_event_handler (lv_event_t *e)
+{
+	lv_event_code_t code = lv_event_get_code(e);
+
+	switch (code) {
+	case LV_EVENT_PRESSING:
+	{
+		lv_obj_t * obj = lv_event_get_target(e);
+		uint32_t id = lv_btnmatrix_get_selected_btn(obj);
+		switch(id) {
+		case 0:
+		{
+			set_slider(0);
+			break;
+		}
+		case 1:
+		{
+			set_slider(2);
+			break;
+		}
+		case 2:
+		{
+			set_slider(4);
+			break;
+		}
+		case 3:
+		{
+			set_slider(6);
+			break;
+		}
+		case 4:
+		{
+			set_slider(8);
+			break;
+		}
+		case 5:
+		{
+			set_slider(10);
+			break;
+		}
+		case 6:
+		{
+			set_slider(12);
+			break;
+		}
+		case 7:
+		{
+			set_slider(14);
+			break;
+		}
+		case 8:
+		{
+			set_slider(16);
+			break;
+		}
+		case 9:
+		{
+			set_slider(18);
+			break;
+		}
+		case 10:
+		{
+			set_slider(20);
+			break;
+		}
+		default:
+			break;
+		}
+		break;
+	}
+	default:
+		break;
+	}
+}
 void events_init_main_screen(lv_ui *ui)
 {
 	lv_obj_add_event_cb(ui->main_screen, main_screen_event_handler, LV_EVENT_ALL, NULL);
-	lv_obj_add_event_cb(ui->main_screen_slider, main_screen_slider_event_handler, LV_EVENT_ALL, NULL);
 	lv_obj_add_event_cb(ui->main_screen_pan_1, main_screen_pan_1_event_handler, LV_EVENT_ALL, NULL);
 	lv_obj_add_event_cb(ui->main_screen_select_ring_h1, main_screen_select_ring_h1_event_handler, LV_EVENT_ALL, NULL);
 	lv_obj_add_event_cb(ui->main_screen_select_ring_l1, main_screen_select_ring_l1_event_handler, LV_EVENT_ALL, NULL);
@@ -441,6 +440,7 @@ void events_init_main_screen(lv_ui *ui)
 	lv_obj_add_event_cb(ui->main_screen_pause_btn, main_screen_pause_btn_event_handler, LV_EVENT_ALL, NULL);
 	lv_obj_add_event_cb(ui->main_screen_menu_btn, main_screen_menu_btn_event_handler, LV_EVENT_ALL, NULL);
 	lv_obj_add_event_cb(ui->main_screen_lock_btn, main_screen_lock_btn_event_handler, LV_EVENT_ALL, NULL);
+	lv_obj_add_event_cb(ui->main_screen_slider, main_screen_slider_event_handler, LV_EVENT_ALL, NULL);
 }
 static void menu_screen_event_handler (lv_event_t *e)
 {

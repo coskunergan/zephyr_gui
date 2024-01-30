@@ -156,7 +156,7 @@ void select_timer_start(void)
     lv_timer_reset(timeout_timer);
 }
 /*******************************************************************************/
-void pan_slide(lv_anim_t *a_x, lv_anim_t *a_y, void *ui, uint16_t x, uint16_t y)
+void pan_slide(lv_anim_t *a_x, lv_anim_t *a_y, void *ui, int32_t x, int32_t y)
 {
     lv_anim_del(a_x, NULL);
     lv_anim_set_var(a_x, ui);
@@ -306,7 +306,7 @@ void pan_refresh(tft_pan_registers_t *pan_regs, system_pan_registers_t *sys_pan_
             lv_img_set_zoom(sys_pan_regs->img_pan, (pan_regs->pan_state.pan_size) ? MID_PAN_SCALE : MINI_PAN_SCALE);
             lv_img_set_zoom(sys_pan_regs->img_ring_h, (pan_regs->pan_state.pan_size) ? MID_PAN_SCALE : MINI_PAN_SCALE);
             lv_img_set_zoom(sys_pan_regs->img_ring_l, (pan_regs->pan_state.pan_size) ? MID_PAN_SCALE : MINI_PAN_SCALE);
-            lv_obj_set_pos(sys_pan_regs->obj_cont, (pan_regs->x - 1) * 150, (pan_regs->pan_state.pan_size) ? (198 - (pan_regs->y - 1) * 33) : (246 - (pan_regs->y - 1) * 41));
+            lv_obj_set_pos(sys_pan_regs->obj_cont, (pan_regs->x - 1) * 150, (pan_regs->pan_state.pan_size) ? ((270 - (pan_regs->y - 1) * 45) - 40) : ((258 - (pan_regs->y - 1) * 43) - 3));
             lv_obj_clear_flag(sys_pan_regs->obj_cont, LV_OBJ_FLAG_HIDDEN);
         }
         else
@@ -337,7 +337,7 @@ void pan_refresh(tft_pan_registers_t *pan_regs, system_pan_registers_t *sys_pan_
         {
             sys_pan_regs->pan.x = pan_regs->x;
             sys_pan_regs->pan.y = pan_regs->y;
-            pan_slide(&sys_pan_regs->a_x, &sys_pan_regs->a_y, sys_pan_regs->obj_cont, (pan_regs->x - 1) * 150, (pan_regs->pan_state.pan_size) ? (198 - (pan_regs->y - 1) * 33) : (246 - (pan_regs->y - 1) * 41));
+            pan_slide(&sys_pan_regs->a_x, &sys_pan_regs->a_y, sys_pan_regs->obj_cont, (pan_regs->x - 1) * 150, (pan_regs->pan_state.pan_size) ? ((270 - (pan_regs->y - 1) * 45) - 40) : ((258 - (pan_regs->y - 1) * 43) - 3));
         }
     }
 }
