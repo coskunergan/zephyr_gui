@@ -22,23 +22,23 @@ uint8_t long_press_countdown;
 void second_timer_cb(lv_timer_t *timeout_timer)
 {
     if(guider_ui.menu_screen_del == false)
-    {        
+    {
         lv_label_set_text_fmt(guider_ui.menu_screen_clock_lbl, "%02d:%02d", tft_regs.write_regs.hour, tft_regs.write_regs.minute);
     }
     else if(guider_ui.main_screen_del == false)
-    {        
-        lv_obj_clear_flag(guider_ui.main_screen_clock_lbl, LV_OBJ_FLAG_HIDDEN);   
+    {
+        lv_obj_clear_flag(guider_ui.main_screen_clock_lbl, LV_OBJ_FLAG_HIDDEN);
         lv_label_set_text_fmt(guider_ui.main_screen_clock_lbl, "%02d:%02d", tft_regs.write_regs.hour, tft_regs.write_regs.minute);
     }
     else
     {
-        lv_obj_clear_flag(guider_ui.logo_screen_clock_lbl, LV_OBJ_FLAG_HIDDEN);     
+        lv_obj_clear_flag(guider_ui.logo_screen_clock_lbl, LV_OBJ_FLAG_HIDDEN);
         lv_label_set_text_fmt(guider_ui.logo_screen_clock_lbl, "%02d:%02d", tft_regs.write_regs.hour, tft_regs.write_regs.minute);
     }
     if(tft_regs.write_regs.hour == tft_regs.read_regs.hour_set && tft_regs.write_regs.minute == tft_regs.read_regs.minute_set)
     {
         tft_regs.read_regs.slave_param_bits.clock_updated = false;
-    }    
+    }
 }
 /*******************************************************************************/
 void timeout_timer_cb(lv_timer_t *timer)
@@ -311,6 +311,7 @@ void pan_refresh(tft_pan_registers_t *pan_regs, system_pan_registers_t *sys_pan_
         }
         else
         {
+            tft_regs.read_regs.panx_value[index] = 0;
             lv_obj_add_flag(sys_pan_regs->obj_cont, LV_OBJ_FLAG_HIDDEN);
         }
     }
@@ -328,7 +329,7 @@ void pan_refresh(tft_pan_registers_t *pan_regs, system_pan_registers_t *sys_pan_
                 if(index == (system_obj.select_pan - 1))
                 {
                     system_obj.select_pan = 0;
-                }                
+                }
                 no_level_set(sys_pan_regs->img_pan, tft_regs.read_regs.panx_value[index] / 2);
             }
         }
