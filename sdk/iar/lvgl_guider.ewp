@@ -4733,6 +4733,9 @@
       <name>$PROJ_DIR$\..\..\generated\images\_ActiveTimer_alpha_57x57.c</name>
     </file>
     <file>
+      <name>$PROJ_DIR$\..\..\generated\images\_check_alpha_17x12.c</name>
+    </file>
+    <file>
       <name>$PROJ_DIR$\..\..\generated\images\_clock_alpha_40x40.c</name>
     </file>
     <file>

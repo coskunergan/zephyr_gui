@@ -418,6 +418,34 @@ static void main_screen_slider_event_handler (lv_event_t *e)
 		break;
 	}
 }
+static void main_screen_set_timer_win_item0_event_handler (lv_event_t *e)
+{
+	lv_event_code_t code = lv_event_get_code(e);
+
+	switch (code) {
+	case LV_EVENT_CLICKED:
+	{
+		click_timer_ok_btn();
+		break;
+	}
+	default:
+		break;
+	}
+}
+static void main_screen_set_timer_win_item1_event_handler (lv_event_t *e)
+{
+	lv_event_code_t code = lv_event_get_code(e);
+
+	switch (code) {
+	case LV_EVENT_CLICKED:
+	{
+		click_timer_close_btn();
+		break;
+	}
+	default:
+		break;
+	}
+}
 void events_init_main_screen(lv_ui *ui)
 {
 	lv_obj_add_event_cb(ui->main_screen, main_screen_event_handler, LV_EVENT_ALL, NULL);
@@ -441,6 +469,8 @@ void events_init_main_screen(lv_ui *ui)
 	lv_obj_add_event_cb(ui->main_screen_menu_btn, main_screen_menu_btn_event_handler, LV_EVENT_ALL, NULL);
 	lv_obj_add_event_cb(ui->main_screen_lock_btn, main_screen_lock_btn_event_handler, LV_EVENT_ALL, NULL);
 	lv_obj_add_event_cb(ui->main_screen_slider, main_screen_slider_event_handler, LV_EVENT_ALL, NULL);
+	lv_obj_add_event_cb(ui->main_screen_set_timer_win_item0, main_screen_set_timer_win_item0_event_handler, LV_EVENT_ALL, NULL);
+	lv_obj_add_event_cb(ui->main_screen_set_timer_win_item1, main_screen_set_timer_win_item1_event_handler, LV_EVENT_ALL, NULL);
 }
 static void menu_screen_event_handler (lv_event_t *e)
 {
@@ -470,7 +500,35 @@ static void menu_screen_settings_save_btn_event_handler (lv_event_t *e)
 		break;
 	}
 }
+static void menu_screen_img_6_event_handler (lv_event_t *e)
+{
+	lv_event_code_t code = lv_event_get_code(e);
+
+	switch (code) {
+	case LV_EVENT_PRESSED:
+	{
+		pressed_setting_save();
+		break;
+	}
+	default:
+		break;
+	}
+}
 static void menu_screen_clock_save_btn_event_handler (lv_event_t *e)
+{
+	lv_event_code_t code = lv_event_get_code(e);
+
+	switch (code) {
+	case LV_EVENT_PRESSED:
+	{
+		pressed_clock_save();
+		break;
+	}
+	default:
+		break;
+	}
+}
+static void menu_screen_img_7_event_handler (lv_event_t *e)
 {
 	lv_event_code_t code = lv_event_get_code(e);
 
@@ -553,7 +611,9 @@ void events_init_menu_screen(lv_ui *ui)
 {
 	lv_obj_add_event_cb(ui->menu_screen, menu_screen_event_handler, LV_EVENT_ALL, NULL);
 	lv_obj_add_event_cb(ui->menu_screen_settings_save_btn, menu_screen_settings_save_btn_event_handler, LV_EVENT_ALL, NULL);
+	lv_obj_add_event_cb(ui->menu_screen_img_6, menu_screen_img_6_event_handler, LV_EVENT_ALL, NULL);
 	lv_obj_add_event_cb(ui->menu_screen_clock_save_btn, menu_screen_clock_save_btn_event_handler, LV_EVENT_ALL, NULL);
+	lv_obj_add_event_cb(ui->menu_screen_img_7, menu_screen_img_7_event_handler, LV_EVENT_ALL, NULL);
 	lv_obj_add_event_cb(ui->menu_screen_img_settings, menu_screen_img_settings_event_handler, LV_EVENT_ALL, NULL);
 	lv_obj_add_event_cb(ui->menu_screen_img_clock, menu_screen_img_clock_event_handler, LV_EVENT_ALL, NULL);
 	lv_obj_add_event_cb(ui->menu_screen_img_info, menu_screen_img_info_event_handler, LV_EVENT_ALL, NULL);

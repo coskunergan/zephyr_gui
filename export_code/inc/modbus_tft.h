@@ -27,7 +27,7 @@ namespace device_modbus_tft
     using namespace zpp;
     using namespace std::chrono;
     using namespace device_modbus_slave;
-    ZPP_THREAD_STACK_DEFINE(tft_modbus_stack, 1024);
+    ZPP_THREAD_STACK_DEFINE(tft_modbus_stack, 2048);
     const uint16_t tft_slave_id{1};
     const size_t tft_modbus_try_count{5};// ~5sn
     const milliseconds modbus_stream_check_delay{10s};

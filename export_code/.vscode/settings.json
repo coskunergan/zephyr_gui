@@ -67,7 +67,8 @@
       "lv_hal.h": "c",
       "lv_tabview.h": "c",
       "lv_assert.h": "c",
-      "pan_procces.h": "c"
+      "pan_procces.h": "c",
+      "events_init.h": "c"
    },
    "cortex-debug.variableUseNaturalFormat": false,
 }

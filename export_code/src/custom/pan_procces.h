@@ -127,5 +127,7 @@ void released_lock(void);
 void buzzer_beep(void);
 void pressed_clock_save(void);
 void pressed_setting_save(void);
+void click_timer_ok_btn(void);
+void click_timer_close_btn(void);
 
 #endif /* PAN_PROCCES */

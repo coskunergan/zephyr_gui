@@ -15,6 +15,14 @@ tft_registers_t tft_regs;
 lv_anim_t anim_pause;
 lv_anim_t anim_lock;
 uint8_t long_press_countdown;
+bool timer_set_menu = false;
+uint32_t minute_minder_timer = 0;
+uint32_t minute_minder_timer_menu_timeout = 0;
+uint32_t alarm_count = 0;
+#define NUMBER_OF_ALARM_COUNT 30
+#define TIMER_MENU_TIMEOUT 30
+
+void stop_minute_minder();
 
 /*******************************************************************************/
 /*******************************************************************************/
@@ -38,6 +46,30 @@ void second_timer_cb(lv_timer_t *timeout_timer)
     if(tft_regs.write_regs.hour == tft_regs.read_regs.hour_set && tft_regs.write_regs.minute == tft_regs.read_regs.minute_set)
     {
         tft_regs.read_regs.slave_param_bits.clock_updated = false;
+    }
+    if(minute_minder_timer)
+    {
+        if(--minute_minder_timer == 0)
+        {
+            lv_obj_add_flag(guider_ui.main_screen_timer_spinner, LV_OBJ_FLAG_HIDDEN);
+            alarm_count = NUMBER_OF_ALARM_COUNT;
+        }
+    }
+    if(alarm_count)
+    {
+        --alarm_count;
+        tft_regs.read_regs.slave_param_bits.buzzer_bit_pan = !tft_regs.read_regs.slave_param_bits.buzzer_bit_pan;
+    }
+    if(minute_minder_timer_menu_timeout)
+    {
+        if(--minute_minder_timer_menu_timeout == 0 && timer_set_menu)
+        {
+            timer_set_menu = false;
+            lv_obj_add_flag(guider_ui.main_screen_set_timer_cont, LV_OBJ_FLAG_HIDDEN);
+            lv_obj_clear_flag(guider_ui.main_screen_pause_btn, LV_OBJ_FLAG_HIDDEN);
+            lv_obj_clear_flag(guider_ui.main_screen_menu_btn, LV_OBJ_FLAG_HIDDEN);
+            lv_obj_clear_flag(guider_ui.main_screen_lock_btn, LV_OBJ_FLAG_HIDDEN);
+        }
     }
 }
 /*******************************************************************************/
@@ -93,6 +125,7 @@ void main_screen_init(void)
         lv_obj_clear_flag(guider_ui.main_screen_cont_3, LV_OBJ_FLAG_SCROLLABLE);
         lv_obj_clear_flag(guider_ui.main_screen_cont_4, LV_OBJ_FLAG_SCROLLABLE);
         lv_obj_clear_flag(guider_ui.main_screen_cont_5, LV_OBJ_FLAG_SCROLLABLE);
+        lv_obj_clear_flag(guider_ui.main_screen_set_timer_cont, LV_OBJ_FLAG_SCROLLABLE);
         timeout_timer = lv_timer_create(timeout_timer_cb, SELECT_TIMEOUT,  NULL);
         refresh_timer = lv_timer_create(refresh_timer_cb, REFRESH_TIME,  NULL);
         system_obj.pan1.img_pan = guider_ui.main_screen_pan_1;
@@ -135,6 +168,7 @@ void main_screen_init(void)
 void menu_screen_init(void)
 {
     guider_ui.menu_screen_del = false;
+    lv_obj_clear_flag(guider_ui.menu_screen_tabview_1, LV_OBJ_FLAG_SCROLLABLE);
     buzzer_beep();
     if(tft_regs.read_regs.slave_param_bits.buzzer_bit_mute)
     {
@@ -397,7 +431,7 @@ void set_select(uint8_t sel)
     {
         buzzer_beep();
     }
-    if(system_obj.select_pan != sel && system_obj.pause == false && system_obj.lock == false)
+    if(system_obj.select_pan != sel && system_obj.pause == false && system_obj.lock == false && timer_set_menu == false)
     {
         system_obj.select_pan = sel;
     }
@@ -460,6 +494,10 @@ void pause_anim_ready_cb(lv_anim_t *a)
     {
         lv_obj_clear_flag(guider_ui.main_screen_timer_btn, LV_OBJ_FLAG_HIDDEN);
         lv_obj_clear_flag(guider_ui.main_screen_lock_btn, LV_OBJ_FLAG_HIDDEN);
+        if(minute_minder_timer)
+        {
+            lv_obj_clear_flag(guider_ui.main_screen_timer_spinner, LV_OBJ_FLAG_HIDDEN);
+        }
     }
 }
 /*******************************************************************************/
@@ -487,6 +525,10 @@ void lock_anim_ready_cb(lv_anim_t *a)
         lv_obj_clear_flag(guider_ui.main_screen_timer_btn, LV_OBJ_FLAG_HIDDEN);
         lv_obj_clear_flag(guider_ui.main_screen_pause_btn, LV_OBJ_FLAG_HIDDEN);
         lv_obj_clear_flag(guider_ui.main_screen_menu_btn, LV_OBJ_FLAG_HIDDEN);
+        if(minute_minder_timer)
+        {
+            lv_obj_clear_flag(guider_ui.main_screen_timer_spinner, LV_OBJ_FLAG_HIDDEN);
+        }
     }
 }
 /*******************************************************************************/
@@ -525,6 +567,7 @@ void click_pause(void)
         lv_obj_set_style_img_opa(guider_ui.main_screen_pan_5, 72, LV_PART_MAIN | LV_STATE_DEFAULT);
         lv_obj_add_flag(guider_ui.main_screen_timer_btn, LV_OBJ_FLAG_HIDDEN);
         lv_obj_add_flag(guider_ui.main_screen_lock_btn, LV_OBJ_FLAG_HIDDEN);
+        lv_obj_add_flag(guider_ui.main_screen_timer_spinner, LV_OBJ_FLAG_HIDDEN);
     }
     else
     {
@@ -550,6 +593,7 @@ void long_press_lock(void)
         lv_obj_add_flag(guider_ui.main_screen_timer_btn, LV_OBJ_FLAG_HIDDEN);
         lv_obj_add_flag(guider_ui.main_screen_pause_btn, LV_OBJ_FLAG_HIDDEN);
         lv_obj_add_flag(guider_ui.main_screen_menu_btn, LV_OBJ_FLAG_HIDDEN);
+        lv_obj_add_flag(guider_ui.main_screen_timer_spinner, LV_OBJ_FLAG_HIDDEN);
     }
     else
     {
@@ -560,9 +604,59 @@ void long_press_lock(void)
     lock_slide(system_obj.lock);
 }
 /*******************************************************************************/
+void start_minute_minder(uint32_t sec)
+{
+    minute_minder_timer = sec;
+    minute_minder_timer_menu_timeout = 0;
+    lv_obj_add_flag(guider_ui.main_screen_set_timer_cont, LV_OBJ_FLAG_HIDDEN);
+    lv_obj_clear_flag(guider_ui.main_screen_timer_spinner, LV_OBJ_FLAG_HIDDEN);
+    lv_obj_clear_flag(guider_ui.main_screen_pause_btn, LV_OBJ_FLAG_HIDDEN);
+    lv_obj_clear_flag(guider_ui.main_screen_menu_btn, LV_OBJ_FLAG_HIDDEN);
+    lv_obj_clear_flag(guider_ui.main_screen_lock_btn, LV_OBJ_FLAG_HIDDEN);
+}
+/*******************************************************************************/
+void stop_minute_minder()
+{
+    alarm_count = 0;
+    minute_minder_timer = 0;
+    minute_minder_timer_menu_timeout = 0;
+    lv_obj_add_flag(guider_ui.main_screen_set_timer_cont, LV_OBJ_FLAG_HIDDEN);
+    lv_obj_add_flag(guider_ui.main_screen_timer_spinner, LV_OBJ_FLAG_HIDDEN);
+    lv_obj_clear_flag(guider_ui.main_screen_pause_btn, LV_OBJ_FLAG_HIDDEN);
+    lv_obj_clear_flag(guider_ui.main_screen_menu_btn, LV_OBJ_FLAG_HIDDEN);
+    lv_obj_clear_flag(guider_ui.main_screen_lock_btn, LV_OBJ_FLAG_HIDDEN);
+}
+/*******************************************************************************/
 void click_main_timer(void)
 {
     buzzer_beep();
+    timer_set_menu = !timer_set_menu;
+    if(timer_set_menu)
+    {
+        minute_minder_timer_menu_timeout = TIMER_MENU_TIMEOUT;
+        lv_roller_set_selected(guider_ui.main_screen_timer_10min_roller, minute_minder_timer / 600, LV_ANIM_ON);
+        if(minute_minder_timer)
+        {
+            lv_roller_set_selected(guider_ui.main_screen_timer_min_roller, minute_minder_timer / 60 + 1, LV_ANIM_ON);
+        }
+        else
+        {
+            lv_roller_set_selected(guider_ui.main_screen_timer_min_roller, 0, LV_ANIM_ON);
+        }
+        lv_obj_clear_flag(guider_ui.main_screen_set_timer_cont, LV_OBJ_FLAG_HIDDEN);
+        lv_obj_add_flag(guider_ui.main_screen_pause_btn, LV_OBJ_FLAG_HIDDEN);
+        lv_obj_add_flag(guider_ui.main_screen_menu_btn, LV_OBJ_FLAG_HIDDEN);
+        lv_obj_add_flag(guider_ui.main_screen_lock_btn, LV_OBJ_FLAG_HIDDEN);
+        system_obj.select_pan = 0;
+    }
+    else
+    {
+        minute_minder_timer_menu_timeout = 0;
+        lv_obj_add_flag(guider_ui.main_screen_set_timer_cont, LV_OBJ_FLAG_HIDDEN);
+        lv_obj_clear_flag(guider_ui.main_screen_pause_btn, LV_OBJ_FLAG_HIDDEN);
+        lv_obj_clear_flag(guider_ui.main_screen_menu_btn, LV_OBJ_FLAG_HIDDEN);
+        lv_obj_clear_flag(guider_ui.main_screen_lock_btn, LV_OBJ_FLAG_HIDDEN);
+    }
 }
 /*******************************************************************************/
 void pressed_clock_save(void)
@@ -587,6 +681,32 @@ void buzzer_beep(void)
     {
         tft_regs.read_regs.slave_param_bits.buzzer_bit_pan = !tft_regs.read_regs.slave_param_bits.buzzer_bit_pan;
     }
+    alarm_count = 0;
+}
+/*******************************************************************************/
+void click_timer_ok_btn(void)
+{
+    uint32_t time = lv_roller_get_selected(guider_ui.main_screen_timer_10min_roller) * 10;
+    time += lv_roller_get_selected(guider_ui.main_screen_timer_min_roller);
+    if(time)
+    {
+        start_minute_minder(time * 60);
+    }
+    else
+    {
+        stop_minute_minder();
+    }
+    timer_set_menu = false;
+    lv_obj_add_flag(guider_ui.main_screen_set_timer_cont, LV_OBJ_FLAG_HIDDEN);
+    buzzer_beep();
+}
+/*******************************************************************************/
+void click_timer_close_btn(void)
+{
+    timer_set_menu = false;
+    lv_obj_add_flag(guider_ui.main_screen_set_timer_cont, LV_OBJ_FLAG_HIDDEN);
+    stop_minute_minder();
+    buzzer_beep();
 }
 /*******************************************************************************/
 /*******************************************************************************/

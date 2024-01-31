@@ -534,7 +534,7 @@
 
 #define LV_USE_VIDEO 0
 
-#define LV_USE_WIN 0
+#define LV_USE_WIN 1
 
 #define LV_USE_ZH_KEYBOARD 0
 #if LV_USE_ZH_KEYBOARD
