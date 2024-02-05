@@ -23,16 +23,16 @@ void setup_scr_logo_screen(lv_ui *ui)
 
 	//Write style for logo_screen, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
 	lv_obj_set_style_bg_opa(ui->logo_screen, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_bg_color(ui->logo_screen, lv_color_hex(0x06090b), LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_color(ui->logo_screen, lv_color_hex(0x000000), LV_PART_MAIN|LV_STATE_DEFAULT);
 
 	//Write codes logo_screen_img_1
 	ui->logo_screen_img_1 = lv_img_create(ui->logo_screen);
 	lv_obj_add_flag(ui->logo_screen_img_1, LV_OBJ_FLAG_CLICKABLE);
-	lv_img_set_src(ui->logo_screen_img_1, &_logo_alpha_394x163);
+	lv_img_set_src(ui->logo_screen_img_1, &_logo_alpha_369x86);
 	lv_img_set_pivot(ui->logo_screen_img_1, 50,50);
 	lv_img_set_angle(ui->logo_screen_img_1, 0);
-	lv_obj_set_pos(ui->logo_screen_img_1, 203, 159);
-	lv_obj_set_size(ui->logo_screen_img_1, 394, 163);
+	lv_obj_set_pos(ui->logo_screen_img_1, 216, 197);
+	lv_obj_set_size(ui->logo_screen_img_1, 369, 86);
 
 	//Write style for logo_screen_img_1, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
 	lv_obj_set_style_img_opa(ui->logo_screen_img_1, 255, LV_PART_MAIN|LV_STATE_DEFAULT);

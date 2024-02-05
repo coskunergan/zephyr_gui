@@ -129,13 +129,13 @@
 					"name": "img_1",
 					"id": "6gx2st8u",
 					"type": "img",
-					"left": 203,
-					"top": 159,
+					"left": 216,
+					"top": 197,
 					"visible": true,
 					"flag": [],
 					"custom_attributes": {},
-					"width": 394,
-					"height": 163,
+					"width": 369,
+					"height": 86,
 					"default_style": false,
 					"use_fs": false,
 					"fs_type": "flash",
@@ -429,7 +429,7 @@
 					"part": "LV_PART_MAIN",
 					"state": "LV_STATE_DEFAULT",
 					"disable": false,
-					"bg_color": "#06090b",
+					"bg_color": "#000000",
 					"bg_grad_dir": "LV_GRAD_DIR_NONE",
 					"bg_grad_color": "#2195f6",
 					"bg_opa": 255,
@@ -985,7 +985,13 @@
 									"bg_color": "#393939",
 									"bg_grad_color": "#2195f6",
 									"bg_grad_dir": "LV_GRAD_DIR_NONE",
-									"bg_opa": 255
+									"bg_opa": 255,
+									"shadow_color": "#2195f6",
+									"shadow_opa": 255,
+									"shadow_width": 0,
+									"shadow_spread": 0,
+									"shadow_ofs_x": 0,
+									"shadow_ofs_y": 0
 								}
 							],
 							"event": {
@@ -993,7 +999,6 @@
 									{
 										"trigger": "clicked",
 										"dst": "9rhmno5o",
-										"item_index": 0,
 										"action": {
 											"load_screen": {
 												"ische": false,
@@ -1119,12 +1124,12 @@
 												"deleted_cb": "",
 												"path_type": "linear"
 											}
-										}
+										},
+										"item_index": 0
 									},
 									{
 										"trigger": "clicked",
 										"dst": "9rhmno5o",
-										"item_index": 1,
 										"action": {
 											"load_screen": {
 												"ische": false,
@@ -1250,7 +1255,8 @@
 												"deleted_cb": "",
 												"path_type": "linear"
 											}
-										}
+										},
+										"item_index": 1
 									}
 								]
 							}
@@ -12003,7 +12009,7 @@
 						"part": "LV_PART_MAIN",
 						"state": "LV_STATE_DEFAULT",
 						"disable": false,
-						"bg_color": "#06090b",
+						"bg_color": "#000000",
 						"bg_grad_dir": "LV_GRAD_DIR_NONE",
 						"bg_grad_color": "#2195f6",
 						"bg_opa": 255,
@@ -12025,12 +12031,12 @@
 						"visible": true,
 						"flag": [],
 						"pos": [
-							203,
-							159
+							216,
+							197
 						],
 						"size": [
-							394,
-							163
+							369,
+							86
 						],
 						"default_style": false,
 						"custom_attributes": {},
@@ -15660,7 +15666,13 @@
 										"bg_color": "#393939",
 										"bg_grad_color": "#2195f6",
 										"bg_grad_dir": "LV_GRAD_DIR_NONE",
-										"bg_opa": 255
+										"bg_opa": 255,
+										"shadow_color": "#2195f6",
+										"shadow_opa": 255,
+										"shadow_width": 0,
+										"shadow_spread": 0,
+										"shadow_ofs_x": 0,
+										"shadow_ofs_y": 0
 									}
 								]
 							},

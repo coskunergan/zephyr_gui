@@ -1099,6 +1099,7 @@ void setup_scr_main_screen(lv_ui *ui)
 	lv_style_set_radius(&style_main_screen_set_timer_win_extra_btns_main_default, 8);
 	lv_style_set_bg_opa(&style_main_screen_set_timer_win_extra_btns_main_default, 255);
 	lv_style_set_bg_color(&style_main_screen_set_timer_win_extra_btns_main_default, lv_color_hex(0x393939));
+	lv_style_set_shadow_width(&style_main_screen_set_timer_win_extra_btns_main_default, 0);
 	lv_obj_add_style(ui->main_screen_set_timer_win_item1, &style_main_screen_set_timer_win_extra_btns_main_default, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_add_style(ui->main_screen_set_timer_win_item0, &style_main_screen_set_timer_win_extra_btns_main_default, LV_PART_MAIN|LV_STATE_DEFAULT);
 
