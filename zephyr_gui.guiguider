@@ -438,7 +438,8 @@
 					"bg_img_recolor": "#ffffff",
 					"bg_img_recolor_opa": 0
 				}
-			]
+			],
+			"layerName": "logo_screen"
 		},
 		{
 			"name": "main_screen",
@@ -1259,7 +1260,8 @@
 										"item_index": 1
 									}
 								]
-							}
+							},
+							"layerName": "main_screen"
 						}
 					],
 					"style": [
@@ -2888,7 +2890,8 @@
 								"item_index": 10
 							}
 						]
-					}
+					},
+					"layerName": "main_screen"
 				},
 				{
 					"name": "count_down_label",
@@ -3655,7 +3658,8 @@
 										}
 									}
 								]
-							}
+							},
+							"layerName": "main_screen"
 						},
 						{
 							"name": "menu_btn",
@@ -4089,7 +4093,8 @@
 										}
 									}
 								]
-							}
+							},
+							"layerName": "main_screen"
 						},
 						{
 							"name": "timer_btn",
@@ -4306,7 +4311,8 @@
 										}
 									}
 								]
-							}
+							},
+							"layerName": "main_screen"
 						}
 					],
 					"style": [
@@ -4859,7 +4865,8 @@
 										}
 									}
 								]
-							}
+							},
+							"layerName": "main_screen"
 						},
 						{
 							"name": "select_ring_h5",
@@ -5024,7 +5031,8 @@
 										}
 									}
 								]
-							}
+							},
+							"layerName": "main_screen"
 						},
 						{
 							"name": "pan_5",
@@ -5189,7 +5197,8 @@
 										}
 									}
 								]
-							}
+							},
+							"layerName": "main_screen"
 						}
 					],
 					"style": [
@@ -5400,7 +5409,8 @@
 										}
 									}
 								]
-							}
+							},
+							"layerName": "main_screen"
 						},
 						{
 							"name": "select_ring_h4",
@@ -5565,7 +5575,8 @@
 										}
 									}
 								]
-							}
+							},
+							"layerName": "main_screen"
 						},
 						{
 							"name": "pan_4",
@@ -5730,7 +5741,8 @@
 										}
 									}
 								]
-							}
+							},
+							"layerName": "main_screen"
 						}
 					],
 					"style": [
@@ -5941,7 +5953,8 @@
 										}
 									}
 								]
-							}
+							},
+							"layerName": "main_screen"
 						},
 						{
 							"name": "select_ring_h3",
@@ -6106,7 +6119,8 @@
 										}
 									}
 								]
-							}
+							},
+							"layerName": "main_screen"
 						},
 						{
 							"name": "pan_3",
@@ -6271,7 +6285,8 @@
 										}
 									}
 								]
-							}
+							},
+							"layerName": "main_screen"
 						}
 					],
 					"style": [
@@ -6482,7 +6497,8 @@
 										}
 									}
 								]
-							}
+							},
+							"layerName": "main_screen"
 						},
 						{
 							"name": "select_ring_h2",
@@ -6647,7 +6663,8 @@
 										}
 									}
 								]
-							}
+							},
+							"layerName": "main_screen"
 						},
 						{
 							"name": "pan_2",
@@ -6812,7 +6829,8 @@
 										}
 									}
 								]
-							}
+							},
+							"layerName": "main_screen"
 						}
 					],
 					"style": [
@@ -7023,7 +7041,8 @@
 										}
 									}
 								]
-							}
+							},
+							"layerName": "main_screen"
 						},
 						{
 							"name": "select_ring_h1",
@@ -7188,7 +7207,8 @@
 										}
 									}
 								]
-							}
+							},
+							"layerName": "main_screen"
 						},
 						{
 							"name": "pan_1",
@@ -7353,7 +7373,8 @@
 										}
 									}
 								]
-							}
+							},
+							"layerName": "main_screen"
 						}
 					],
 					"style": [
@@ -8219,7 +8240,8 @@
 					"bg_img_recolor": "#ffffff",
 					"bg_img_recolor_opa": 0
 				}
-			]
+			],
+			"layerName": "main_screen"
 		},
 		{
 			"name": "menu_screen",
@@ -8711,7 +8733,8 @@
 								}
 							}
 						]
-					}
+					},
+					"layerName": "menu_screen"
 				},
 				{
 					"name": "img_clock",
@@ -8876,7 +8899,8 @@
 								}
 							}
 						]
-					}
+					},
+					"layerName": "menu_screen"
 				},
 				{
 					"name": "img_settings",
@@ -9041,7 +9065,8 @@
 								}
 							}
 						]
-					}
+					},
+					"layerName": "menu_screen"
 				},
 				{
 					"name": "img_5",
@@ -9555,7 +9580,8 @@
 												}
 											}
 										]
-									}
+									},
+									"layerName": "menu_screen"
 								},
 								{
 									"name": "img_3",
@@ -10625,7 +10651,8 @@
 												}
 											}
 										]
-									}
+									},
+									"layerName": "menu_screen"
 								},
 								{
 									"name": "label_3",
@@ -11429,7 +11456,7 @@
 									"width": 100,
 									"height": 32,
 									"default_style": false,
-									"text": "V1.0.4",
+									"text": "V1.0.5",
 									"long_mode": "LV_LABEL_LONG_WRAP",
 									"style": [
 										{
@@ -11769,7 +11796,8 @@
 					"bg_img_recolor": "#ffffff",
 					"bg_img_recolor_opa": 0
 				}
-			]
+			],
+			"layerName": "menu_screen"
 		}
 	],
 	"projectName": "button_test",
@@ -17974,7 +18002,7 @@
 										],
 										"default_style": false,
 										"custom_attributes": {},
-										"text": "V1.0.4",
+										"text": "V1.0.5",
 										"long_mode": "LV_LABEL_LONG_WRAP",
 										"style": [
 											{

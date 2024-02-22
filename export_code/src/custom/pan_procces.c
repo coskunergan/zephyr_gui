@@ -346,7 +346,8 @@ void pan_refresh(tft_pan_registers_t *pan_regs, system_pan_registers_t *sys_pan_
         else
         {
             tft_regs.read_regs.panx_value[index] = 0;
-            lv_obj_add_flag(sys_pan_regs->obj_cont, LV_OBJ_FLAG_HIDDEN);
+            level_set(sys_pan_regs->img_pan, 0);
+            lv_obj_add_flag(sys_pan_regs->obj_cont, LV_OBJ_FLAG_HIDDEN);            
         }
     }
     else if(pan_regs->pan_state.state_active)
