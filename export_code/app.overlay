@@ -1,4 +1,33 @@
 
+/ {
+	eeprom1: eeprom1 {
+		status = "okay";
+		compatible = "zephyr,emu-eeprom";
+		size = <DT_SIZE_K(4)>;
+		pagesize = <DT_SIZE_K(8)>;
+		partition = <&eepromemu_partition>;
+		rambuf;
+	};
+
+	aliases {		
+		eeprom-1 = &eeprom1;
+	};				
+};
+
+&flash0 {
+
+	partitions {
+		compatible = "fixed-partitions";
+		#address-cells = <1>;
+		#size-cells = <1>;
+
+		eepromemu_partition: partition@F8000 {
+			label = "eeprom-emu";
+			reg = <0xF8000 DT_SIZE_K(32)>;
+		};		
+	};
+};
+
 &uart7 {
 	pinctrl-0 = <&uart7_rx_pf6 &uart7_tx_pf7>;
 	pinctrl-names = "default";
