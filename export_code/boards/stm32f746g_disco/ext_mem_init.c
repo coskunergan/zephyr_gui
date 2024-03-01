@@ -15,7 +15,6 @@
 void BSP_QSPI_EnableMemoryMappedMode()
 {
     QSPI_CommandTypeDef      cmd = {0};
-    QSPI_MemoryMappedTypeDef s_mem_mapped_cfg = {0};
 
     QUADSPI_TypeDef *Instance = (QUADSPI_TypeDef *)QSPI_R_BASE;
 
@@ -30,10 +29,6 @@ void BSP_QSPI_EnableMemoryMappedMode()
     cmd.DdrMode           = QSPI_DDR_MODE_DISABLE;
     cmd.DdrHoldHalfCycle  = QSPI_DDR_HHC_ANALOG_DELAY;
     cmd.SIOOMode          = QSPI_SIOO_INST_EVERY_CMD;
-
-    /* Configure the memory mapped mode */
-    s_mem_mapped_cfg.TimeOutActivation = QSPI_TIMEOUT_COUNTER_DISABLE;
-    s_mem_mapped_cfg.TimeOutPeriod     = 0;
 
     WRITE_REG(Instance->CCR, (cmd.DdrMode | cmd.DdrHoldHalfCycle | cmd.SIOOMode |
                                      cmd.DataMode | (cmd.DummyCycles << QUADSPI_CCR_DCYC_Pos) |

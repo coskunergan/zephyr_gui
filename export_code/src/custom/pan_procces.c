@@ -1,6 +1,10 @@
 
 #include <pan_procces.h>
 #include "gui_guider.h"
+#ifndef LV_USE_GUIDER_SIMULATOR
+#include <zephyr/device.h>
+#include <zephyr/drivers/eeprom.h>
+#endif
 
 #define SELECT_TIMEOUT 5000
 #define REFRESH_TIME   300
@@ -22,6 +26,12 @@ uint32_t alarm_count = 0;
 #define NUMBER_OF_ALARM_COUNT 30
 #define TIMER_MENU_TIMEOUT 30
 
+#define EEPROM_SLAVE_PARAM_ID 1
+
+#ifndef LV_USE_GUIDER_SIMULATOR
+const struct device *eeprom = DEVICE_DT_GET(DT_ALIAS(eeprom_1));
+#endif
+
 void stop_minute_minder();
 
 /*******************************************************************************/
@@ -29,6 +39,15 @@ void stop_minute_minder();
 /*******************************************************************************/
 void second_timer_cb(lv_timer_t *timeout_timer)
 {
+    #if LV_USE_GUIDER_SIMULATOR
+    static bool first = false;
+    if(!first)
+    {
+        first = true;
+        lv_obj_t *act_scr = lv_scr_act();
+        lv_event_send(act_scr, LV_EVENT_VALUE_CHANGED, NULL);
+    }
+    #endif
     if(guider_ui.menu_screen_del == false)
     {
         lv_label_set_text_fmt(guider_ui.menu_screen_clock_lbl, "%02d:%02d", tft_regs.write_regs.hour, tft_regs.write_regs.minute);
@@ -93,6 +112,13 @@ void logo_screen_init(void)
     guider_ui.logo_screen_del = false;
     memset(&system_obj, 0, sizeof(system_obj));
     memset(&tft_regs, 0, sizeof(tft_regs));
+    #ifndef LV_USE_GUIDER_SIMULATOR
+    eeprom_read(eeprom, EEPROM_SLAVE_PARAM_ID, &tft_regs.read_regs.slave_param_bits, sizeof(tft_regs.read_regs.slave_param_bits));
+    if(*(uint16_t *)&tft_regs.read_regs.slave_param_bits == 0xFFFF)
+    {
+        *(uint16_t *)&tft_regs.read_regs.slave_param_bits = 0;
+    }
+    #endif
     tft_regs.write_regs.pan1_regs.x = 1;
     tft_regs.write_regs.pan1_regs.y = 1;
     tft_regs.write_regs.pan2_regs.x = 1;
@@ -673,6 +699,9 @@ void pressed_setting_save(void)
 {
     tft_regs.read_regs.slave_param_bits.buzzer_bit_mute = lv_obj_get_state(guider_ui.menu_screen_sound_switch) & LV_STATE_CHECKED ? true : false;
     tft_regs.read_regs.slave_param_bits.power_limit = lv_roller_get_selected(guider_ui.menu_screen_power_roller);
+    #ifndef LV_USE_GUIDER_SIMULATOR
+    eeprom_write(eeprom, EEPROM_SLAVE_PARAM_ID, &tft_regs.read_regs.slave_param_bits, sizeof(tft_regs.read_regs.slave_param_bits));
+    #endif
     buzzer_beep();
 }
 /*******************************************************************************/

@@ -10,13 +10,13 @@
             "servertype": "openocd",
             //"device": "STM32F746NG",
             "toolchainPrefix": "arm-zephyr-eabi",
-            "armToolchainPath": "C:/Users/cosku/zephyr-sdk-0.16.1/arm-zephyr-eabi/bin/",
+            "armToolchainPath": "C:/zephyr/zephyr-sdk-0.16.1/arm-zephyr-eabi/bin/",
             //"interface": "swd",
              //"gdbpath": "/usr/bin/gdb-multiarch",
             //"svdFile": "${workspaceRoot}/.vscode/armcm7.svd",
             "showDevDebugOutput": "raw",
             //"gdbTarget": "C:/Users/cosku/zephyr-sdk-0.16.1/arm-zephyr-eabi/bin/arm-zephyr-eabi-gdb",
-            "configFiles": ["C:/Users/cosku/zephyrproject/zephyr/boards/arm/stm32f746g_disco/support/openocd.cfg"]
+            "configFiles": ["C:/zephyr/zephyrproject/zephyr/boards/arm/stm32f746g_disco/support/openocd.cfg"]
         }
     ]
 }
