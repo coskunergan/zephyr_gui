@@ -366,6 +366,29 @@ void setup_scr_main_screen(lv_ui *ui)
 	//Write style for main_screen_select_ring_l1, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
 	lv_obj_set_style_img_opa(ui->main_screen_select_ring_l1, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
 
+	//Write codes main_screen_timer_label_1
+	ui->main_screen_timer_label_1 = lv_label_create(ui->main_screen_cont_1);
+	lv_label_set_text(ui->main_screen_timer_label_1, "00:00");
+	lv_label_set_long_mode(ui->main_screen_timer_label_1, LV_LABEL_LONG_WRAP);
+	lv_obj_set_pos(ui->main_screen_timer_label_1, 51, 136);
+	lv_obj_set_size(ui->main_screen_timer_label_1, 100, 32);
+	lv_obj_add_flag(ui->main_screen_timer_label_1, LV_OBJ_FLAG_HIDDEN);
+
+	//Write style for main_screen_timer_label_1, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+	lv_obj_set_style_border_width(ui->main_screen_timer_label_1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_radius(ui->main_screen_timer_label_1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_color(ui->main_screen_timer_label_1, lv_color_hex(0xffffff), LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_font(ui->main_screen_timer_label_1, &lv_font_montserratMedium_16, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_letter_space(ui->main_screen_timer_label_1, 2, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_line_space(ui->main_screen_timer_label_1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_align(ui->main_screen_timer_label_1, LV_TEXT_ALIGN_CENTER, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_opa(ui->main_screen_timer_label_1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_top(ui->main_screen_timer_label_1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_right(ui->main_screen_timer_label_1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_bottom(ui->main_screen_timer_label_1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_left(ui->main_screen_timer_label_1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_shadow_width(ui->main_screen_timer_label_1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+
 	//Write codes main_screen_cont_2
 	ui->main_screen_cont_2 = lv_obj_create(ui->main_screen);
 	lv_obj_set_pos(ui->main_screen_cont_2, 300, 50);
@@ -423,6 +446,29 @@ void setup_scr_main_screen(lv_ui *ui)
 
 	//Write style for main_screen_select_ring_l2, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
 	lv_obj_set_style_img_opa(ui->main_screen_select_ring_l2, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+
+	//Write codes main_screen_timer_label_2
+	ui->main_screen_timer_label_2 = lv_label_create(ui->main_screen_cont_2);
+	lv_label_set_text(ui->main_screen_timer_label_2, "00:00");
+	lv_label_set_long_mode(ui->main_screen_timer_label_2, LV_LABEL_LONG_WRAP);
+	lv_obj_set_pos(ui->main_screen_timer_label_2, 51, 136);
+	lv_obj_set_size(ui->main_screen_timer_label_2, 100, 32);
+	lv_obj_add_flag(ui->main_screen_timer_label_2, LV_OBJ_FLAG_HIDDEN);
+
+	//Write style for main_screen_timer_label_2, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+	lv_obj_set_style_border_width(ui->main_screen_timer_label_2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_radius(ui->main_screen_timer_label_2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_color(ui->main_screen_timer_label_2, lv_color_hex(0xffffff), LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_font(ui->main_screen_timer_label_2, &lv_font_montserratMedium_16, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_letter_space(ui->main_screen_timer_label_2, 2, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_line_space(ui->main_screen_timer_label_2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_align(ui->main_screen_timer_label_2, LV_TEXT_ALIGN_CENTER, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_opa(ui->main_screen_timer_label_2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_top(ui->main_screen_timer_label_2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_right(ui->main_screen_timer_label_2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_bottom(ui->main_screen_timer_label_2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_left(ui->main_screen_timer_label_2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_shadow_width(ui->main_screen_timer_label_2, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 
 	//Write codes main_screen_cont_3
 	ui->main_screen_cont_3 = lv_obj_create(ui->main_screen);
@@ -482,6 +528,29 @@ void setup_scr_main_screen(lv_ui *ui)
 	//Write style for main_screen_select_ring_l3, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
 	lv_obj_set_style_img_opa(ui->main_screen_select_ring_l3, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
 
+	//Write codes main_screen_timer_label_3
+	ui->main_screen_timer_label_3 = lv_label_create(ui->main_screen_cont_3);
+	lv_label_set_text(ui->main_screen_timer_label_3, "00:00");
+	lv_label_set_long_mode(ui->main_screen_timer_label_3, LV_LABEL_LONG_WRAP);
+	lv_obj_set_pos(ui->main_screen_timer_label_3, 53, 136);
+	lv_obj_set_size(ui->main_screen_timer_label_3, 100, 32);
+	lv_obj_add_flag(ui->main_screen_timer_label_3, LV_OBJ_FLAG_HIDDEN);
+
+	//Write style for main_screen_timer_label_3, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+	lv_obj_set_style_border_width(ui->main_screen_timer_label_3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_radius(ui->main_screen_timer_label_3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_color(ui->main_screen_timer_label_3, lv_color_hex(0xffffff), LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_font(ui->main_screen_timer_label_3, &lv_font_montserratMedium_16, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_letter_space(ui->main_screen_timer_label_3, 2, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_line_space(ui->main_screen_timer_label_3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_align(ui->main_screen_timer_label_3, LV_TEXT_ALIGN_CENTER, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_opa(ui->main_screen_timer_label_3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_top(ui->main_screen_timer_label_3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_right(ui->main_screen_timer_label_3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_bottom(ui->main_screen_timer_label_3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_left(ui->main_screen_timer_label_3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_shadow_width(ui->main_screen_timer_label_3, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+
 	//Write codes main_screen_cont_4
 	ui->main_screen_cont_4 = lv_obj_create(ui->main_screen);
 	lv_obj_set_pos(ui->main_screen_cont_4, 145, 201);
@@ -540,6 +609,29 @@ void setup_scr_main_screen(lv_ui *ui)
 	//Write style for main_screen_select_ring_l4, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
 	lv_obj_set_style_img_opa(ui->main_screen_select_ring_l4, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
 
+	//Write codes main_screen_timer_label_4
+	ui->main_screen_timer_label_4 = lv_label_create(ui->main_screen_cont_4);
+	lv_label_set_text(ui->main_screen_timer_label_4, "00:00");
+	lv_label_set_long_mode(ui->main_screen_timer_label_4, LV_LABEL_LONG_WRAP);
+	lv_obj_set_pos(ui->main_screen_timer_label_4, 51, 136);
+	lv_obj_set_size(ui->main_screen_timer_label_4, 100, 32);
+	lv_obj_add_flag(ui->main_screen_timer_label_4, LV_OBJ_FLAG_HIDDEN);
+
+	//Write style for main_screen_timer_label_4, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+	lv_obj_set_style_border_width(ui->main_screen_timer_label_4, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_radius(ui->main_screen_timer_label_4, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_color(ui->main_screen_timer_label_4, lv_color_hex(0xffffff), LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_font(ui->main_screen_timer_label_4, &lv_font_montserratMedium_16, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_letter_space(ui->main_screen_timer_label_4, 2, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_line_space(ui->main_screen_timer_label_4, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_align(ui->main_screen_timer_label_4, LV_TEXT_ALIGN_CENTER, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_opa(ui->main_screen_timer_label_4, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_top(ui->main_screen_timer_label_4, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_right(ui->main_screen_timer_label_4, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_bottom(ui->main_screen_timer_label_4, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_left(ui->main_screen_timer_label_4, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_shadow_width(ui->main_screen_timer_label_4, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+
 	//Write codes main_screen_cont_5
 	ui->main_screen_cont_5 = lv_obj_create(ui->main_screen);
 	lv_obj_set_pos(ui->main_screen_cont_5, 415, 201);
@@ -597,6 +689,62 @@ void setup_scr_main_screen(lv_ui *ui)
 
 	//Write style for main_screen_select_ring_l5, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
 	lv_obj_set_style_img_opa(ui->main_screen_select_ring_l5, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+
+	//Write codes main_screen_timer_label_5
+	ui->main_screen_timer_label_5 = lv_label_create(ui->main_screen_cont_5);
+	lv_label_set_text(ui->main_screen_timer_label_5, "00:00");
+	lv_label_set_long_mode(ui->main_screen_timer_label_5, LV_LABEL_LONG_WRAP);
+	lv_obj_set_pos(ui->main_screen_timer_label_5, 51, 136);
+	lv_obj_set_size(ui->main_screen_timer_label_5, 100, 32);
+	lv_obj_add_flag(ui->main_screen_timer_label_5, LV_OBJ_FLAG_HIDDEN);
+
+	//Write style for main_screen_timer_label_5, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+	lv_obj_set_style_border_width(ui->main_screen_timer_label_5, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_radius(ui->main_screen_timer_label_5, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_color(ui->main_screen_timer_label_5, lv_color_hex(0xffffff), LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_font(ui->main_screen_timer_label_5, &lv_font_montserratMedium_16, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_letter_space(ui->main_screen_timer_label_5, 2, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_line_space(ui->main_screen_timer_label_5, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_align(ui->main_screen_timer_label_5, LV_TEXT_ALIGN_CENTER, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_opa(ui->main_screen_timer_label_5, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_top(ui->main_screen_timer_label_5, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_right(ui->main_screen_timer_label_5, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_bottom(ui->main_screen_timer_label_5, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_left(ui->main_screen_timer_label_5, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_shadow_width(ui->main_screen_timer_label_5, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+
+	//Write codes main_screen_zone_timer_btn
+	ui->main_screen_zone_timer_btn = lv_imgbtn_create(ui->main_screen);
+	lv_obj_add_flag(ui->main_screen_zone_timer_btn, LV_OBJ_FLAG_CHECKABLE);
+	ui->main_screen_zone_timer_btn_label = lv_label_create(ui->main_screen_zone_timer_btn);
+	lv_label_set_text(ui->main_screen_zone_timer_btn_label, "");
+	lv_label_set_long_mode(ui->main_screen_zone_timer_btn_label, LV_LABEL_LONG_WRAP);
+	lv_obj_align(ui->main_screen_zone_timer_btn_label, LV_ALIGN_CENTER, 0, 0);
+	lv_obj_set_style_pad_all(ui->main_screen_zone_timer_btn, 0, LV_STATE_DEFAULT);
+	lv_obj_set_pos(ui->main_screen_zone_timer_btn, 145, 138);
+	lv_obj_set_size(ui->main_screen_zone_timer_btn, 50, 50);
+	lv_obj_add_flag(ui->main_screen_zone_timer_btn, LV_OBJ_FLAG_HIDDEN);
+
+	//Write style for main_screen_zone_timer_btn, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+	lv_obj_set_style_text_color(ui->main_screen_zone_timer_btn, lv_color_hex(0x000000), LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_font(ui->main_screen_zone_timer_btn, &lv_font_montserratMedium_12, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_align(ui->main_screen_zone_timer_btn, LV_TEXT_ALIGN_CENTER, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_shadow_width(ui->main_screen_zone_timer_btn, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+
+	//Write style for main_screen_zone_timer_btn, Part: LV_PART_MAIN, State: LV_STATE_PRESSED.
+	lv_obj_set_style_img_opa(ui->main_screen_zone_timer_btn, 255, LV_PART_MAIN|LV_STATE_PRESSED);
+	lv_obj_set_style_text_color(ui->main_screen_zone_timer_btn, lv_color_hex(0xFF33FF), LV_PART_MAIN|LV_STATE_PRESSED);
+	lv_obj_set_style_text_font(ui->main_screen_zone_timer_btn, &lv_font_montserratMedium_12, LV_PART_MAIN|LV_STATE_PRESSED);
+	lv_obj_set_style_shadow_width(ui->main_screen_zone_timer_btn, 0, LV_PART_MAIN|LV_STATE_PRESSED);
+
+	//Write style for main_screen_zone_timer_btn, Part: LV_PART_MAIN, State: LV_STATE_CHECKED.
+	lv_obj_set_style_img_opa(ui->main_screen_zone_timer_btn, 255, LV_PART_MAIN|LV_STATE_CHECKED);
+	lv_obj_set_style_text_color(ui->main_screen_zone_timer_btn, lv_color_hex(0xFF33FF), LV_PART_MAIN|LV_STATE_CHECKED);
+	lv_obj_set_style_text_font(ui->main_screen_zone_timer_btn, &lv_font_montserratMedium_12, LV_PART_MAIN|LV_STATE_CHECKED);
+	lv_obj_set_style_shadow_width(ui->main_screen_zone_timer_btn, 0, LV_PART_MAIN|LV_STATE_CHECKED);
+
+	//Write style for main_screen_zone_timer_btn, Part: LV_PART_MAIN, State: LV_IMGBTN_STATE_RELEASED.
+	lv_obj_set_style_img_opa(ui->main_screen_zone_timer_btn, 255, LV_PART_MAIN|LV_IMGBTN_STATE_RELEASED);
 
 	//Write codes main_screen_img_pan_0
 	ui->main_screen_img_pan_0 = lv_img_create(ui->main_screen);
@@ -773,7 +921,7 @@ void setup_scr_main_screen(lv_ui *ui)
 	lv_label_set_long_mode(ui->main_screen_timer_btn_label, LV_LABEL_LONG_WRAP);
 	lv_obj_align(ui->main_screen_timer_btn_label, LV_ALIGN_CENTER, 0, 0);
 	lv_obj_set_style_pad_all(ui->main_screen_timer_btn, 0, LV_STATE_DEFAULT);
-	lv_obj_set_pos(ui->main_screen_timer_btn, 372, 11);
+	lv_obj_set_pos(ui->main_screen_timer_btn, 372, 10);
 	lv_obj_set_size(ui->main_screen_timer_btn, 57, 57);
 
 	//Write style for main_screen_timer_btn, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
@@ -1053,7 +1201,7 @@ void setup_scr_main_screen(lv_ui *ui)
 
 	//Write codes main_screen_set_timer_win
 	ui->main_screen_set_timer_win = lv_win_create(ui->main_screen_set_timer_cont, 50);
-	lv_win_add_title(ui->main_screen_set_timer_win, "Timer Set");
+	lv_win_add_title(ui->main_screen_set_timer_win, "");
 	ui->main_screen_set_timer_win_item0 = lv_win_add_btn(ui->main_screen_set_timer_win, LV_SYMBOL_OK, 70);
 	ui->main_screen_set_timer_win_item1 = lv_win_add_btn(ui->main_screen_set_timer_win, LV_SYMBOL_CLOSE, 70);
 	lv_obj_t *main_screen_set_timer_win_label = lv_label_create(lv_win_get_content(ui->main_screen_set_timer_win));
@@ -1178,6 +1326,18 @@ void setup_scr_main_screen(lv_ui *ui)
 	lv_obj_set_style_pad_bottom(ui->main_screen_label_1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_pad_left(ui->main_screen_label_1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_shadow_width(ui->main_screen_label_1, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+
+	//Write codes main_screen_img_1
+	ui->main_screen_img_1 = lv_img_create(ui->main_screen_set_timer_cont);
+	lv_obj_add_flag(ui->main_screen_img_1, LV_OBJ_FLAG_CLICKABLE);
+	lv_img_set_src(ui->main_screen_img_1, &_clock_alpha_44x43);
+	lv_img_set_pivot(ui->main_screen_img_1, 50,50);
+	lv_img_set_angle(ui->main_screen_img_1, 0);
+	lv_obj_set_pos(ui->main_screen_img_1, 10, 3);
+	lv_obj_set_size(ui->main_screen_img_1, 44, 43);
+
+	//Write style for main_screen_img_1, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+	lv_obj_set_style_img_opa(ui->main_screen_img_1, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
 
 	//Update current screen layout.
 	lv_obj_update_layout(ui->main_screen);

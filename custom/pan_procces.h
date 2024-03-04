@@ -28,6 +28,7 @@ typedef struct
     void *img_ring_l;
     void *img_ring_h;
     void *obj_cont;
+    void *timer_label;
     lv_anim_t a_x;
     lv_anim_t a_y;
     tft_pan_registers_t pan;
@@ -65,7 +66,8 @@ typedef struct
              buzzer_bit_pan  : 1,
              buzzer_bit_mute : 1,
              clock_updated   : 1,
-             reserve         : 7;
+             buzzer_bit_alarm: 1,
+             reserve         : 6;
 } slave_param_bits_t;
 
 typedef struct
@@ -118,7 +120,6 @@ void menu_screen_init(void);
 void set_slider(uint8_t val);
 void set_select(uint8_t sel);
 void refresh_display(void);
-void pan_level(uint8_t sel, uint8_t level);
 void click_pause(void);
 void click_main_timer(void);
 void long_press_lock(void);

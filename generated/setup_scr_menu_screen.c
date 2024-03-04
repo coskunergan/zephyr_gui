@@ -83,7 +83,7 @@ void setup_scr_menu_screen(lv_ui *ui)
 	ui->menu_screen_power_roller = lv_roller_create(ui->menu_screen_tabview_1_tab_1);
 	lv_roller_set_options(ui->menu_screen_power_roller, "1500W\n2800W\n3600W\n7200W\n10800W", LV_ROLLER_MODE_INFINITE);
 	lv_roller_set_visible_row_count(ui->menu_screen_power_roller, 3);
-	lv_obj_set_pos(ui->menu_screen_power_roller, 177, 170);
+	lv_obj_set_pos(ui->menu_screen_power_roller, 177, 150);
 	lv_obj_set_width(ui->menu_screen_power_roller, 260);
 
 	//Write style for menu_screen_power_roller, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
@@ -108,7 +108,7 @@ void setup_scr_menu_screen(lv_ui *ui)
 
 	//Write codes menu_screen_sound_switch
 	ui->menu_screen_sound_switch = lv_switch_create(ui->menu_screen_tabview_1_tab_1);
-	lv_obj_set_pos(ui->menu_screen_sound_switch, 257, 93);
+	lv_obj_set_pos(ui->menu_screen_sound_switch, 257, 50);
 	lv_obj_set_size(ui->menu_screen_sound_switch, 85, 42);
 
 	//Write style for menu_screen_sound_switch, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
@@ -129,38 +129,13 @@ void setup_scr_menu_screen(lv_ui *ui)
 	lv_obj_set_style_border_width(ui->menu_screen_sound_switch, 0, LV_PART_KNOB|LV_STATE_DEFAULT);
 	lv_obj_set_style_radius(ui->menu_screen_sound_switch, 21, LV_PART_KNOB|LV_STATE_DEFAULT);
 
-	//Write codes menu_screen_slider_contrast
-	ui->menu_screen_slider_contrast = lv_slider_create(ui->menu_screen_tabview_1_tab_1);
-	lv_slider_set_range(ui->menu_screen_slider_contrast, 0, 100);
-	lv_slider_set_mode(ui->menu_screen_slider_contrast, LV_SLIDER_MODE_NORMAL);
-	lv_slider_set_value(ui->menu_screen_slider_contrast, 50, LV_ANIM_OFF);
-	lv_obj_set_pos(ui->menu_screen_slider_contrast, 138, 23);
-	lv_obj_set_size(ui->menu_screen_slider_contrast, 325, 14);
-
-	//Write style for menu_screen_slider_contrast, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
-	lv_obj_set_style_bg_opa(ui->menu_screen_slider_contrast, 60, LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_bg_color(ui->menu_screen_slider_contrast, lv_color_hex(0x636363), LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_radius(ui->menu_screen_slider_contrast, 50, LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_outline_width(ui->menu_screen_slider_contrast, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_shadow_width(ui->menu_screen_slider_contrast, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
-
-	//Write style for menu_screen_slider_contrast, Part: LV_PART_INDICATOR, State: LV_STATE_DEFAULT.
-	lv_obj_set_style_bg_opa(ui->menu_screen_slider_contrast, 255, LV_PART_INDICATOR|LV_STATE_DEFAULT);
-	lv_obj_set_style_bg_color(ui->menu_screen_slider_contrast, lv_color_hex(0x636363), LV_PART_INDICATOR|LV_STATE_DEFAULT);
-	lv_obj_set_style_radius(ui->menu_screen_slider_contrast, 50, LV_PART_INDICATOR|LV_STATE_DEFAULT);
-
-	//Write style for menu_screen_slider_contrast, Part: LV_PART_KNOB, State: LV_STATE_DEFAULT.
-	lv_obj_set_style_bg_opa(ui->menu_screen_slider_contrast, 255, LV_PART_KNOB|LV_STATE_DEFAULT);
-	lv_obj_set_style_bg_color(ui->menu_screen_slider_contrast, lv_color_hex(0xffffff), LV_PART_KNOB|LV_STATE_DEFAULT);
-	lv_obj_set_style_radius(ui->menu_screen_slider_contrast, 50, LV_PART_KNOB|LV_STATE_DEFAULT);
-
 	//Write codes menu_screen_img_2
 	ui->menu_screen_img_2 = lv_img_create(ui->menu_screen_tabview_1_tab_1);
 	lv_obj_add_flag(ui->menu_screen_img_2, LV_OBJ_FLAG_CLICKABLE);
 	lv_img_set_src(ui->menu_screen_img_2, &_speaker_alpha_50x50);
 	lv_img_set_pivot(ui->menu_screen_img_2, 50,50);
 	lv_img_set_angle(ui->menu_screen_img_2, 0);
-	lv_obj_set_pos(ui->menu_screen_img_2, 59, 87);
+	lv_obj_set_pos(ui->menu_screen_img_2, 59, 50);
 	lv_obj_set_size(ui->menu_screen_img_2, 50, 50);
 
 	//Write style for menu_screen_img_2, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
@@ -172,23 +147,11 @@ void setup_scr_menu_screen(lv_ui *ui)
 	lv_img_set_src(ui->menu_screen_img_4, &_power_alpha_50x50);
 	lv_img_set_pivot(ui->menu_screen_img_4, 50,50);
 	lv_img_set_angle(ui->menu_screen_img_4, 0);
-	lv_obj_set_pos(ui->menu_screen_img_4, 60, 182);
+	lv_obj_set_pos(ui->menu_screen_img_4, 60, 160);
 	lv_obj_set_size(ui->menu_screen_img_4, 50, 50);
 
 	//Write style for menu_screen_img_4, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
 	lv_obj_set_style_img_opa(ui->menu_screen_img_4, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-
-	//Write codes menu_screen_img_3
-	ui->menu_screen_img_3 = lv_img_create(ui->menu_screen_tabview_1_tab_1);
-	lv_obj_add_flag(ui->menu_screen_img_3, LV_OBJ_FLAG_CLICKABLE);
-	lv_img_set_src(ui->menu_screen_img_3, &_contrast_alpha_50x50);
-	lv_img_set_pivot(ui->menu_screen_img_3, 50,50);
-	lv_img_set_angle(ui->menu_screen_img_3, 0);
-	lv_obj_set_pos(ui->menu_screen_img_3, 59, 5);
-	lv_obj_set_size(ui->menu_screen_img_3, 50, 50);
-
-	//Write style for menu_screen_img_3, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
-	lv_obj_set_style_img_opa(ui->menu_screen_img_3, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
 
 	//Write codes menu_screen_settings_save_btn
 	ui->menu_screen_settings_save_btn = lv_btn_create(ui->menu_screen_tabview_1_tab_1);
@@ -411,7 +374,7 @@ void setup_scr_menu_screen(lv_ui *ui)
 
 	//Write codes menu_screen_label_4
 	ui->menu_screen_label_4 = lv_label_create(ui->menu_screen_tabview_1_tab_3);
-	lv_label_set_text(ui->menu_screen_label_4, "V1.0.6");
+	lv_label_set_text(ui->menu_screen_label_4, "V1.0.7");
 	lv_label_set_long_mode(ui->menu_screen_label_4, LV_LABEL_LONG_WRAP);
 	lv_obj_set_pos(ui->menu_screen_label_4, 260, 254);
 	lv_obj_set_size(ui->menu_screen_label_4, 100, 32);
