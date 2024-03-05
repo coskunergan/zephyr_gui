@@ -283,6 +283,20 @@ static void main_screen_zone_timer_btn_event_handler (lv_event_t *e)
 		break;
 	}
 }
+static void main_screen_zone_warm_btn_event_handler (lv_event_t *e)
+{
+	lv_event_code_t code = lv_event_get_code(e);
+
+	switch (code) {
+	case LV_EVENT_CLICKED:
+	{
+		click_warm_btn();
+		break;
+	}
+	default:
+		break;
+	}
+}
 static void main_screen_timer_btn_event_handler (lv_event_t *e)
 {
 	lv_event_code_t code = lv_event_get_code(e);
@@ -479,6 +493,7 @@ void events_init_main_screen(lv_ui *ui)
 	lv_obj_add_event_cb(ui->main_screen_select_ring_h5, main_screen_select_ring_h5_event_handler, LV_EVENT_ALL, NULL);
 	lv_obj_add_event_cb(ui->main_screen_select_ring_l5, main_screen_select_ring_l5_event_handler, LV_EVENT_ALL, NULL);
 	lv_obj_add_event_cb(ui->main_screen_zone_timer_btn, main_screen_zone_timer_btn_event_handler, LV_EVENT_ALL, NULL);
+	lv_obj_add_event_cb(ui->main_screen_zone_warm_btn, main_screen_zone_warm_btn_event_handler, LV_EVENT_ALL, NULL);
 	lv_obj_add_event_cb(ui->main_screen_timer_btn, main_screen_timer_btn_event_handler, LV_EVENT_ALL, NULL);
 	lv_obj_add_event_cb(ui->main_screen_pause_btn, main_screen_pause_btn_event_handler, LV_EVENT_ALL, NULL);
 	lv_obj_add_event_cb(ui->main_screen_menu_btn, main_screen_menu_btn_event_handler, LV_EVENT_ALL, NULL);

@@ -23,6 +23,7 @@ bool timer_set_menu = false;
 uint8_t  timer_select = 0;
 uint32_t minute_minder_timer = 0;
 uint32_t minute_zone_timer[5] = {0, 0, 0, 0, 0};
+uint8_t zone_keep_warm[5] = {0, 0, 0, 0, 0};
 uint32_t timer_menu_timeout = 0;
 uint32_t alarm_count = 0;
 #define NUMBER_OF_ALARM_COUNT 30
@@ -74,6 +75,7 @@ void second_timer_cb(lv_timer_t *timeout_timer)
         {
             if(--minute_zone_timer[i] == 0)
             {
+                zone_keep_warm[i] = 0;
                 tft_regs.read_regs.panx_value[i] = 0;
                 set_select(i + 1);
                 alarm_count = NUMBER_OF_ALARM_COUNT;
@@ -313,6 +315,18 @@ void level_set(void *ui, uint8_t level)
             lv_img_set_src(ui, &_img_pan_P_alpha_200x194);
             lv_obj_set_style_bg_img_src(guider_ui.main_screen_slider, &_slider_P_alpha_800x80, LV_PART_MAIN | LV_STATE_DEFAULT);
             break;
+        case 11:
+            lv_img_set_src(ui, &_img_warm_1_alpha_200x194);
+            lv_obj_set_style_bg_img_src(guider_ui.main_screen_slider, &_slider_3_alpha_800x80, LV_PART_MAIN | LV_STATE_DEFAULT);
+            break;
+        case 12:
+            lv_img_set_src(ui, &_img_warm_2_alpha_200x194);
+            lv_obj_set_style_bg_img_src(guider_ui.main_screen_slider, &_slider_5_alpha_800x80, LV_PART_MAIN | LV_STATE_DEFAULT);
+            break;
+        case 13:
+            lv_img_set_src(ui, &_img_warm_3_alpha_200x194);
+            lv_obj_set_style_bg_img_src(guider_ui.main_screen_slider, &_slider_7_alpha_800x80, LV_PART_MAIN | LV_STATE_DEFAULT);
+            break;
         default:
             break;
     }
@@ -356,6 +370,15 @@ void no_level_set(void *ui, uint8_t level)
         case 10:
             lv_img_set_src(ui, &_NoHob_P_alpha_200x194);
             break;
+        case 11:
+            lv_img_set_src(ui, &_NoHob_3_alpha_200x194);
+            break;
+        case 12:
+            lv_img_set_src(ui, &_NoHob_5_alpha_200x194);
+            break;
+        case 13:
+            lv_img_set_src(ui, &_NoHob_7_alpha_200x194);
+            break;
         default:
             break;
     }
@@ -369,6 +392,7 @@ void pan_refresh(tft_pan_registers_t *pan_regs, system_pan_registers_t *sys_pan_
     if(system_obj.select_pan == 0)
     {
         lv_obj_add_flag(guider_ui.main_screen_zone_timer_btn, LV_OBJ_FLAG_HIDDEN);
+        lv_obj_add_flag(guider_ui.main_screen_zone_warm_btn, LV_OBJ_FLAG_HIDDEN);
     }
     if(system_obj.select_pan == index + 1)
     {
@@ -378,10 +402,12 @@ void pan_refresh(tft_pan_registers_t *pan_regs, system_pan_registers_t *sys_pan_
             if(pan_regs->pan_state.pan_size)
             {
                 lv_obj_set_pos(guider_ui.main_screen_zone_timer_btn, 146 + lv_obj_get_x(sys_pan_regs->obj_cont), 8 + lv_obj_get_y(sys_pan_regs->obj_cont));
+                lv_obj_set_pos(guider_ui.main_screen_zone_warm_btn, 3 + lv_obj_get_x(sys_pan_regs->obj_cont), 8 + lv_obj_get_y(sys_pan_regs->obj_cont));
             }
             else
             {
                 lv_obj_set_pos(guider_ui.main_screen_zone_timer_btn, 131 + lv_obj_get_x(sys_pan_regs->obj_cont), lv_obj_get_y(sys_pan_regs->obj_cont));
+                lv_obj_set_pos(guider_ui.main_screen_zone_warm_btn, 25 + lv_obj_get_x(sys_pan_regs->obj_cont), lv_obj_get_y(sys_pan_regs->obj_cont));
             }
         }
         else
@@ -390,14 +416,17 @@ void pan_refresh(tft_pan_registers_t *pan_regs, system_pan_registers_t *sys_pan_
             if(pan_regs->pan_state.pan_size)
             {
                 lv_obj_set_pos(guider_ui.main_screen_zone_timer_btn, 146 + lv_obj_get_x(sys_pan_regs->obj_cont), 139 + lv_obj_get_y(sys_pan_regs->obj_cont));
+                lv_obj_set_pos(guider_ui.main_screen_zone_warm_btn, 3 + lv_obj_get_x(sys_pan_regs->obj_cont), 139 + lv_obj_get_y(sys_pan_regs->obj_cont));
             }
             else
             {
                 lv_obj_set_pos(guider_ui.main_screen_zone_timer_btn, 131 + lv_obj_get_x(sys_pan_regs->obj_cont), 105 + lv_obj_get_y(sys_pan_regs->obj_cont));
+                lv_obj_set_pos(guider_ui.main_screen_zone_warm_btn, 25 + lv_obj_get_x(sys_pan_regs->obj_cont), 105 + lv_obj_get_y(sys_pan_regs->obj_cont));
             }
         }
         level_set(sys_pan_regs->img_pan, tft_regs.read_regs.panx_value[index] / 2);
         lv_obj_clear_flag(guider_ui.main_screen_zone_timer_btn, LV_OBJ_FLAG_HIDDEN);
+        lv_obj_clear_flag(guider_ui.main_screen_zone_warm_btn, LV_OBJ_FLAG_HIDDEN);
     }
     if(sys_pan_regs->pan.pan_state.state_active != pan_regs->pan_state.state_active)
     {
@@ -412,6 +441,7 @@ void pan_refresh(tft_pan_registers_t *pan_regs, system_pan_registers_t *sys_pan_
         }
         else
         {
+            zone_keep_warm[index] = 0;
             tft_regs.read_regs.panx_value[index] = 0;
             level_set(sys_pan_regs->img_pan, 0);
             lv_obj_add_flag(sys_pan_regs->obj_cont, LV_OBJ_FLAG_HIDDEN);
@@ -446,11 +476,11 @@ void pan_refresh(tft_pan_registers_t *pan_regs, system_pan_registers_t *sys_pan_
     {
         if(pan_regs->pan_state.pan_size)
         {
-            lv_obj_set_pos(sys_pan_regs->timer_label, 51, 136);        
+            lv_obj_set_pos(sys_pan_regs->timer_label, 51, 136);
         }
         else
         {
-            lv_obj_set_pos(sys_pan_regs->timer_label, 51, 93);            
+            lv_obj_set_pos(sys_pan_regs->timer_label, 51, 93);
         }
         lv_obj_clear_flag(sys_pan_regs->timer_label, LV_OBJ_FLAG_HIDDEN);
         lv_label_set_text_fmt(sys_pan_regs->timer_label, "%02d:%02d", minute_zone_timer[index] / 60, minute_zone_timer[index] % 60);
@@ -477,6 +507,7 @@ void refresh_display(void)
 /*******************************************************************************/
 void set_slider(uint8_t val)
 {
+    zone_keep_warm[system_obj.select_pan - 1] = 0;
     select_timer_start();
     if(system_obj.slider_value != val && system_obj.pause == false)
     {
@@ -828,6 +859,22 @@ void click_timer_close_btn(void)
     else
     {
         stop_minute_minder();
+    }
+    buzzer_beep();
+}
+/*******************************************************************************/
+void click_warm_btn(void)
+{
+    uint8_t index = system_obj.select_pan - 1;
+    ++zone_keep_warm[index];
+    zone_keep_warm[index] %= 4;
+    if(zone_keep_warm[index])
+    {
+        tft_regs.read_regs.panx_value[index] = 20 + zone_keep_warm[index] * 2;
+    }
+    else
+    {
+        tft_regs.read_regs.panx_value[index] = 0;
     }
     buzzer_beep();
 }

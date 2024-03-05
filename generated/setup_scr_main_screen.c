@@ -721,7 +721,7 @@ void setup_scr_main_screen(lv_ui *ui)
 	lv_label_set_long_mode(ui->main_screen_zone_timer_btn_label, LV_LABEL_LONG_WRAP);
 	lv_obj_align(ui->main_screen_zone_timer_btn_label, LV_ALIGN_CENTER, 0, 0);
 	lv_obj_set_style_pad_all(ui->main_screen_zone_timer_btn, 0, LV_STATE_DEFAULT);
-	lv_obj_set_pos(ui->main_screen_zone_timer_btn, 145, 138);
+	lv_obj_set_pos(ui->main_screen_zone_timer_btn, 154, 175);
 	lv_obj_set_size(ui->main_screen_zone_timer_btn, 50, 50);
 	lv_obj_add_flag(ui->main_screen_zone_timer_btn, LV_OBJ_FLAG_HIDDEN);
 
@@ -745,6 +745,78 @@ void setup_scr_main_screen(lv_ui *ui)
 
 	//Write style for main_screen_zone_timer_btn, Part: LV_PART_MAIN, State: LV_IMGBTN_STATE_RELEASED.
 	lv_obj_set_style_img_opa(ui->main_screen_zone_timer_btn, 255, LV_PART_MAIN|LV_IMGBTN_STATE_RELEASED);
+
+	//Write codes main_screen_zone_warm_btn
+	ui->main_screen_zone_warm_btn = lv_imgbtn_create(ui->main_screen);
+	lv_obj_add_flag(ui->main_screen_zone_warm_btn, LV_OBJ_FLAG_CHECKABLE);
+	ui->main_screen_zone_warm_btn_label = lv_label_create(ui->main_screen_zone_warm_btn);
+	lv_label_set_text(ui->main_screen_zone_warm_btn_label, "");
+	lv_label_set_long_mode(ui->main_screen_zone_warm_btn_label, LV_LABEL_LONG_WRAP);
+	lv_obj_align(ui->main_screen_zone_warm_btn_label, LV_ALIGN_CENTER, 0, 0);
+	lv_obj_set_style_pad_all(ui->main_screen_zone_warm_btn, 0, LV_STATE_DEFAULT);
+	lv_obj_set_pos(ui->main_screen_zone_warm_btn, 26, 175);
+	lv_obj_set_size(ui->main_screen_zone_warm_btn, 50, 50);
+	lv_obj_add_flag(ui->main_screen_zone_warm_btn, LV_OBJ_FLAG_HIDDEN);
+
+	//Write style for main_screen_zone_warm_btn, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+	lv_obj_set_style_text_color(ui->main_screen_zone_warm_btn, lv_color_hex(0x000000), LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_font(ui->main_screen_zone_warm_btn, &lv_font_montserratMedium_12, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_align(ui->main_screen_zone_warm_btn, LV_TEXT_ALIGN_CENTER, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_shadow_width(ui->main_screen_zone_warm_btn, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+
+	//Write style for main_screen_zone_warm_btn, Part: LV_PART_MAIN, State: LV_STATE_PRESSED.
+	lv_obj_set_style_img_opa(ui->main_screen_zone_warm_btn, 255, LV_PART_MAIN|LV_STATE_PRESSED);
+	lv_obj_set_style_text_color(ui->main_screen_zone_warm_btn, lv_color_hex(0xFF33FF), LV_PART_MAIN|LV_STATE_PRESSED);
+	lv_obj_set_style_text_font(ui->main_screen_zone_warm_btn, &lv_font_montserratMedium_12, LV_PART_MAIN|LV_STATE_PRESSED);
+	lv_obj_set_style_shadow_width(ui->main_screen_zone_warm_btn, 0, LV_PART_MAIN|LV_STATE_PRESSED);
+
+	//Write style for main_screen_zone_warm_btn, Part: LV_PART_MAIN, State: LV_STATE_CHECKED.
+	lv_obj_set_style_img_opa(ui->main_screen_zone_warm_btn, 255, LV_PART_MAIN|LV_STATE_CHECKED);
+	lv_obj_set_style_text_color(ui->main_screen_zone_warm_btn, lv_color_hex(0xFF33FF), LV_PART_MAIN|LV_STATE_CHECKED);
+	lv_obj_set_style_text_font(ui->main_screen_zone_warm_btn, &lv_font_montserratMedium_12, LV_PART_MAIN|LV_STATE_CHECKED);
+	lv_obj_set_style_shadow_width(ui->main_screen_zone_warm_btn, 0, LV_PART_MAIN|LV_STATE_CHECKED);
+
+	//Write style for main_screen_zone_warm_btn, Part: LV_PART_MAIN, State: LV_IMGBTN_STATE_RELEASED.
+	lv_obj_set_style_img_opa(ui->main_screen_zone_warm_btn, 255, LV_PART_MAIN|LV_IMGBTN_STATE_RELEASED);
+
+	//Write codes main_screen_img_warm_3
+	ui->main_screen_img_warm_3 = lv_img_create(ui->main_screen);
+	lv_obj_add_flag(ui->main_screen_img_warm_3, LV_OBJ_FLAG_CLICKABLE);
+	lv_img_set_src(ui->main_screen_img_warm_3, &_img_warm_3_alpha_200x194);
+	lv_img_set_pivot(ui->main_screen_img_warm_3, 50,50);
+	lv_img_set_angle(ui->main_screen_img_warm_3, 0);
+	lv_obj_set_pos(ui->main_screen_img_warm_3, 592, 10);
+	lv_obj_set_size(ui->main_screen_img_warm_3, 200, 194);
+	lv_obj_add_flag(ui->main_screen_img_warm_3, LV_OBJ_FLAG_HIDDEN);
+
+	//Write style for main_screen_img_warm_3, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+	lv_obj_set_style_img_opa(ui->main_screen_img_warm_3, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+
+	//Write codes main_screen_img_warm_2
+	ui->main_screen_img_warm_2 = lv_img_create(ui->main_screen);
+	lv_obj_add_flag(ui->main_screen_img_warm_2, LV_OBJ_FLAG_CLICKABLE);
+	lv_img_set_src(ui->main_screen_img_warm_2, &_img_warm_2_alpha_200x194);
+	lv_img_set_pivot(ui->main_screen_img_warm_2, 50,50);
+	lv_img_set_angle(ui->main_screen_img_warm_2, 0);
+	lv_obj_set_pos(ui->main_screen_img_warm_2, 392, 10);
+	lv_obj_set_size(ui->main_screen_img_warm_2, 200, 194);
+	lv_obj_add_flag(ui->main_screen_img_warm_2, LV_OBJ_FLAG_HIDDEN);
+
+	//Write style for main_screen_img_warm_2, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+	lv_obj_set_style_img_opa(ui->main_screen_img_warm_2, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+
+	//Write codes main_screen_img_warm_1
+	ui->main_screen_img_warm_1 = lv_img_create(ui->main_screen);
+	lv_obj_add_flag(ui->main_screen_img_warm_1, LV_OBJ_FLAG_CLICKABLE);
+	lv_img_set_src(ui->main_screen_img_warm_1, &_img_warm_1_alpha_200x194);
+	lv_img_set_pivot(ui->main_screen_img_warm_1, 50,50);
+	lv_img_set_angle(ui->main_screen_img_warm_1, 0);
+	lv_obj_set_pos(ui->main_screen_img_warm_1, 192, 10);
+	lv_obj_set_size(ui->main_screen_img_warm_1, 200, 194);
+	lv_obj_add_flag(ui->main_screen_img_warm_1, LV_OBJ_FLAG_HIDDEN);
+
+	//Write style for main_screen_img_warm_1, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+	lv_obj_set_style_img_opa(ui->main_screen_img_warm_1, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
 
 	//Write codes main_screen_img_pan_0
 	ui->main_screen_img_pan_0 = lv_img_create(ui->main_screen);

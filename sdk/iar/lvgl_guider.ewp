@@ -4784,6 +4784,15 @@
       <name>$PROJ_DIR$\..\..\generated\images\_img_pan_P_alpha_200x194.c</name>
     </file>
     <file>
+      <name>$PROJ_DIR$\..\..\generated\images\_img_warm_1_alpha_200x194.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\images\_img_warm_2_alpha_200x194.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\images\_img_warm_3_alpha_200x194.c</name>
+    </file>
+    <file>
       <name>$PROJ_DIR$\..\..\generated\images\_info_alpha_40x40.c</name>
     </file>
     <file>
