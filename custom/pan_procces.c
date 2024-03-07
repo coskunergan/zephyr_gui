@@ -64,30 +64,47 @@ void second_timer_cb(lv_timer_t *timeout_timer)
     {
         lv_obj_clear_flag(guider_ui.logo_screen_clock_lbl, LV_OBJ_FLAG_HIDDEN);
         lv_label_set_text_fmt(guider_ui.logo_screen_clock_lbl, "%02d:%02d", tft_regs.write_regs.hour, tft_regs.write_regs.minute);
+        if(tft_regs.write_regs.pan1_regs.pan_state.pan_heat ||
+                tft_regs.write_regs.pan2_regs.pan_state.pan_heat ||
+                tft_regs.write_regs.pan3_regs.pan_state.pan_heat ||
+                tft_regs.write_regs.pan4_regs.pan_state.pan_heat ||
+                tft_regs.write_regs.pan5_regs.pan_state.pan_heat)
+        {
+            lv_obj_clear_flag(guider_ui.logo_screen_heat_lbl, LV_OBJ_FLAG_HIDDEN);
+            lv_obj_clear_flag(guider_ui.logo_screen_img_heat, LV_OBJ_FLAG_HIDDEN);
+        }
+        else
+        {
+            lv_obj_add_flag(guider_ui.logo_screen_heat_lbl, LV_OBJ_FLAG_HIDDEN);
+            lv_obj_add_flag(guider_ui.logo_screen_img_heat, LV_OBJ_FLAG_HIDDEN);
+        }
     }
     if(tft_regs.write_regs.hour == tft_regs.read_regs.hour_set && tft_regs.write_regs.minute == tft_regs.read_regs.minute_set)
     {
         tft_regs.read_regs.slave_param_bits.clock_updated = false;
     }
-    for(size_t i = 0; i < 5; i++)
+    if(system_obj.pause == false)
     {
-        if(minute_zone_timer[i])
+        for(size_t i = 0; i < 5; i++)
         {
-            if(--minute_zone_timer[i] == 0)
+            if(minute_zone_timer[i])
             {
-                zone_keep_warm[i] = 0;
-                tft_regs.read_regs.panx_value[i] = 0;
-                set_select(i + 1);
-                alarm_count = NUMBER_OF_ALARM_COUNT;
+                if(--minute_zone_timer[i] == 0)
+                {
+                    zone_keep_warm[i] = 0;
+                    tft_regs.read_regs.panx_value[i] = 0;
+                    set_select(i + 1);
+                    alarm_count = NUMBER_OF_ALARM_COUNT;
+                }
             }
         }
-    }
-    if(minute_minder_timer)
-    {
-        if(--minute_minder_timer == 0)
+        if(minute_minder_timer)
         {
-            lv_obj_add_flag(guider_ui.main_screen_timer_spinner, LV_OBJ_FLAG_HIDDEN);
-            alarm_count = NUMBER_OF_ALARM_COUNT;
+            if(--minute_minder_timer == 0)
+            {
+                lv_obj_add_flag(guider_ui.main_screen_timer_spinner, LV_OBJ_FLAG_HIDDEN);
+                alarm_count = NUMBER_OF_ALARM_COUNT;
+            }
         }
     }
     if(alarm_count)
@@ -317,15 +334,15 @@ void level_set(void *ui, uint8_t level)
             break;
         case 11:
             lv_img_set_src(ui, &_img_warm_1_alpha_200x194);
-            lv_obj_set_style_bg_img_src(guider_ui.main_screen_slider, &_slider_3_alpha_800x80, LV_PART_MAIN | LV_STATE_DEFAULT);
+            lv_obj_set_style_bg_img_src(guider_ui.main_screen_slider, &_slider_0_alpha_800x80, LV_PART_MAIN | LV_STATE_DEFAULT);
             break;
         case 12:
             lv_img_set_src(ui, &_img_warm_2_alpha_200x194);
-            lv_obj_set_style_bg_img_src(guider_ui.main_screen_slider, &_slider_5_alpha_800x80, LV_PART_MAIN | LV_STATE_DEFAULT);
+            lv_obj_set_style_bg_img_src(guider_ui.main_screen_slider, &_slider_0_alpha_800x80, LV_PART_MAIN | LV_STATE_DEFAULT);
             break;
         case 13:
             lv_img_set_src(ui, &_img_warm_3_alpha_200x194);
-            lv_obj_set_style_bg_img_src(guider_ui.main_screen_slider, &_slider_7_alpha_800x80, LV_PART_MAIN | LV_STATE_DEFAULT);
+            lv_obj_set_style_bg_img_src(guider_ui.main_screen_slider, &_slider_0_alpha_800x80, LV_PART_MAIN | LV_STATE_DEFAULT);
             break;
         default:
             break;
@@ -371,13 +388,13 @@ void no_level_set(void *ui, uint8_t level)
             lv_img_set_src(ui, &_NoHob_P_alpha_200x194);
             break;
         case 11:
-            lv_img_set_src(ui, &_NoHob_3_alpha_200x194);
+            lv_img_set_src(ui, &_img_no_warm_1_alpha_200x194);
             break;
         case 12:
-            lv_img_set_src(ui, &_NoHob_5_alpha_200x194);
+            lv_img_set_src(ui, &_img_no_warm_2_alpha_200x194);
             break;
         case 13:
-            lv_img_set_src(ui, &_NoHob_7_alpha_200x194);
+            lv_img_set_src(ui, &_img_no_warm_3_alpha_200x194);
             break;
         default:
             break;
@@ -441,6 +458,7 @@ void pan_refresh(tft_pan_registers_t *pan_regs, system_pan_registers_t *sys_pan_
         }
         else
         {
+            minute_zone_timer[index] = 0;
             zone_keep_warm[index] = 0;
             tft_regs.read_regs.panx_value[index] = 0;
             level_set(sys_pan_regs->img_pan, 0);
@@ -472,7 +490,7 @@ void pan_refresh(tft_pan_registers_t *pan_regs, system_pan_registers_t *sys_pan_
             pan_slide(&sys_pan_regs->a_x, &sys_pan_regs->a_y, sys_pan_regs->obj_cont, (pan_regs->x - 1) * 150, (pan_regs->pan_state.pan_size) ? ((270 - (pan_regs->y - 1) * 45) - 40) : ((258 - (pan_regs->y - 1) * 43) - 3));
         }
     }
-    if(minute_zone_timer[index])
+    if(minute_zone_timer[index] && system_obj.pause == false)
     {
         if(pan_regs->pan_state.pan_size)
         {

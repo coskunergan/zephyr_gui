@@ -4751,6 +4751,18 @@
       <name>$PROJ_DIR$\..\..\generated\images\_gtmqr_alpha_200x200.c</name>
     </file>
     <file>
+      <name>$PROJ_DIR$\..\..\generated\images\_heat_alpha_149x138.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\images\_img_no_warm_1_alpha_200x194.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\images\_img_no_warm_2_alpha_200x194.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\images\_img_no_warm_3_alpha_200x194.c</name>
+    </file>
+    <file>
       <name>$PROJ_DIR$\..\..\generated\images\_img_pan_0_alpha_200x194.c</name>
     </file>
     <file>

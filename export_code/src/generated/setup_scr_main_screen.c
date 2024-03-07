@@ -779,11 +779,50 @@ void setup_scr_main_screen(lv_ui *ui)
 	//Write style for main_screen_zone_warm_btn, Part: LV_PART_MAIN, State: LV_IMGBTN_STATE_RELEASED.
 	lv_obj_set_style_img_opa(ui->main_screen_zone_warm_btn, 255, LV_PART_MAIN|LV_IMGBTN_STATE_RELEASED);
 
+	//Write codes main_screen_img_no_warm_3
+	ui->main_screen_img_no_warm_3 = lv_img_create(ui->main_screen);
+	lv_obj_add_flag(ui->main_screen_img_no_warm_3, LV_OBJ_FLAG_CLICKABLE);
+	lv_img_set_src(ui->main_screen_img_no_warm_3, &_img_no_warm_3_alpha_200x194);
+	lv_img_set_pivot(ui->main_screen_img_no_warm_3, 100,5);
+	lv_img_set_angle(ui->main_screen_img_no_warm_3, 0);
+	lv_obj_set_pos(ui->main_screen_img_no_warm_3, 215, 54);
+	lv_obj_set_size(ui->main_screen_img_no_warm_3, 200, 194);
+	lv_obj_add_flag(ui->main_screen_img_no_warm_3, LV_OBJ_FLAG_HIDDEN);
+
+	//Write style for main_screen_img_no_warm_3, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+	lv_obj_set_style_img_opa(ui->main_screen_img_no_warm_3, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+
+	//Write codes main_screen_img_no_warm_2
+	ui->main_screen_img_no_warm_2 = lv_img_create(ui->main_screen);
+	lv_obj_add_flag(ui->main_screen_img_no_warm_2, LV_OBJ_FLAG_CLICKABLE);
+	lv_img_set_src(ui->main_screen_img_no_warm_2, &_img_no_warm_2_alpha_200x194);
+	lv_img_set_pivot(ui->main_screen_img_no_warm_2, 100,5);
+	lv_img_set_angle(ui->main_screen_img_no_warm_2, 0);
+	lv_obj_set_pos(ui->main_screen_img_no_warm_2, 350, 190);
+	lv_obj_set_size(ui->main_screen_img_no_warm_2, 200, 194);
+	lv_obj_add_flag(ui->main_screen_img_no_warm_2, LV_OBJ_FLAG_HIDDEN);
+
+	//Write style for main_screen_img_no_warm_2, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+	lv_obj_set_style_img_opa(ui->main_screen_img_no_warm_2, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+
+	//Write codes main_screen_img_no_warm_1
+	ui->main_screen_img_no_warm_1 = lv_img_create(ui->main_screen);
+	lv_obj_add_flag(ui->main_screen_img_no_warm_1, LV_OBJ_FLAG_CLICKABLE);
+	lv_img_set_src(ui->main_screen_img_no_warm_1, &_img_no_warm_1_alpha_200x194);
+	lv_img_set_pivot(ui->main_screen_img_no_warm_1, 100,5);
+	lv_img_set_angle(ui->main_screen_img_no_warm_1, 0);
+	lv_obj_set_pos(ui->main_screen_img_no_warm_1, 567, 153);
+	lv_obj_set_size(ui->main_screen_img_no_warm_1, 200, 194);
+	lv_obj_add_flag(ui->main_screen_img_no_warm_1, LV_OBJ_FLAG_HIDDEN);
+
+	//Write style for main_screen_img_no_warm_1, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+	lv_obj_set_style_img_opa(ui->main_screen_img_no_warm_1, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+
 	//Write codes main_screen_img_warm_3
 	ui->main_screen_img_warm_3 = lv_img_create(ui->main_screen);
 	lv_obj_add_flag(ui->main_screen_img_warm_3, LV_OBJ_FLAG_CLICKABLE);
 	lv_img_set_src(ui->main_screen_img_warm_3, &_img_warm_3_alpha_200x194);
-	lv_img_set_pivot(ui->main_screen_img_warm_3, 50,50);
+	lv_img_set_pivot(ui->main_screen_img_warm_3, 100,5);
 	lv_img_set_angle(ui->main_screen_img_warm_3, 0);
 	lv_obj_set_pos(ui->main_screen_img_warm_3, 592, 10);
 	lv_obj_set_size(ui->main_screen_img_warm_3, 200, 194);
@@ -796,7 +835,7 @@ void setup_scr_main_screen(lv_ui *ui)
 	ui->main_screen_img_warm_2 = lv_img_create(ui->main_screen);
 	lv_obj_add_flag(ui->main_screen_img_warm_2, LV_OBJ_FLAG_CLICKABLE);
 	lv_img_set_src(ui->main_screen_img_warm_2, &_img_warm_2_alpha_200x194);
-	lv_img_set_pivot(ui->main_screen_img_warm_2, 50,50);
+	lv_img_set_pivot(ui->main_screen_img_warm_2, 100,5);
 	lv_img_set_angle(ui->main_screen_img_warm_2, 0);
 	lv_obj_set_pos(ui->main_screen_img_warm_2, 392, 10);
 	lv_obj_set_size(ui->main_screen_img_warm_2, 200, 194);
@@ -809,7 +848,7 @@ void setup_scr_main_screen(lv_ui *ui)
 	ui->main_screen_img_warm_1 = lv_img_create(ui->main_screen);
 	lv_obj_add_flag(ui->main_screen_img_warm_1, LV_OBJ_FLAG_CLICKABLE);
 	lv_img_set_src(ui->main_screen_img_warm_1, &_img_warm_1_alpha_200x194);
-	lv_img_set_pivot(ui->main_screen_img_warm_1, 50,50);
+	lv_img_set_pivot(ui->main_screen_img_warm_1, 100,5);
 	lv_img_set_angle(ui->main_screen_img_warm_1, 0);
 	lv_obj_set_pos(ui->main_screen_img_warm_1, 192, 10);
 	lv_obj_set_size(ui->main_screen_img_warm_1, 200, 194);

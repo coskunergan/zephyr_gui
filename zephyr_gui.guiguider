@@ -37,6 +37,126 @@
 			"keyboard_font_size": "18",
 			"list": [
 				{
+					"name": "heat_lbl",
+					"id": "5d5vt7dz",
+					"type": "label",
+					"left": 340,
+					"top": 130,
+					"visible": false,
+					"flag": [],
+					"custom_attributes": {},
+					"width": 120,
+					"height": 35,
+					"default_style": false,
+					"text": "HEAT",
+					"long_mode": "LV_LABEL_LONG_WRAP",
+					"style": [
+						{
+							"part": "LV_PART_MAIN",
+							"state": "LV_STATE_DEFAULT",
+							"disable": false,
+							"border_side": [
+								"LV_BORDER_SIDE_FULL"
+							],
+							"border_width": 0,
+							"border_opa": 255,
+							"border_color": "#2195f6",
+							"radius": 0,
+							"text_color": "#ff6c00",
+							"font": 34,
+							"text_align": "LV_TEXT_ALIGN_CENTER",
+							"font_family": "montserratMedium",
+							"letter_space": 2,
+							"line_space": 0,
+							"bg_color": "#2195f6",
+							"bg_grad_color": "#2195f6",
+							"bg_opa": 0,
+							"bg_grad_dir": "LV_GRAD_DIR_NONE",
+							"padding_top": 0,
+							"padding_right": 0,
+							"padding_bottom": 0,
+							"padding_left": 0,
+							"bg_img_src": "",
+							"bg_img_opa": 255,
+							"bg_img_recolor": "#ffffff",
+							"bg_img_recolor_opa": 0,
+							"shadow_color": "#2195f6",
+							"shadow_opa": 255,
+							"shadow_width": 0,
+							"shadow_spread": 0,
+							"shadow_ofs_x": 0,
+							"shadow_ofs_y": 0
+						},
+						{
+							"part": "LV_PART_MAIN",
+							"state": "LV_STATE_DISABLED",
+							"disable": true,
+							"border_side": [
+								"LV_BORDER_SIDE_FULL"
+							],
+							"border_width": 0,
+							"border_opa": 255,
+							"border_color": "#2195f6",
+							"radius": 0,
+							"text_color": "#000000",
+							"font": 16,
+							"font_family": "montserratMedium",
+							"text_align": "LV_TEXT_ALIGN_CENTER",
+							"letter_space": 2,
+							"line_space": 0,
+							"bg_color": "#2195f6",
+							"bg_grad_color": "#2195f6",
+							"bg_opa": 0,
+							"bg_grad_dir": "LV_GRAD_DIR_NONE",
+							"padding_top": 0,
+							"padding_right": 0,
+							"padding_bottom": 0,
+							"padding_left": 0,
+							"bg_img_src": "",
+							"bg_img_opa": 255,
+							"bg_img_recolor": "#ffffff",
+							"bg_img_recolor_opa": 0,
+							"shadow_color": "#2195f6",
+							"shadow_opa": 255,
+							"shadow_width": 0,
+							"shadow_spread": 0,
+							"shadow_ofs_x": 0,
+							"shadow_ofs_y": 0
+						}
+					]
+				},
+				{
+					"name": "img_heat",
+					"id": "2u2rhwby",
+					"type": "img",
+					"left": 326,
+					"top": 2,
+					"visible": false,
+					"flag": [],
+					"custom_attributes": {},
+					"width": 149,
+					"height": 138,
+					"default_style": false,
+					"use_fs": false,
+					"fs_type": "flash",
+					"sd_path": "",
+					"img_path": "C:\\workspace_cergan\\zephyr_gui\\import\\image\\heat.png",
+					"rotate": 0,
+					"x": 50,
+					"y": 50,
+					"color_format": "true-color-alpha",
+					"style": [
+						{
+							"part": "LV_PART_MAIN",
+							"state": "LV_STATE_DEFAULT",
+							"disable": false,
+							"image_recolor": "#ffffff",
+							"image_recolor_opa": 0,
+							"image_opa": 255
+						}
+					]
+				},
+				{
 					"name": "clock_lbl",
 					"id": "sqb1rj7d",
 					"type": "label",
@@ -126,7 +246,7 @@
 					]
 				},
 				{
-					"name": "img_1",
+					"name": "img_logo",
 					"id": "6gx2st8u",
 					"type": "img",
 					"left": 216,
@@ -4730,8 +4850,8 @@
 					"sd_path": "",
 					"img_path": "C:\\workspace_cergan\\zephyr_gui\\import\\image\\img_warm_1.png",
 					"rotate": 0,
-					"x": 50,
-					"y": 50,
+					"x": 100,
+					"y": 5,
 					"color_format": "true-color-alpha",
 					"style": [
 						{
@@ -4761,8 +4881,8 @@
 					"sd_path": "",
 					"img_path": "C:\\workspace_cergan\\zephyr_gui\\import\\image\\img_warm_2.png",
 					"rotate": 0,
-					"x": 50,
-					"y": 50,
+					"x": 100,
+					"y": 5,
 					"color_format": "true-color-alpha",
 					"style": [
 						{
@@ -4792,8 +4912,101 @@
 					"sd_path": "",
 					"img_path": "C:\\workspace_cergan\\zephyr_gui\\import\\image\\img_warm_3.png",
 					"rotate": 0,
-					"x": 50,
-					"y": 50,
+					"x": 100,
+					"y": 5,
+					"color_format": "true-color-alpha",
+					"style": [
+						{
+							"part": "LV_PART_MAIN",
+							"state": "LV_STATE_DEFAULT",
+							"disable": false,
+							"image_recolor": "#ffffff",
+							"image_recolor_opa": 0,
+							"image_opa": 255
+						}
+					]
+				},
+				{
+					"name": "img_no_warm_1",
+					"id": "ao4a5bqv",
+					"type": "img",
+					"left": 567,
+					"top": 153,
+					"visible": false,
+					"flag": [],
+					"custom_attributes": {},
+					"width": 200,
+					"height": 194,
+					"default_style": false,
+					"use_fs": false,
+					"fs_type": "flash",
+					"sd_path": "",
+					"img_path": "C:\\workspace_cergan\\zephyr_gui\\import\\image\\img_no_warm_1.png",
+					"rotate": 0,
+					"x": 100,
+					"y": 5,
+					"color_format": "true-color-alpha",
+					"style": [
+						{
+							"part": "LV_PART_MAIN",
+							"state": "LV_STATE_DEFAULT",
+							"disable": false,
+							"image_recolor": "#ffffff",
+							"image_recolor_opa": 0,
+							"image_opa": 255
+						}
+					]
+				},
+				{
+					"name": "img_no_warm_2",
+					"id": "jvgbftjr",
+					"type": "img",
+					"left": 350,
+					"top": 190,
+					"visible": false,
+					"flag": [],
+					"custom_attributes": {},
+					"width": 200,
+					"height": 194,
+					"default_style": false,
+					"use_fs": false,
+					"fs_type": "flash",
+					"sd_path": "",
+					"img_path": "C:\\workspace_cergan\\zephyr_gui\\import\\image\\img_no_warm_2.png",
+					"rotate": 0,
+					"x": 100,
+					"y": 5,
+					"color_format": "true-color-alpha",
+					"style": [
+						{
+							"part": "LV_PART_MAIN",
+							"state": "LV_STATE_DEFAULT",
+							"disable": false,
+							"image_recolor": "#ffffff",
+							"image_recolor_opa": 0,
+							"image_opa": 255
+						}
+					]
+				},
+				{
+					"name": "img_no_warm_3",
+					"id": "n84zpfrh",
+					"type": "img",
+					"left": 215,
+					"top": 54,
+					"visible": false,
+					"flag": [],
+					"custom_attributes": {},
+					"width": 200,
+					"height": 194,
+					"default_style": false,
+					"use_fs": false,
+					"fs_type": "flash",
+					"sd_path": "",
+					"img_path": "C:\\workspace_cergan\\zephyr_gui\\import\\image\\img_no_warm_3.png",
+					"rotate": 0,
+					"x": 100,
+					"y": 5,
 					"color_format": "true-color-alpha",
 					"style": [
 						{
@@ -12240,7 +12453,7 @@
 									"width": 100,
 									"height": 32,
 									"default_style": false,
-									"text": "V1.0.8",
+									"text": "V1.0.9",
 									"long_mode": "LV_LABEL_LONG_WRAP",
 									"style": [
 										{
@@ -12836,7 +13049,7 @@
 				],
 				"widgets": [
 					{
-						"name": "logo_screen_img_1",
+						"name": "logo_screen_img_logo",
 						"id": "6gx2st8u",
 						"type": "img",
 						"visible": true,
@@ -12906,6 +13119,134 @@
 								"text_align": "LV_TEXT_ALIGN_CENTER",
 								"font_family": "montserratMedium",
 								"letter_space": 7,
+								"line_space": 0,
+								"bg_color": "#2195f6",
+								"bg_grad_color": "#2195f6",
+								"bg_opa": 0,
+								"bg_grad_dir": "LV_GRAD_DIR_NONE",
+								"padding_top": 0,
+								"padding_right": 0,
+								"padding_bottom": 0,
+								"padding_left": 0,
+								"bg_img_src": "",
+								"bg_img_opa": 255,
+								"bg_img_recolor": "#ffffff",
+								"bg_img_recolor_opa": 0,
+								"shadow_color": "#2195f6",
+								"shadow_opa": 255,
+								"shadow_width": 0,
+								"shadow_spread": 0,
+								"shadow_ofs_x": 0,
+								"shadow_ofs_y": 0
+							},
+							{
+								"part": "LV_PART_MAIN",
+								"state": "LV_STATE_DISABLED",
+								"disable": true,
+								"border_side": [
+									"LV_BORDER_SIDE_FULL"
+								],
+								"border_width": 0,
+								"border_opa": 255,
+								"border_color": "#2195f6",
+								"radius": 0,
+								"text_color": "#000000",
+								"font": 16,
+								"font_family": "montserratMedium",
+								"text_align": "LV_TEXT_ALIGN_CENTER",
+								"letter_space": 2,
+								"line_space": 0,
+								"bg_color": "#2195f6",
+								"bg_grad_color": "#2195f6",
+								"bg_opa": 0,
+								"bg_grad_dir": "LV_GRAD_DIR_NONE",
+								"padding_top": 0,
+								"padding_right": 0,
+								"padding_bottom": 0,
+								"padding_left": 0,
+								"bg_img_src": "",
+								"bg_img_opa": 255,
+								"bg_img_recolor": "#ffffff",
+								"bg_img_recolor_opa": 0,
+								"shadow_color": "#2195f6",
+								"shadow_opa": 255,
+								"shadow_width": 0,
+								"shadow_spread": 0,
+								"shadow_ofs_x": 0,
+								"shadow_ofs_y": 0
+							}
+						]
+					},
+					{
+						"name": "logo_screen_img_heat",
+						"id": "2u2rhwby",
+						"type": "img",
+						"visible": false,
+						"flag": [],
+						"pos": [
+							326,
+							2
+						],
+						"size": [
+							149,
+							138
+						],
+						"default_style": false,
+						"custom_attributes": {},
+						"img_path": "C:\\workspace_cergan\\zephyr_gui\\import\\image\\heat.png",
+						"color_format": "true-color-alpha",
+						"rotate": 0,
+						"pivot": "50,50",
+						"use_fs": false,
+						"fs_type": "flash",
+						"img_flash_path": "F:/heat.png",
+						"img_sd_path": "S:/heat.png",
+						"style": [
+							{
+								"part": "LV_PART_MAIN",
+								"state": "LV_STATE_DEFAULT",
+								"disable": false,
+								"image_recolor": "#ffffff",
+								"image_recolor_opa": 0,
+								"image_opa": 255
+							}
+						]
+					},
+					{
+						"name": "logo_screen_heat_lbl",
+						"id": "5d5vt7dz",
+						"type": "label",
+						"visible": false,
+						"flag": [],
+						"pos": [
+							340,
+							130
+						],
+						"size": [
+							120,
+							35
+						],
+						"default_style": false,
+						"custom_attributes": {},
+						"text": "HEAT",
+						"long_mode": "LV_LABEL_LONG_WRAP",
+						"style": [
+							{
+								"part": "LV_PART_MAIN",
+								"state": "LV_STATE_DEFAULT",
+								"disable": false,
+								"border_side": [
+									"LV_BORDER_SIDE_FULL"
+								],
+								"border_width": 0,
+								"border_opa": 255,
+								"border_color": "#2195f6",
+								"radius": 0,
+								"text_color": "#ff6c00",
+								"font": 34,
+								"text_align": "LV_TEXT_ALIGN_CENTER",
+								"font_family": "montserratMedium",
+								"letter_space": 2,
 								"line_space": 0,
 								"bg_color": "#2195f6",
 								"bg_grad_color": "#2195f6",
@@ -15497,6 +15838,111 @@
 						]
 					},
 					{
+						"name": "main_screen_img_no_warm_3",
+						"id": "n84zpfrh",
+						"type": "img",
+						"visible": false,
+						"flag": [],
+						"pos": [
+							215,
+							54
+						],
+						"size": [
+							200,
+							194
+						],
+						"default_style": false,
+						"custom_attributes": {},
+						"img_path": "C:\\workspace_cergan\\zephyr_gui\\import\\image\\img_no_warm_3.png",
+						"color_format": "true-color-alpha",
+						"rotate": 0,
+						"pivot": "100,5",
+						"use_fs": false,
+						"fs_type": "flash",
+						"img_flash_path": "F:/img_no_warm_3.png",
+						"img_sd_path": "S:/img_no_warm_3.png",
+						"style": [
+							{
+								"part": "LV_PART_MAIN",
+								"state": "LV_STATE_DEFAULT",
+								"disable": false,
+								"image_recolor": "#ffffff",
+								"image_recolor_opa": 0,
+								"image_opa": 255
+							}
+						]
+					},
+					{
+						"name": "main_screen_img_no_warm_2",
+						"id": "jvgbftjr",
+						"type": "img",
+						"visible": false,
+						"flag": [],
+						"pos": [
+							350,
+							190
+						],
+						"size": [
+							200,
+							194
+						],
+						"default_style": false,
+						"custom_attributes": {},
+						"img_path": "C:\\workspace_cergan\\zephyr_gui\\import\\image\\img_no_warm_2.png",
+						"color_format": "true-color-alpha",
+						"rotate": 0,
+						"pivot": "100,5",
+						"use_fs": false,
+						"fs_type": "flash",
+						"img_flash_path": "F:/img_no_warm_2.png",
+						"img_sd_path": "S:/img_no_warm_2.png",
+						"style": [
+							{
+								"part": "LV_PART_MAIN",
+								"state": "LV_STATE_DEFAULT",
+								"disable": false,
+								"image_recolor": "#ffffff",
+								"image_recolor_opa": 0,
+								"image_opa": 255
+							}
+						]
+					},
+					{
+						"name": "main_screen_img_no_warm_1",
+						"id": "ao4a5bqv",
+						"type": "img",
+						"visible": false,
+						"flag": [],
+						"pos": [
+							567,
+							153
+						],
+						"size": [
+							200,
+							194
+						],
+						"default_style": false,
+						"custom_attributes": {},
+						"img_path": "C:\\workspace_cergan\\zephyr_gui\\import\\image\\img_no_warm_1.png",
+						"color_format": "true-color-alpha",
+						"rotate": 0,
+						"pivot": "100,5",
+						"use_fs": false,
+						"fs_type": "flash",
+						"img_flash_path": "F:/img_no_warm_1.png",
+						"img_sd_path": "S:/img_no_warm_1.png",
+						"style": [
+							{
+								"part": "LV_PART_MAIN",
+								"state": "LV_STATE_DEFAULT",
+								"disable": false,
+								"image_recolor": "#ffffff",
+								"image_recolor_opa": 0,
+								"image_opa": 255
+							}
+						]
+					},
+					{
 						"name": "main_screen_img_warm_3",
 						"id": "f8y8xu0w",
 						"type": "img",
@@ -15515,7 +15961,7 @@
 						"img_path": "C:\\workspace_cergan\\zephyr_gui\\import\\image\\img_warm_3.png",
 						"color_format": "true-color-alpha",
 						"rotate": 0,
-						"pivot": "50,50",
+						"pivot": "100,5",
 						"use_fs": false,
 						"fs_type": "flash",
 						"img_flash_path": "F:/img_warm_3.png",
@@ -15550,7 +15996,7 @@
 						"img_path": "C:\\workspace_cergan\\zephyr_gui\\import\\image\\img_warm_2.png",
 						"color_format": "true-color-alpha",
 						"rotate": 0,
-						"pivot": "50,50",
+						"pivot": "100,5",
 						"use_fs": false,
 						"fs_type": "flash",
 						"img_flash_path": "F:/img_warm_2.png",
@@ -15585,7 +16031,7 @@
 						"img_path": "C:\\workspace_cergan\\zephyr_gui\\import\\image\\img_warm_1.png",
 						"color_format": "true-color-alpha",
 						"rotate": 0,
-						"pivot": "50,50",
+						"pivot": "100,5",
 						"use_fs": false,
 						"fs_type": "flash",
 						"img_flash_path": "F:/img_warm_1.png",
@@ -19408,7 +19854,7 @@
 										],
 										"default_style": false,
 										"custom_attributes": {},
-										"text": "V1.0.8",
+										"text": "V1.0.9",
 										"long_mode": "LV_LABEL_LONG_WRAP",
 										"style": [
 											{

@@ -25,17 +25,17 @@ void setup_scr_logo_screen(lv_ui *ui)
 	lv_obj_set_style_bg_opa(ui->logo_screen, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_bg_color(ui->logo_screen, lv_color_hex(0x000000), LV_PART_MAIN|LV_STATE_DEFAULT);
 
-	//Write codes logo_screen_img_1
-	ui->logo_screen_img_1 = lv_img_create(ui->logo_screen);
-	lv_obj_add_flag(ui->logo_screen_img_1, LV_OBJ_FLAG_CLICKABLE);
-	lv_img_set_src(ui->logo_screen_img_1, &_logo_alpha_369x86);
-	lv_img_set_pivot(ui->logo_screen_img_1, 50,50);
-	lv_img_set_angle(ui->logo_screen_img_1, 0);
-	lv_obj_set_pos(ui->logo_screen_img_1, 216, 197);
-	lv_obj_set_size(ui->logo_screen_img_1, 369, 86);
+	//Write codes logo_screen_img_logo
+	ui->logo_screen_img_logo = lv_img_create(ui->logo_screen);
+	lv_obj_add_flag(ui->logo_screen_img_logo, LV_OBJ_FLAG_CLICKABLE);
+	lv_img_set_src(ui->logo_screen_img_logo, &_logo_alpha_369x86);
+	lv_img_set_pivot(ui->logo_screen_img_logo, 50,50);
+	lv_img_set_angle(ui->logo_screen_img_logo, 0);
+	lv_obj_set_pos(ui->logo_screen_img_logo, 216, 197);
+	lv_obj_set_size(ui->logo_screen_img_logo, 369, 86);
 
-	//Write style for logo_screen_img_1, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
-	lv_obj_set_style_img_opa(ui->logo_screen_img_1, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+	//Write style for logo_screen_img_logo, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+	lv_obj_set_style_img_opa(ui->logo_screen_img_logo, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
 
 	//Write codes logo_screen_clock_lbl
 	ui->logo_screen_clock_lbl = lv_label_create(ui->logo_screen);
@@ -59,6 +59,42 @@ void setup_scr_logo_screen(lv_ui *ui)
 	lv_obj_set_style_pad_bottom(ui->logo_screen_clock_lbl, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_pad_left(ui->logo_screen_clock_lbl, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_shadow_width(ui->logo_screen_clock_lbl, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+
+	//Write codes logo_screen_img_heat
+	ui->logo_screen_img_heat = lv_img_create(ui->logo_screen);
+	lv_obj_add_flag(ui->logo_screen_img_heat, LV_OBJ_FLAG_CLICKABLE);
+	lv_img_set_src(ui->logo_screen_img_heat, &_heat_alpha_149x138);
+	lv_img_set_pivot(ui->logo_screen_img_heat, 50,50);
+	lv_img_set_angle(ui->logo_screen_img_heat, 0);
+	lv_obj_set_pos(ui->logo_screen_img_heat, 326, 2);
+	lv_obj_set_size(ui->logo_screen_img_heat, 149, 138);
+	lv_obj_add_flag(ui->logo_screen_img_heat, LV_OBJ_FLAG_HIDDEN);
+
+	//Write style for logo_screen_img_heat, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+	lv_obj_set_style_img_opa(ui->logo_screen_img_heat, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+
+	//Write codes logo_screen_heat_lbl
+	ui->logo_screen_heat_lbl = lv_label_create(ui->logo_screen);
+	lv_label_set_text(ui->logo_screen_heat_lbl, "HEAT");
+	lv_label_set_long_mode(ui->logo_screen_heat_lbl, LV_LABEL_LONG_WRAP);
+	lv_obj_set_pos(ui->logo_screen_heat_lbl, 340, 130);
+	lv_obj_set_size(ui->logo_screen_heat_lbl, 120, 35);
+	lv_obj_add_flag(ui->logo_screen_heat_lbl, LV_OBJ_FLAG_HIDDEN);
+
+	//Write style for logo_screen_heat_lbl, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+	lv_obj_set_style_border_width(ui->logo_screen_heat_lbl, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_radius(ui->logo_screen_heat_lbl, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_color(ui->logo_screen_heat_lbl, lv_color_hex(0xff6c00), LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_font(ui->logo_screen_heat_lbl, &lv_font_montserratMedium_34, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_letter_space(ui->logo_screen_heat_lbl, 2, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_line_space(ui->logo_screen_heat_lbl, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_align(ui->logo_screen_heat_lbl, LV_TEXT_ALIGN_CENTER, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_opa(ui->logo_screen_heat_lbl, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_top(ui->logo_screen_heat_lbl, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_right(ui->logo_screen_heat_lbl, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_bottom(ui->logo_screen_heat_lbl, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_left(ui->logo_screen_heat_lbl, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_shadow_width(ui->logo_screen_heat_lbl, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 
 	//Update current screen layout.
 	lv_obj_update_layout(ui->logo_screen);

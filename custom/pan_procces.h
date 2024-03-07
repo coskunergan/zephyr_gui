@@ -12,7 +12,8 @@ typedef struct
              vertical_horizontal: 1,
              circle_rectangle: 1,
              pan_size       :  2,
-             reserve        : 10;
+             pan_heat       :  1,
+             reserve        :  9;
 } pan_state_t;
 
 typedef struct
