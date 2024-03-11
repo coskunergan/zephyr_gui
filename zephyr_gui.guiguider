@@ -48,7 +48,7 @@
 					"width": 120,
 					"height": 35,
 					"default_style": false,
-					"text": "HEAT",
+					"text": "HOT",
 					"long_mode": "LV_LABEL_LONG_WRAP",
 					"style": [
 						{
@@ -13228,7 +13228,7 @@
 						],
 						"default_style": false,
 						"custom_attributes": {},
-						"text": "HEAT",
+						"text": "HOT",
 						"long_mode": "LV_LABEL_LONG_WRAP",
 						"style": [
 							{

@@ -75,7 +75,7 @@ void setup_scr_logo_screen(lv_ui *ui)
 
 	//Write codes logo_screen_heat_lbl
 	ui->logo_screen_heat_lbl = lv_label_create(ui->logo_screen);
-	lv_label_set_text(ui->logo_screen_heat_lbl, "HEAT");
+	lv_label_set_text(ui->logo_screen_heat_lbl, "HOT");
 	lv_label_set_long_mode(ui->logo_screen_heat_lbl, LV_LABEL_LONG_WRAP);
 	lv_obj_set_pos(ui->logo_screen_heat_lbl, 340, 130);
 	lv_obj_set_size(ui->logo_screen_heat_lbl, 120, 35);
