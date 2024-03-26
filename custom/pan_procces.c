@@ -26,8 +26,10 @@ uint32_t minute_zone_timer[5] = {0, 0, 0, 0, 0};
 uint8_t zone_keep_warm[5] = {0, 0, 0, 0, 0};
 uint32_t timer_menu_timeout = 0;
 uint32_t alarm_count = 0;
+uint8_t button_ignore_count = 0;
 #define NUMBER_OF_ALARM_COUNT 30
 #define TIMER_MENU_TIMEOUT_SECOMD 30
+#define BUTTON_IGNORE_VAL 2
 
 #define EEPROM_SLAVE_PARAM_ID 1
 
@@ -133,6 +135,10 @@ void timeout_timer_cb(lv_timer_t *timer)
 /*******************************************************************************/
 void refresh_timer_cb(lv_timer_t *timer)
 {
+    if(button_ignore_count)
+    {
+        --button_ignore_count;
+    }
     refresh_display();
     if(long_press_countdown)
     {
@@ -242,6 +248,14 @@ void menu_screen_init(void)
     else
     {
         lv_obj_clear_state(guider_ui.menu_screen_sound_switch, LV_STATE_CHECKED);
+    }
+    if(tft_regs.read_regs.slave_param_bits.demo_mode_on)
+    {
+        lv_obj_clear_flag(guider_ui.menu_screen_demo_lbl, LV_OBJ_FLAG_HIDDEN);
+    }
+    else
+    {
+        lv_obj_add_flag(guider_ui.menu_screen_demo_lbl, LV_OBJ_FLAG_HIDDEN);
     }
     lv_roller_set_selected(guider_ui.menu_screen_power_roller, tft_regs.read_regs.slave_param_bits.power_limit, LV_ANIM_ON);
     lv_roller_set_selected(guider_ui.menu_screen_roller_1, tft_regs.write_regs.hour, LV_ANIM_ON);
@@ -677,6 +691,11 @@ void lock_slide(bool active)
 /*******************************************************************************/
 void click_pause(void)
 {
+    if(button_ignore_count)
+    {
+        return;
+    }
+    button_ignore_count = BUTTON_IGNORE_VAL;
     lv_obj_add_flag(guider_ui.main_screen_set_timer_cont, LV_OBJ_FLAG_HIDDEN);
     timer_set_menu = false;
     system_obj.pause = !system_obj.pause;
@@ -757,6 +776,11 @@ void stop_minute_minder()
 /*******************************************************************************/
 void click_main_timer(void)
 {
+    if(button_ignore_count)
+    {
+        return;
+    }
+    button_ignore_count = BUTTON_IGNORE_VAL;
     buzzer_beep();
     timer_select = system_obj.select_pan;
     if(timer_select != 0)
@@ -809,6 +833,11 @@ void click_main_timer(void)
 /*******************************************************************************/
 void pressed_clock_save(void)
 {
+    if(button_ignore_count)
+    {
+        return;
+    }
+    button_ignore_count = BUTTON_IGNORE_VAL;
     lv_timer_reset(second_timer);
     buzzer_beep();
     tft_regs.read_regs.hour_set = lv_roller_get_selected(guider_ui.menu_screen_roller_1);
@@ -818,6 +847,11 @@ void pressed_clock_save(void)
 /*******************************************************************************/
 void pressed_setting_save(void)
 {
+    if(button_ignore_count)
+    {
+        return;
+    }
+    button_ignore_count = BUTTON_IGNORE_VAL;
     tft_regs.read_regs.slave_param_bits.buzzer_bit_mute = lv_obj_get_state(guider_ui.menu_screen_sound_switch) & LV_STATE_CHECKED ? true : false;
     tft_regs.read_regs.slave_param_bits.power_limit = lv_roller_get_selected(guider_ui.menu_screen_power_roller);
 #ifndef LV_USE_GUIDER_SIMULATOR
@@ -884,6 +918,11 @@ void click_timer_close_btn(void)
 void click_warm_btn(void)
 {
     uint8_t index = system_obj.select_pan - 1;
+    if(button_ignore_count)
+    {
+        return;
+    }
+    button_ignore_count = BUTTON_IGNORE_VAL;
     ++zone_keep_warm[index];
     zone_keep_warm[index] %= 4;
     if(zone_keep_warm[index])
@@ -893,6 +932,62 @@ void click_warm_btn(void)
     else
     {
         tft_regs.read_regs.panx_value[index] = 0;
+    }
+    buzzer_beep();
+}
+/*******************************************************************************/
+void set_keypad(uint8_t key) // 8316#
+{
+    const uint8_t password[4] = {8, 3, 1, 6};
+    static uint8_t key_index = 0;
+    buzzer_beep();
+    if(key == 10) //*
+    {
+        key_index = 0;
+    }
+    else if(key == 11) //#
+    {
+        if(key_index == 4)
+        {
+            tft_regs.read_regs.slave_param_bits.demo_mode_on = !tft_regs.read_regs.slave_param_bits.demo_mode_on;
+#ifndef LV_USE_GUIDER_SIMULATOR
+            eeprom_write(eeprom, EEPROM_SLAVE_PARAM_ID, &tft_regs.read_regs.slave_param_bits, sizeof(tft_regs.read_regs.slave_param_bits));
+#endif
+            if(tft_regs.read_regs.slave_param_bits.demo_mode_on)
+            {
+                lv_obj_clear_flag(guider_ui.menu_screen_demo_lbl, LV_OBJ_FLAG_HIDDEN);
+            }
+            else
+            {
+                lv_obj_add_flag(guider_ui.menu_screen_demo_lbl, LV_OBJ_FLAG_HIDDEN);
+            }
+        }
+        key_index = 0;
+    }
+    else if(password[key_index] == key)
+    {
+        key_index++;
+    }
+    else
+    {
+        key_index = 0;
+    }
+}
+/*******************************************************************************/
+void pressed_service_btn(void)
+{
+    if(button_ignore_count)
+    {
+        return;
+    }
+    button_ignore_count = BUTTON_IGNORE_VAL;
+    if(lv_obj_has_flag(guider_ui.menu_screen_keypad_btn, LV_OBJ_FLAG_HIDDEN))
+    {
+        lv_obj_clear_flag(guider_ui.menu_screen_keypad_btn, LV_OBJ_FLAG_HIDDEN);
+    }
+    else
+    {
+        lv_obj_add_flag(guider_ui.menu_screen_keypad_btn, LV_OBJ_FLAG_HIDDEN);
     }
     buzzer_beep();
 }

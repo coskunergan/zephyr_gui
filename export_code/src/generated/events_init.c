@@ -544,6 +544,113 @@ static void menu_screen_img_6_event_handler (lv_event_t *e)
 		break;
 	}
 }
+static void menu_screen_service_btn_event_handler (lv_event_t *e)
+{
+	lv_event_code_t code = lv_event_get_code(e);
+
+	switch (code) {
+	case LV_EVENT_CLICKED:
+	{
+		pressed_service_btn();
+		break;
+	}
+	default:
+		break;
+	}
+}
+static void menu_screen_img_8_event_handler (lv_event_t *e)
+{
+	lv_event_code_t code = lv_event_get_code(e);
+
+	switch (code) {
+	case LV_EVENT_CLICKED:
+	{
+		pressed_service_btn();
+		break;
+	}
+	default:
+		break;
+	}
+}
+static void menu_screen_keypad_btn_event_handler (lv_event_t *e)
+{
+	lv_event_code_t code = lv_event_get_code(e);
+
+	switch (code) {
+	case LV_EVENT_CLICKED:
+	{
+		lv_obj_t * obj = lv_event_get_target(e);
+		uint32_t id = lv_btnmatrix_get_selected_btn(obj);
+		switch(id) {
+		case 0:
+		{
+			set_keypad(1);
+			break;
+		}
+		case 1:
+		{
+			set_keypad(2);
+			break;
+		}
+		case 2:
+		{
+			set_keypad(3);
+			break;
+		}
+		case 3:
+		{
+			set_keypad(4);
+			break;
+		}
+		case 4:
+		{
+			set_keypad(5);
+			break;
+		}
+		case 5:
+		{
+			set_keypad(6);
+			break;
+		}
+		case 6:
+		{
+			set_keypad(7);
+			break;
+		}
+		case 7:
+		{
+			set_keypad(8);
+			break;
+		}
+		case 8:
+		{
+			set_keypad(9);
+			break;
+		}
+		case 9:
+		{
+			set_keypad(10);
+			break;
+		}
+		case 10:
+		{
+			set_keypad(0);
+			break;
+		}
+		case 11:
+		{
+			set_keypad(11);
+			break;
+		}
+		default:
+			break;
+		}
+		break;
+	}
+	default:
+		break;
+	}
+}
 static void menu_screen_clock_save_btn_event_handler (lv_event_t *e)
 {
 	lv_event_code_t code = lv_event_get_code(e);
@@ -642,6 +749,9 @@ void events_init_menu_screen(lv_ui *ui)
 	lv_obj_add_event_cb(ui->menu_screen, menu_screen_event_handler, LV_EVENT_ALL, NULL);
 	lv_obj_add_event_cb(ui->menu_screen_settings_save_btn, menu_screen_settings_save_btn_event_handler, LV_EVENT_ALL, NULL);
 	lv_obj_add_event_cb(ui->menu_screen_img_6, menu_screen_img_6_event_handler, LV_EVENT_ALL, NULL);
+	lv_obj_add_event_cb(ui->menu_screen_service_btn, menu_screen_service_btn_event_handler, LV_EVENT_ALL, NULL);
+	lv_obj_add_event_cb(ui->menu_screen_img_8, menu_screen_img_8_event_handler, LV_EVENT_ALL, NULL);
+	lv_obj_add_event_cb(ui->menu_screen_keypad_btn, menu_screen_keypad_btn_event_handler, LV_EVENT_ALL, NULL);
 	lv_obj_add_event_cb(ui->menu_screen_clock_save_btn, menu_screen_clock_save_btn_event_handler, LV_EVENT_ALL, NULL);
 	lv_obj_add_event_cb(ui->menu_screen_img_7, menu_screen_img_7_event_handler, LV_EVENT_ALL, NULL);
 	lv_obj_add_event_cb(ui->menu_screen_img_settings, menu_screen_img_settings_event_handler, LV_EVENT_ALL, NULL);

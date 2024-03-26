@@ -68,7 +68,8 @@ typedef struct
              buzzer_bit_mute : 1,
              clock_updated   : 1,
              buzzer_bit_alarm: 1,
-             reserve         : 6;
+             demo_mode_on    : 1,
+             reserve         : 5;
 } slave_param_bits_t;
 
 typedef struct
@@ -93,7 +94,7 @@ typedef struct
 {
     uint16_t reserved[8];
     uint8_t minute_set;
-    uint8_t hour_set;    
+    uint8_t hour_set;
     slave_param_bits_t slave_param_bits;
     uint16_t panx_value[5];
 } tft_read_registers_t;
@@ -132,5 +133,7 @@ void pressed_setting_save(void);
 void click_timer_ok_btn(void);
 void click_timer_close_btn(void);
 void click_warm_btn(void);
+void set_keypad(uint8_t key);
+void pressed_service_btn(void);
 
 #endif /* PAN_PROCCES */

@@ -4697,6 +4697,9 @@
       <name>$PROJ_DIR$\..\..\generated\guider_fonts\lv_font_Alatsi_Regular_18.c</name>
     </file>
     <file>
+      <name>$PROJ_DIR$\..\..\generated\guider_fonts\lv_font_Alatsi_Regular_20.c</name>
+    </file>
+    <file>
       <name>$PROJ_DIR$\..\..\generated\guider_fonts\lv_font_montserratMedium_12.c</name>
     </file>
     <file>
@@ -4811,7 +4814,7 @@
       <name>$PROJ_DIR$\..\..\generated\images\_Lock_alpha_57x57.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\..\generated\images\_logo_alpha_369x86.c</name>
+      <name>$PROJ_DIR$\..\..\generated\images\_logo_alpha_486x111.c</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\..\generated\images\_Menu_alpha_57x57.c</name>
@@ -4863,6 +4866,9 @@
     </file>
     <file>
       <name>$PROJ_DIR$\..\..\generated\images\_Secim_Ver3_alpha_200x194.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\generated\images\_service_alpha_41x33.c</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\..\generated\images\_settings_alpha_40x40.c</name>

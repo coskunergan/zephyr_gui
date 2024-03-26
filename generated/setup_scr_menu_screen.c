@@ -112,15 +112,15 @@ void setup_scr_menu_screen(lv_ui *ui)
 	lv_obj_set_size(ui->menu_screen_sound_switch, 85, 42);
 
 	//Write style for menu_screen_sound_switch, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
-	lv_obj_set_style_bg_opa(ui->menu_screen_sound_switch, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
-	lv_obj_set_style_bg_color(ui->menu_screen_sound_switch, lv_color_hex(0x636363), LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_opa(ui->menu_screen_sound_switch, 53, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_color(ui->menu_screen_sound_switch, lv_color_hex(0x00ff32), LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_border_width(ui->menu_screen_sound_switch, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_radius(ui->menu_screen_sound_switch, 21, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_shadow_width(ui->menu_screen_sound_switch, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 
 	//Write style for menu_screen_sound_switch, Part: LV_PART_INDICATOR, State: LV_STATE_CHECKED.
-	lv_obj_set_style_bg_opa(ui->menu_screen_sound_switch, 255, LV_PART_INDICATOR|LV_STATE_CHECKED);
-	lv_obj_set_style_bg_color(ui->menu_screen_sound_switch, lv_color_hex(0x636363), LV_PART_INDICATOR|LV_STATE_CHECKED);
+	lv_obj_set_style_bg_opa(ui->menu_screen_sound_switch, 124, LV_PART_INDICATOR|LV_STATE_CHECKED);
+	lv_obj_set_style_bg_color(ui->menu_screen_sound_switch, lv_color_hex(0xff0027), LV_PART_INDICATOR|LV_STATE_CHECKED);
 	lv_obj_set_style_border_width(ui->menu_screen_sound_switch, 0, LV_PART_INDICATOR|LV_STATE_CHECKED);
 
 	//Write style for menu_screen_sound_switch, Part: LV_PART_KNOB, State: LV_STATE_DEFAULT.
@@ -184,6 +184,116 @@ void setup_scr_menu_screen(lv_ui *ui)
 
 	//Write style for menu_screen_img_6, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
 	lv_obj_set_style_img_opa(ui->menu_screen_img_6, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+
+	//Write codes menu_screen_service_btn
+	ui->menu_screen_service_btn = lv_btn_create(ui->menu_screen_tabview_1_tab_1);
+	ui->menu_screen_service_btn_label = lv_label_create(ui->menu_screen_service_btn);
+	lv_label_set_text(ui->menu_screen_service_btn_label, "");
+	lv_label_set_long_mode(ui->menu_screen_service_btn_label, LV_LABEL_LONG_WRAP);
+	lv_obj_align(ui->menu_screen_service_btn_label, LV_ALIGN_CENTER, 0, 0);
+	lv_obj_set_style_pad_all(ui->menu_screen_service_btn, 0, LV_STATE_DEFAULT);
+	lv_obj_set_pos(ui->menu_screen_service_btn, 490, 50);
+	lv_obj_set_size(ui->menu_screen_service_btn, 114, 45);
+
+	//Write style for menu_screen_service_btn, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+	lv_obj_set_style_bg_opa(ui->menu_screen_service_btn, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_color(ui->menu_screen_service_btn, lv_color_hex(0x393939), LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_border_width(ui->menu_screen_service_btn, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_radius(ui->menu_screen_service_btn, 5, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_shadow_width(ui->menu_screen_service_btn, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_color(ui->menu_screen_service_btn, lv_color_hex(0x636363), LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_font(ui->menu_screen_service_btn, &lv_font_montserratMedium_16, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_align(ui->menu_screen_service_btn, LV_TEXT_ALIGN_CENTER, LV_PART_MAIN|LV_STATE_DEFAULT);
+
+	//Write codes menu_screen_img_8
+	ui->menu_screen_img_8 = lv_img_create(ui->menu_screen_tabview_1_tab_1);
+	lv_obj_add_flag(ui->menu_screen_img_8, LV_OBJ_FLAG_CLICKABLE);
+	lv_img_set_src(ui->menu_screen_img_8, &_service_alpha_41x33);
+	lv_img_set_pivot(ui->menu_screen_img_8, 0,0);
+	lv_img_set_angle(ui->menu_screen_img_8, 0);
+	lv_obj_set_pos(ui->menu_screen_img_8, 526, 57);
+	lv_obj_set_size(ui->menu_screen_img_8, 41, 33);
+
+	//Write style for menu_screen_img_8, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+	lv_obj_set_style_img_opa(ui->menu_screen_img_8, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+
+	//Write codes menu_screen_keypad_btn
+	ui->menu_screen_keypad_btn = lv_btnmatrix_create(ui->menu_screen_tabview_1_tab_1);
+	static const char *menu_screen_keypad_btn_text_map[] = {"1", "2", "3", "\n", "4", "5", "6", "\n", "7", "8", "9", "\n", "*", "0", "#", "",};
+	lv_btnmatrix_set_map(ui->menu_screen_keypad_btn, menu_screen_keypad_btn_text_map);
+	lv_obj_set_pos(ui->menu_screen_keypad_btn, 9, 5);
+	lv_obj_set_size(ui->menu_screen_keypad_btn, 437, 284);
+	lv_obj_add_flag(ui->menu_screen_keypad_btn, LV_OBJ_FLAG_HIDDEN);
+
+	//Write style for menu_screen_keypad_btn, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+	lv_obj_set_style_border_width(ui->menu_screen_keypad_btn, 1, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_border_opa(ui->menu_screen_keypad_btn, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_border_color(ui->menu_screen_keypad_btn, lv_color_hex(0xc9c9c9), LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_border_side(ui->menu_screen_keypad_btn, LV_BORDER_SIDE_FULL, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_top(ui->menu_screen_keypad_btn, 16, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_bottom(ui->menu_screen_keypad_btn, 16, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_left(ui->menu_screen_keypad_btn, 16, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_right(ui->menu_screen_keypad_btn, 16, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_row(ui->menu_screen_keypad_btn, 8, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_column(ui->menu_screen_keypad_btn, 8, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_radius(ui->menu_screen_keypad_btn, 4, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_opa(ui->menu_screen_keypad_btn, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_color(ui->menu_screen_keypad_btn, lv_color_hex(0xb8b8b8), LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_grad_dir(ui->menu_screen_keypad_btn, LV_GRAD_DIR_HOR, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_grad_color(ui->menu_screen_keypad_btn, lv_color_hex(0xffffff), LV_PART_MAIN|LV_STATE_DEFAULT);
+
+	//Write style for menu_screen_keypad_btn, Part: LV_PART_ITEMS, State: LV_STATE_DEFAULT.
+	lv_obj_set_style_border_width(ui->menu_screen_keypad_btn, 1, LV_PART_ITEMS|LV_STATE_DEFAULT);
+	lv_obj_set_style_border_opa(ui->menu_screen_keypad_btn, 255, LV_PART_ITEMS|LV_STATE_DEFAULT);
+	lv_obj_set_style_border_color(ui->menu_screen_keypad_btn, lv_color_hex(0xc9c9c9), LV_PART_ITEMS|LV_STATE_DEFAULT);
+	lv_obj_set_style_border_side(ui->menu_screen_keypad_btn, LV_BORDER_SIDE_FULL, LV_PART_ITEMS|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_color(ui->menu_screen_keypad_btn, lv_color_hex(0x860b1e), LV_PART_ITEMS|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_font(ui->menu_screen_keypad_btn, &lv_font_Alatsi_Regular_20, LV_PART_ITEMS|LV_STATE_DEFAULT);
+	lv_obj_set_style_radius(ui->menu_screen_keypad_btn, 4, LV_PART_ITEMS|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_opa(ui->menu_screen_keypad_btn, 255, LV_PART_ITEMS|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_color(ui->menu_screen_keypad_btn, lv_color_hex(0xa4a4a4), LV_PART_ITEMS|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_grad_dir(ui->menu_screen_keypad_btn, LV_GRAD_DIR_HOR, LV_PART_ITEMS|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_grad_color(ui->menu_screen_keypad_btn, lv_color_hex(0xeeeeee), LV_PART_ITEMS|LV_STATE_DEFAULT);
+	lv_obj_set_style_shadow_width(ui->menu_screen_keypad_btn, 0, LV_PART_ITEMS|LV_STATE_DEFAULT);
+
+	//Write style for menu_screen_keypad_btn, Part: LV_PART_ITEMS, State: LV_STATE_PRESSED.
+	lv_obj_set_style_border_width(ui->menu_screen_keypad_btn, 1, LV_PART_ITEMS|LV_STATE_PRESSED);
+	lv_obj_set_style_border_opa(ui->menu_screen_keypad_btn, 255, LV_PART_ITEMS|LV_STATE_PRESSED);
+	lv_obj_set_style_border_color(ui->menu_screen_keypad_btn, lv_color_hex(0xc9c9c9), LV_PART_ITEMS|LV_STATE_PRESSED);
+	lv_obj_set_style_border_side(ui->menu_screen_keypad_btn, LV_BORDER_SIDE_FULL, LV_PART_ITEMS|LV_STATE_PRESSED);
+	lv_obj_set_style_text_color(ui->menu_screen_keypad_btn, lv_color_hex(0xffffff), LV_PART_ITEMS|LV_STATE_PRESSED);
+	lv_obj_set_style_text_font(ui->menu_screen_keypad_btn, &lv_font_Alatsi_Regular_20, LV_PART_ITEMS|LV_STATE_PRESSED);
+	lv_obj_set_style_radius(ui->menu_screen_keypad_btn, 4, LV_PART_ITEMS|LV_STATE_PRESSED);
+	lv_obj_set_style_bg_opa(ui->menu_screen_keypad_btn, 255, LV_PART_ITEMS|LV_STATE_PRESSED);
+	lv_obj_set_style_bg_color(ui->menu_screen_keypad_btn, lv_color_hex(0xb3a9cc), LV_PART_ITEMS|LV_STATE_PRESSED);
+	lv_obj_set_style_shadow_width(ui->menu_screen_keypad_btn, 4, LV_PART_ITEMS|LV_STATE_PRESSED);
+	lv_obj_set_style_shadow_color(ui->menu_screen_keypad_btn, lv_color_hex(0xb3a9cc), LV_PART_ITEMS|LV_STATE_PRESSED);
+	lv_obj_set_style_shadow_opa(ui->menu_screen_keypad_btn, 255, LV_PART_ITEMS|LV_STATE_PRESSED);
+	lv_obj_set_style_shadow_spread(ui->menu_screen_keypad_btn, 2, LV_PART_ITEMS|LV_STATE_PRESSED);
+	lv_obj_set_style_shadow_ofs_x(ui->menu_screen_keypad_btn, 0, LV_PART_ITEMS|LV_STATE_PRESSED);
+	lv_obj_set_style_shadow_ofs_y(ui->menu_screen_keypad_btn, 2, LV_PART_ITEMS|LV_STATE_PRESSED);
+
+	//Write codes menu_screen_demo_lbl
+	ui->menu_screen_demo_lbl = lv_label_create(ui->menu_screen_tabview_1_tab_1);
+	lv_label_set_text(ui->menu_screen_demo_lbl, "Demo On");
+	lv_label_set_long_mode(ui->menu_screen_demo_lbl, LV_LABEL_LONG_WRAP);
+	lv_obj_set_pos(ui->menu_screen_demo_lbl, 491, 162);
+	lv_obj_set_size(ui->menu_screen_demo_lbl, 112, 36);
+
+	//Write style for menu_screen_demo_lbl, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+	lv_obj_set_style_border_width(ui->menu_screen_demo_lbl, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_radius(ui->menu_screen_demo_lbl, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_color(ui->menu_screen_demo_lbl, lv_color_hex(0x000000), LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_font(ui->menu_screen_demo_lbl, &lv_font_montserratMedium_16, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_letter_space(ui->menu_screen_demo_lbl, 2, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_line_space(ui->menu_screen_demo_lbl, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_align(ui->menu_screen_demo_lbl, LV_TEXT_ALIGN_CENTER, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_opa(ui->menu_screen_demo_lbl, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_top(ui->menu_screen_demo_lbl, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_right(ui->menu_screen_demo_lbl, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_bottom(ui->menu_screen_demo_lbl, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_left(ui->menu_screen_demo_lbl, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_shadow_width(ui->menu_screen_demo_lbl, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 
 	//Write codes clock
 	ui->menu_screen_tabview_1_tab_2 = lv_tabview_add_tab(ui->menu_screen_tabview_1,"clock");
@@ -374,7 +484,7 @@ void setup_scr_menu_screen(lv_ui *ui)
 
 	//Write codes menu_screen_label_4
 	ui->menu_screen_label_4 = lv_label_create(ui->menu_screen_tabview_1_tab_3);
-	lv_label_set_text(ui->menu_screen_label_4, "V1.0.9");
+	lv_label_set_text(ui->menu_screen_label_4, "V1.1.0");
 	lv_label_set_long_mode(ui->menu_screen_label_4, LV_LABEL_LONG_WRAP);
 	lv_obj_set_pos(ui->menu_screen_label_4, 260, 254);
 	lv_obj_set_size(ui->menu_screen_label_4, 100, 32);

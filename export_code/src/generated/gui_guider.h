@@ -129,6 +129,11 @@ typedef struct
 	lv_obj_t *menu_screen_settings_save_btn;
 	lv_obj_t *menu_screen_settings_save_btn_label;
 	lv_obj_t *menu_screen_img_6;
+	lv_obj_t *menu_screen_service_btn;
+	lv_obj_t *menu_screen_service_btn_label;
+	lv_obj_t *menu_screen_img_8;
+	lv_obj_t *menu_screen_keypad_btn;
+	lv_obj_t *menu_screen_demo_lbl;
 	lv_obj_t *menu_screen_roller_1;
 	lv_obj_t *menu_screen_roller_2;
 	lv_obj_t *menu_screen_label_1;
@@ -156,7 +161,7 @@ extern lv_ui guider_ui;
 void setup_scr_logo_screen(lv_ui *ui);
 void setup_scr_main_screen(lv_ui *ui);
 void setup_scr_menu_screen(lv_ui *ui);
-LV_IMG_DECLARE(_logo_alpha_369x86);
+LV_IMG_DECLARE(_logo_alpha_486x111);
 LV_IMG_DECLARE(_heat_alpha_149x138);
 LV_IMG_DECLARE(_slider_0_alpha_800x80);
 LV_IMG_DECLARE(_slider_1_alpha_800x80);
@@ -227,6 +232,7 @@ LV_IMG_DECLARE(_clock_alpha_44x43);
 LV_IMG_DECLARE(_speaker_alpha_50x50);
 LV_IMG_DECLARE(_power_alpha_50x50);
 LV_IMG_DECLARE(_check_alpha_17x12);
+LV_IMG_DECLARE(_service_alpha_41x33);
 LV_IMG_DECLARE(_check_alpha_17x12);
 LV_IMG_DECLARE(_gtmqr_alpha_200x200);
 LV_IMG_DECLARE(_empty_alpha_800x80);
@@ -243,6 +249,7 @@ LV_FONT_DECLARE(lv_font_Alatsi_Regular_1)
 LV_FONT_DECLARE(lv_font_montserratMedium_24)
 LV_FONT_DECLARE(lv_font_Acme_Regular_16)
 LV_FONT_DECLARE(lv_font_Alatsi_Regular_18)
+LV_FONT_DECLARE(lv_font_Alatsi_Regular_20)
 LV_FONT_DECLARE(lv_font_montserratMedium_20)
 
 
