@@ -12,6 +12,7 @@
 #include <zephyr/kernel.h>
 #include <zephyr/sys/util.h>
 #include "modbus_slave.h"
+#include "modbus_master.h"
 
 #include <zpp.hpp>
 #include <zpp/timer.hpp>
@@ -21,12 +22,15 @@
 #include "lvgl.h"
 
 extern tft_registers_t tft_regs;
+extern "C" void wifi_active(void);
+extern "C" void wifi_deactive(void);
 
 namespace device_modbus_tft
 {
     using namespace zpp;
     using namespace std::chrono;
     using namespace device_modbus_slave;
+    using namespace device_modbus_master;
     ZPP_THREAD_STACK_DEFINE(tft_modbus_stack, 2048);
     const uint16_t tft_slave_id{1};
     const size_t tft_modbus_try_count{5};// ~5sn
@@ -83,10 +87,21 @@ namespace device_modbus_tft
         },
     };
 
-    class modbus_tft : public modbus_slave
+    const static struct modbus_iface_param client_param_master =
+    {
+        .mode = MODBUS_MODE_RTU,
+        .rx_timeout = 150000, // 150mSn
+        .serial = {
+            .baud = 9600,
+            .parity = UART_CFG_PARITY_NONE,
+            .stop_bits_client = UART_CFG_STOP_BITS_1,
+        },
+    };
+
+    class modbus_tft : public modbus_slave, modbus_master
     {
     public:
-        modbus_tft() : modbus_slave("modbus0", client_param)
+        modbus_tft() : modbus_slave("modbus0", client_param), modbus_master("modbus1", client_param_master)
         {
             static thread_data tcb;
             static thread t;
@@ -111,16 +126,45 @@ namespace device_modbus_tft
     private:
         static void task_modbus_tft(modbus_tft *mb) noexcept
         {
-            static bool logo_off_state = false;
+            bool logo_off_state = false;
+            uint32_t modbus_rd_error = 0;
+            uint32_t modbus_wr_error = 0;
             while(1)
             {
-                this_thread::sleep_for(100ms);
+                this_thread::sleep_for(200ms);
                 tft_regs.modbus_status.data_stream_fail = false;
                 if(tft_regs.write_regs.master_param_bits.logo_off_state && logo_off_state == false)
                 {
                     logo_off_state = true;
                     lv_obj_t *act_scr = lv_scr_act();
                     lv_event_send(act_scr, LV_EVENT_VALUE_CHANGED, NULL);
+                }
+                if(logo_off_state == true)
+                {
+                    if(mb->write_holding_reg(1, 10, (uint16_t *)&tft_regs.write_regs.master_param_bits, 16) != 0)
+                    {
+                        ++modbus_wr_error;
+                    }
+                    else
+                    {
+                        modbus_wr_error = 0;
+                    }
+                    if(mb->read_holding_reg(1, 44, (uint16_t *)&tft_regs.read_regs.slave_param_bits, 6) != 0)
+                    {
+                        ++modbus_rd_error;
+                    }
+                    else
+                    {
+                        modbus_rd_error = 0;
+                    }
+                    if(modbus_rd_error == 5 || modbus_wr_error == 5)
+                    {
+                        wifi_deactive();
+                    }
+                    else if(modbus_rd_error == 0 && modbus_wr_error == 0)
+                    {
+                        wifi_active();
+                    }
                 }
             }
         }

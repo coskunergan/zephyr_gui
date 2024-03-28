@@ -10303,7 +10303,7 @@
 					"height": 387,
 					"default_style": false,
 					"scrollbar_mode": "OFF",
-					"current_item": 0,
+					"current_item": 2,
 					"child": [
 						{
 							"name": "settings",
@@ -14746,7 +14746,7 @@
 									"width": 100,
 									"height": 32,
 									"default_style": false,
-									"text": "V1.1.0",
+									"text": "V1.1.1",
 									"long_mode": "LV_LABEL_LONG_WRAP",
 									"style": [
 										{
@@ -22809,7 +22809,7 @@
 										],
 										"default_style": false,
 										"custom_attributes": {},
-										"text": "V1.1.0",
+										"text": "V1.1.1",
 										"long_mode": "LV_LABEL_LONG_WRAP",
 										"style": [
 											{

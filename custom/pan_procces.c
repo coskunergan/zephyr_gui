@@ -27,6 +27,7 @@ uint8_t zone_keep_warm[5] = {0, 0, 0, 0, 0};
 uint32_t timer_menu_timeout = 0;
 uint32_t alarm_count = 0;
 uint8_t button_ignore_count = 0;
+bool wifi_state = false;
 #define NUMBER_OF_ALARM_COUNT 30
 #define TIMER_MENU_TIMEOUT_SECOMD 30
 #define BUTTON_IGNORE_VAL 2
@@ -455,7 +456,6 @@ void pan_refresh(tft_pan_registers_t *pan_regs, system_pan_registers_t *sys_pan_
                 lv_obj_set_pos(guider_ui.main_screen_zone_warm_btn, 25 + lv_obj_get_x(sys_pan_regs->obj_cont), 105 + lv_obj_get_y(sys_pan_regs->obj_cont));
             }
         }
-        level_set(sys_pan_regs->img_pan, tft_regs.read_regs.panx_value[index] / 2);
         lv_obj_clear_flag(guider_ui.main_screen_zone_timer_btn, LV_OBJ_FLAG_HIDDEN);
         lv_obj_clear_flag(guider_ui.main_screen_zone_warm_btn, LV_OBJ_FLAG_HIDDEN);
     }
@@ -481,9 +481,9 @@ void pan_refresh(tft_pan_registers_t *pan_regs, system_pan_registers_t *sys_pan_
     }
     else if(pan_regs->pan_state.state_active)
     {
-        if(sys_pan_regs->pan.pan_state.pan_state != pan_regs->pan_state.pan_state)
+        //if(sys_pan_regs->pan.pan_state.pan_state != pan_regs->pan_state.pan_state)
         {
-            sys_pan_regs->pan.pan_state.pan_state = pan_regs->pan_state.pan_state;
+            //sys_pan_regs->pan.pan_state.pan_state = pan_regs->pan_state.pan_state;
             if(pan_regs->pan_state.pan_state)
             {
                 level_set(sys_pan_regs->img_pan, tft_regs.read_regs.panx_value[index] / 2);
@@ -614,6 +614,10 @@ void released_lock(void)
 /*******************************************************************************/
 void pressed_lock(void)
 {
+    if(wifi_state)
+    {
+        return;
+    }
     lv_obj_add_flag(guider_ui.main_screen_set_timer_cont, LV_OBJ_FLAG_HIDDEN);
     timer_set_menu = false;
     long_press_countdown = 5;
@@ -733,6 +737,10 @@ void click_pause(void)
 /*******************************************************************************/
 void long_press_lock(void)
 {
+    if(wifi_state)
+    {
+        return;
+    }
     system_obj.lock = !system_obj.lock;
     if(system_obj.lock)
     {
@@ -990,6 +998,36 @@ void pressed_service_btn(void)
         lv_obj_add_flag(guider_ui.menu_screen_keypad_btn, LV_OBJ_FLAG_HIDDEN);
     }
     buzzer_beep();
+}
+/*******************************************************************************/
+void wifi_deactive(void)
+{
+    if(wifi_state == true)
+    {
+        wifi_state = false;
+        system_obj.lock = false;
+        tft_regs.read_regs.slave_param_bits.buzzer_bit_lock = false;
+        lv_obj_add_flag(guider_ui.main_screen_count_down_label, LV_OBJ_FLAG_HIDDEN);
+        lv_obj_add_flag(guider_ui.main_screen_spinner_1, LV_OBJ_FLAG_HIDDEN);
+        lock_slide(system_obj.lock);
+    }
+}
+/*******************************************************************************/
+void wifi_active(void)
+{
+    if(wifi_state == false)
+    {
+        wifi_state = true;
+        system_obj.lock = true;
+        tft_regs.read_regs.slave_param_bits.buzzer_bit_lock = true;
+        lv_obj_add_flag(guider_ui.main_screen_timer_btn, LV_OBJ_FLAG_HIDDEN);
+        lv_obj_add_flag(guider_ui.main_screen_pause_btn, LV_OBJ_FLAG_HIDDEN);
+        lv_obj_add_flag(guider_ui.main_screen_menu_btn, LV_OBJ_FLAG_HIDDEN);
+        lv_obj_add_flag(guider_ui.main_screen_timer_spinner, LV_OBJ_FLAG_HIDDEN);
+        lv_obj_add_flag(guider_ui.main_screen_count_down_label, LV_OBJ_FLAG_HIDDEN);
+        lv_obj_add_flag(guider_ui.main_screen_spinner_1, LV_OBJ_FLAG_HIDDEN);
+        lock_slide(system_obj.lock);
+    }
 }
 /*******************************************************************************/
 /*******************************************************************************/

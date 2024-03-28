@@ -4,6 +4,10 @@
 
 #include "gui_guider.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 /*******************************************************************************/
 typedef struct
 {
@@ -135,5 +139,11 @@ void click_timer_close_btn(void);
 void click_warm_btn(void);
 void set_keypad(uint8_t key);
 void pressed_service_btn(void);
+void wifi_active(void);
+void wifi_deactive(void);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* PAN_PROCCES */

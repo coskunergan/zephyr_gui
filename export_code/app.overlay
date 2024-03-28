@@ -40,3 +40,17 @@
 		de-gpios = <&gpiof 8 GPIO_ACTIVE_LOW>;	
 	};	
 };
+
+&usart6 {
+	pinctrl-0 = <&usart6_tx_pc6 &usart6_rx_pc7>;
+	pinctrl-names = "default";
+	current-speed = <9600>;
+	status = "okay";
+	
+	modbus1 {
+		compatible = "zephyr,modbus-serial";
+		status = "okay";
+		de-gpios = <&gpiog 6 GPIO_ACTIVE_LOW>;	
+	};	
+};
+
