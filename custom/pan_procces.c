@@ -1006,7 +1006,7 @@ void wifi_deactive(void)
     {
         wifi_state = false;
         system_obj.lock = false;
-        tft_regs.read_regs.slave_param_bits.buzzer_bit_lock = false;
+        tft_regs.read_regs.slave_param_bits.buzzer_bit_lock = !tft_regs.read_regs.slave_param_bits.buzzer_bit_lock;
         lv_obj_add_flag(guider_ui.main_screen_count_down_label, LV_OBJ_FLAG_HIDDEN);
         lv_obj_add_flag(guider_ui.main_screen_spinner_1, LV_OBJ_FLAG_HIDDEN);
         lock_slide(system_obj.lock);
@@ -1019,7 +1019,7 @@ void wifi_active(void)
     {
         wifi_state = true;
         system_obj.lock = true;
-        tft_regs.read_regs.slave_param_bits.buzzer_bit_lock = true;
+        tft_regs.read_regs.slave_param_bits.buzzer_bit_lock = !tft_regs.read_regs.slave_param_bits.buzzer_bit_lock;
         lv_obj_add_flag(guider_ui.main_screen_timer_btn, LV_OBJ_FLAG_HIDDEN);
         lv_obj_add_flag(guider_ui.main_screen_pause_btn, LV_OBJ_FLAG_HIDDEN);
         lv_obj_add_flag(guider_ui.main_screen_menu_btn, LV_OBJ_FLAG_HIDDEN);

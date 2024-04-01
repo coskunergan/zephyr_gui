@@ -90,7 +90,7 @@ namespace device_modbus_tft
     const static struct modbus_iface_param client_param_master =
     {
         .mode = MODBUS_MODE_RTU,
-        .rx_timeout = 150000, // 150mSn
+        .rx_timeout = 300000, // 300mSn
         .serial = {
             .baud = 9600,
             .parity = UART_CFG_PARITY_NONE,
@@ -127,11 +127,11 @@ namespace device_modbus_tft
         static void task_modbus_tft(modbus_tft *mb) noexcept
         {
             bool logo_off_state = false;
-            uint32_t modbus_rd_error = 0;
-            uint32_t modbus_wr_error = 0;
+            uint32_t modbus_rd_error = 4;
+            uint32_t modbus_wr_error = 4;
+            this_thread::sleep_for(100ms);
             while(1)
             {
-                this_thread::sleep_for(200ms);
                 tft_regs.modbus_status.data_stream_fail = false;
                 if(tft_regs.write_regs.master_param_bits.logo_off_state && logo_off_state == false)
                 {
@@ -157,15 +157,21 @@ namespace device_modbus_tft
                     {
                         modbus_rd_error = 0;
                     }
-                    if(modbus_rd_error == 5 || modbus_wr_error == 5)
+                    if(modbus_rd_error == 8 || modbus_wr_error == 8)
                     {
                         wifi_deactive();
                     }
-                    else if(modbus_rd_error == 0 && modbus_wr_error == 0)
+                    else if(modbus_rd_error <= 4 && modbus_wr_error <= 4)
                     {
                         wifi_active();
                     }
                 }
+                else
+                {
+                    this_thread::sleep_for(100ms);
+                }
+                tft_regs.read_regs.reserved[0] = modbus_wr_error;
+                tft_regs.read_regs.reserved[1] = modbus_rd_error;
             }
         }
     };
