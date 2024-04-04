@@ -249,13 +249,13 @@
 					"name": "img_logo",
 					"id": "6gx2st8u",
 					"type": "img",
-					"left": 157,
-					"top": 185,
+					"left": 168,
+					"top": 208,
 					"visible": true,
 					"flag": [],
 					"custom_attributes": {},
-					"width": 486,
-					"height": 111,
+					"width": 465,
+					"height": 64,
 					"default_style": false,
 					"use_fs": false,
 					"fs_type": "flash",
@@ -549,7 +549,7 @@
 					"part": "LV_PART_MAIN",
 					"state": "LV_STATE_DEFAULT",
 					"disable": false,
-					"bg_color": "#231f20",
+					"bg_color": "#000000",
 					"bg_grad_dir": "LV_GRAD_DIR_NONE",
 					"bg_grad_color": "#2195f6",
 					"bg_opa": 255,
@@ -15326,7 +15326,7 @@
 						"part": "LV_PART_MAIN",
 						"state": "LV_STATE_DEFAULT",
 						"disable": false,
-						"bg_color": "#231f20",
+						"bg_color": "#000000",
 						"bg_grad_dir": "LV_GRAD_DIR_NONE",
 						"bg_grad_color": "#2195f6",
 						"bg_opa": 255,
@@ -15348,12 +15348,12 @@
 						"visible": true,
 						"flag": [],
 						"pos": [
-							157,
-							185
+							168,
+							208
 						],
 						"size": [
-							486,
-							111
+							465,
+							64
 						],
 						"default_style": false,
 						"custom_attributes": {},

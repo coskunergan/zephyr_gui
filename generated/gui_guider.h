@@ -161,7 +161,7 @@ extern lv_ui guider_ui;
 void setup_scr_logo_screen(lv_ui *ui);
 void setup_scr_main_screen(lv_ui *ui);
 void setup_scr_menu_screen(lv_ui *ui);
-LV_IMG_DECLARE(_logo_alpha_486x111);
+LV_IMG_DECLARE(_logo_alpha_465x64);
 LV_IMG_DECLARE(_heat_alpha_149x138);
 LV_IMG_DECLARE(_slider_0_alpha_800x80);
 LV_IMG_DECLARE(_slider_1_alpha_800x80);
