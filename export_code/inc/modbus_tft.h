@@ -149,7 +149,7 @@ namespace device_modbus_tft
                     {
                         modbus_wr_error = 0;
                     }
-                    if(mb->read_holding_reg(1, 44, (uint16_t *)&tft_regs.read_regs.slave_param_bits, 6) != 0)
+                    if(mb->read_holding_reg(1, 45, (uint16_t *)&tft_regs.read_regs.panx_value[0], 5) != 0)
                     {
                         ++modbus_rd_error;
                     }

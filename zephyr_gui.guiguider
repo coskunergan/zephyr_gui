@@ -162,7 +162,7 @@
 					"type": "label",
 					"left": 336,
 					"top": 340,
-					"visible": true,
+					"visible": false,
 					"flag": [],
 					"custom_attributes": {},
 					"width": 140,
@@ -15381,7 +15381,7 @@
 						"name": "logo_screen_clock_lbl",
 						"id": "sqb1rj7d",
 						"type": "label",
-						"visible": true,
+						"visible": false,
 						"flag": [],
 						"pos": [
 							336,

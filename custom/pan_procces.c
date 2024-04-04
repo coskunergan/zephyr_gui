@@ -99,6 +99,10 @@ void second_timer_cb(lv_timer_t *timeout_timer)
                     set_select(i + 1);
                     alarm_count = NUMBER_OF_ALARM_COUNT;
                 }
+                else if(minute_zone_timer[i] == 10)
+                {
+                    tft_regs.read_regs.slave_param_bits.buzzer_bit_alarm = !tft_regs.read_regs.slave_param_bits.buzzer_bit_alarm;
+                }
             }
         }
         if(minute_minder_timer)
