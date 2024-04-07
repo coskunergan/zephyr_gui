@@ -29,6 +29,7 @@ typedef struct
 
 typedef struct
 {
+    uint16_t set_value;
     void *img_pan;
     void *img_ring_l;
     void *img_ring_h;

@@ -47,6 +47,11 @@ void second_timer_cb(lv_timer_t *timeout_timer)
 {
 #if LV_USE_GUIDER_SIMULATOR
     static bool first = false;
+    tft_regs.write_regs.pan1_regs.pan_state.state_active = true;
+    tft_regs.write_regs.pan1_regs.pan_state.pan_state = true;
+    tft_regs.write_regs.pan2_regs.pan_state.state_active = true;
+    tft_regs.write_regs.pan2_regs.pan_state.pan_state = true;  
+    tft_regs.write_regs.pan2_regs.x = 3;  
     if(!first)
     {
         first = true;
@@ -485,9 +490,9 @@ void pan_refresh(tft_pan_registers_t *pan_regs, system_pan_registers_t *sys_pan_
     }
     else if(pan_regs->pan_state.state_active)
     {
-        //if(sys_pan_regs->pan.pan_state.pan_state != pan_regs->pan_state.pan_state)
+        if(sys_pan_regs->set_value != tft_regs.read_regs.panx_value[index])
         {
-            //sys_pan_regs->pan.pan_state.pan_state = pan_regs->pan_state.pan_state;
+            sys_pan_regs->set_value = tft_regs.read_regs.panx_value[index];
             if(pan_regs->pan_state.pan_state)
             {
                 level_set(sys_pan_regs->img_pan, tft_regs.read_regs.panx_value[index] / 2);
@@ -563,18 +568,23 @@ void set_select(uint8_t sel)
     {
         case 1:
             sel = (tft_regs.write_regs.pan1_regs.pan_state.pan_state) ? sel : 0;
+            system_obj.pan1.set_value = 0xFF;
             break;
         case 2:
             sel = (tft_regs.write_regs.pan2_regs.pan_state.pan_state) ? sel : 0;
+            system_obj.pan2.set_value = 0xFF;
             break;
         case 3:
             sel = (tft_regs.write_regs.pan3_regs.pan_state.pan_state) ? sel : 0;
+            system_obj.pan3.set_value = 0xFF;
             break;
         case 4:
             sel = (tft_regs.write_regs.pan4_regs.pan_state.pan_state) ? sel : 0;
+            system_obj.pan4.set_value = 0xFF;
             break;
         case 5:
             sel = (tft_regs.write_regs.pan5_regs.pan_state.pan_state) ? sel : 0;
+            system_obj.pan5.set_value = 0xFF;
             break;
         default:
             break;

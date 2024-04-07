@@ -484,7 +484,7 @@ void setup_scr_menu_screen(lv_ui *ui)
 
 	//Write codes menu_screen_label_4
 	ui->menu_screen_label_4 = lv_label_create(ui->menu_screen_tabview_1_tab_3);
-	lv_label_set_text(ui->menu_screen_label_4, "V1.1.1");
+	lv_label_set_text(ui->menu_screen_label_4, "V1.1.2");
 	lv_label_set_long_mode(ui->menu_screen_label_4, LV_LABEL_LONG_WRAP);
 	lv_obj_set_pos(ui->menu_screen_label_4, 260, 254);
 	lv_obj_set_size(ui->menu_screen_label_4, 100, 32);
