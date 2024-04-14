@@ -525,13 +525,21 @@ void pan_refresh(tft_pan_registers_t *pan_regs, system_pan_registers_t *sys_pan_
                 no_level_set(sys_pan_regs->img_pan, tft_regs.read_regs.panx_value[index] / 2);
             }
         }
-        if(!pan_regs->pan_state.pan_state)
+        if(sys_pan_regs->pan.pan_state.pan_state != pan_regs->pan_state.pan_state)
         {
-            if(index == (system_obj.select_pan - 1))
+            sys_pan_regs->pan.pan_state.pan_state = pan_regs->pan_state.pan_state;
+            if(pan_regs->pan_state.pan_state)
             {
-                system_obj.select_pan = 0;
+                level_set(sys_pan_regs->img_pan, tft_regs.read_regs.panx_value[index] / 2);
             }
-            no_level_set(sys_pan_regs->img_pan, tft_regs.read_regs.panx_value[index] / 2);
+            else
+            {
+                if(index == (system_obj.select_pan - 1))
+                {
+                    system_obj.select_pan = 0;
+                }
+                no_level_set(sys_pan_regs->img_pan, tft_regs.read_regs.panx_value[index] / 2);
+            }
         }
         if((sys_pan_regs->pan.x != pan_regs->x) || (sys_pan_regs->pan.y != pan_regs->y))
         {
