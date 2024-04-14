@@ -1450,6 +1450,89 @@ void setup_scr_main_screen(lv_ui *ui)
 	//Write style for main_screen_img_1, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
 	lv_obj_set_style_img_opa(ui->main_screen_img_1, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
 
+	//Write codes main_screen_oops_cont
+	ui->main_screen_oops_cont = lv_obj_create(ui->main_screen);
+	lv_obj_set_pos(ui->main_screen_oops_cont, 211, 75);
+	lv_obj_set_size(ui->main_screen_oops_cont, 386, 272);
+	lv_obj_set_scrollbar_mode(ui->main_screen_oops_cont, LV_SCROLLBAR_MODE_OFF);
+	lv_obj_add_flag(ui->main_screen_oops_cont, LV_OBJ_FLAG_HIDDEN);
+
+	//Write style for main_screen_oops_cont, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+	lv_obj_set_style_border_width(ui->main_screen_oops_cont, 2, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_border_opa(ui->main_screen_oops_cont, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_border_color(ui->main_screen_oops_cont, lv_color_hex(0x2195f6), LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_border_side(ui->main_screen_oops_cont, LV_BORDER_SIDE_FULL, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_radius(ui->main_screen_oops_cont, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_opa(ui->main_screen_oops_cont, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_color(ui->main_screen_oops_cont, lv_color_hex(0xffffff), LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_top(ui->main_screen_oops_cont, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_bottom(ui->main_screen_oops_cont, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_left(ui->main_screen_oops_cont, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_right(ui->main_screen_oops_cont, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_shadow_width(ui->main_screen_oops_cont, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+
+	//Write codes main_screen_oops_win
+	ui->main_screen_oops_win = lv_win_create(ui->main_screen_oops_cont, 50);
+	lv_win_add_title(ui->main_screen_oops_win, "Oops !");
+	ui->main_screen_oops_win_item0 = lv_win_add_btn(ui->main_screen_oops_win, LV_SYMBOL_CLOSE, 40);
+	lv_obj_t *main_screen_oops_win_label = lv_label_create(lv_win_get_content(ui->main_screen_oops_win));
+	lv_obj_set_scrollbar_mode(lv_win_get_content(ui->main_screen_oops_win), LV_SCROLLBAR_MODE_OFF);
+	lv_label_set_text(main_screen_oops_win_label, "");
+	lv_obj_set_pos(ui->main_screen_oops_win, -2, -2);
+	lv_obj_set_size(ui->main_screen_oops_win, 387, 272);
+
+	//Write style for main_screen_oops_win, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+	lv_obj_set_style_bg_opa(ui->main_screen_oops_win, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_color(ui->main_screen_oops_win, lv_color_hex(0xffffff), LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_outline_width(ui->main_screen_oops_win, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_shadow_width(ui->main_screen_oops_win, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+
+	//Write style state: LV_STATE_DEFAULT for &style_main_screen_oops_win_extra_content_main_default
+	static lv_style_t style_main_screen_oops_win_extra_content_main_default;
+	ui_init_style(&style_main_screen_oops_win_extra_content_main_default);
+	
+	lv_style_set_bg_opa(&style_main_screen_oops_win_extra_content_main_default, 255);
+	lv_style_set_bg_color(&style_main_screen_oops_win_extra_content_main_default, lv_color_hex(0x9a9a9a));
+	lv_style_set_text_color(&style_main_screen_oops_win_extra_content_main_default, lv_color_hex(0xffffff));
+	lv_style_set_text_font(&style_main_screen_oops_win_extra_content_main_default, &lv_font_montserratMedium_12);
+	lv_style_set_text_letter_space(&style_main_screen_oops_win_extra_content_main_default, 0);
+	lv_style_set_text_line_space(&style_main_screen_oops_win_extra_content_main_default, 2);
+	lv_obj_add_style(lv_win_get_content(ui->main_screen_oops_win), &style_main_screen_oops_win_extra_content_main_default, LV_PART_MAIN|LV_STATE_DEFAULT);
+
+	//Write style state: LV_STATE_DEFAULT for &style_main_screen_oops_win_extra_header_main_default
+	static lv_style_t style_main_screen_oops_win_extra_header_main_default;
+	ui_init_style(&style_main_screen_oops_win_extra_header_main_default);
+	
+	lv_style_set_bg_opa(&style_main_screen_oops_win_extra_header_main_default, 255);
+	lv_style_set_bg_color(&style_main_screen_oops_win_extra_header_main_default, lv_color_hex(0x626262));
+	lv_style_set_text_color(&style_main_screen_oops_win_extra_header_main_default, lv_color_hex(0xffffff));
+	lv_style_set_text_font(&style_main_screen_oops_win_extra_header_main_default, &lv_font_montserratMedium_16);
+	lv_style_set_text_letter_space(&style_main_screen_oops_win_extra_header_main_default, 0);
+	lv_style_set_text_line_space(&style_main_screen_oops_win_extra_header_main_default, 2);
+	lv_obj_add_style(lv_win_get_header(ui->main_screen_oops_win), &style_main_screen_oops_win_extra_header_main_default, LV_PART_MAIN|LV_STATE_DEFAULT);
+
+	//Write style state: LV_STATE_DEFAULT for &style_main_screen_oops_win_extra_btns_main_default
+	static lv_style_t style_main_screen_oops_win_extra_btns_main_default;
+	ui_init_style(&style_main_screen_oops_win_extra_btns_main_default);
+	
+	lv_style_set_radius(&style_main_screen_oops_win_extra_btns_main_default, 8);
+	lv_style_set_bg_opa(&style_main_screen_oops_win_extra_btns_main_default, 255);
+	lv_style_set_bg_color(&style_main_screen_oops_win_extra_btns_main_default, lv_color_hex(0x393939));
+	lv_style_set_shadow_width(&style_main_screen_oops_win_extra_btns_main_default, 0);
+	lv_obj_add_style(ui->main_screen_oops_win_item0, &style_main_screen_oops_win_extra_btns_main_default, LV_PART_MAIN|LV_STATE_DEFAULT);
+
+	//Write codes main_screen_oops_img
+	ui->main_screen_oops_img = lv_img_create(ui->main_screen_oops_cont);
+	lv_obj_add_flag(ui->main_screen_oops_img, LV_OBJ_FLAG_CLICKABLE);
+	lv_img_set_src(ui->main_screen_oops_img, &_oops_alpha_314x184);
+	lv_img_set_pivot(ui->main_screen_oops_img, 50,50);
+	lv_img_set_angle(ui->main_screen_oops_img, 0);
+	lv_obj_set_pos(ui->main_screen_oops_img, 31, 68);
+	lv_obj_set_size(ui->main_screen_oops_img, 314, 184);
+
+	//Write style for main_screen_oops_img, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+	lv_obj_set_style_img_opa(ui->main_screen_oops_img, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+
 	//Update current screen layout.
 	lv_obj_update_layout(ui->main_screen);
 

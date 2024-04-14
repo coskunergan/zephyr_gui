@@ -8,6 +8,7 @@
 
 #define SELECT_TIMEOUT 5000
 #define REFRESH_TIME   300
+#define WARNING_MENU_TIME 10
 #define MINI_PAN_SCALE 180
 #define MID_PAN_SCALE  256
 
@@ -27,7 +28,9 @@ uint8_t zone_keep_warm[5] = {0, 0, 0, 0, 0};
 uint32_t timer_menu_timeout = 0;
 uint32_t alarm_count = 0;
 uint8_t button_ignore_count = 0;
+uint8_t warning_screen_count = 0;
 bool wifi_state = false;
+bool warning_info = false;
 #define NUMBER_OF_ALARM_COUNT 30
 #define TIMER_MENU_TIMEOUT_SECOMD 30
 #define BUTTON_IGNORE_VAL 2
@@ -48,10 +51,11 @@ void second_timer_cb(lv_timer_t *timeout_timer)
 #if LV_USE_GUIDER_SIMULATOR
     static bool first = false;
     tft_regs.write_regs.pan1_regs.pan_state.state_active = true;
-    tft_regs.write_regs.pan1_regs.pan_state.pan_state = true;
+    tft_regs.write_regs.pan1_regs.pan_state.pan_state = false;
     tft_regs.write_regs.pan2_regs.pan_state.state_active = true;
-    tft_regs.write_regs.pan2_regs.pan_state.pan_state = true;  
-    tft_regs.write_regs.pan2_regs.x = 3;  
+    tft_regs.write_regs.pan2_regs.pan_state.pan_state = true;
+    tft_regs.write_regs.master_param_bits.warning_info=true;
+    tft_regs.write_regs.pan2_regs.x = 3;
     if(!first)
     {
         first = true;
@@ -155,6 +159,19 @@ void refresh_timer_cb(lv_timer_t *timer)
         --long_press_countdown;
         lv_label_set_text_fmt(guider_ui.main_screen_count_down_label, "%d", long_press_countdown);
     }
+    if(tft_regs.write_regs.master_param_bits.warning_info != warning_info)
+    {
+        warning_info = tft_regs.write_regs.master_param_bits.warning_info;
+        warning_screen_count = WARNING_MENU_TIME;
+        lv_obj_clear_flag(guider_ui.main_screen_oops_cont, LV_OBJ_FLAG_HIDDEN);
+    }
+    if(warning_screen_count)
+    {
+        if(--warning_screen_count == 0)
+        {
+            lv_obj_add_flag(guider_ui.main_screen_oops_cont, LV_OBJ_FLAG_HIDDEN);
+        }
+    }
 }
 /*******************************************************************************/
 void logo_screen_init(void)
@@ -196,6 +213,8 @@ void main_screen_init(void)
         lv_obj_clear_flag(guider_ui.main_screen_cont_3, LV_OBJ_FLAG_SCROLL_ELASTIC);
         lv_obj_clear_flag(guider_ui.main_screen_cont_4, LV_OBJ_FLAG_SCROLL_ELASTIC);
         lv_obj_clear_flag(guider_ui.main_screen_cont_5, LV_OBJ_FLAG_SCROLL_ELASTIC);
+        lv_obj_clear_flag(guider_ui.main_screen_oops_cont, LV_OBJ_FLAG_SCROLL_ELASTIC);
+        lv_obj_clear_flag(guider_ui.main_screen_oops_cont, LV_OBJ_FLAG_SCROLLABLE);
         lv_obj_clear_flag(guider_ui.main_screen_cont_1, LV_OBJ_FLAG_SCROLLABLE);
         lv_obj_clear_flag(guider_ui.main_screen_cont_2, LV_OBJ_FLAG_SCROLLABLE);
         lv_obj_clear_flag(guider_ui.main_screen_cont_3, LV_OBJ_FLAG_SCROLLABLE);
@@ -505,6 +524,14 @@ void pan_refresh(tft_pan_registers_t *pan_regs, system_pan_registers_t *sys_pan_
                 }
                 no_level_set(sys_pan_regs->img_pan, tft_regs.read_regs.panx_value[index] / 2);
             }
+        }
+        if(!pan_regs->pan_state.pan_state)
+        {
+            if(index == (system_obj.select_pan - 1))
+            {
+                system_obj.select_pan = 0;
+            }
+            no_level_set(sys_pan_regs->img_pan, tft_regs.read_regs.panx_value[index] / 2);
         }
         if((sys_pan_regs->pan.x != pan_regs->x) || (sys_pan_regs->pan.y != pan_regs->y))
         {

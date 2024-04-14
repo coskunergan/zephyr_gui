@@ -116,6 +116,10 @@ typedef struct
 	lv_obj_t *main_screen_timer_10min_roller;
 	lv_obj_t *main_screen_label_1;
 	lv_obj_t *main_screen_img_1;
+	lv_obj_t *main_screen_oops_cont;
+	lv_obj_t *main_screen_oops_win;
+	lv_obj_t *main_screen_oops_win_item0;
+	lv_obj_t *main_screen_oops_img;
 	lv_obj_t *menu_screen;
 	bool menu_screen_del;
 	lv_obj_t *menu_screen_tabview_1;
@@ -229,6 +233,7 @@ LV_IMG_DECLARE(_ActiveLock_alpha_57x57);
 
 LV_IMG_DECLARE(_empty_800x80);
 LV_IMG_DECLARE(_clock_alpha_44x43);
+LV_IMG_DECLARE(_oops_alpha_314x184);
 LV_IMG_DECLARE(_speaker_alpha_50x50);
 LV_IMG_DECLARE(_power_alpha_50x50);
 LV_IMG_DECLARE(_check_alpha_17x12);

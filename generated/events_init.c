@@ -474,6 +474,20 @@ static void main_screen_set_timer_win_item1_event_handler (lv_event_t *e)
 		break;
 	}
 }
+static void main_screen_oops_win_item0_event_handler (lv_event_t *e)
+{
+	lv_event_code_t code = lv_event_get_code(e);
+
+	switch (code) {
+	case LV_EVENT_CLICKED:
+	{
+		lv_obj_add_flag(guider_ui.main_screen_oops_cont, LV_OBJ_FLAG_HIDDEN);
+		break;
+	}
+	default:
+		break;
+	}
+}
 void events_init_main_screen(lv_ui *ui)
 {
 	lv_obj_add_event_cb(ui->main_screen, main_screen_event_handler, LV_EVENT_ALL, NULL);
@@ -501,6 +515,7 @@ void events_init_main_screen(lv_ui *ui)
 	lv_obj_add_event_cb(ui->main_screen_slider, main_screen_slider_event_handler, LV_EVENT_ALL, NULL);
 	lv_obj_add_event_cb(ui->main_screen_set_timer_win_item0, main_screen_set_timer_win_item0_event_handler, LV_EVENT_ALL, NULL);
 	lv_obj_add_event_cb(ui->main_screen_set_timer_win_item1, main_screen_set_timer_win_item1_event_handler, LV_EVENT_ALL, NULL);
+	lv_obj_add_event_cb(ui->main_screen_oops_win_item0, main_screen_oops_win_item0_event_handler, LV_EVENT_ALL, NULL);
 }
 static void menu_screen_event_handler (lv_event_t *e)
 {
