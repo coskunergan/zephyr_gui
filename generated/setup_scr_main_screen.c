@@ -25,6 +25,26 @@ void setup_scr_main_screen(lv_ui *ui)
 	lv_obj_set_style_bg_opa(ui->main_screen, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_bg_color(ui->main_screen, lv_color_hex(0x06090b), LV_PART_MAIN|LV_STATE_DEFAULT);
 
+	//Write codes main_screen_start_point_cont
+	ui->main_screen_start_point_cont = lv_obj_create(ui->main_screen);
+	lv_obj_set_pos(ui->main_screen_start_point_cont, 10, 193);
+	lv_obj_set_size(ui->main_screen_start_point_cont, 184, 184);
+	lv_obj_set_scrollbar_mode(ui->main_screen_start_point_cont, LV_SCROLLBAR_MODE_OFF);
+	lv_obj_add_flag(ui->main_screen_start_point_cont, LV_OBJ_FLAG_HIDDEN);
+
+	//Write style for main_screen_start_point_cont, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+	lv_obj_set_style_border_width(ui->main_screen_start_point_cont, 2, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_border_opa(ui->main_screen_start_point_cont, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_border_color(ui->main_screen_start_point_cont, lv_color_hex(0xb3b3b3), LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_border_side(ui->main_screen_start_point_cont, LV_BORDER_SIDE_FULL, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_radius(ui->main_screen_start_point_cont, 22, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_opa(ui->main_screen_start_point_cont, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_top(ui->main_screen_start_point_cont, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_bottom(ui->main_screen_start_point_cont, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_left(ui->main_screen_start_point_cont, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_right(ui->main_screen_start_point_cont, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_shadow_width(ui->main_screen_start_point_cont, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+
 	//Write codes main_screen_slider_0
 	ui->main_screen_slider_0 = lv_img_create(ui->main_screen);
 	lv_obj_add_flag(ui->main_screen_slider_0, LV_OBJ_FLAG_CLICKABLE);

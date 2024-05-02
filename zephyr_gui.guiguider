@@ -558,8 +558,7 @@
 					"bg_img_recolor": "#ffffff",
 					"bg_img_recolor_opa": 0
 				}
-			],
-			"layerName": "logo_screen"
+			]
 		},
 		{
 			"name": "main_screen",
@@ -891,8 +890,7 @@
 							"shadow_ofs_x": 0,
 							"shadow_ofs_y": 0
 						}
-					],
-					"layerName": "main_screen"
+					]
 				},
 				{
 					"name": "set_timer_cont",
@@ -1723,8 +1721,7 @@
 										"item_index": 1
 									}
 								]
-							},
-							"layerName": "main_screen"
+							}
 						}
 					],
 					"style": [
@@ -3353,8 +3350,7 @@
 								"item_index": 10
 							}
 						]
-					},
-					"layerName": "main_screen"
+					}
 				},
 				{
 					"name": "count_down_label",
@@ -4121,8 +4117,7 @@
 										}
 									}
 								]
-							},
-							"layerName": "main_screen"
+							}
 						},
 						{
 							"name": "menu_btn",
@@ -4556,8 +4551,7 @@
 										}
 									}
 								]
-							},
-							"layerName": "main_screen"
+							}
 						},
 						{
 							"name": "timer_btn",
@@ -4774,8 +4768,7 @@
 										}
 									}
 								]
-							},
-							"layerName": "main_screen"
+							}
 						}
 					],
 					"style": [
@@ -5552,8 +5545,7 @@
 								}
 							}
 						]
-					},
-					"layerName": "main_screen"
+					}
 				},
 				{
 					"name": "zone_timer_btn",
@@ -5770,8 +5762,7 @@
 								}
 							}
 						]
-					},
-					"layerName": "main_screen"
+					}
 				},
 				{
 					"name": "cont_5",
@@ -6039,8 +6030,7 @@
 										}
 									}
 								]
-							},
-							"layerName": "main_screen"
+							}
 						},
 						{
 							"name": "select_ring_h5",
@@ -6205,8 +6195,7 @@
 										}
 									}
 								]
-							},
-							"layerName": "main_screen"
+							}
 						},
 						{
 							"name": "pan_5",
@@ -6371,8 +6360,7 @@
 										}
 									}
 								]
-							},
-							"layerName": "main_screen"
+							}
 						}
 					],
 					"style": [
@@ -6672,8 +6660,7 @@
 										}
 									}
 								]
-							},
-							"layerName": "main_screen"
+							}
 						},
 						{
 							"name": "select_ring_h4",
@@ -6838,8 +6825,7 @@
 										}
 									}
 								]
-							},
-							"layerName": "main_screen"
+							}
 						},
 						{
 							"name": "pan_4",
@@ -7004,8 +6990,7 @@
 										}
 									}
 								]
-							},
-							"layerName": "main_screen"
+							}
 						}
 					],
 					"style": [
@@ -7305,8 +7290,7 @@
 										}
 									}
 								]
-							},
-							"layerName": "main_screen"
+							}
 						},
 						{
 							"name": "select_ring_h3",
@@ -7471,8 +7455,7 @@
 										}
 									}
 								]
-							},
-							"layerName": "main_screen"
+							}
 						},
 						{
 							"name": "pan_3",
@@ -7637,8 +7620,7 @@
 										}
 									}
 								]
-							},
-							"layerName": "main_screen"
+							}
 						}
 					],
 					"style": [
@@ -7938,8 +7920,7 @@
 										}
 									}
 								]
-							},
-							"layerName": "main_screen"
+							}
 						},
 						{
 							"name": "select_ring_h2",
@@ -8104,8 +8085,7 @@
 										}
 									}
 								]
-							},
-							"layerName": "main_screen"
+							}
 						},
 						{
 							"name": "pan_2",
@@ -8270,8 +8250,7 @@
 										}
 									}
 								]
-							},
-							"layerName": "main_screen"
+							}
 						}
 					],
 					"style": [
@@ -8571,8 +8550,7 @@
 										}
 									}
 								]
-							},
-							"layerName": "main_screen"
+							}
 						},
 						{
 							"name": "select_ring_h1",
@@ -8737,8 +8715,7 @@
 										}
 									}
 								]
-							},
-							"layerName": "main_screen"
+							}
 						},
 						{
 							"name": "pan_1",
@@ -8903,8 +8880,7 @@
 										}
 									}
 								]
-							},
-							"layerName": "main_screen"
+							}
 						}
 					],
 					"style": [
@@ -9620,6 +9596,53 @@
 							"image_opa": 255
 						}
 					]
+				},
+				{
+					"name": "start_point_cont",
+					"id": "oc2kg1vz",
+					"type": "cont",
+					"left": 10,
+					"top": 193,
+					"visible": false,
+					"flag": [],
+					"custom_attributes": {},
+					"width": 184,
+					"height": 184,
+					"default_style": false,
+					"scrollbar_mode": "OFF",
+					"child": [],
+					"style": [
+						{
+							"part": "LV_PART_MAIN",
+							"state": "LV_STATE_DEFAULT",
+							"disable": false,
+							"border_side": [
+								"LV_BORDER_SIDE_FULL"
+							],
+							"border_width": 2,
+							"border_color": "#b3b3b3",
+							"border_opa": 255,
+							"radius": 22,
+							"bg_color": "#ffffff",
+							"bg_grad_color": "#ffffff",
+							"bg_grad_dir": "LV_GRAD_DIR_NONE",
+							"bg_opa": 0,
+							"padding_top": 0,
+							"padding_bottom": 0,
+							"padding_left": 0,
+							"padding_right": 0,
+							"bg_img_src": "",
+							"bg_img_opa": 255,
+							"bg_img_recolor": "#ffffff",
+							"bg_img_recolor_opa": 0,
+							"shadow_color": "#2195f6",
+							"shadow_opa": 255,
+							"shadow_width": 0,
+							"shadow_spread": 0,
+							"shadow_ofs_x": 0,
+							"shadow_ofs_y": 0
+						}
+					]
 				}
 			],
 			"event": {
@@ -9770,8 +9793,7 @@
 					"bg_img_recolor": "#ffffff",
 					"bg_img_recolor_opa": 0
 				}
-			],
-			"layerName": "main_screen"
+			]
 		},
 		{
 			"name": "menu_screen",
@@ -10263,8 +10285,7 @@
 								}
 							}
 						]
-					},
-					"layerName": "menu_screen"
+					}
 				},
 				{
 					"name": "img_clock",
@@ -10429,8 +10450,7 @@
 								}
 							}
 						]
-					},
-					"layerName": "menu_screen"
+					}
 				},
 				{
 					"name": "img_settings",
@@ -10595,8 +10615,7 @@
 								}
 							}
 						]
-					},
-					"layerName": "menu_screen"
+					}
 				},
 				{
 					"name": "img_5",
@@ -12477,8 +12496,7 @@
 												"item_index": 11
 											}
 										]
-									},
-									"layerName": "menu_screen"
+									}
 								},
 								{
 									"name": "img_8",
@@ -12941,8 +12959,7 @@
 												}
 											}
 										]
-									},
-									"layerName": "menu_screen"
+									}
 								},
 								{
 									"name": "img_6",
@@ -13405,8 +13422,7 @@
 												}
 											}
 										]
-									},
-									"layerName": "menu_screen"
+									}
 								},
 								{
 									"name": "img_4",
@@ -14284,8 +14300,7 @@
 												}
 											}
 										]
-									},
-									"layerName": "menu_screen"
+									}
 								},
 								{
 									"name": "label_3",
@@ -15089,7 +15104,7 @@
 									"width": 100,
 									"height": 32,
 									"default_style": false,
-									"text": "V1.1.3",
+									"text": "V1.1.4",
 									"long_mode": "LV_LABEL_LONG_WRAP",
 									"style": [
 										{
@@ -15429,8 +15444,7 @@
 					"bg_img_recolor": "#ffffff",
 					"bg_img_recolor_opa": 0
 				}
-			],
-			"layerName": "menu_screen"
+			]
 		}
 	],
 	"projectName": "button_test",
@@ -16001,6 +16015,57 @@
 					480
 				],
 				"widgets": [
+					{
+						"name": "main_screen_start_point_cont",
+						"id": "oc2kg1vz",
+						"type": "cont",
+						"visible": false,
+						"scrollbar_mode": "OFF",
+						"flag": [],
+						"pos": [
+							10,
+							193
+						],
+						"size": [
+							184,
+							184
+						],
+						"default_style": false,
+						"custom_attributes": {},
+						"child": [],
+						"style": [
+							{
+								"part": "LV_PART_MAIN",
+								"state": "LV_STATE_DEFAULT",
+								"disable": false,
+								"border_side": [
+									"LV_BORDER_SIDE_FULL"
+								],
+								"border_width": 2,
+								"border_color": "#b3b3b3",
+								"border_opa": 255,
+								"radius": 22,
+								"bg_color": "#ffffff",
+								"bg_grad_color": "#ffffff",
+								"bg_grad_dir": "LV_GRAD_DIR_NONE",
+								"bg_opa": 0,
+								"padding_top": 0,
+								"padding_bottom": 0,
+								"padding_left": 0,
+								"padding_right": 0,
+								"bg_img_src": "",
+								"bg_img_opa": 255,
+								"bg_img_recolor": "#ffffff",
+								"bg_img_recolor_opa": 0,
+								"shadow_color": "#2195f6",
+								"shadow_opa": 255,
+								"shadow_width": 0,
+								"shadow_spread": 0,
+								"shadow_ofs_x": 0,
+								"shadow_ofs_y": 0
+							}
+						]
+					},
 					{
 						"name": "main_screen_slider_0",
 						"id": "8nzcqw3r",
@@ -23364,7 +23429,7 @@
 										],
 										"default_style": false,
 										"custom_attributes": {},
-										"text": "V1.1.3",
+										"text": "V1.1.4",
 										"long_mode": "LV_LABEL_LONG_WRAP",
 										"style": [
 											{

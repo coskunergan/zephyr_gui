@@ -11,6 +11,8 @@
 #define WARNING_MENU_TIME 10
 #define MINI_PAN_SCALE 180
 #define MID_PAN_SCALE  256
+#define BOOST_TIMEOUT_TIME  300
+#define BOOST_IGNORE_TIME  600
 
 lv_timer_t *timeout_timer;
 lv_timer_t *refresh_timer;
@@ -24,6 +26,8 @@ bool timer_set_menu = false;
 uint8_t  timer_select = 0;
 uint32_t minute_minder_timer = 0;
 uint32_t minute_zone_timer[5] = {0, 0, 0, 0, 0};
+uint32_t boost_timeout_timer[5] = {0, 0, 0, 0, 0};
+uint32_t boost_ignore_timer[5] = {0, 0, 0, 0, 0};
 uint8_t zone_keep_warm[5] = {0, 0, 0, 0, 0};
 uint32_t timer_menu_timeout = 0;
 uint32_t alarm_count = 0;
@@ -51,10 +55,13 @@ void second_timer_cb(lv_timer_t *timeout_timer)
 #if LV_USE_GUIDER_SIMULATOR
     static bool first = false;
     tft_regs.write_regs.pan1_regs.pan_state.state_active = true;
-    tft_regs.write_regs.pan1_regs.pan_state.pan_state = false;
+    tft_regs.write_regs.pan1_regs.pan_state.pan_state = true;
+    tft_regs.write_regs.pan1_regs.pan_state.pan_size = 1;
+    tft_regs.write_regs.pan1_regs.x = 1;
+    tft_regs.write_regs.pan1_regs.y = 2;
     tft_regs.write_regs.pan2_regs.pan_state.state_active = true;
     tft_regs.write_regs.pan2_regs.pan_state.pan_state = true;
-    tft_regs.write_regs.master_param_bits.warning_info=true;
+    tft_regs.write_regs.master_param_bits.warning_info = true;
     tft_regs.write_regs.pan2_regs.x = 3;
     if(!first)
     {
@@ -113,6 +120,24 @@ void second_timer_cb(lv_timer_t *timeout_timer)
                     tft_regs.read_regs.slave_param_bits.buzzer_bit_alarm = !tft_regs.read_regs.slave_param_bits.buzzer_bit_alarm;
                 }
             }
+            //--------------
+            if(boost_timeout_timer[i])
+            {
+                if(--boost_timeout_timer[i] == 0)
+                {
+                    if(tft_regs.read_regs.panx_value[i] > 18 && tft_regs.read_regs.panx_value[i] < 21)
+                    {
+                        tft_regs.read_regs.slave_param_bits.buzzer_bit_pan = !tft_regs.read_regs.slave_param_bits.buzzer_bit_pan;
+                        tft_regs.read_regs.panx_value[i] = 18;
+                        boost_ignore_timer[i] = BOOST_IGNORE_TIME;
+                    }
+                }
+            }
+            if(boost_ignore_timer[i])
+            {
+                --boost_ignore_timer[i];
+            }            
+            //--------------
         }
         if(minute_minder_timer)
         {
@@ -590,6 +615,17 @@ void set_slider(uint8_t val)
         system_obj.slider_value = val;
         if(system_obj.select_pan)
         {
+            if((val > 18) && (val < 21))
+            {
+                if(boost_timeout_timer[system_obj.select_pan - 1] == 0)
+                {
+                    boost_timeout_timer[system_obj.select_pan - 1] = BOOST_TIMEOUT_TIME;
+                }                 
+                if(boost_ignore_timer[system_obj.select_pan - 1])
+                {
+                    val = 18;
+                }
+            }
             tft_regs.read_regs.panx_value[system_obj.select_pan - 1] = val;
         }
         refresh_display();

@@ -26,6 +26,7 @@ typedef struct
 	lv_obj_t *logo_screen_heat_lbl;
 	lv_obj_t *main_screen;
 	bool main_screen_del;
+	lv_obj_t *main_screen_start_point_cont;
 	lv_obj_t *main_screen_slider_0;
 	lv_obj_t *main_screen_slider_1;
 	lv_obj_t *main_screen_slider_2;
