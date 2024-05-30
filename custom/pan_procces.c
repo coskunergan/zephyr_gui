@@ -288,6 +288,14 @@ void main_screen_init(void)
     refresh_display();
     buzzer_beep();
     lv_label_set_text_fmt(guider_ui.main_screen_clock_lbl, "%02d:%02d", tft_regs.write_regs.hour, tft_regs.write_regs.minute);
+    if(tft_regs.read_regs.slave_param_bits.chef_mode_on)
+    {
+        lv_obj_add_flag(guider_ui.main_screen_start_point_cont, LV_OBJ_FLAG_HIDDEN);
+    }
+    else
+    {
+        lv_obj_clear_flag(guider_ui.main_screen_start_point_cont, LV_OBJ_FLAG_HIDDEN);
+    }
 }
 /*******************************************************************************/
 void menu_screen_init(void)
