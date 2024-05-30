@@ -277,8 +277,8 @@ void setup_scr_menu_screen(lv_ui *ui)
 	ui->menu_screen_demo_lbl = lv_label_create(ui->menu_screen_tabview_1_tab_1);
 	lv_label_set_text(ui->menu_screen_demo_lbl, "Demo On");
 	lv_label_set_long_mode(ui->menu_screen_demo_lbl, LV_LABEL_LONG_WRAP);
-	lv_obj_set_pos(ui->menu_screen_demo_lbl, 491, 162);
-	lv_obj_set_size(ui->menu_screen_demo_lbl, 112, 36);
+	lv_obj_set_pos(ui->menu_screen_demo_lbl, 486, 137);
+	lv_obj_set_size(ui->menu_screen_demo_lbl, 112, 18);
 
 	//Write style for menu_screen_demo_lbl, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
 	lv_obj_set_style_border_width(ui->menu_screen_demo_lbl, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
@@ -294,6 +294,28 @@ void setup_scr_menu_screen(lv_ui *ui)
 	lv_obj_set_style_pad_bottom(ui->menu_screen_demo_lbl, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_pad_left(ui->menu_screen_demo_lbl, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_shadow_width(ui->menu_screen_demo_lbl, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+
+	//Write codes menu_screen_chef_lbl
+	ui->menu_screen_chef_lbl = lv_label_create(ui->menu_screen_tabview_1_tab_1);
+	lv_label_set_text(ui->menu_screen_chef_lbl, "Chef Mode");
+	lv_label_set_long_mode(ui->menu_screen_chef_lbl, LV_LABEL_LONG_WRAP);
+	lv_obj_set_pos(ui->menu_screen_chef_lbl, 494, 173);
+	lv_obj_set_size(ui->menu_screen_chef_lbl, 112, 18);
+
+	//Write style for menu_screen_chef_lbl, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+	lv_obj_set_style_border_width(ui->menu_screen_chef_lbl, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_radius(ui->menu_screen_chef_lbl, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_color(ui->menu_screen_chef_lbl, lv_color_hex(0x000000), LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_font(ui->menu_screen_chef_lbl, &lv_font_montserratMedium_16, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_letter_space(ui->menu_screen_chef_lbl, 2, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_line_space(ui->menu_screen_chef_lbl, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_align(ui->menu_screen_chef_lbl, LV_TEXT_ALIGN_CENTER, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_opa(ui->menu_screen_chef_lbl, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_top(ui->menu_screen_chef_lbl, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_right(ui->menu_screen_chef_lbl, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_bottom(ui->menu_screen_chef_lbl, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_left(ui->menu_screen_chef_lbl, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_shadow_width(ui->menu_screen_chef_lbl, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 
 	//Write codes clock
 	ui->menu_screen_tabview_1_tab_2 = lv_tabview_add_tab(ui->menu_screen_tabview_1,"clock");
@@ -484,7 +506,7 @@ void setup_scr_menu_screen(lv_ui *ui)
 
 	//Write codes menu_screen_label_4
 	ui->menu_screen_label_4 = lv_label_create(ui->menu_screen_tabview_1_tab_3);
-	lv_label_set_text(ui->menu_screen_label_4, "V1.1.4");
+	lv_label_set_text(ui->menu_screen_label_4, "V1.1.5");
 	lv_label_set_long_mode(ui->menu_screen_label_4, LV_LABEL_LONG_WRAP);
 	lv_obj_set_pos(ui->menu_screen_label_4, 260, 254);
 	lv_obj_set_size(ui->menu_screen_label_4, 100, 32);

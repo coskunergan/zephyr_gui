@@ -75,7 +75,8 @@ typedef struct
              clock_updated   : 1,
              buzzer_bit_alarm: 1,
              demo_mode_on    : 1,
-             reserve         : 5;
+             chef_mode_on    : 1,
+             reserve         : 4;
 } slave_param_bits_t;
 
 typedef struct

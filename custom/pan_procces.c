@@ -136,7 +136,7 @@ void second_timer_cb(lv_timer_t *timeout_timer)
             if(boost_ignore_timer[i])
             {
                 --boost_ignore_timer[i];
-            }            
+            }
             //--------------
         }
         if(minute_minder_timer)
@@ -310,6 +310,16 @@ void menu_screen_init(void)
     else
     {
         lv_obj_add_flag(guider_ui.menu_screen_demo_lbl, LV_OBJ_FLAG_HIDDEN);
+    }
+    if(tft_regs.read_regs.slave_param_bits.chef_mode_on)
+    {
+        lv_obj_clear_flag(guider_ui.menu_screen_chef_lbl, LV_OBJ_FLAG_HIDDEN);
+        lv_obj_add_flag(guider_ui.main_screen_start_point_cont, LV_OBJ_FLAG_HIDDEN);
+    }
+    else
+    {
+        lv_obj_add_flag(guider_ui.menu_screen_chef_lbl, LV_OBJ_FLAG_HIDDEN);
+        lv_obj_clear_flag(guider_ui.main_screen_start_point_cont, LV_OBJ_FLAG_HIDDEN);
     }
     lv_roller_set_selected(guider_ui.menu_screen_power_roller, tft_regs.read_regs.slave_param_bits.power_limit, LV_ANIM_ON);
     lv_roller_set_selected(guider_ui.menu_screen_roller_1, tft_regs.write_regs.hour, LV_ANIM_ON);
@@ -620,7 +630,7 @@ void set_slider(uint8_t val)
                 if(boost_timeout_timer[system_obj.select_pan - 1] == 0)
                 {
                     boost_timeout_timer[system_obj.select_pan - 1] = BOOST_TIMEOUT_TIME;
-                }                 
+                }
                 if(boost_ignore_timer[system_obj.select_pan - 1])
                 {
                     val = 18;
@@ -1031,16 +1041,19 @@ void click_warm_btn(void)
 /*******************************************************************************/
 void set_keypad(uint8_t key) // 8316#
 {
-    const uint8_t password[4] = {8, 3, 1, 6};
-    static uint8_t key_index = 0;
+    const uint8_t demo_password[4] = {8, 3, 1, 6};
+    const uint8_t chef_password[4] = {4, 8, 0, 6};
+    static uint8_t demo_key_index = 0;
+    static uint8_t chef_key_index = 0;
     buzzer_beep();
     if(key == 10) //*
     {
-        key_index = 0;
+        demo_key_index = 0;
+        chef_key_index = 0;
     }
     else if(key == 11) //#
     {
-        if(key_index == 4)
+        if(demo_key_index == 4)
         {
             tft_regs.read_regs.slave_param_bits.demo_mode_on = !tft_regs.read_regs.slave_param_bits.demo_mode_on;
 #ifndef LV_USE_GUIDER_SIMULATOR
@@ -1055,15 +1068,38 @@ void set_keypad(uint8_t key) // 8316#
                 lv_obj_add_flag(guider_ui.menu_screen_demo_lbl, LV_OBJ_FLAG_HIDDEN);
             }
         }
-        key_index = 0;
+        else if(chef_key_index == 4)
+        {
+            tft_regs.read_regs.slave_param_bits.chef_mode_on = !tft_regs.read_regs.slave_param_bits.chef_mode_on;
+#ifndef LV_USE_GUIDER_SIMULATOR
+            eeprom_write(eeprom, EEPROM_SLAVE_PARAM_ID, &tft_regs.read_regs.slave_param_bits, sizeof(tft_regs.read_regs.slave_param_bits));
+#endif
+            if(tft_regs.read_regs.slave_param_bits.chef_mode_on)
+            {
+                lv_obj_clear_flag(guider_ui.menu_screen_chef_lbl, LV_OBJ_FLAG_HIDDEN);
+                lv_obj_add_flag(guider_ui.main_screen_start_point_cont, LV_OBJ_FLAG_HIDDEN);
+            }
+            else
+            {
+                lv_obj_add_flag(guider_ui.menu_screen_chef_lbl, LV_OBJ_FLAG_HIDDEN);
+                lv_obj_clear_flag(guider_ui.main_screen_start_point_cont, LV_OBJ_FLAG_HIDDEN);
+            }
+        }
+        chef_key_index = 0;
+        demo_key_index = 0;
     }
-    else if(password[key_index] == key)
+    else if(chef_password[chef_key_index] == key)
     {
-        key_index++;
+        chef_key_index++;
+    }
+    else if(demo_password[demo_key_index] == key)
+    {
+        demo_key_index++;
     }
     else
     {
-        key_index = 0;
+        demo_key_index = 0;
+        chef_key_index = 0;
     }
 }
 /*******************************************************************************/

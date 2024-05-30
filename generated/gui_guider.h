@@ -139,6 +139,7 @@ typedef struct
 	lv_obj_t *menu_screen_img_8;
 	lv_obj_t *menu_screen_keypad_btn;
 	lv_obj_t *menu_screen_demo_lbl;
+	lv_obj_t *menu_screen_chef_lbl;
 	lv_obj_t *menu_screen_roller_1;
 	lv_obj_t *menu_screen_roller_2;
 	lv_obj_t *menu_screen_label_1;
