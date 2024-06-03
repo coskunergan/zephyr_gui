@@ -289,17 +289,14 @@ void main_screen_init(void)
     refresh_display();
     buzzer_beep();
     lv_label_set_text_fmt(guider_ui.main_screen_clock_lbl, "%02d:%02d", tft_regs.write_regs.hour, tft_regs.write_regs.minute);
-    tft_regs.read_regs.slave_param_bits.chef_mode_on= false;
     if(tft_regs.read_regs.slave_param_bits.chef_mode_on)
     {
-        lv_obj_add_flag(guider_ui.main_screen_spinner_start, LV_OBJ_FLAG_HIDDEN);
-        lv_obj_add_flag(guider_ui.main_screen_label_start, LV_OBJ_FLAG_HIDDEN);
+         lv_obj_add_flag(guider_ui.main_screen_spinner_start, LV_OBJ_FLAG_HIDDEN);
+         lv_obj_add_flag(guider_ui.main_screen_label_start, LV_OBJ_FLAG_HIDDEN);
         lv_obj_add_flag(guider_ui.main_screen_start_point_cont, LV_OBJ_FLAG_HIDDEN);
     }
     else
     {
-        lv_obj_clear_flag(guider_ui.main_screen_spinner_start, LV_OBJ_FLAG_HIDDEN);
-        lv_obj_clear_flag(guider_ui.main_screen_label_start, LV_OBJ_FLAG_HIDDEN);
         lv_obj_clear_flag(guider_ui.main_screen_start_point_cont, LV_OBJ_FLAG_HIDDEN);
     }
 }
@@ -339,7 +336,8 @@ void menu_screen_init(void)
     lv_roller_set_selected(guider_ui.menu_screen_roller_1, tft_regs.write_regs.hour, LV_ANIM_ON);
     lv_roller_set_selected(guider_ui.menu_screen_roller_2, tft_regs.write_regs.minute, LV_ANIM_ON);
     lv_label_set_text_fmt(guider_ui.menu_screen_clock_lbl, "%02d:%02d", tft_regs.write_regs.hour, tft_regs.write_regs.minute);
-
+    lv_obj_add_flag(guider_ui.main_screen_spinner_start, LV_OBJ_FLAG_HIDDEN);
+    lv_obj_add_flag(guider_ui.main_screen_label_start, LV_OBJ_FLAG_HIDDEN);
 }
 /*******************************************************************************/
 void select_timer_start(void)
@@ -618,14 +616,17 @@ void pan_refresh(tft_pan_registers_t *pan_regs, system_pan_registers_t *sys_pan_
 /*******************************************************************************/
 void refresh_display(void)
 {
-    if(tft_regs.write_regs.pan1_regs.pan_state.state_active ||
-            tft_regs.write_regs.pan2_regs.pan_state.state_active ||
-            tft_regs.write_regs.pan3_regs.pan_state.state_active ||
-            tft_regs.write_regs.pan4_regs.pan_state.state_active ||
-            tft_regs.write_regs.pan5_regs.pan_state.state_active)
+    if(!lv_obj_has_flag(guider_ui.main_screen_spinner_start, LV_OBJ_FLAG_HIDDEN))
     {
-        lv_obj_add_flag(guider_ui.main_screen_spinner_start, LV_OBJ_FLAG_HIDDEN);
-        lv_obj_add_flag(guider_ui.main_screen_label_start, LV_OBJ_FLAG_HIDDEN);
+        if(tft_regs.write_regs.pan1_regs.pan_state.state_active ||
+                tft_regs.write_regs.pan2_regs.pan_state.state_active ||
+                tft_regs.write_regs.pan3_regs.pan_state.state_active ||
+                tft_regs.write_regs.pan4_regs.pan_state.state_active ||
+                tft_regs.write_regs.pan5_regs.pan_state.state_active)
+        {
+            lv_obj_add_flag(guider_ui.main_screen_spinner_start, LV_OBJ_FLAG_HIDDEN);
+            lv_obj_add_flag(guider_ui.main_screen_label_start, LV_OBJ_FLAG_HIDDEN);
+        }
     }
     /////// TEST ///////
     //tft_regs.write_regs.pan1_regs.pan_state.state_active = true;
@@ -1116,7 +1117,6 @@ void set_keypad(uint8_t key) // 8316#
             tft_regs.read_regs.slave_param_bits.buzzer_bit_alarm = !tft_regs.read_regs.slave_param_bits.buzzer_bit_alarm;
             tft_regs.read_regs.slave_param_bits.buzzer_bit_lock = !tft_regs.read_regs.slave_param_bits.buzzer_bit_lock;
             tft_regs.read_regs.slave_param_bits.buzzer_bit_pause = !tft_regs.read_regs.slave_param_bits.buzzer_bit_pause;
-            tft_regs.read_regs.slave_param_bits.buzzer_bit_pan = !tft_regs.read_regs.slave_param_bits.buzzer_bit_pan;
             // restart abov->mcu
         }
         restart_key_index = 0;
