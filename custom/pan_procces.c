@@ -238,9 +238,10 @@ void main_screen_init(void)
         lv_obj_clear_flag(guider_ui.main_screen_cont_3, LV_OBJ_FLAG_SCROLL_ELASTIC);
         lv_obj_clear_flag(guider_ui.main_screen_cont_4, LV_OBJ_FLAG_SCROLL_ELASTIC);
         lv_obj_clear_flag(guider_ui.main_screen_cont_5, LV_OBJ_FLAG_SCROLL_ELASTIC);
-        lv_obj_clear_flag(guider_ui.main_screen_oops_cont, LV_OBJ_FLAG_SCROLL_ELASTIC);
+        lv_obj_clear_flag(guider_ui.main_screen_spinner_start, LV_OBJ_FLAG_SCROLL_ELASTIC);
         lv_obj_clear_flag(guider_ui.main_screen_oops_cont, LV_OBJ_FLAG_SCROLLABLE);
         lv_obj_clear_flag(guider_ui.main_screen_cont_1, LV_OBJ_FLAG_SCROLLABLE);
+        lv_obj_clear_flag(guider_ui.main_screen_spinner_start, LV_OBJ_FLAG_SCROLLABLE);
         lv_obj_clear_flag(guider_ui.main_screen_cont_2, LV_OBJ_FLAG_SCROLLABLE);
         lv_obj_clear_flag(guider_ui.main_screen_cont_3, LV_OBJ_FLAG_SCROLLABLE);
         lv_obj_clear_flag(guider_ui.main_screen_cont_4, LV_OBJ_FLAG_SCROLLABLE);
@@ -288,12 +289,17 @@ void main_screen_init(void)
     refresh_display();
     buzzer_beep();
     lv_label_set_text_fmt(guider_ui.main_screen_clock_lbl, "%02d:%02d", tft_regs.write_regs.hour, tft_regs.write_regs.minute);
+    tft_regs.read_regs.slave_param_bits.chef_mode_on= false;
     if(tft_regs.read_regs.slave_param_bits.chef_mode_on)
     {
+        lv_obj_add_flag(guider_ui.main_screen_spinner_start, LV_OBJ_FLAG_HIDDEN);
+        lv_obj_add_flag(guider_ui.main_screen_label_start, LV_OBJ_FLAG_HIDDEN);
         lv_obj_add_flag(guider_ui.main_screen_start_point_cont, LV_OBJ_FLAG_HIDDEN);
     }
     else
     {
+        lv_obj_clear_flag(guider_ui.main_screen_spinner_start, LV_OBJ_FLAG_HIDDEN);
+        lv_obj_clear_flag(guider_ui.main_screen_label_start, LV_OBJ_FLAG_HIDDEN);
         lv_obj_clear_flag(guider_ui.main_screen_start_point_cont, LV_OBJ_FLAG_HIDDEN);
     }
 }
@@ -612,6 +618,15 @@ void pan_refresh(tft_pan_registers_t *pan_regs, system_pan_registers_t *sys_pan_
 /*******************************************************************************/
 void refresh_display(void)
 {
+    if(tft_regs.write_regs.pan1_regs.pan_state.state_active ||
+            tft_regs.write_regs.pan2_regs.pan_state.state_active ||
+            tft_regs.write_regs.pan3_regs.pan_state.state_active ||
+            tft_regs.write_regs.pan4_regs.pan_state.state_active ||
+            tft_regs.write_regs.pan5_regs.pan_state.state_active)
+    {
+        lv_obj_add_flag(guider_ui.main_screen_spinner_start, LV_OBJ_FLAG_HIDDEN);
+        lv_obj_add_flag(guider_ui.main_screen_label_start, LV_OBJ_FLAG_HIDDEN);
+    }
     /////// TEST ///////
     //tft_regs.write_regs.pan1_regs.pan_state.state_active = true;
     //tft_regs.write_regs.pan2_regs.pan_state.state_active = true;
@@ -1051,13 +1066,16 @@ void set_keypad(uint8_t key) // 8316#
 {
     const uint8_t demo_password[4] = {8, 3, 1, 6};
     const uint8_t chef_password[4] = {4, 8, 0, 6};
+    const uint8_t restart_password[4] = {1, 2, 4, 8};
     static uint8_t demo_key_index = 0;
     static uint8_t chef_key_index = 0;
+    static uint8_t restart_key_index = 0;
     buzzer_beep();
     if(key == 10) //*
     {
         demo_key_index = 0;
         chef_key_index = 0;
+        restart_key_index = 0;
     }
     else if(key == 11) //#
     {
@@ -1093,8 +1111,21 @@ void set_keypad(uint8_t key) // 8316#
                 lv_obj_clear_flag(guider_ui.main_screen_start_point_cont, LV_OBJ_FLAG_HIDDEN);
             }
         }
+        else if(restart_key_index == 4)
+        {
+            tft_regs.read_regs.slave_param_bits.buzzer_bit_alarm = !tft_regs.read_regs.slave_param_bits.buzzer_bit_alarm;
+            tft_regs.read_regs.slave_param_bits.buzzer_bit_lock = !tft_regs.read_regs.slave_param_bits.buzzer_bit_lock;
+            tft_regs.read_regs.slave_param_bits.buzzer_bit_pause = !tft_regs.read_regs.slave_param_bits.buzzer_bit_pause;
+            tft_regs.read_regs.slave_param_bits.buzzer_bit_pan = !tft_regs.read_regs.slave_param_bits.buzzer_bit_pan;
+            // restart abov->mcu
+        }
+        restart_key_index = 0;
         chef_key_index = 0;
         demo_key_index = 0;
+    }
+    else if(restart_password[restart_key_index] == key)
+    {
+        restart_key_index++;
     }
     else if(chef_password[chef_key_index] == key)
     {
@@ -1108,6 +1139,7 @@ void set_keypad(uint8_t key) // 8316#
     {
         demo_key_index = 0;
         chef_key_index = 0;
+        restart_key_index = 0;
     }
 }
 /*******************************************************************************/

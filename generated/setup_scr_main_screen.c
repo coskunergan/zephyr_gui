@@ -44,6 +44,49 @@ void setup_scr_main_screen(lv_ui *ui)
 	lv_obj_set_style_pad_right(ui->main_screen_start_point_cont, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 	lv_obj_set_style_shadow_width(ui->main_screen_start_point_cont, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
 
+	//Write codes main_screen_label_start
+	ui->main_screen_label_start = lv_label_create(ui->main_screen_start_point_cont);
+	lv_label_set_text(ui->main_screen_label_start, "START");
+	lv_label_set_long_mode(ui->main_screen_label_start, LV_LABEL_LONG_WRAP);
+	lv_obj_set_pos(ui->main_screen_label_start, 42, 76);
+	lv_obj_set_size(ui->main_screen_label_start, 100, 32);
+
+	//Write style for main_screen_label_start, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+	lv_obj_set_style_border_width(ui->main_screen_label_start, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_radius(ui->main_screen_label_start, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_color(ui->main_screen_label_start, lv_color_hex(0xffffff), LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_font(ui->main_screen_label_start, &lv_font_montserratMedium_24, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_letter_space(ui->main_screen_label_start, 2, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_line_space(ui->main_screen_label_start, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_text_align(ui->main_screen_label_start, LV_TEXT_ALIGN_CENTER, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_opa(ui->main_screen_label_start, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_top(ui->main_screen_label_start, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_right(ui->main_screen_label_start, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_bottom(ui->main_screen_label_start, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_left(ui->main_screen_label_start, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_shadow_width(ui->main_screen_label_start, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+
+	//Write codes main_screen_spinner_start
+	ui->main_screen_spinner_start = lv_spinner_create(ui->main_screen_start_point_cont, 1000, 60);
+	lv_obj_set_pos(ui->main_screen_spinner_start, 3, 2);
+	lv_obj_set_size(ui->main_screen_spinner_start, 183, 175);
+
+	//Write style for main_screen_spinner_start, Part: LV_PART_MAIN, State: LV_STATE_DEFAULT.
+	lv_obj_set_style_pad_top(ui->main_screen_spinner_start, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_bottom(ui->main_screen_spinner_start, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_left(ui->main_screen_spinner_start, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_pad_right(ui->main_screen_spinner_start, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_bg_opa(ui->main_screen_spinner_start, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_arc_width(ui->main_screen_spinner_start, 10, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_arc_opa(ui->main_screen_spinner_start, 255, LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_arc_color(ui->main_screen_spinner_start, lv_color_hex(0x727272), LV_PART_MAIN|LV_STATE_DEFAULT);
+	lv_obj_set_style_shadow_width(ui->main_screen_spinner_start, 0, LV_PART_MAIN|LV_STATE_DEFAULT);
+
+	//Write style for main_screen_spinner_start, Part: LV_PART_INDICATOR, State: LV_STATE_DEFAULT.
+	lv_obj_set_style_arc_width(ui->main_screen_spinner_start, 10, LV_PART_INDICATOR|LV_STATE_DEFAULT);
+	lv_obj_set_style_arc_opa(ui->main_screen_spinner_start, 255, LV_PART_INDICATOR|LV_STATE_DEFAULT);
+	lv_obj_set_style_arc_color(ui->main_screen_spinner_start, lv_color_hex(0xffffff), LV_PART_INDICATOR|LV_STATE_DEFAULT);
+
 	//Write codes main_screen_slider_0
 	ui->main_screen_slider_0 = lv_img_create(ui->main_screen);
 	lv_obj_add_flag(ui->main_screen_slider_0, LV_OBJ_FLAG_CLICKABLE);

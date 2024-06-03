@@ -27,6 +27,8 @@ typedef struct
 	lv_obj_t *main_screen;
 	bool main_screen_del;
 	lv_obj_t *main_screen_start_point_cont;
+	lv_obj_t *main_screen_label_start;
+	lv_obj_t *main_screen_spinner_start;
 	lv_obj_t *main_screen_slider_0;
 	lv_obj_t *main_screen_slider_1;
 	lv_obj_t *main_screen_slider_2;
@@ -167,7 +169,7 @@ extern lv_ui guider_ui;
 void setup_scr_logo_screen(lv_ui *ui);
 void setup_scr_main_screen(lv_ui *ui);
 void setup_scr_menu_screen(lv_ui *ui);
-LV_IMG_DECLARE(_logo_alpha_395x163);
+LV_IMG_DECLARE(_logo_alpha_473x70);
 LV_IMG_DECLARE(_heat_alpha_149x138);
 LV_IMG_DECLARE(_slider_0_alpha_800x80);
 LV_IMG_DECLARE(_slider_1_alpha_800x80);
@@ -250,10 +252,10 @@ LV_IMG_DECLARE(_Menu_alpha_57x57);
 
 LV_FONT_DECLARE(lv_font_montserratMedium_34)
 LV_FONT_DECLARE(lv_font_montserratMedium_16)
+LV_FONT_DECLARE(lv_font_montserratMedium_24)
 LV_FONT_DECLARE(lv_font_montserratMedium_12)
 LV_FONT_DECLARE(lv_font_montserratMedium_44)
 LV_FONT_DECLARE(lv_font_Alatsi_Regular_1)
-LV_FONT_DECLARE(lv_font_montserratMedium_24)
 LV_FONT_DECLARE(lv_font_Acme_Regular_16)
 LV_FONT_DECLARE(lv_font_Alatsi_Regular_18)
 LV_FONT_DECLARE(lv_font_Alatsi_Regular_20)
