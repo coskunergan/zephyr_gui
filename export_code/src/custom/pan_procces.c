@@ -1067,7 +1067,7 @@ void set_keypad(uint8_t key) // 8316#
 {
     const uint8_t demo_password[4] = {8, 3, 1, 6};
     const uint8_t chef_password[4] = {4, 8, 0, 6};
-    const uint8_t restart_password[4] = {1, 2, 4, 8};
+    const uint8_t restart_password[4] = {7, 2, 5, 9};
     static uint8_t demo_key_index = 0;
     static uint8_t chef_key_index = 0;
     static uint8_t restart_key_index = 0;
