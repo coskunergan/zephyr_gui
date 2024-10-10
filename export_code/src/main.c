@@ -18,6 +18,8 @@
 #include <zephyr/logging/log.h>
 LOG_MODULE_REGISTER(app);
 
+// önemli not; proje derlenmiyor ise .west klasöründeki proje ismine bu projenin adını yaz.
+
 lv_ui guider_ui;
 
 void main(void)

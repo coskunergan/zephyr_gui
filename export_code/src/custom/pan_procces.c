@@ -41,6 +41,8 @@ bool warning_info = false;
 
 #define EEPROM_SLAVE_PARAM_ID 1
 
+//#define TOUCH_TEST_CODE
+
 #ifndef LV_USE_GUIDER_SIMULATOR
 const struct device *eeprom = DEVICE_DT_GET(DT_ALIAS(eeprom_1));
 #endif
@@ -52,10 +54,28 @@ void stop_minute_minder();
 /*******************************************************************************/
 void second_timer_cb(lv_timer_t *timeout_timer)
 {
+#ifdef TOUCH_TEST_CODE    
+  static bool first = false;
+    tft_regs.write_regs.pan1_regs.pan_state.state_active = true; 
+    tft_regs.write_regs.pan1_regs.pan_state.pan_state = true;
+    tft_regs.write_regs.pan1_regs.pan_state.pan_size = 1;
+    tft_regs.write_regs.pan1_regs.x = 1;
+    tft_regs.write_regs.pan1_regs.y = 2;
+    tft_regs.write_regs.pan2_regs.pan_state.state_active = true;
+    tft_regs.write_regs.pan2_regs.pan_state.pan_state = true;
+    tft_regs.write_regs.master_param_bits.warning_info = true;
+    tft_regs.write_regs.pan2_regs.x = 3;
+    if(!first)
+    { 
+        first = true;
+        lv_obj_t *act_scr = lv_scr_act();
+        lv_event_send(act_scr, LV_EVENT_VALUE_CHANGED, NULL);
+    }
+#endif
 #if LV_USE_GUIDER_SIMULATOR
     static bool first = false;
     tft_regs.write_regs.pan1_regs.pan_state.state_active = true;
-    tft_regs.write_regs.pan1_regs.pan_state.pan_state = true;
+    tft_regs.write_regs.pan1_regs.pan_state. pan_state = true;
     tft_regs.write_regs.pan1_regs.pan_state.pan_size = 1;
     tft_regs.write_regs.pan1_regs.x = 1;
     tft_regs.write_regs.pan1_regs.y = 2;
