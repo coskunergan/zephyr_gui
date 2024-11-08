@@ -76,7 +76,8 @@ typedef struct
              buzzer_bit_alarm: 1,
              demo_mode_on    : 1,
              chef_mode_on    : 1,
-             reserve         : 4;
+             start_calib     : 1,
+             reserve         : 3;
 } slave_param_bits_t;
 
 typedef struct

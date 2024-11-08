@@ -33,6 +33,7 @@ uint32_t timer_menu_timeout = 0;
 uint32_t alarm_count = 0;
 uint8_t button_ignore_count = 0;
 uint8_t warning_screen_count = 0;
+uint8_t calibration_count = 0;
 bool wifi_state = false;
 bool warning_info = false;
 #define NUMBER_OF_ALARM_COUNT 30
@@ -54,9 +55,16 @@ void stop_minute_minder();
 /*******************************************************************************/
 void second_timer_cb(lv_timer_t *timeout_timer)
 {
-#ifdef TOUCH_TEST_CODE    
-  static bool first = false;
-    tft_regs.write_regs.pan1_regs.pan_state.state_active = true; 
+    if(calibration_count)
+    {
+        if(--calibration_count == 0)
+        {
+            wifi_deactive();
+        }
+    }
+#ifdef TOUCH_TEST_CODE
+    static bool first = false;
+    tft_regs.write_regs.pan1_regs.pan_state.state_active = true;
     tft_regs.write_regs.pan1_regs.pan_state.pan_state = true;
     tft_regs.write_regs.pan1_regs.pan_state.pan_size = 1;
     tft_regs.write_regs.pan1_regs.x = 1;
@@ -66,7 +74,7 @@ void second_timer_cb(lv_timer_t *timeout_timer)
     tft_regs.write_regs.master_param_bits.warning_info = true;
     tft_regs.write_regs.pan2_regs.x = 3;
     if(!first)
-    { 
+    {
         first = true;
         lv_obj_t *act_scr = lv_scr_act();
         lv_event_send(act_scr, LV_EVENT_VALUE_CHANGED, NULL);
@@ -311,8 +319,8 @@ void main_screen_init(void)
     lv_label_set_text_fmt(guider_ui.main_screen_clock_lbl, "%02d:%02d", tft_regs.write_regs.hour, tft_regs.write_regs.minute);
     if(tft_regs.read_regs.slave_param_bits.chef_mode_on)
     {
-         lv_obj_add_flag(guider_ui.main_screen_spinner_start, LV_OBJ_FLAG_HIDDEN);
-         lv_obj_add_flag(guider_ui.main_screen_label_start, LV_OBJ_FLAG_HIDDEN);
+        lv_obj_add_flag(guider_ui.main_screen_spinner_start, LV_OBJ_FLAG_HIDDEN);
+        lv_obj_add_flag(guider_ui.main_screen_label_start, LV_OBJ_FLAG_HIDDEN);
         lv_obj_add_flag(guider_ui.main_screen_start_point_cont, LV_OBJ_FLAG_HIDDEN);
     }
     else
@@ -1085,11 +1093,13 @@ void click_warm_btn(void)
 /*******************************************************************************/
 void set_keypad(uint8_t key) // 8316#
 {
-    const uint8_t demo_password[4] = {8, 3, 1, 6};
-    const uint8_t chef_password[4] = {4, 8, 0, 6};
+    const uint8_t demo_password[4] =    {8, 3, 1, 6};
+    const uint8_t chef_password[4] =    {4, 8, 0, 6};
     const uint8_t restart_password[4] = {7, 2, 5, 9};
+    const uint8_t calib_password[4] =   {1, 5, 2, 9};
     static uint8_t demo_key_index = 0;
     static uint8_t chef_key_index = 0;
+    static uint8_t calib_key_index = 0;
     static uint8_t restart_key_index = 0;
     buzzer_beep();
     if(key == 10) //*
@@ -1139,6 +1149,14 @@ void set_keypad(uint8_t key) // 8316#
             tft_regs.read_regs.slave_param_bits.buzzer_bit_pause = !tft_regs.read_regs.slave_param_bits.buzzer_bit_pause;
             // restart abov->mcu
         }
+        else if(calib_key_index == 4)
+        {
+            tft_regs.read_regs.slave_param_bits.start_calib = !tft_regs.read_regs.slave_param_bits.start_calib;
+            calibration_count = 90;                        
+            lv_event_send(guider_ui.menu_screen_imgbtn_1, LV_EVENT_RELEASED, NULL);
+            wifi_active(); // for lock screeen
+        }
+        calib_key_index = 0;
         restart_key_index = 0;
         chef_key_index = 0;
         demo_key_index = 0;
@@ -1155,11 +1173,16 @@ void set_keypad(uint8_t key) // 8316#
     {
         demo_key_index++;
     }
+    else if(calib_password[calib_key_index] == key)
+    {
+        calib_key_index++;
+    }
     else
     {
         demo_key_index = 0;
         chef_key_index = 0;
         restart_key_index = 0;
+        calib_key_index = 0;
     }
 }
 /*******************************************************************************/
